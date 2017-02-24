@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>FurKid首頁</title>
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+
+
+	<script src="js/zepto.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="js/modernizr.min.js"></script>
+	<script type="text/javascript" src="js/scrolloverflow.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/bin-calendar.js"></script>
+
+	<script type="text/javascript" src="js/nav.js"></script>
+<style type="text/css">
+	*{
+		/*outline: 1px solid #f00;*/
+	}
+	
+</style>
+</head>
+<body >
+	   <!-- 選單開始 -->
+    <nav class="nav-header">
+        <div class="fullcontainer">
+            <div class="col-xs-2 col-sm-2 col-lg-8 menu">
+                <!-- 手機選單的漢堡和關閉 -->
+                <header>
+                    <div id="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                    <div id="cross"><i class="fa fa-times" aria-hidden="true"></i></div>
+                </header>
+                <!-- 選單內容 -->
+                <ul class="content">
+                    <li>
+                        <a href="book.html" title=""><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>&nbsp; 線上訂房<span class="line"></span></a>
+                    </li>
+                    <li>
+                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp; 萌主爭霸<span class="line"></span></a></li>
+                    <li>
+                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp; 主題討論<span class="line"></span></a></li>
+                    <li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; 服務介紹<span class="line"></span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; 常見問題<span class="line"></span></a></li>
+                </ul>
+            </div>
+            <!-- logo回首頁 -->
+            <div class="col-xs-5 col-sm-5 col-lg-3 logo">
+                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+            </div>
+            <!-- 登入 -->
+            <div class="col-xs-2 col-sm-2 col-lg-1 login">
+                <div class="beforeLogin" id="userlogin">
+                    <div class="loginIcon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <p>登入</p>
+                </div>
+                <div class="afterLogin">
+                    <div class="profilePhotoDiv">
+                        <img id="showMemberLightbox" src="images/profilePhoto.jpg" alt="">
+                    </div>
+                    <p>Hi~<span id="memberName">宋慧喬</span></p>
+                </div>
+                <!-- 會員中心選單燈箱開始 -->
+                <div class="memberlightbox">
+                    <ul class="subMenu">
+                        <li>
+                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                        <li>
+                            <a data-tab-id="#myposts">我的文章</a></li>
+                        <li>
+                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                        <div class="btn" id="logoutBtn">登出</div>
+                    </ul>
+                </div>
+                <!-- 會員中心選單燈箱結束 -->
+            </div>
+        </div>
+    </nav>
+    <!-- 選單結束 -->
+    <!-- login燈箱開始 -->
+    <div class="loginlightbox">
+        <div class="content">
+            <p class="loginLeft">登入</p>
+            <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+            <form action="#" method="post">
+                <p>
+                    <input type="email" name="mem_mail" placeholder="email帳號">
+                </p>
+                <p>
+                    <input type="password" name="mem_psw" placeholder="密碼">
+                </p>
+                <p>
+                    <input id="loginBtn" type="submit" value="登入">
+                </p>
+                <p id="forgotPsw"><a href="#">忘記密碼</a></p>
+                <p><a href="signup.html">註冊新帳號</a></p>
+            </form>
+        </div>
+    </div>
+    <!-- login燈箱結束 -->
+	<div class="index" id="index">
+	<!-- 從這開始寫 -->
+
+		<div class=" section PageOne">
+			<div class="ccc">
+									<div class="b-select-date dateRoom shadow">
+									<div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+									<div class="yearAndMonth">
+										<div class="year text-center" id="year"></div>
+										<div class="select-month">
+											<div class="month text-center" id="month"></div>
+											<div class="before" id="before"></div>
+											<div class="after" id="after"></div>
+										</div>
+									</div>
+									<div class="days">
+										<div class="weekend">
+											<div class="week"><span class="weekday">SUN</span></div>
+											<div class="week"><span class="weekday">MON</span></div>
+											<div class="week"><span class="weekday">TUE</span></div>
+											<div class="week"><span class="weekday">WED</span></div>
+											<div class="week"><span class="weekday">TUR</span></div>
+											<div class="week"><span class="weekday">FRI</span></div>
+											<div class="week"><span class="weekday">SAT</span></div>
+										</div>
+										<div id="table">
+															
+										</div>
+									</div>
+								</div> <!-- b-select-date dateRoom shadow end -->
+								</div>
+				
+			
+			<svg id="first"  viewBox="0 0 146 57" version="1.1" x="0px" y="0px">
+				<g>
+					<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M7.215,53V25.988H2.557v-4.102h4.658v-3.311c0-2.09,0.186-3.643,0.557-4.658c0.508-1.367,1.401-2.476,2.681-3.325
+		c1.279-0.85,3.071-1.274,5.376-1.274c1.484,0,3.125,0.176,4.922,0.527l-0.791,4.6c-1.094-0.195-2.129-0.293-3.105-0.293
+		c-1.602,0-2.735,0.342-3.398,1.025c-0.664,0.684-0.996,1.963-0.996,3.838v2.871h6.064v4.102h-6.064V53H7.215z"/>
+	<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M43.016,53v-4.57c-2.422,3.516-5.713,5.273-9.873,5.273c-1.836,0-3.55-0.352-5.142-1.055
+		c-1.592-0.703-2.773-1.586-3.545-2.651c-0.772-1.064-1.314-2.368-1.626-3.911c-0.215-1.035-0.322-2.676-0.322-4.922V21.886h5.273
+		v17.256c0,2.754,0.107,4.61,0.322,5.566c0.332,1.387,1.035,2.476,2.109,3.267c1.074,0.791,2.402,1.187,3.984,1.187
+		s3.066-0.405,4.453-1.216c1.387-0.81,2.368-1.914,2.944-3.311c0.576-1.396,0.864-3.423,0.864-6.079v-16.67h5.273V53H43.016z"/>
+	<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M55.936,53V21.886h4.746v4.717c1.211-2.207,2.329-3.662,3.354-4.365s2.153-1.055,3.384-1.055
+		c1.777,0,3.584,0.567,5.42,1.699l-1.816,4.893c-1.289-0.762-2.578-1.143-3.867-1.143c-1.153,0-2.188,0.347-3.105,1.04
+		c-0.918,0.693-1.572,1.655-1.963,2.886c-0.586,1.875-0.879,3.926-0.879,6.152V53H55.936z"/>
+	<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M76.004,53V10.05h5.273v24.492l12.48-12.656h6.826L88.689,33.429L101.785,53h-6.504L84.998,37.091l-3.721,3.574V53H76.004z
+		"/>
+	<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M106.004,16.115V10.05h5.273v6.064H106.004z M106.004,53V21.886h5.273V53H106.004z"/>
+	<path stroke="#fff" fill="none" stroke-miterlimit="10" d="M139.49,53v-3.926c-1.973,3.086-4.873,4.629-8.701,4.629c-2.48,0-4.761-0.684-6.841-2.051s-3.691-3.276-4.834-5.728
+		c-1.143-2.451-1.714-5.269-1.714-8.452c0-3.105,0.518-5.922,1.553-8.452c1.035-2.529,2.588-4.468,4.658-5.815
+		s4.385-2.021,6.943-2.021c1.875,0,3.545,0.396,5.01,1.187s2.656,1.821,3.574,3.091V10.05h5.244V53H139.49z M122.82,37.472
+		c0,3.984,0.84,6.963,2.52,8.936c1.68,1.973,3.662,2.959,5.947,2.959c2.305,0,4.263-0.942,5.874-2.827
+		c1.611-1.885,2.417-4.761,2.417-8.628c0-4.258-0.82-7.383-2.461-9.375s-3.662-2.988-6.064-2.988c-2.344,0-4.302,0.957-5.874,2.871
+		C123.606,30.334,122.82,33.352,122.82,37.472z"/>
+				</g>
+			</svg>
+
+			<svg id="second" version="1.1"  viewBox="0 0 146 57" x="0px" y="0px">
+				<g stroke="rgba(0,0,0,0)" fill="rgba(0,0,0,0)">
+					<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M7.215,53V25.988H2.557v-4.102h4.658v-3.311c0-2.09,0.186-3.643,0.557-4.658c0.508-1.367,1.401-2.476,2.681-3.325
+		c1.279-0.85,3.071-1.274,5.376-1.274c1.484,0,3.125,0.176,4.922,0.527l-0.791,4.6c-1.094-0.195-2.129-0.293-3.105-0.293
+		c-1.602,0-2.735,0.342-3.398,1.025c-0.664,0.684-0.996,1.963-0.996,3.838v2.871h6.064v4.102h-6.064V53H7.215z"/>
+	<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M43.016,53v-4.57c-2.422,3.516-5.713,5.273-9.873,5.273c-1.836,0-3.55-0.352-5.142-1.055
+		c-1.592-0.703-2.773-1.586-3.545-2.651c-0.772-1.064-1.314-2.368-1.626-3.911c-0.215-1.035-0.322-2.676-0.322-4.922V21.886h5.273
+		v17.256c0,2.754,0.107,4.61,0.322,5.566c0.332,1.387,1.035,2.476,2.109,3.267c1.074,0.791,2.402,1.187,3.984,1.187
+		s3.066-0.405,4.453-1.216c1.387-0.81,2.368-1.914,2.944-3.311c0.576-1.396,0.864-3.423,0.864-6.079v-16.67h5.273V53H43.016z"/>
+	<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M55.936,53V21.886h4.746v4.717c1.211-2.207,2.329-3.662,3.354-4.365s2.153-1.055,3.384-1.055
+		c1.777,0,3.584,0.567,5.42,1.699l-1.816,4.893c-1.289-0.762-2.578-1.143-3.867-1.143c-1.153,0-2.188,0.347-3.105,1.04
+		c-0.918,0.693-1.572,1.655-1.963,2.886c-0.586,1.875-0.879,3.926-0.879,6.152V53H55.936z"/>
+	<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M76.004,53V10.05h5.273v24.492l12.48-12.656h6.826L88.689,33.429L101.785,53h-6.504L84.998,37.091l-3.721,3.574V53H76.004z
+		"/>
+	<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M106.004,16.115V10.05h5.273v6.064H106.004z M106.004,53V21.886h5.273V53H106.004z"/>
+	<path stroke="rgba(0,0,0,0)"  stroke-miterlimit="10" d="M139.49,53v-3.926c-1.973,3.086-4.873,4.629-8.701,4.629c-2.48,0-4.761-0.684-6.841-2.051s-3.691-3.276-4.834-5.728
+		c-1.143-2.451-1.714-5.269-1.714-8.452c0-3.105,0.518-5.922,1.553-8.452c1.035-2.529,2.588-4.468,4.658-5.815
+		s4.385-2.021,6.943-2.021c1.875,0,3.545,0.396,5.01,1.187s2.656,1.821,3.574,3.091V10.05h5.244V53H139.49z M122.82,37.472
+		c0,3.984,0.84,6.963,2.52,8.936c1.68,1.973,3.662,2.959,5.947,2.959c2.305,0,4.263-0.942,5.874-2.827
+		c1.611-1.885,2.417-4.761,2.417-8.628c0-4.258-0.82-7.383-2.461-9.375s-3.662-2.988-6.064-2.988c-2.344,0-4.302,0.957-5.874,2.871
+		C123.606,30.334,122.82,33.352,122.82,37.472z"/>
+				</g>
+			</svg>
+			
+			<!-- 首頁副標 -->
+			<div class="page-view">
+				<div class="project">
+					<div class="text">
+						<h1>最貼心的寵物旅館</h1>
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>最優質的寵物旅館</h1>
+						
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>最多選擇的寵物旅館</h1>
+						
+					</div>
+				</div>
+				<div class="project">
+					<div class="text">
+						<h1>最時尚的寵物旅館</h1>
+						
+					</div>
+				</div>
+			</div>
+
+			<!-- 篩選器 -->
+			<div class="orderTable">
+				
+						<div class="orderText">訂房日期</div>
+						<div class="bin-calendar">
+								<div class="i-dateClick text-center"><span id="roomIn"></span><span id="roomOut"></span></div>
+								
+								
+						</div>	<!-- bin-calendar end -->
+						<div class="button">
+							<a href="book.html">馬上預定</a>
+						</div>
+				
+				
+			</div>
+
+			<!-- scroll -->
+			<div class="scroll-icon">
+				<i class="fa fa-angle-double-down" ></i>
+			</div>
+			<div class="clear"></div>
+
+		</div><!-- pageOne end -->
+		
+		<div class="section PageTwo">
+			<!-- <div class="container">
+	    		<div class="row"> -->
+					
+			    	<div id="lightbox">
+		    			<div class="pic">
+		    				<img src="">
+		    			</div>
+		    			<div class="text">
+		    				<h3>鄉村風</h3>
+		    				<p>美式的鄉村住宿環境</p>
+		    				<a href="service.html">more</a>
+		    			</div>
+			    	</div>
+			    	<div class="box" id="box">
+				    	<header>
+							<h3>我們提供六種房型給狗狗享受</h3>
+						</header>
+			    		<div class="house house-01">
+				    		<img src="img/pgo1.jpg">
+				    		<div><span>鄉村風</span><span>給寵物滿滿的鄉村大平台</span></div>
+				    	</div>
+
+				    	
+				    	<div class="house house-02">
+				    		<img src="img/pgo2.jpg">
+				    		<div ><span>夢幻風</span><span>給寵物滿滿的工業大平台</span></div>
+				    	</div>
+				    	<div class="house house-03">
+				    		<img src="img/pgo5.jpg">
+				    		<div ><span>夢幻風</span><span>給寵物滿滿的夢幻大平台</span></div>
+				    	</div>
+				    	<div class="house house-04">
+				    		<img src="img/pgo4.jpg">
+				    		<div ><span>普普風</span><span>給寵物滿滿的普普大平台</span></div>
+				    	</div>
+				    	<div class="house house-05">
+				    		<img src="img/pgo5.jpg">
+				    		<div ><span>夢幻風</span><span>給寵物滿滿的夢幻大平台</span></div>
+				    	</div>
+				    	<div class="house house-06">
+				    		<img src="img/pgo1.jpg">
+				    		<div ><span>鄉村風</span><span>給寵物滿滿的鄉村大平台</span></div>
+				    	</div>
+				    	<div class="clear"></div>
+			    	</div>
+			    	
+					
+					<!-- scroll -->
+					<div class="scroll-icon">
+						<i class="fa fa-angle-double-down" ></i>
+					</div>
+					
+				<!-- </div>row end -->
+
+			<!-- </div>container end -->
+			<!-- <div class="bgDog">
+						<img src="img/pg2dog.png">
+					</div> -->
+		</div><!-- pageTwo end -->
+	
+
+		<div class="section PageThree">
+			<div class="blackbg">
+				
+			
+			<header>
+				<h3>精選服務項目</h3>
+			</header>
+			<div id="preview">
+				<div id="preview-coverflow">
+					<div class="grid">
+						<figure class="effect-marley" >
+							<img class="cover" src="img/pg3-1.png"/>
+							<figcaption>
+								<h2>沐浴</h2>
+								<p>提供狗狗最好的洗澡服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+					<div class="grid">
+						<figure class="effect-marley " >
+							<img class="cover" src="img/pg3-2.jpg"/>
+							<figcaption>
+								<h2>潔牙</h2>
+								<p>提供狗狗最好的潔牙服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+					<div class="grid">
+						<figure class="effect-marley">
+							<img class="cover" src="img/pg3-3.jpg"/>
+							<figcaption>
+								<h2>美容</h2>
+								<p>提供狗狗最好的美容服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+					<div class="grid">
+						<figure class="effect-marley open">
+							<img class="cover" src="img/pg3-4.jpg"/>
+							<figcaption>
+								<h2>按摩</h2>
+								<p>提供狗狗最好的按摩服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+					<div class="grid">
+						<figure class="effect-marley">
+							<img class="cover" src="img/pg3-5.jpg"/>
+							<figcaption>
+								<h2>游泳</h2>
+								<p>提供狗狗最好的游泳服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+					<div class="grid">
+						<figure class="effect-marley">
+							<img class="cover" src="img/pg3-6.jpg"/>
+							<figcaption>
+								<h2>遛狗</h2>
+								<p>提供狗狗最好的遛狗服務</p>
+							</figcaption>			
+						</figure>
+					</div>
+						<video id="myMovie" controls>
+							<source src="myMovie/video01.mp4" type="">
+						</video>	
+					
+				</div>
+			</div>			
+				<!-- scroll -->
+			<div class="scroll-icon">
+				<i class="fa fa-angle-double-down" ></i>
+			</div>
+			</div>
+		</div> <!-- pageThree end -->
+
+		<div class="section PageFour" >
+			<section id="photostack-1" class="photostack ">
+				<div>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog2.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog3.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog1.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog4.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog5.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog6.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog7.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog8.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog9.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog10.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog11.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog12.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog13.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog14.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog15.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+					<figure data-dummy>
+						<div class="card">
+							<a href="race.html">
+								<img src="img/dog16.png">
+							</a>
+							<div class="text">
+								<div class="textTop">
+									<p class="number">002</p>
+									<p class="name">皮皮</p>
+									<p class="votes">599</p>
+								</div>
+								<div class="textDown">
+									<div class="size">
+										<span>體型:</span>
+										<span>大型犬</span>
+									</div>
+									<div class="personality">
+										<span>個性:</span>
+										<span>活潑愛搗蛋</span>
+									</div>
+									<div class="sex">
+										<span>性別:</span>
+										<span>女生</span>
+									</div>
+									<div class="like">
+										<!-- <img src="../../../race_image/r_heart.png"> -->
+										<button class="favorite">				
+											<i class="fa fa-heart outsideheart" aria-hidden="true">
+												<i class="fa fa-heart insideheart" aria-hidden="true"></i>
+											</i>
+										</button>
+									</div>										
+								</div>
+							</div>
+						</div>
+					</figure>
+				</div>
+			</section>
+			<!-- scroll -->
+			<div class="scroll-icon">
+				<i class="fa fa-angle-double-down" ></i>
+			</div>
+		</div><!-- pageFour end -->
+
+		<div class=" section PageFive">
+			<div class="home_dis">
+				<div class="disclass disclass1">
+					<div class="distitle"><h2>住宿心得</h2></div>
+					<div class="disInfo">
+						<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        					<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        					<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="clear"></div>
+					</div>
+				</div>
+				<div class="disclass disclass2">
+					<div class="distitle"><h2>健康鮮食</h2></div>
+					<div class="disInfo">
+						<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<div class="disclass disclass3">
+					<div class="distitle"><h2>新手爸媽</h2></div>
+					<div class="disInfo">
+						<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<div class="disclass disclass4">
+					<div class="distitle"><h2>創作分享</h2></div>
+					<div class="disInfo">
+						<div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<!-- footer開始 -->
+    <footer>
+        <div class="container">
+            <section>
+                <div class="col-xs-12 col-sm-6 col-lg-6 contactus">
+                    <h6>聯絡我們</h6>
+                    <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
+                    <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
+                    <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
+                    <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-6 info">
+                    <h6>營業資訊</h6>
+                    <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; 營業時間: 週一到週日9:00-21:00</p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; 地址: 桃園市中壢區中大路300號</p>
+                    <p><i class="fa fa-paw" aria-hidden="true"></i>&nbsp; 桃園市特寵業證字號第123號</p>
+                </div>
+            </section>
+            <section>
+                <div class="col-xs-12 col-lg-12 col-sm-12 copyright">
+                    <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
+                </div>
+            </section>
+        </div>
+    </footer>
+		</div><!-- pageFive end -->
+	
+	</div><!-- index end -->
+
+</body>
+</html>
+
+
+	<script src="js/jquery.drawsvg.js"></script>
+
+
+	<script src="js/classie.js"></script>
+	<script src="js/photostack.js"></script>
+
+	<script src="js/jquery.hoverdir.js"></script>
+	<!-- Plugin -->
+		<script src="js/jquery.coverflow.js"></script>
+		<!-- <script src="jquery.touchSwipe.min.js"></script> -->
+		<!-- Optionals -->
+		<!-- <script src="js/jquery.interpolate.min.js"></script> -->
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<!-- <script src="js/reflection.js"></script> -->
+<script type="text/javascript" src="js/javascrip-sam.js"></script>

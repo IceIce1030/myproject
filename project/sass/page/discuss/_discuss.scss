@@ -1,0 +1,308 @@
+@import "lg";
+@import "sm";
+@import "xs";
+
+$allColor: #557095;
+$shareColor: #8CD899;
+$healthColor: #57B1DA;
+$newColor: #D9ABE6;
+$foodColor: #F4A66F;
+$hotColor: #F00;
+
+#d-body{
+	// background-color: #F9F7E8;
+	background-image: url(../images/bg02.png);
+	color:#fff;
+}
+.discuss{
+	//三個尺寸共用的寫在這
+	
+	.D-filter{
+
+		.filters{
+			
+			margin-top: 20px;
+
+			.filterBtn{
+				float: left;
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				margin: 5px;
+				text-align: center;
+				letter-spacing: 1px;
+				color: #000;
+				border-radius: 3px;
+				cursor: pointer;
+				transition: 0.3s;
+				&.chosen{
+					color:#fff;
+				}
+				&.chosen#allBtn{
+					background-color: $allColor;
+				}
+				&.chosen#shareBtn{
+					background-color: $shareColor;
+				}
+				&.chosen#healthBtn{
+					background-color: $healthColor;
+				}
+				&.chosen#newBtn{
+					background-color: $newColor;
+				}
+				&.chosen#foodBtn{
+					background-color: $foodColor;
+				}
+				&.chosen#hotBtn{
+					background-color: $hotColor;
+				}
+			}
+			.filterBtn:hover{
+				color: #ececec;
+				background-color: #ccc;
+			}
+
+
+
+			
+		}
+
+
+		.search{
+			margin: 20px auto 0;
+			padding: 5px;
+			color: #000;
+			// background-color: #000;
+			.search-txt{
+				width: 0px;
+				border: none;
+				border-radius: 3px;
+				background-color: #ececec;
+				transition:0.5s;
+				&.open{
+				width: 40%;
+				padding: 5px;
+				}
+			}
+			.icon{margin: 0 5px;}
+			.icon:after{
+				content: '\f002';
+				font-family: fontAwesome;
+				color: #000;
+				cursor: pointer;}
+			.post{
+				display: inline-block;
+				width: 120px;
+				height: 35px;
+				padding: 5px;
+				text-align: center;
+				background-color: #B37600;
+				color: #fff;
+				border-radius: 3px;
+				cursor: pointer;
+				&:before{
+					content: '\f0f6';
+					font-family: fontAwesome;
+					margin: 2px;
+
+				}
+			}
+
+		}
+			
+
+
+	}
+
+	//燈箱
+	.lightbox-target {
+		position: fixed;
+		z-index: 2;
+		top: -100%;
+		width: 100%;
+		background: rgba(0,0,0,0.7);
+		opacity: 0;
+		transition:opacity .5s ease-in-out;
+		overflow: hidden;
+		.content {
+			max-width: 90%;
+			background: #fff;
+	        color: #333;
+			margin: auto;
+			padding: 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			// max-height: 0%;
+			// max-width: 0%;
+			border-radius: 3px;
+			border: 3px solid #fff;
+			box-sizing: border-box;
+			transition:.5s ease-in-out;
+
+		}
+     
+		&:target {
+			opacity: 1;
+			top: 0;
+			bottom: 0;
+			.content{
+				max-height: 100%;
+				max-width: 100%;
+				//文發表格
+				.postForm{
+					display: inline-block;
+					// margin: auto;
+					text-align: left;
+					.formGroup{
+						border-bottom: 1px dotted $brown;
+						margin: 5px 0;
+						min-height: 40px;
+					}
+					.labelClass{
+						display: inline-block;
+						font-weight: bold;
+						width: 70px;
+					}
+					#post-title{
+						height: 34px;
+						padding: 3px;
+						letter-spacing: 1px;
+						border: 1px solid rgba(119,71,32,0.8);
+						border-radius: 4px;
+					}
+					#post-pic{margin: 5px;}
+					.showPic{
+						text-align: center;
+						display: inline-block;
+						position: relative;
+						top: 5px;
+						vertical-align: bottom;
+						margin: 5px auto;
+						overflow: hidden;
+						img{width: 50px;}
+					}
+					#post-text{
+						width: 100%;
+						resize:none;
+					}
+				}
+
+			}
+			.lightbox-close {
+				top: 5%;
+			}
+		}//&targetEnd
+} //燈箱結束
+
+		.cross {
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .8);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, .8);
+            cursor: pointer;
+            .fa-times {
+                font-size: 20px;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 4px;
+                
+
+            }
+        }
+
+	.D-content{
+		.item{
+			background-color: #fff;
+			padding: 10px;
+			border-radius: 3px;
+			position: relative;
+			overflow: hidden;
+			transition:0.5s;
+			&.aa{
+				border: 4px double $shareColor ;
+			}
+			&.bb{
+				border: 4px double $healthColor ;
+			}
+			&.cc{
+				border: 4px double $newColor ;
+			}
+			&.dd{
+				border: 4px double $foodColor ;
+			}
+			h3{
+				color: #434343;
+				transition:0.5s;}
+			img{border-radius: 3px;}
+			.postDate{
+				color: $light-gray;
+				font-size: 12px;}
+			.watchMess{
+					color: $light-gray;
+					font-size: 12px;
+					
+					//觀看
+					.watch:before{
+						content: '\f06e';
+						font-family: fontAwesome;
+						margin: 10px;}
+					.message:before{
+						content: '\f27a';
+						font-family: fontAwesome;
+						margin: 10px;}
+				}
+
+		}
+		.itemlabel{
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				margin: 5px;
+				text-align: center;
+				letter-spacing: 1px;
+				color: #fff;
+				border-radius: 3px;
+				position: absolute;
+				left: -5px;
+				transition: 0.5s;
+				&#shareLabel{
+					background-color: $shareColor;
+				}
+				&#healthLabel{
+					background-color: $healthColor;
+				}
+				&#newLabel{
+					background-color: $newColor;
+				}
+				&#foodLabel{
+					background-color: $foodColor;
+				}
+		}
+
+
+	}//內容結束
+		.item:hover{
+			box-shadow: 0 0 10px rgba(0,0,0,0.6);
+			h3{color: $deep-orange;};
+			
+		}
+			
+
+	
+}
+
+	
+	
+
+

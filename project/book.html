@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>線上訂房</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+  	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+
+    <script type="text/javascript" src="js/burgermenu.js"></script>
+	
+
+	<!-- transform -->
+	<script type="text/javascript" src="js/transform/jquery.transform2d.js"></script>
+	<script type="text/javascript" src="js/transform/jquery.transform3d.js"></script>
+	<!-- transform -->
+
+    <!-- navjs -->
+    <script type="text/javascript" src="js/nav.js"></script>
+    <!-- navjs -->
+	
+	<!-- circle-->
+	<script type="text/javascript" src="js/jquery.tinycircleslider.js"></script>
+	<!-- circle-->
+
+	<!-- scroll -->
+	 <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<!-- scroll -->
+
+	<!-- buble -->
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery-BubbleEngine.js"></script>
+	<!-- buble -->
+	
+
+	<script type="text/javascript" src="js/b-javascrip.js"></script>
+
+</head>
+<body id="bookbody">
+<div></div>
+<div class="loadingbox">
+    <div class="dogbox">
+        <div class="dog">
+          <div class="dog-body">
+            <div class="dog-tail">
+              <div class="dog-tail">
+                <div class="dog-tail">
+                  <div class="dog-tail">
+                    <div class="dog-tail">
+                      <div class="dog-tail">
+                        <div class="dog-tail">
+                          <div class="dog-tail"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dog-torso"></div>
+          <div class="dog-head">
+            <div class="dog-ears">
+              <div class="dog-ear"></div>
+              <div class="dog-ear"></div>
+            </div>
+            <div class="dog-eyes">
+              <div class="dog-eye"></div>
+              <div class="dog-eye"></div>
+            </div>
+            <div class="dog-muzzle">
+              <div class="dog-tongue"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ball" tabindex="0"></div>
+    </div>
+    
+
+</div>
+   <!-- 選單開始 -->
+    <nav class="nav-header">
+        <div class="fullcontainer">
+            <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
+                <!-- 手機選單的漢堡和關閉 -->
+                <header class="hamburgerMenu" id="hamburgerMenu">
+                    <div class="bar" id="hamburgerMenuBar"></div>
+                </header>
+                <!-- 選單內容 -->
+                <ul class="content" id="menuContent">
+                    <li>
+                        <a href="book.html"  class="active"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
+                    </li>
+                    <li>
+                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
+                    <li>
+                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
+                    <li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
+                </ul>
+            </div>
+            <!-- logo回首頁 -->
+            <div class="col-xs-5 col-sm-5 col-md-2 col-md-pull-9 col-lg-3 col-lg-pull-8 logo">
+                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+            </div>
+            <!-- 登入/會員頭像 -->
+            <div class="col-xs-2 col-sm-2 col-md-1 login">
+                <div class="beforeLogin" id="beforeLogin">
+                    <div class="loginIcon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <p>登入</p>
+                </div>
+                <div class="afterLogin" id="afterLogin">
+                    <div class="profilePhotoDiv">
+                        <img id="mem_img" src="">
+                    </div>
+                    <p>Hi~<span id="mem_name"></span></p>
+                </div>
+                <!-- 會員中心選單燈箱開始 -->
+                <div class="navbarLightbox memberlightbox">
+                    <ul class="subMenu">
+                        <li>
+                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                        <li>
+                            <a data-tab-id="#myposts">我的文章</a></li>
+                        <li>
+                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                        <div class="btnFunction" id="logoutBtn">登出</div>
+                    </ul>
+                </div>
+                <!-- 會員中心選單燈箱結束 -->
+            </div>
+        </div>
+    </nav>
+    <!-- 選單結束 -->
+    <!-- login燈箱開始 -->
+    <div class="navbarLightbox loginlightbox">
+        <div class="content">
+            <p class="loginLeft">登入</p>
+            <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+            <p>
+                <input type="text" name="mem_id" id="mem_id" placeholder="帳號" required>
+            </p>
+            <p>
+                <input type="password" name="mem_psw" id="mem_psw" placeholder="密碼" required>
+            </p>
+            <p id="forgotPsw"><span>忘記密碼</span></p>
+            <p>
+                <input class="inputBtn" id="loginBtn" type="submit" value="登入">
+            </p>
+            <div class="notMemberYet">
+                <p>
+                    還不是會員嗎？<a href="signup.html">立刻註冊</a>
+                </p>
+                <p>
+                    <input class="inputBtn" id="guestLoginBtn" type="submit" value="使用體驗帳號登入">
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- login燈箱結束 -->
+
+<div class="book"> 
+<!-- 從這開始寫 -->
+<div class="mobile-step" id="mobile-step"><i id="UpRight"></i><i id="UpLeft"></i>Step<span id="stepNum"></span></div>
+
+
+<div class="container">
+<div class="stepDiy">
+			<ul>
+				<li class="step1">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_01">1</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_01">選擇房間</a></div>
+				</li>
+				<li class="step2">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_02">2</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_02">狗狗資料</a></div>
+				</li>
+				<li class="step3">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_03">3</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_03">選擇保母</a></div>
+				</li>
+				<li class="step4">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_04">4</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_04">選擇服務</a></div>
+				</li>
+				<li class="step5">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_05">5</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_05">訂單結果</a></div>
+				</li>
+				<li class="step6">
+					<div class="step-bar"><span></span></div>
+					<div class="step-num"><a class="page-scroll mStepA" href="#section_06">6</a></div>
+					<div class="step-text"><a class="page-scroll mStepA" href="#section_06">完成付款</a></div>
+				</li>
+			</ul>
+		</div>
+</div>
+
+<!-- 選擇房間 -->
+<div id="section_01"></div>
+<section class="step_dateRoom step" id="bookSection1">
+	<div class="container">
+		
+				<div>
+					<div class="row">
+					<div class="col-xs-12 col-sm-5 col-md-5">
+
+						<div class="b-select-date dateRoom bg">
+							<div class="step-info">
+								<h2><img class="footicon rwd-img" src="images/footprint-icon.png">1/6</h2>
+							</div>
+							<div class="selecting-info">
+								<h4><span id="nowNeedSelectDate">請選擇入住日期</span></h4>
+							</div>
+							
+								<div class="yearAndMonth">
+									<div class="year text-center" id="year"></div>
+									<div class="select-month">
+										
+										<div class="before b-btn" id="before"></div>
+										<div class="month text-center" id="month"></div>
+										<div class="after b-btn" id="after"></div>
+									</div>
+								</div>
+								<div class="days">
+									<div class="weekend">
+										<div class="week"><span class="weekday">SUN</span></div>
+										<div class="week"><span class="weekday">MON</span></div>
+										<div class="week"><span class="weekday">TUE</span></div>
+										<div class="week"><span class="weekday">WED</span></div>
+										<div class="week"><span class="weekday">TUR</span></div>
+										<div class="week"><span class="weekday">FRI</span></div>
+										<div class="week"><span class="weekday">SAT</span></div>
+									</div>
+
+									<div id="table">
+										
+									</div>
+
+									
+								</div>
+								<div class="dateResult text-center">
+									<p>入住日期：<span class="roomIn">請選擇入住日期</span></p>
+									<p>退房日期：<span class="roomOut">請選擇退房日期</span></p>
+									<p>天數：<span class="roomDays">0</span></p>
+								</div>
+						</div>
+						
+						
+					</div>
+					<div class="col-xs-12 col-sm-7 col-md-7">
+						<div class="b-select-room dateRoom bg">
+						<div id="dateRoomChange"></div>
+							
+							<div class="dateResult text-center" id="mobileDate">
+								<div>入住日期<span class="roomIn">請選擇入住日期</span></div>
+								<div>退房日期<span class="roomOut">請選擇退房日期</span></div>
+								<div>天數<span class="roomDays">0</span></div>
+							</div>
+	
+							<div class="b-select-roomStyle">
+								<div class="roomStyle text-center" id="room_styleIn">
+									<!-- <div class="styleBox">
+										<div class="styles b-btn-room">
+											<span>
+												現代風
+												<input type="hidden" name="rooms" value="">
+											</span>
+											<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+										
+									</div>
+									<div class="styleBox">
+										<div class="styles b-btn-room">
+										<span>
+											工業風
+											<input type="hidden" name="rooms" value="">
+										</span>
+										<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+									</div>
+									<div class="styleBox">
+										<div class="styles b-btn-room">
+											<span>
+												公主風
+												<input type="hidden" name="rooms" value="">
+											</span>
+											<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+									</div>
+									<div class="styleBox">
+										<div class="styles b-btn-room">
+											<span>
+												鄉村風
+												<input type="hidden" name="rooms" value="">
+											</span>
+											<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+									</div>
+									<div class="styleBox">
+										<div class="styles b-btn-room">
+											<span>
+												OO風
+												<input type="hidden" name="rooms" value="">
+											</span>
+											<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+									</div>
+									<div class="styleBox">
+										<div class="styles b-btn-room">
+											<span>
+												普普風
+												<input type="hidden" name="rooms" value="">
+											</span>
+											<div class="footprint">
+												<img class="img-weight-auto" src="images/Pet_footprint.png">
+											</div>
+										</div>
+									</div> -->
+								</div>
+							</div>
+							<div class="roomPic">
+
+									<div class="row" id="_roomInfo">
+										<!-- <div class="col-xs-12 col-sm-5 col-md-5">
+											<div class="roomInfo">
+												<h2 class="roomStyle-selected">現代風</h2>
+												<p>著重於將收納機能隱藏在設計量體中，以明亮色調與簡潔線條呈現乾淨俐落的空間風格</p>
+												<h4>房間價格:<span id="roomPrice">1600</span>元</h4>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 pic-main ">
+											<div class="big">
+												<img class="img-rwd" id="roomPicBig" src="images/b-room1.png">
+											</div>
+											
+											<div class="pic-small">
+												<div class="small">
+													<img class="first b-btn" src="images/b-room1.png">
+												</div>
+												<div class="small">
+													<img class="b-btn" src="images/b-room2.png">
+												</div>
+												<div class="small">
+													<img class="b-btn" src="images/b-room3.png">
+												</div>
+											</div>
+										</div> -->
+									</div>							
+							</div>
+							<div class="step-info-p">
+								<p>請選擇日期及房間再下一步</p>
+							</div>
+							<div class="next">
+								<a class="page-scroll btnLink" href="#section_02">下一步</a>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+								
+		
+<!-- 選擇狗狗 -->
+</section>
+<div id="section_02"></div>
+<section class="step_dog step" id="bookSection2">
+	<div class="container">
+			
+			<div class="bg ">
+				<div class="row">
+				<div class="col-xs-12 col-md-12 col-md-12">
+					<div class="step-info">
+						<h2><img class="footicon rwd-img" src="images/footprint-icon.png">2/6</h2>
+					</div>
+					<h4>我的<span>毛小孩</span></h4>
+				 	<p class="again-p"><span class="again inputBtn">帶入寵物資料</span></p>
+				 	<div class="mypet">
+						<select id="mypet-select">
+							<!-- <option>請選擇</option>
+							<option>蓓蓓</option>
+							<option>皮皮</option> -->
+						</select>
+					</div>		
+				</div>
+					
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="select-dog pd">
+						<div class="dog-info">
+						<div class="backColor "></div>
+							<p>毛小孩名字：</p> 
+							<p>
+								<input id="petNameInput" type="text" placeholder="請輸入毛小孩姓名" name="petName">
+								
+							</p>
+							
+							<p>毛小孩性別：</p>
+							<p>
+								<span class="b-sex sexclick b-btn">
+									<input type="hidden" name="dog-sex" value="f">
+									<svg class="pet-boy" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+									<circle style="fill:#F4B2B0;" cx="235.632" cy="235.661" r="143.558"/>
+									<g>
+										<path style="fill:#B3404A;" d="M235.636,394.862c-42.522,0-82.5-16.558-112.568-46.627c-62.07-62.07-62.07-163.066,0-225.136
+											c30.068-30.068,70.045-46.627,112.568-46.627s82.5,16.558,112.569,46.627c62.068,62.071,62.068,163.066,0,225.136
+											C318.136,378.303,278.159,394.862,235.636,394.862z M235.636,107.752c-34.168,0-66.289,13.305-90.448,37.465
+											c-49.875,49.875-49.875,131.026,0,180.9c24.159,24.16,56.28,37.465,90.448,37.465s66.291-13.305,90.45-37.465
+											c49.874-49.874,49.874-131.024,0-180.9C301.927,121.057,269.805,107.752,235.636,107.752z"/>
+										<path style="fill:#B3404A;" d="M496.331,389.993c-8.636,0-15.64,7.002-15.64,15.64v52.967l-67.688-67.688
+											c37.731-42.985,58.351-97.529,58.351-155.247c0-62.961-24.519-122.155-69.041-166.675c-6.109-6.107-16.009-6.107-22.119,0
+											c-6.107,6.107-6.107,16.011,0,22.118c38.613,38.612,59.879,89.951,59.879,144.558c0,54.608-21.265,105.946-59.879,144.558
+											c-79.707,79.708-209.405,79.712-289.113,0c-79.71-79.71-79.71-209.407,0-289.117c51.572-51.569,127.418-71.812,197.919-52.827
+											c8.349,2.244,16.922-2.696,19.17-11.035c2.246-8.341-2.696-16.922-11.035-19.168C215.85-13.807,128.42,9.529,68.961,68.992
+											c-91.904,91.904-91.904,241.446,0,333.352c44.52,44.52,103.712,69.039,166.675,69.039c57.72,0,112.261-20.62,155.246-58.349
+											l67.688,67.688h-52.967c-8.636,0-15.64,7.002-15.64,15.64c0,8.638,7.004,15.64,15.64,15.64h90.727c8.636,0,15.64-7.002,15.64-15.64
+											v-90.725C511.97,396.995,504.967,389.993,496.331,389.993z"/>
+									</g>
+									</svg>
+								</span>
+
+								<span class="b-sex  sexclick b-btn">
+								<input type="hidden" name="dog-sex" value="m">
+									<svg class="pet-girl" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+									<circle style="fill:#CFF09E;" cx="237.297" cy="237.327" r="144.573"/>
+									<g>
+										<path style="fill:#507C5C;" d="M237.302,397.655c-42.822,0-83.084-16.677-113.365-46.957c-62.509-62.509-62.509-164.217,0-226.726
+											c30.282-30.282,70.542-46.957,113.365-46.957s83.084,16.675,113.365,46.957c62.509,62.51,62.509,164.219,0,226.728
+											C320.386,380.978,280.126,397.655,237.302,397.655z M237.302,108.514c-34.41,0-66.76,13.399-91.09,37.73
+											c-50.227,50.227-50.227,131.951,0,182.179c24.33,24.331,56.68,37.73,91.09,37.73s66.76-13.399,91.09-37.732
+											c50.227-50.227,50.227-131.951,0-182.179C304.062,121.914,271.712,108.514,237.302,108.514z"/>
+										<path style="fill:#507C5C;" d="M507.356,485.112l-34.75-34.749l32.038-32.038c6.151-6.151,6.151-16.124,0-22.276
+											c-6.152-6.151-16.122-6.151-22.276,0l-32.038,32.038l-34.41-34.408c37.998-43.289,58.763-98.218,58.763-156.345
+											c0-63.407-24.694-123.019-69.529-167.854c-6.152-6.151-16.122-6.151-22.276,0c-6.151,6.151-6.151,16.124,0,22.274
+											c38.886,38.885,60.302,90.587,60.302,145.58s-21.416,106.695-60.302,145.58c-80.271,80.272-210.886,80.274-291.158,0
+											c-80.274-80.274-80.274-210.888,0-291.161c51.939-51.935,128.314-72.32,199.32-53.2c8.406,2.259,17.042-2.715,19.305-11.114
+											c2.262-8.4-2.715-17.042-11.114-19.304C217.37-13.906,129.328,9.598,69.448,69.48c-92.554,92.556-92.554,243.154,0,335.71
+											c44.835,44.835,104.448,69.527,167.854,69.527c58.127,0,113.057-20.765,156.344-58.762l34.41,34.408l-32.038,32.038
+											c-6.151,6.151-6.151,16.124,0,22.276c3.076,3.076,7.107,4.613,11.137,4.613c4.032,0,8.061-1.537,11.137-4.613l32.038-32.038
+											l34.75,34.749c3.076,3.076,7.107,4.613,11.137,4.613s8.061-1.539,11.137-4.613C513.507,501.236,513.507,491.263,507.356,485.112z"
+											/>
+									</g>
+									</svg>
+
+								</span>
+							</p>
+								
+							
+							<!-- <p>毛小孩體重：</p>
+							<div class="pet-weight text-center">
+								<div class="b-addLess add b-btn"></div>
+								<div class="weight"><span class="b-select-weight">0</span>KG</div>
+								<div class="b-addLess less b-btn"></div>
+							</div> -->
+
+							<p>毛小孩年齡：</p>
+							<div class="pet-age text-center">
+								<div class="b-dog-year">
+									<div class="b-addLess less b-btn">
+										<i class="fa fa-minus-circle" aria-hidden="true"></i>
+									</div>
+
+									<div class="year">
+										<span class="b-select-year">0</span>年
+									</div>
+
+									<div class="b-addLess add b-btn">
+										<i class="fa fa-plus-circle" aria-hidden="true"></i>
+									</div>
+
+								</div>
+
+								<!-- <div class="b-dog-month">
+									<div class="b-addLess add b-btn"></div>
+									<div class="month"><span class="b-select-month">0</span>月</div>
+									<div class="b-addLess less b-btn"></div>
+								</div> -->
+								
+							</div>					
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="select-dog dogdog">
+						<div class="backColor "></div>
+							<div class="dogbgc">
+								<div class="dog-kind row text-center">
+									<div class="kinds col-xs-4 col-md-4 col-md-4">
+										<span class="b-btn dog-first">大型犬</span>
+										<input type="hidden" name="size" value="大型犬">
+									</div>
+
+									<div class="kinds col-xs-4 col-md-4 col-md-4">
+										<span class="b-btn">中型犬</span>
+										<input type="hidden" name="size" value="中型犬">
+									</div>
+
+									<div class="kinds col-xs-4 col-md-4 col-md-4">
+										<span class="b-btn">小型犬</span>
+										<input type="hidden" name="size" value="小型犬">
+									</div>
+								</div>
+							</div>				
+								<div class="dogs text-center">
+									<div id="dogsUl" class="dogbgc">
+									<div class="row" id="dogishere">
+										<!-- <div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Golden-Retriever.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>黃金獵犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Collie.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>可麗牧羊</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Dalmatian.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>大麥町犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Weimar.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>威瑪犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-German-Shepherd.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>德國狼犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Labrador.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>拉不拉多</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Husky.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>哈士奇</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Rottweiler.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>挪威納</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Doberman.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>杜賓犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Akitas.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>秋田犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Samoyed.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>薩摩耶犬</p>
+											<input type="hidden" name="dog_king" value="">
+										</div>
+										<div class="col-xs-3 col-md-3 col-md-3 dogk">
+											<div class="img-box">
+												<img class="rwd-img" src="images/dog-species/lg-Mashitifu.jpg">
+											</div>
+											<div class="footprint">
+												<img class="rwd-img" src="images/Pet_footprint.png">
+											</div>
+											<p>馬士提夫</p>
+											<input type="hidden" name="dog_king" value="">
+										</div> -->
+									</div>
+									</div>
+								</div>
+
+					</div>					
+				</div>
+
+				<div class="col-xs-12 col-sm-4 col-md-4">
+
+						<div class="select-dog text-center">
+							<div class="dog-img">
+								<div class="dog-select-img">
+									<img class="rwd-img dogKind-img " src="images/dog-species/lg-Golden-Retriever.jpg">
+								</div>
+
+								<div class="dog-size-kind">
+									<p>尺寸： <span class="dog-size">大型犬</span></p>
+									<p>種類： <span class="dog-kind-name">黃金獵犬</span></p>
+								</div>
+							</div>					
+						</div>										
+				</div>	
+				
+			</div>
+			<div class="step-info-p">
+				<p>請填寫完資料再下一步</p>
+			</div>
+			<div class="next">
+					<a class="page-scroll btnLink" href="#section_03">下一步</a>
+				</div>
+			</div>
+			
+		</div>
+		
+</section>
+
+<div id="section_03"></div>
+<!-- 選擇保母 -->
+<section class="step_mom step" id="bookSection3">
+		<div class="container">
+		<div class="bg ">
+		
+		<div class="identityInfo">
+			<div class="step-info">
+				<h2><img class="footicon rwd-img" src="images/footprint-icon.png">3/6</h2>
+			</div>
+			<h4 class="p-l" >選擇毛小孩<span>個性</span>，</h4>
+			<h4>推薦最<span>合適的保母</span></h4>
+		</div>
+		<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7">
+
+			
+			<div class="boxmargin">
+			<div id="rotatescroll">
+				<div class="viewport">
+					<ul class="overview">
+						<li><img src="images/activeBig.png" /></li>
+						<li><img src="images/StickyBig.png" /></li>
+						<li><img src="images/shyBig.png" /></li>
+						<li><img src="images/naughtyBig.png" /></li>
+					</ul>
+				</div>
+
+				<div class="dot"></div>
+				<!-- <div class="overlay"></div> -->
+				<div class="thumb"></div>
+			</div>
+			<div class="momResult">
+				<p>您的毛小孩是屬於<span class="pet-personality">活潑</span>個性</p>
+				<p>為您推薦保母：<span class="momName-selected">Sara</span></p>
+			</div>
+			
+		</div>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-5">
+			<div class="mom-box">
+				<div class="mompic">
+					<div class="momcover">
+						
+					</div>
+					<div class="b-mom1 b-mom">
+						<div class="select-mon-pic">
+							<img class="rwd-img mominfo " src="images/mom1.jpg">
+						</div>
+						<div class="mom-content">
+							<div class="b-mom-year">
+								<h4>Amy</h4>
+								<p>資歷；<span class="mom-year color-red">5</span>年</p>
+								<p>從事寵物醫療工作，對於狗狗貓咪的照護有一定的了解與經驗，自己養了4犬1喵，家裡的孩子們都是棄犬、浪貓。</p>
+							</div>
+						</div>
+					</div>
+					<div class="b-mom2 b-mom">
+						<div class="select-mon-pic">
+							<img class="rwd-img mominfo " src="images/mom1.jpg">
+						</div>
+						<div class="mom-content">
+							<div class="b-mom-year">
+								<h4>Sara</h4>
+								<p>資歷；<span class="mom-year color-red">10</span>年</p>
+								<p>協助流浪動物十多年了，總是把毛小孩當做自己的孩子看待，而每個毛孩子，都是爸、媽心中的寶貝，這裡是您的寶貝的第二個家</p>
+							</div>
+						</div>
+					</div>
+					<div class="b-mom3 b-mom">
+						<div class="select-mon-pic">
+							<img class="rwd-img mominfo " src="images/mom1.jpg">
+						</div>
+						<div class="mom-content">
+							<div class="b-mom-year">
+								<h4>Judy</h4>
+								<p>資歷；<span class="mom-year color-red">8</span>年</p>
+								<p>本身是從年幼開始與狗貓生活一起。從小幫著家人照顧過米克斯、大麥町、羅威納。直到婚後和先生一起領養了共四隻中小型犬，也接觸動保方面的活動。</p>
+							</div>
+						</div>
+					</div>
+					<div class="b-mom4 b-mom">
+						<div class="select-mon-pic">
+							<img class="rwd-img mominfo " src="images/mom1.jpg">
+						</div>
+						<div class="mom-content">
+							<div class="b-mom-year">
+								<h4>Mary</h4>
+								<p>資歷；<span class="mom-year color-red">7</span>年</p>
+								<p>我個人養了一隻米克斯，貴賓跟馬爾濟斯混種，從不會定點廁所到固定去洗手間尿尿都是親自教的，狗狗養了8年了，越養越漂亮可愛，本身是很愛狗狗的人</p>
+							</div>
+						</div>
+					</div>			
+									
+				</div>
+			</div>
+			
+		</div>
+		
+		</div>
+		<div class="step-info-p">
+			<p></p>
+		</div>
+		<div class="next">
+			<a class="page-scroll btnLink" href="#section_04">下一步</a>
+		</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- 選擇服務 -->
+<div id="section_04"></div>
+<section class="step_service step" id="bookSection4">
+<div class="service-lightbox lightbox">
+	<div class="lightbox-box">
+		<div class="lightbox-content">
+			<div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+			<div id="_serviceInfo">
+				<!-- <div class="lb-service-pic">
+					<img class="rwd-img" src="images/brush.jpg">	
+				</div>
+				<div class="lb-content">
+					<h4 id="lb-serviece-title">潔牙</h4>
+					<p id="lb-serviece-p">大家是否有此經驗，每當想親親家裡的愛犬，只要聞到牠嘴巴的味道，就讓你想要一把把他推得老遠呢？其實狗狗除了每天都要吃東西，嘴巴自然容易產生異味。大多給予啃咬牛皮骨，但其實還有另一個很棒的選擇—— 幫狗刷牙。</p>
+					<p>價格：<span id="service-price">300</span>元</p>
+				</div> -->
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="bg ">
+		<div class="service-select-info">
+			<div class="step-info">
+				<h2><img class="footicon rwd-img" src="images/footprint-icon.png">4/6</h2>
+			</div>
+			<h4>選擇想要的<span>加值服務</span></h4>
+		</div>
+				<div class="service-all">
+					<div class="b-service add-box" id="_addBox">
+						<!-- <div class="service-box service-box1">
+							<p class="b-beauty"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">美容</span><span class="circle rt"></span><span class="circle rb"></span></p>
+							
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box1" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div>
+						<div class="service-box service-box2">
+							<p class="b-bathing"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">沐浴</span><span class="circle rt"></span><span class="circle rb"></span></p>
+							
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box2" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div>
+						<div class="service-box service-box3">
+							<p class="b-massage"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">按摩</span><span class="circle rt"></span><span class="circle rb"></span></p>
+							
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box3" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div>
+						<div class="service-box service-box4">
+							<p class="b-tooth"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">潔牙</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box4" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div>
+						<div class="service-box service-box5">
+							<p class="b-walk"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">遛狗</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box5" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div>
+						<div class="service-box service-box6">
+							<p class="b-swim"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">游泳</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+							<input type="hidden" name="sevice-val" value="">
+
+							<span id="service-box6" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						</div> -->
+					</div>
+				</div>
+		
+		<!-- 哈士奇 -->
+		<div class="husky-box">
+
+
+			<div class="husky">
+					
+
+				  <div class="mane">
+				    <div class="coat"></div>
+				  </div>
+				  <div class="body">
+				    <div class="head">
+				      <div class="ear"></div>
+				      <div class="ear"></div>
+				      <div class="face">
+				        <div class="eye"></div>
+				        <div class="eye"></div>
+				        <div class="nose"></div>
+				        <div class="mouth">
+				          <div class="lips"></div>
+				          <div class="tongue"></div>
+				        </div>
+				      </div>
+				    </div>
+				    <div class="torso"></div>
+				  </div>
+				  <div class="legs">
+				    <div class="front-legs">
+				      <div class="leg"></div>
+				      <div class="leg"></div>
+				    </div>
+				    <div class="hind-leg">
+				    </div>
+				  </div>
+				  <div class="tail">
+				    <div class="tail">
+				      <div class="tail">
+				        <div class="tail">
+				          <div class="tail">
+				            <div class="tail">
+				              <div class="tail"></div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				
+
+				
+
+				<div class="b-bowlBox">
+					<div class="b-bowl-img">
+						<img class="rwd-img" src="images/b-bowl.png">
+						<div class="bowl-food">
+							<div class="b-food b-food1"></div>
+							<div class="b-food b-food2"></div>
+							<div class="b-food b-food3"></div>
+						</div>
+						
+						<div class="much-service"><span id="service-total">0</span></div>
+					</div>
+					
+					<div class="select-service">
+						<div class="service-all">
+							<div class="b-service selected-box" id="_selectBox">
+								<!-- <div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div> -->
+								<!-- <div class="service-box service-box1">
+									<p class="b-beauty"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">美容</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box1" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<div class="service-box service-box2">
+									<p class="b-bathing"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">沐浴</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box2" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<div class="service-box service-box3">
+									<p class="b-massage"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">按摩</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box3" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<div class="service-box service-box4">
+									<p class="b-tooth"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">潔牙</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box4" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<div class="service-box service-box5">
+									<p class="b-walk"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">遛狗</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box5" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div>
+								<div class="service-box service-box6">
+									<p class="b-swim"><span class="circle lt"></span><span class="circle lb"></span><span class="b-service-txt">游泳</span><span class="circle rt"></span><span class="circle rb"></span></p>
+
+									<input type="hidden" name="sevice-val" value="">
+
+									<span id="service-box6" class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				</div>
+
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+				  <defs>
+
+				    
+				    <filter id="squiggly-0">
+				      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+				      <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+				    </filter>
+				    <filter id="squiggly-1">
+				      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+				<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+				    </filter>
+				    
+				    <filter id="squiggly-2">
+				      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+				<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+				    </filter>
+				    <filter id="squiggly-3">
+				      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+				<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+				    </filter>
+				    
+				    <filter id="squiggly-4">
+				      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+				<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+				    </filter>
+				  </defs> 
+				</svg>
+						
+		</div><!-- 哈士奇 -->
+			
+			<div class="step-info-p">
+				<p></p>
+			</div>
+			<div class="next">
+				<a class="page-scroll btnLink" href="#section_05">下一步</a>
+			</div>
+		</div>
+</div>
+</section>
+
+<!-- 確認訂單 -->
+<div id="section_05"></div>
+<section class="step_orderCheck step" id="bookSection5">
+<div class="container">
+
+		<div class="order-check  bg">
+			<div class="step-info">
+				<h2><img class="footicon rwd-img" src="images/footprint-icon.png">5/6</h2>
+			</div>
+			<h4><span>確認</span>訂單結果</h4>
+		<div class="box">
+			<div class="order-content">
+
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<p>入住日期： <span class="roomIn"></span></p>
+						<p>退房日期： <span class="roomOut"></span></p>
+						<p>共住：<span class="roomDays"></span>晚</p>
+						<p>房間： <span class="roomStyle-selected">現代風</span></p>
+						<p>毛小孩名稱： <span class="petName"></span></p>
+						<p id="pet-sex"><p>毛小孩性別： </p>
+							<span class="b-sex">
+								<input type="hidden" name="sex" value="f">
+								<svg class="pet-boy" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+								<circle style="fill:#F4B2B0;" cx="235.632" cy="235.661" r="143.558"/>
+								<g>
+									<path style="fill:#B3404A;" d="M235.636,394.862c-42.522,0-82.5-16.558-112.568-46.627c-62.07-62.07-62.07-163.066,0-225.136
+										c30.068-30.068,70.045-46.627,112.568-46.627s82.5,16.558,112.569,46.627c62.068,62.071,62.068,163.066,0,225.136
+										C318.136,378.303,278.159,394.862,235.636,394.862z M235.636,107.752c-34.168,0-66.289,13.305-90.448,37.465
+										c-49.875,49.875-49.875,131.026,0,180.9c24.159,24.16,56.28,37.465,90.448,37.465s66.291-13.305,90.45-37.465
+										c49.874-49.874,49.874-131.024,0-180.9C301.927,121.057,269.805,107.752,235.636,107.752z"/>
+									<path style="fill:#B3404A;" d="M496.331,389.993c-8.636,0-15.64,7.002-15.64,15.64v52.967l-67.688-67.688
+										c37.731-42.985,58.351-97.529,58.351-155.247c0-62.961-24.519-122.155-69.041-166.675c-6.109-6.107-16.009-6.107-22.119,0
+										c-6.107,6.107-6.107,16.011,0,22.118c38.613,38.612,59.879,89.951,59.879,144.558c0,54.608-21.265,105.946-59.879,144.558
+										c-79.707,79.708-209.405,79.712-289.113,0c-79.71-79.71-79.71-209.407,0-289.117c51.572-51.569,127.418-71.812,197.919-52.827
+										c8.349,2.244,16.922-2.696,19.17-11.035c2.246-8.341-2.696-16.922-11.035-19.168C215.85-13.807,128.42,9.529,68.961,68.992
+										c-91.904,91.904-91.904,241.446,0,333.352c44.52,44.52,103.712,69.039,166.675,69.039c57.72,0,112.261-20.62,155.246-58.349
+										l67.688,67.688h-52.967c-8.636,0-15.64,7.002-15.64,15.64c0,8.638,7.004,15.64,15.64,15.64h90.727c8.636,0,15.64-7.002,15.64-15.64
+										v-90.725C511.97,396.995,504.967,389.993,496.331,389.993z"/>
+								</g>
+								</svg>
+							</span>
+							<span class="b-sex">
+								<input type="hidden" name="sex" value="m">
+								<svg class="pet-girl" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+								<circle style="fill:#CFF09E;" cx="237.297" cy="237.327" r="144.573"/>
+								<g>
+									<path style="fill:#507C5C;" d="M237.302,397.655c-42.822,0-83.084-16.677-113.365-46.957c-62.509-62.509-62.509-164.217,0-226.726
+										c30.282-30.282,70.542-46.957,113.365-46.957s83.084,16.675,113.365,46.957c62.509,62.51,62.509,164.219,0,226.728
+										C320.386,380.978,280.126,397.655,237.302,397.655z M237.302,108.514c-34.41,0-66.76,13.399-91.09,37.73
+										c-50.227,50.227-50.227,131.951,0,182.179c24.33,24.331,56.68,37.73,91.09,37.73s66.76-13.399,91.09-37.732
+										c50.227-50.227,50.227-131.951,0-182.179C304.062,121.914,271.712,108.514,237.302,108.514z"/>
+									<path style="fill:#507C5C;" d="M507.356,485.112l-34.75-34.749l32.038-32.038c6.151-6.151,6.151-16.124,0-22.276
+										c-6.152-6.151-16.122-6.151-22.276,0l-32.038,32.038l-34.41-34.408c37.998-43.289,58.763-98.218,58.763-156.345
+										c0-63.407-24.694-123.019-69.529-167.854c-6.152-6.151-16.122-6.151-22.276,0c-6.151,6.151-6.151,16.124,0,22.274
+										c38.886,38.885,60.302,90.587,60.302,145.58s-21.416,106.695-60.302,145.58c-80.271,80.272-210.886,80.274-291.158,0
+										c-80.274-80.274-80.274-210.888,0-291.161c51.939-51.935,128.314-72.32,199.32-53.2c8.406,2.259,17.042-2.715,19.305-11.114
+										c2.262-8.4-2.715-17.042-11.114-19.304C217.37-13.906,129.328,9.598,69.448,69.48c-92.554,92.556-92.554,243.154,0,335.71
+										c44.835,44.835,104.448,69.527,167.854,69.527c58.127,0,113.057-20.765,156.344-58.762l34.41,34.408l-32.038,32.038
+										c-6.151,6.151-6.151,16.124,0,22.276c3.076,3.076,7.107,4.613,11.137,4.613c4.032,0,8.061-1.537,11.137-4.613l32.038-32.038
+										l34.75,34.749c3.076,3.076,7.107,4.613,11.137,4.613s8.061-1.539,11.137-4.613C513.507,501.236,513.507,491.263,507.356,485.112z"
+										/>
+								</g>
+								</svg>
+							</span>
+						</p>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-6">	
+						<p>尺寸： <span class="dog-size">超大型犬</span></p>
+						<p>種類： <span class="dog-kind-name">黃金獵犬</span></p>
+						<p>毛小孩年齡： <span class="b-select-year"></span>年</p>
+						<p>個性： <span class="pet-personality">活潑</span></p>
+						<p>保母： <span class="momName">Sara</span></p>
+						<p>加值服務：<span id="service-added"></span></p>
+						<p>總金額： <span id="totalMoney"></span>元</p>
+
+						
+						<div class="step-info-p">
+							<p></p>
+						</div>
+						<div class="next">
+							<a class="page-scroll btnLink" href="#section_06" id="submitOrder">付款去</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+	
+			
+		</div>
+		</div>
+
+
+
+</div>
+
+</section>
+<!-- 確認訂單 -->
+<div id="section_06"></div>
+<section class="step_pay step" id="bookSection6">
+	<div class="container">
+		<div class="bg ">
+			<div class="step-info">
+				<h2><img class="footicon rwd-img" src="images/footprint-icon.png">6/6</h2>
+			</div>
+			<div class="title">
+				<h4>請選擇<span>付款方式</span></h4>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="pay-method text-center b-btn">
+						<div class="payimg">
+							<img class="rwd-img" src="images/money.png">
+						</div>
+						<p>現金付款</p>
+					</div>
+			
+				</div>
+				<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="pay-method text-center b-btn">
+						<div class="payimg">
+							<img class="rwd-img" src="images/credit-card.png">
+						</div>
+						<p>信用卡</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="pay-method text-center b-btn">
+						<div class="payimg">
+							<img class="rwd-img" src="images/paypal.png">
+						</div>
+						<p>第三方支付</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-3 col-md-3">
+					<div class="pay-method text-center b-btn">
+						<div class="payimg">
+							<img class="rwd-img" src="images/711officon.png">
+						</div>
+						<p>超商繳費</p>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="step-info-p">
+				<p>請選擇付款方式再下一步</p>
+			</div>
+			<div class="next">
+				<a class="page-scroll btnLink" href="#section_07">付款</a>
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+<div class="payanimation">
+		<div class="check-ok text-center">
+			<i class="fa fa-check-circle" aria-hidden="true"></i>
+			<h1>付款成功</h1>
+		</div>
+	    <div id="cssload-contain">
+	        <div class="cssload-wrap" id="cssload-wrap1">
+	            <div class="cssload-ball" id="cssload-ball1"></div>
+	        </div>
+
+	        <div class="cssload-wrap" id="cssload-wrap2">
+	            <div class="cssload-ball" id="cssload-ball2"></div>
+	        </div>
+	        
+	        <div class="cssload-wrap" id="cssload-wrap3">
+	            <div class="cssload-ball" id="cssload-ball3"></div>
+	        </div>
+	        
+	        <div class="cssload-wrap" id="cssload-wrap4">
+	            <div class="cssload-ball" id="cssload-ball4"></div>
+	        </div>
+
+	    </div>
+</div>
+
+<!-- 去哪裡 -->
+<div id="section_07"></div>
+<section class="step_gowhere step" id="bookSection7">
+	<div class="bgdark"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="dogbox">
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="go-discuss gogo text-center">
+								<a href="discuss.html" class="">
+									<i class="fa fa-comments" aria-hidden="true"></i>
+									<p><span>主題討論</span></p>
+									<span class="dotdot dotleft1"></span>
+									<span class="dotdot dotleft2"></span>
+								</a>
+								
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6">
+							<div class="go-race gogo text-center">
+								<a href="race.html" class="">
+									<i class="fa fa-trophy" aria-hidden="true"></i>
+									<p><span>萌主爭霸</span></p>
+									<span class="dotdot dotright1"></span>
+									<span class="dotdot dotright2"></span>
+								</a>
+								
+							</div>
+						</div>
+					</div>
+					<div class="dog">
+						<div class="dog-head">
+							<div class="dog-nose"></div>
+							<div class="dog-eye"><div><div></div></div></div>
+							<div class="dog-ear"></div>
+							<div class="dog-smile">
+								<div class="dog-fang1"></div>
+								<div class="dog-fang2"></div>
+								<div class="dog-tongue"></div>
+							</div>
+						</div>
+						<div class="dog-body">
+							<div class="dog-tail"></div>
+							<div class="dog-spot"></div>
+							<div class="dog-leg1"><div></div></div>
+							<div class="dog-leg2"><div></div></div>
+							<div class="dog-leg3"><div><div></div></div></div>
+						</div>
+					</div>
+				</div>
+				
+			  </div>
+		</div>
+ 		
+		
+	</div>
+</section>
+</div>
+</body>
+</html>

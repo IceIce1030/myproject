@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bin-calendar</title>
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bin-calendar.js"></script>
+</head>
+<body>
+	
+	<div class="bin-calendar">
+
+
+	<div class="i-dateClick text-center"><span id="roomIn"></span><span id="roomOut"></span></div>
+
+
+		<div class="b-select-date dateRoom shadow">
+	
+				<div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+							
+								<div class="yearAndMonth">
+									<div class="year text-center" id="year"></div>
+									<div class="select-month">
+										<div class="month text-center" id="month"></div>
+										<div class="before" id="before"></div>
+										<div class="after" id="after"></div>
+									</div>
+								</div>
+								<div class="days">
+									<div class="weekend">
+										<div class="week"><span class="weekday">SUN</span></div>
+										<div class="week"><span class="weekday">MON</span></div>
+										<div class="week"><span class="weekday">TUE</span></div>
+										<div class="week"><span class="weekday">WED</span></div>
+										<div class="week"><span class="weekday">TUR</span></div>
+										<div class="week"><span class="weekday">FRI</span></div>
+										<div class="week"><span class="weekday">SAT</span></div>
+									</div>
+
+									<div id="table">
+										
+									</div>
+
+									
+								</div>
+								<div class="dateResult text-center">
+									<div>入住日期：<span class="roomIn">請選擇入住日期</span></div>
+									<div>退房日期：<span class="roomOut">請選擇退房日期</span></div>
+									<div>天數：<span class="roomDays">0</span></div>
+								</div>
+						</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,532 @@
+@import "lg";
+@import "sm";
+@import "xs";
+// * {
+//     outline: 1px solid red;
+// }
+.member {
+    background-image: url(../images/bg02.png);
+    .container {
+        position: relative;
+        padding-bottom: 20px;
+        // background-color: rgba(255, 145, 0, 0.2);
+        //寵物會員資料列表共同設定
+        .linktochange {
+            cursor: pointer;
+            color: #b37600;
+            &:hover {
+                color: $brown;
+            }
+        }
+        //會員資料列表
+        .memberInfo {
+            text-align: left;
+            .profilePhoto img {
+                cursor: pointer;
+                width: 100px;
+                border-radius: 50%;
+            }
+            div {
+                display: inline-block;
+            }
+            .txt {
+                margin-left: 10px;
+                height: 100px;
+                line-height: 1.9;
+                vertical-align: top;
+                text-align: left;
+                .fa {
+                    margin-right: 5px;
+                }
+                >span {
+                    margin-right: 10px;
+                }
+            }
+        }
+        //寵物資料列表 
+        .petList {
+            .petPhoto img {
+                border: 2px solid $sup-orange;
+                width: 60px;
+                border-radius: 50%;
+            }
+            .pet {
+                display: inline-block;
+                .petPhoto {
+                    text-align: center;
+                    cursor: pointer;
+                    position: relative;
+                }
+                .txt {
+                    text-align: center;
+                }
+                .fa {
+                    margin-left: 5px;
+                    cursor: pointer;
+                    color: #b37600;
+                    &:hover {
+                        color: $brown;
+                    }
+                }
+                &.petAdd {
+                    .addPetIcon {
+                        font-size: 30px;
+                        margin: auto;
+                        position: absolute;
+                        top: 15px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        // 會員管理
+        .accountMgt {
+            //tab選單
+            .tabMenu {
+                margin: 10px 0;
+                border-bottom: 3px solid $deep-orange;
+                a {
+                    cursor: pointer;
+                    color: $deep-gray;
+                    text-align: center;
+                    display: inline-block;
+                    border-radius: 5px 5px 0 0;
+                    border: 2px dotted $deep-orange;
+                    border-bottom: 1px solid $deep-orange;
+                    margin-bottom: -1px;
+                    &:hover {
+                        background-color: $deep-orange;
+                        color: #fff;
+                        border-style: solid;
+                        border-radius: 5px 5px 0 0;
+                    }
+                    &.active {
+                        background-color: $deep-orange;
+                        color: #fff;
+                        border-style: solid;
+                        border-radius: 5px 5px 0 0;
+                    }
+                }
+            }
+            .mainContent {
+                //隱藏的class
+                .hideItem {
+                    display: none;
+                }
+                // 我的訂單
+                .booking {
+                    background-color: #fff;
+                    width: 100%;
+                    // border: 1px solid $brown;
+                    transition: box-shadow .4s ease;
+                    &:hover {
+                        box-shadow: 0px 1px 3px #555;
+                    }
+                    &.pastBooking {
+                        background-color: #eee;
+                    }
+                    .roomPhoto {
+                        float: left;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .bookingDetail {
+                        max-width: 352px;
+                        .totalAmount {
+                            color: $light-pink;
+                            font-weight: 900;
+                        }
+                        .historyBooking {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 2px 5px;
+                            margin-left: 20px;
+                            position: relative;
+                            bottom: 2px;
+                            font-size: $fz-content;
+                            vertical-align: middle;
+                            background-color: #ccc;
+                            color: $deep-gray;
+                        }
+                    }
+                    .bookingDate {
+                        position: relative;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        .checkinDate {
+                            float: left;
+                        }
+                        .checkoutDate {
+                            border-left: 2px dotted #ccc;
+                        }
+                        .dateTitle {
+                            color: $light-gray;
+                        }
+                    }
+                    .btnDiv {
+                        text-align: center;
+                        display: inline-block;
+                        .btn {
+                            text-align: center;
+                            display: block;
+                            padding: 5px 10px;
+                            cursor: pointer;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            background-color: $deep-orange;
+                            color: #fff;
+                            letter-spacing: 2px;
+                            transition: box-shadow .4s ease;
+                            &:hover {
+                                box-shadow: 1px 1px 5px #555;
+                                background-color: $brown;
+                            }
+                        }
+                    }
+                }
+                //我的文章
+                .post {
+                    background-color: #fff;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    position: relative;
+                    transition: box-shadow .4s ease;
+                    &:hover {
+                        box-shadow: 0px 1px 3px #555;
+                    }
+                    .postImg {
+                        overflow: hidden;
+                        float: left;
+                        text-align: center;
+                    }
+                    .txt {
+                        float: left;
+                        &>div {
+                            margin-bottom: 5px;
+                        }
+                        .postTitle a {
+                            color: $deep-gray;
+                            &:hover {
+                                color: $brown;
+                            }
+                        }
+                        .postDate {
+                            color: $light-gray;
+                        }
+                        .postContent {
+                            overflow: hidden;
+                            max-height: 44px;
+                        }
+                        .postInfo {
+                            font-size: $fz-mincontent;
+                            color: $light-gray;
+                            .author {
+                                margin-right: 5px;
+                            }
+                            .watch:before {
+                                content: '\f06e';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                            .message:before {
+                                content: '\f27a';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    .itemLabel {
+                        position: absolute;
+                        left: 15px;
+                        top: 15px;
+                        width: 90px;
+                        height: 30px;
+                        padding: 5px;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 3px;
+                        &.foodLabel {
+                            background-color: $foodColor;
+                        }
+                        &.shareLabel {
+                            background-color: $shareColor;
+                        }
+                        &.healthLabel {
+                            background-color: $healthColor;
+                        }
+                        &.newLabel {
+                            background-color: $newColor;
+                        }
+                    }
+                }
+                //參賽紀錄{
+                #myrace {
+                    .cardWrap {
+                        .card {
+                            background-color: #fdeeca;
+                            border-radius: 15px;
+                            position: relative;
+                            overflow: hidden;
+                            img {
+                                transition: all 1s;
+                                width: 100%;
+                                &:hover {
+                                    // transform: scale(1.1);
+                                }
+                            }
+                            .text {
+                                padding: 15px;
+                            }
+                            .textTop {
+                                padding: 5px;
+                                .number {
+                                    display: inline-block;
+                                    font-size: $fz-content;
+                                    color: $deep-gray;
+                                }
+                                .name {
+                                    display: inline-block;
+                                    font-size: $fz-h3;
+                                    padding: 0 5px;
+                                }
+                                .votes {
+                                    display: inline-block;
+                                    font-size: $fz-h1;
+                                    color: $light-pink;
+                                    float: right;
+                                }
+                            }
+                            .textDown {
+                                padding: 5px;
+                                position: relative;
+                                span {
+                                    display: inline-block;
+                                    padding: 5px 0;
+                                }
+                                .like {
+                                    height: 50px;
+                                    width: 50px;
+                                    position: absolute;
+                                    bottom: 50px;
+                                    right: 10px;
+                                    img {
+                                        width: 100%;
+                                    }
+                                    .favorite {
+                                        cursor: pointer;
+                                        background: transparent;
+                                        border: 0;
+                                        &:focus {
+                                            outline: 0;
+                                        }
+                                        .outsideheart {
+                                            position: relative;
+                                            font-size: 50px;
+                                            color: #ccc;
+                                            .insideheart {
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                opacity: 0.5;
+                                            }
+                                        }
+                                        &.liked {
+                                            .outsideheart {
+                                                color: $light-pink;
+                                                z-index: 0;
+                                                animation: heart 0.5s;
+                                                .insideheart {
+                                                    z-index: 1000;
+                                                    animation: heartHollow 1s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .messageBorad {
+                                width: 100%;
+                                padding: 3px 30px;
+                                position: relative;
+                                left: 0;
+                                bottom: 0;
+                                background-color: #ffb67e;
+                                border-radius: 0 0 15px 15px;
+                                .member {
+                                    display: inline-block;
+                                    float: left;
+                                    color: $white;
+                                }
+                                input {
+                                    font-size: $fz-content;
+                                    width: 60%;
+                                    height: 100%;
+                                    border: none;
+                                    border-radius: 4px;
+                                    outline: none;
+                                    background-color: #ffb67e;
+                                    display: inline-block;
+                                    display: none;
+                                }
+                                button {
+                                    display: none;
+                                }
+                                .post {
+                                    width: 100%;
+                                    height: 30px;
+                                    overflow: hidden;
+                                    display: inline-block;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//燈箱共同設定
+.memberLightboxTarget {
+    position: fixed;
+    z-index: 20;
+    top: -100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    /* 預設透明度為 0，觸發 :target 後，利用動畫效果調整透明度 */
+    opacity: 0;
+    transition: opacity, .5s, ease-in-out;
+    overflow: hidden;
+    .content {
+        /* 設定內容的樣式及位置(白底區塊) */
+        background-color: $bgc;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* 預設寬高為 0，觸發 :target 後，利用動畫效果展開寬與高 */
+        max-height: 0%;
+        max-width: 0%;
+        transition: .5s, ease-in-out;
+        //其他css設定
+        text-align: center;
+    }
+    &:target {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+        .content {
+            max-height: 100%;
+            max-width: 100%;
+        }
+        //關閉按鈕
+        .cross {
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .8);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, .8);
+            cursor: pointer;
+            .fa-times {
+                font-size: 20px;
+                position: absolute;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: 4px;
+            }
+        }
+        .formDiv {
+            display: inline-block;
+            margin: auto;
+            text-align: left;
+            .formGroup {
+                border-bottom: 1px dotted $brown;
+                margin: 5px 0;
+                min-height: 40px;
+            }
+            .labelClass {
+                font-weight: bold;
+                display: inline-block;
+                width: 64px;
+            }
+            input {
+                height: 34px;
+                padding: 3px 3px;
+                letter-spacing: 1px;
+                border: 1px solid rgba(119, 71, 32, .8);
+                border-radius: 4px;
+            }
+            option {
+                font-size: $fz-content;
+            }
+            .genderInput {
+                margin-left: 5px;
+            }
+            .genderInput input {
+                margin-right: 10px;
+                width: auto;
+                height: auto;
+                cursor: pointer;
+            }
+            .showImage {
+                text-align: center;
+                display: inline-block;
+                position: relative;
+                top: 5px;
+                vertical-align: bottom;
+                margin: 5px auto;
+                overflow: hidden;
+                img {
+                    width: 50px;
+                    border-radius: 50%;
+                }
+            }
+            .inputImg {
+                border: none;
+                width: 78px;
+            }
+            .linktochange {
+                padding: 5px 0;
+                color: $deep-orange;
+                cursor: pointer;
+                &:hover {
+                    color: $brown;
+                }
+                .fa {
+                    margin-right: 5px;
+                }
+            }
+            .btnDiv {
+                text-align: center;
+            }
+            .inputBtn {
+                margin: 10px auto;
+                width: 259px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                background-color: $deep-orange;
+                color: #fff;
+                cursor: pointer;
+                letter-spacing: 2px;
+                transition: box-shadow .4s ease;
+                &:hover {
+                    box-shadow: 1px 1px 5px #555;
+                    background-color: $brown;
+                }
+            }
+        }
+    }
+}

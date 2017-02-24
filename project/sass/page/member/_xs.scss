@@ -1,0 +1,104 @@
+@include respones(xs) {
+    //手機100%
+    .member {
+        padding-top: 60px;
+        .container {
+            padding-top: 20px;
+            min-height: 65vh;
+            .memberInfo {
+                margin-bottom: 10px;
+            }
+            .petList {
+                margin-bottom: 10px;
+                .pet {
+                    margin-right: 10px;
+                }
+            }
+            // 會員管理
+            .accountMgt {
+                //tab選單
+                .tabMenu {
+                    //iphone5會換行
+                    a {
+                        padding: 5px 5px;
+                        letter-spacing: 0.05em;
+                        width: auto;
+                        // margin: 0 2px;
+                    }
+                }
+            }
+            //tab選單內容
+            .mainContent {
+                font-size: 16px;
+                // 我的訂單
+                .booking {
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    .roomPhoto {
+                        width: 100%;
+                    }
+                    .bookingDetail {
+                        line-height: 1.5;
+                        border-bottom: 2px dotted #ccc;
+                    }
+                    .bookingDate {
+                        .checkinDate {
+                            width: 50%;
+                            border-bottom: 2px dotted #ccc;
+                        }
+                        .checkoutDate {
+                            width: 50%;
+                            float: left;
+                            border-bottom: 2px dotted #ccc;
+                        }
+                        .btnDiv {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+                //我的文章
+                .post {
+                    // height: 180px;
+                    padding: 20px;
+                    .postImg {
+                        width: 100%;
+                        height: 180px;
+                    }
+                    .txt {
+                        max-width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .memberLightboxTarget {
+        .content {
+            width: 95%;
+            padding: 20px 10px 10px;
+            input {
+                width: 250px;
+                font-size: $fz-content;
+            }
+            .formGroup {
+                padding: 5px 0;
+            }
+            .labelClass {
+                margin-right: 10px;
+            }
+        }
+    }
+    //aboutme更新會員資料燈箱
+    #aboutme {
+        .content {
+            height: 90vh;
+        }
+    }
+    //mypets addPet資料燈箱
+    #mypets,
+    #addPet {
+        .content {
+            height: 90vh;
+        }
+    }
+}

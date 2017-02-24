@@ -1,0 +1,52 @@
+//管理全部
+@import "assets/var";//變數
+@import "assets/color";//顏色
+@import "assets/font";//字型
+@import "assets/radius";//圓角角度
+@import "assets/mixin/mixins";//function 函數
+@import "assets/grid";//格線
+@import "assets/commons";//一些常用到的功能，text-center......
+
+//大家共用的nav、footer
+@import "layout/navbar";//大家共用的navbar的css
+@import "layout/footer";//大家共用的footer的css
+@import "layout/loadingAnimate";
+
+
+// @import "page/pageTest/pageTest";//測試可以註解掉
+//以下是要import大家寫的scss
+//@import "page/自己的scss的檔名";
+
+//學
+@import "page/index/index";
+
+
+//思
+@import "page/discuss/discuss";
+@import "page/back/back";
+@import "page/article/article";
+
+//君
+@import "page/member/member";
+@import "page/signup/signup";
+@import "page/changePsw/changePsw";
+@import "page/service/service";
+
+
+//鵬
+@import "page/race/race";
+@import "page/compete/compete";
+
+
+
+//bin
+@import "page/book/book";
+@import "page/faq/faq";
+
+
+
+//*只能用font-size: 不能用font:
+
+
+//日曆
+// @import "layout/bin-calendar";

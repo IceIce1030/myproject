@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>會員專區</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- 選單要引用fontawesome/jquery和nav.js -->
+    <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/member.js"></script>
+</head>
+
+<body>
+    <!-- 選單開始 -->
+    <nav class="nav-header">
+        <div class="fullcontainer">
+            <div class="col-xs-2 col-sm-2 col-lg-8 menu">
+                <!-- 手機選單的漢堡和關閉 -->
+                <header>
+                    <div id="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                    <div id="cross"><i class="fa fa-times" aria-hidden="true"></i></div>
+                </header>
+                <!-- 選單內容 -->
+                <ul class="content">
+                    <li>
+                        <a href="book.html" title=""><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>&nbsp; 線上訂房<span class="line"></span></a>
+                    </li>
+                    <li>
+                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp; 萌主爭霸<span class="line"></span></a></li>
+                    <li>
+                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp; 主題討論<span class="line"></span></a></li>
+                    <li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; 服務介紹<span class="line"></span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; 常見問題<span class="line"></span></a></li>
+                </ul>
+            </div>
+            <!-- logo回首頁 -->
+            <div class="col-xs-5 col-sm-5 col-lg-3 logo">
+                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+            </div>
+            <!-- 登入 -->
+            <div class="col-xs-2 col-sm-2 col-lg-1 login">
+                <div class="beforeLogin" id="userlogin">
+                    <div class="loginIcon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </div>
+                    <p>登入</p>
+                </div>
+                <div class="afterLogin">
+                    <div class="profilePhotoDiv">
+                        <img id="showMemberLightbox" src="images/profilePhoto.jpg" alt="">
+                    </div>
+                    <p>Hi~<span id="memberName">宋慧喬</span></p>
+                </div>
+                <!-- 會員中心選單燈箱開始 -->
+                <div class="memberlightbox">
+                    <ul class="subMenu">
+                        <li>
+                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                        <li>
+                            <a data-tab-id="#myposts">我的文章</a></li>
+                        <li>
+                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                        <div class="btn" id="logoutBtn">登出</div>
+                    </ul>
+                </div>
+                <!-- 會員中心選單燈箱結束 -->
+            </div>
+        </div>
+    </nav>
+    <!-- 選單結束 -->
+    <!-- login燈箱開始 -->
+    <div class="loginlightbox">
+        <div class="content">
+            <p class="loginLeft">登入</p>
+            <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
+            <div class="clear"></div>
+            <form action="#" method="post">
+                <p>
+                    <input type="email" name="mem_mail" placeholder="email帳號">
+                </p>
+                <p>
+                    <input type="password" name="mem_psw" placeholder="密碼">
+                </p>
+                <p>
+                    <input id="loginBtn" type="submit" value="登入">
+                </p>
+                <p id="forgotPsw"><a href="#">忘記密碼</a></p>
+                <p><a href="signup.html">註冊新帳號</a></p>
+            </form>
+        </div>
+    </div>
+    <!-- login燈箱結束 -->
+    <!-- 會員頁開始 -->
+    <div class="member">
+        <div class="container">
+            <!-- 會員個人資料列表 -->
+            <div class="top">
+                <div class="col-xs-12 col-sm-12 col-lg-12 memberInfo">
+                    <div class="profilePhoto">
+                        <a href="#aboutme"><img src="images/profilePhoto.jpg" alt=""></a>
+                    </div>
+                    <div class="txt">
+                        <h4>宋慧喬</h4>
+                        <p><span id="petCount">3</span>隻毛小孩的<span>媽咪</span></p>
+                        <span><a id="updateInfo" class="linktochange" href="#aboutme"><i class="fa fa-pencil" aria-hidden="true"></i>更新個人資料</a></span>
+                        <span><a id="changepsw" class="linktochange" href="changePsw.html"><i class="fa fa-unlock-alt" aria-hidden="true"></i>變更密碼</a></span>
+                    </div>
+                </div>
+                <!-- 寵物資料列表 -->
+                <div class="col-xs-12 col-sm-12 col-lg-12 petList">
+                    <div class="pet pet1">
+                        <div class="petPhoto">
+                            <a href="#mypets"><img src="images/beibei.JPG" alt=""></a>
+                        </div>
+                        <div class="txt">
+                            <p><span class="petName">貝貝</span><span class="openMypet1"><a href="#mypets"><i class="fa fa-pencil" aria-hidden="true"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pet pet2">
+                        <div class="petPhoto">
+                            <a href="#mypets"><img src="images/beibei.JPG" alt=""></a>
+                        </div>
+                        <div class="txt">
+                            <p><span class="petName">小黑</span><span class="openMypet1"><a href="#mypets"><i class="fa fa-pencil" aria-hidden="true"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pet pet3">
+                        <div class="petPhoto">
+                            <a href="#mypets"><img src="images/beibei.JPG" alt=""></a>
+                        </div>
+                        <div class="txt">
+                            <p><span class="petName">茶茶</span><span class="openMypet1"><a href="#mypets"><i class="fa fa-pencil" aria-hidden="true"></i></a></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pet petAdd">
+                        <div class="petPhoto">
+                            <a href="#addPet"><img src="images/dogShadow.png" alt=""><i class="fa fa-plus addPetIcon" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="txt">
+                            <p><a class="linktochange" href="#addPet">新增寵物</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-lg-12 accountMgt">
+                <!-- 會員中心選單 -->
+                <div class="tabMenu">
+                    <a data-tab-id="#mybookings" class="tab active">我的訂單</a>
+                    <a data-tab-id="#myposts" class="tab">我的文章</a>
+                    <a data-tab-id="#myrace" class="tab">萌主參賽紀錄</a>
+                </div>
+                <!-- 會員資料內容 -->
+                <div class="mainContent">
+                    <!-- 我的訂單 -->
+                    <div id="mybookings" class="tabContent">
+                        <div class="booking booking1 futureBooking">
+                            <div class="roomPhoto">
+                                <a href="#mybookingContent"><img src="images/roomType.jpg" alt=""></a>
+                            </div>
+                            <div class="bookingDetail">
+                                <p class="roomType">
+                                    <h3>現代風房型</h3></p>
+                                <p class="stayDay"><span class="dogName">貝貝</span>入住<span class="stayingDay">5</span>天</p>
+                                <p class="serviceOrder">
+                                    加值服務：<span class="serviceItem">遛狗、潔牙、美容、按摩、游泳、沐浴</span>
+                                </p>
+                                <h4 class="totalAmount">$<span>8,000</span></h4>
+                            </div>
+                            <div class="bookingDate">
+                                <div class="checkinDate">
+                                    <p class="dateTitle">入住時間</p>
+                                    <h4 class="date">3月5日</h4>
+                                    <p class="year">2017</p>
+                                    <p class="day">星期日</p>
+                                </div>
+                                <div class="checkoutDate">
+                                    <p class="dateTitle">退房時間</p>
+                                    <h4 class="date">3月10日</h4>
+                                    <p class="year">2017</p>
+                                    <p class="day">星期五</p>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="btnDiv">
+                                    <a href="#mybookingContent" class="btn">查看訂單</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="booking booking2 pastBooking">
+                            <div class="roomPhoto">
+                                <a href=""><img src="images/roomType.jpg" alt=""></a>
+                            </div>
+                            <div class="bookingDetail">
+                                <p class="roomType">
+                                    <h3>現代風房型<span class="historyBooking">歷史訂單</span></h3></p>
+                                <p class="stayDay"><span class="dogName">貝貝</span>入住<span class="stayingDay">5</span>天</p>
+                                <p class="serviceOrder">
+                                    加值服務：<span class="serviceItem">遛狗、潔牙、美容、按摩、游泳、沐浴</span>
+                                </p>
+                                <h4 class="totalAmount">$<span>8,000</span></h4>
+                            </div>
+                            <div class="bookingDate">
+                                <div class="checkinDate">
+                                    <p class="dateTitle">入住時間</p>
+                                    <h4 class="date">1月5日</h4>
+                                    <p class="year">2017</p>
+                                    <p class="day">星期四</p>
+                                </div>
+                                <div class="checkoutDate">
+                                    <p class="dateTitle">退房時間</p>
+                                    <h4 class="date">1月10日</h4>
+                                    <p class="year">2017</p>
+                                    <p class="day">星期二</p>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="btnDiv">
+                                    <a href="" class="btn">再次預訂</a>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- 我的文章 -->
+                    <div id="myposts" class="tabContent hideItem">
+                        <div class="post">
+                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="images/dogFood.jpeg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>你家寶貝吃什麼飼料?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    不知道大家的寶貝都吃什麼牌子的乾飼料呢? 有沒有覺得哪一些飼料是吃過覺得還不錯可以推薦的? 你們選飼料的依據是什麼呢? (比如 WDJ評薦,獸醫推薦,價格,啫口性,方便購買等...)
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="post">
+                            <div class="itemLabel healthLabel">寵物保健</div>
+                            <div class="postImg">
+                                <a href=""><img class="rwd-img" src="images/dogBrushTeeth.jpg" alt=""></a>
+                            </div>
+                            <div class="txt">
+                                <div class="postTitle">
+                                    <a href=""><h3>請問大家是怎麼幫毛小孩刷牙呢?</h3></a></div>
+                                <div class="postDate">2017-01-08</div>
+                                <div class="postContent">
+                                    前幾天看到了恰恰麻的文章 馬上就衝去檢查KCHS們的牙齒 慘了! Kitty的牙結石最嚴重 都黑掉了!! Candy是其次 後半邊的牙齒歐歐的 嗚....好自責 Q1 我家Kitty很不喜歡很不喜歡刷牙 這該怎麼辦呢? Q2 Kitty不喜歡吃潔牙骨也不喜歡翻嘴皮 怎麼辦呢? Q3 請推薦不錯的潔牙膏or潔牙骨 Q4 多久刷一次? Q5 牙齒都黑黑的刷不掉 該去麻醉洗牙嗎? Q6 萬一毛小孩很抗拒的話 該怎麼辦呢?
+                                </div>
+                                <div class="postInfo">
+                                    <span class="author">宋慧喬</span>
+                                    <span class="watch">666</span>
+                                    <span class="message">12</span>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <!-- 萌主參賽紀錄 -->
+                    <div id="myrace" class="tabContent hideItem">
+                        <div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item transition big">
+                            <div class="card">
+                                <a href="#anchorCard">
+                                    <img src="images/dog004.png">
+                                </a>
+                                <div class="text">
+                                    <div class="textTop">
+                                        <p class="number">002</p>
+                                        <p class="name">皮皮</p>
+                                        <p class="votes">599</p>
+                                    </div>
+                                    <div class="textDown">
+                                        <div class="size">
+                                            <span>體型:</span>
+                                            <span>小型犬</span>
+                                        </div>
+                                        <div class="personality">
+                                            <span>個性:</span>
+                                            <span>活潑愛搗蛋</span>
+                                        </div>
+                                        <div class="sex">
+                                            <span>性別:</span>
+                                            <span>女生</span>
+                                        </div>
+                                        <div class="like">
+                                            <!-- <img src="../../../race_image/r_heart.png"> -->
+                                            <button class="favorite">
+                                                <i class="fa fa-heart outsideheart" aria-hidden="true">
+                                    <i class="fa fa-heart insideheart" aria-hidden="true"></i>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="messageBorad">
+                                    <section class="post">
+                                    </section>
+                                    <input type="text" class="msg dropzone">
+                                    <button class="add_table" type="submit">submit
+                                        <!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 個人資料燈箱 -->
+    <div class="memberLightboxTarget" id="aboutme">
+        <div class="content">
+            <div class="cross">
+                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
+            </div>
+            <div class="formDiv">
+                <form action="#" method="post">
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_name">姓名</label>
+                        <input class="" type="text" name="mem_name" id="mem_name" value="宋慧喬">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_mail">Email</label>
+                        <input class="" type="email" name="mem_mail" id="mem_mail" maxlength="50" value="furkid@gmail.com">
+                    </div>
+                    <div class="formGroup">
+                        <span class="labelClass">性別</span>
+                        <span class="genderInput">
+                                <label for="male">男</label>
+                                    <input type="radio" name="mem_sex" id="male" value="1">
+                                 <label for="female">女</label>
+                                    <input type="radio" name="mem_sex" id="female" value="0" checked>
+                    </span>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_phone">手機號碼</label>
+                        <input class="" type="tel" name="mem_phone" id="mem_phone" maxlength="10" value="0911987654">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_addr">地址</label>
+                        <input class="" type="text" name="mem_addr" id="mem_addr" value="台北市大安區忠孝東路一段1號">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_img">照片</label>
+                        <span class="showImage"><img src="images/profilePhoto.jpg" alt="" id="profilePhoto"></span>
+                        <input class="inputImg" type="file" name="mem_img" id="mem_img">
+                    </div>
+                    <div id="confirmUpdate">
+                        <div class="btnDiv">
+                            <input class="inputBtn" id="updateBtn" type="submit" name="" value="更新資料">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 個人資料燈箱結束 -->
+    <!-- 寵物資料燈箱內容 -->
+    <div class="memberLightboxTarget" id="mypets">
+        <div class="content">
+            <div class="cross">
+                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
+            </div>
+            <div class="formDiv">
+                <form action="#" method="post">
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_name">名字</label>
+                        <input class="" type="text" name="pet_name" id="pet_name" value="貝貝">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_birthday">生日</label>
+                        <input class="" type="date" name="pet_birthday" id="pet_birthday" maxlength="50" value="2014-05-05">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_age">年齡</label>
+                        <input class="" type="number" name="pet_age" id="pet_age" maxlength="50" value="3">
+                    </div>
+                    <div class="formGroup">
+                        <span class="labelClass">性別</span>
+                        <span class="genderInput">
+                                <label for="male">男生</label>
+                                    <input type="radio" name="mem_sex" id="male" value="1">
+                                 <label for="female">女生</label>
+                                    <input type="radio" name="mem_sex" id="female" value="0" checked>
+                    </span>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_person">個性</label>
+                        <select name="pet_person">
+                            <option value="personality1">活潑</option>
+                            <option value="personality2">害羞</option>
+                            <option value="personality3">調皮</option>
+                            <option value="personality4">黏人</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_weight">體重</label>
+                        <select name="pet_weight">
+                            <option value="weight1">小於10kg</option>
+                            <option value="weight2">10kg~25kg</option>
+                            <option value="weight3">26kg~39kg</option>
+                            <option value="weight4">40kg以上</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_size">體型</label>
+                        <select name="pet_size">
+                            <option value="size1">小型犬</option>
+                            <option value="size2">中型犬</option>
+                            <option value="size3">大型犬</option>
+                            <option value="size4">超大型犬</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="petSort _name">品種</label>
+                        <select name="petSort _name">
+                            <option value="petSort1">黃金獵犬</option>
+                            <option value="petSort2">拉布拉多</option>
+                            <option value="petSort3">哈士奇</option>
+                            <option value="petSort4">米克斯</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet _img">照片</label>
+                        <span class="showImage"><img src="images/beibei.JPG" alt="" id="petInfoPhoto"></span>
+                        <input class="inputImg" type="file" name="pet _img" id="pet _img">
+                    </div>
+                    <div id="confirmUpdate">
+                        <div class="btnDiv">
+                            <input class="inputBtn" id="updatePetBtn" type="submit" name="" value="更新資料">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 寵物燈箱結束 -->
+    <!-- 新增寵物燈箱 -->
+    <div class="memberLightboxTarget" id="addPet">
+        <div class="content">
+            <div class="cross">
+                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
+            </div>
+            <div class="formDiv">
+                <form action="#" method="post">
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_name">名字</label>
+                        <input class="" type="text" name="pet_name" id="pet_name">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_birthday">生日</label>
+                        <input class="" type="date" name="pet_birthday" id="pet_birthday" maxlength="50">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_age">年齡</label>
+                        <input class="" type="number" name="pet_age" id="pet_age" maxlength="50">
+                    </div>
+                    <div class="formGroup">
+                        <span class="labelClass">性別</span>
+                        <span class="genderInput">
+                                <label for="male">男生</label>
+                                    <input type="radio" name="mem_sex" id="male" value="1">
+                                 <label for="female">女生</label>
+                                    <input type="radio" name="mem_sex" id="female" value="0">
+                    </span>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_person">個性</label>
+                        <select name="pet_person">
+                            <option value="personality1">活潑</option>
+                            <option value="personality2">害羞</option>
+                            <option value="personality3">調皮</option>
+                            <option value="personality4">黏人</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_weight">體重</label>
+                        <select name="pet_weight">
+                            <option value="weight1">小於10kg</option>
+                            <option value="weight2">10kg~25kg</option>
+                            <option value="weight3">26kg~39kg</option>
+                            <option value="weight4">40kg以上</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_size">體型</label>
+                        <select name="pet_size">
+                            <option value="size1">小型犬</option>
+                            <option value="size2">中型犬</option>
+                            <option value="size3">大型犬</option>
+                            <option value="size4">超大型犬</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="petSort _name">品種</label>
+                        <select name="petSort _name">
+                            <option value="petSort1">黃金獵犬</option>
+                            <option value="petSort2">拉布拉多</option>
+                            <option value="petSort3">哈士奇</option>
+                            <option value="petSort4">米克斯</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet _img">照片</label>
+                        <span class="showImage"><img src="images/dogShadow.png" alt="" id="petInfoPhoto"></span>
+                        <input class="inputImg" type="file" name="pet _img" id="pet _img">
+                    </div>
+                    <div id="confirmUpdate">
+                        <div class="btnDiv">
+                            <input class="inputBtn" id="" type="submit" name="" value="新增寵物">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 新增寵物燈箱結束 -->
+    <!-- 訂單燈箱內容 -->
+    <div class="memberLightboxTarget" id="mybookingContent">
+        <div class="content">
+            <div class="cross">
+                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
+            </div>
+            <div class="formDiv">
+                <form action="#" method="post">
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_name">名字</label>
+                        <input class="" type="text" name="pet_name" id="pet_name" value="貝貝">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_birthday">生日</label>
+                        <input class="" type="date" name="pet_birthday" id="pet_birthday" maxlength="50" value="2014-05-05">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_age">年齡</label>
+                        <input class="" type="number" name="pet_age" id="pet_age" maxlength="50" value="3">
+                    </div>
+                    <div class="formGroup">
+                        <span class="labelClass">性別</span>
+                        <span class="genderInput">
+                                <label for="male">男生</label>
+                                    <input type="radio" name="mem_sex" id="male" value="1">
+                                 <label for="female">女生</label>
+                                    <input type="radio" name="mem_sex" id="female" value="0" checked>
+                    </span>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_person">個性</label>
+                        <select name="pet_person">
+                            <option value="personality1">活潑</option>
+                            <option value="personality2">害羞</option>
+                            <option value="personality3">調皮</option>
+                            <option value="personality4">黏人</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_weight">體重</label>
+                        <select name="pet_weight">
+                            <option value="weight1">小於10kg</option>
+                            <option value="weight2">10kg~25kg</option>
+                            <option value="weight3">26kg~39kg</option>
+                            <option value="weight4">40kg以上</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet_size">體型</label>
+                        <select name="pet_size">
+                            <option value="size1">小型犬</option>
+                            <option value="size2">中型犬</option>
+                            <option value="size3">大型犬</option>
+                            <option value="size4">超大型犬</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="petSort _name">品種</label>
+                        <select name="petSort _name">
+                            <option value="petSort1">黃金獵犬</option>
+                            <option value="petSort2">拉布拉多</option>
+                            <option value="petSort3">哈士奇</option>
+                            <option value="petSort4">米克斯</option>
+                        </select>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="pet _img">照片</label>
+                        <span class="showImage"><img src="images/beibei.JPG" alt="" id="petInfoPhoto"></span>
+                        <input class="inputImg" type="file" name="pet _img" id="pet _img">
+                    </div>
+                    <div id="confirmUpdate">
+                        <div class="btnDiv">
+                            <input class="inputBtn" id="updatePetBtn" type="submit" name="" value="更新資料">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 訂單燈箱結束 -->
+    <!-- footer開始 -->
+    <footer>
+        <div class="container">
+            <section>
+                <div class="col-xs-12 col-sm-6 col-lg-6 contactus">
+                    <h6>聯絡我們</h6>
+                    <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
+                    <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
+                    <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
+                    <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-6 info">
+                    <h6>營業資訊</h6>
+                    <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; 營業時間: 週一到週日9:00-21:00</p>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; 地址: 桃園市中壢區中大路300號</p>
+                    <p><i class="fa fa-paw" aria-hidden="true"></i>&nbsp; 桃園市特寵業證字號第123號</p>
+                </div>
+            </section>
+            <section>
+                <div class="col-xs-12 col-lg-12 col-sm-12 copyright">
+                    <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
+                </div>
+            </section>
+        </div>
+    </footer>
+    <!-- footer結束 -->
+</body>
+
+</html>

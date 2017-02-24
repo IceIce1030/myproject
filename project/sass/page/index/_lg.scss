@@ -1,0 +1,107 @@
+@include respones(md) {
+	//桌機 container 1170
+	//直接寫css
+	.index{
+	//從這開始寫
+		
+		.PageOne{
+			.page-view .project .text h1{
+				font-size: 50px;
+	            top: 60%;
+			}
+			
+			svg{
+				left: 0;
+			 	right: 0;
+				top: 15%;
+			  	max-width:600px;
+			}
+			.orderTable{
+				
+            	padding:15px ;
+                left: 50%;
+                top:50%;
+                transform: translate(-50%,350%);
+				.button{
+                    float:left;
+                    a{
+                    	margin:0 0 0 15px;
+                    }
+                }
+                .orderText{
+                	float:left;
+                	margin:0 15px 0 0;
+                }
+                .i-dateClick{
+                	width: 200px;
+                }
+			}
+		}/*PageOne end*/
+		
+		.PageTwo{
+			header {
+	            padding: 50px 0 50px;
+	            text-align: center;
+	            font-size: 35px;
+        	}
+        	.box{
+        		 margin: 0 auto;
+        	}
+        	.house{
+        		float: left;
+        		width: 31.33%;
+        		padding: 5px;
+            	margin: 1%;
+        	}
+        	.bgDog {
+	            position: absolute;
+	            bottom: 0;
+	        }
+        	.dogmove{
+        		animation: dogmove 1.7s 1s both;
+        	}
+        @keyframes dogmove{
+			0% {
+				left: -100%; 
+			}
+			100%{
+				left: 0;
+			}
+        }
+		}/*PageTwo end*/
+		
+		.PageThree{
+			header {
+	            padding: 150px 0 0px;
+	            text-align: center;
+	            font-size: 35px;
+
+        	}
+			img {
+	    		width: 700px;
+	        }
+	        #myMovie{
+	        	width: 700px;
+	        }
+	        #preview {
+	            width: 100vw;
+	            height: 300px;
+	        }
+		}/*PageThree end*/
+
+		.PageFive{
+			.post {
+                        height: 180px;
+                        padding: 20px;
+                        .postImg {
+                            width: 10%;
+                            height: 140px;
+                        }
+                        .txt {
+                            max-width: 650px;
+                            margin-left: 20px;
+                        }
+                    }
+		}
+	}
+}

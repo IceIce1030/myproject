@@ -1,0 +1,93 @@
+@import "lg";
+@import "sm";
+@import "xs";
+
+.back{
+	//三個尺寸共用的寫在這
+	
+	//選單
+	.backNav{
+		width: 100%;
+		background-image: url("../../images/wrap_bg.jpg");
+		font-size: 0;
+		.logo{
+			padding: 10px;
+			text-align: center;
+		}
+		.backMenu{
+
+			li{
+				display: inline-block;
+				padding: 25px;
+								
+				a{
+					font-size: 20px;
+					color: $orange;
+					position: relative;
+					&:after{
+						content:'';
+						display: block;
+						position: absolute;
+						left: 0;
+						bottom: -5px;
+						width: 0%;
+						height: 2px;
+						background-color: $deep-orange;
+						transition:0.5s;
+					}
+					&:hover:after{
+						width: 100%
+					}
+					
+				}
+			}
+			li + li{
+				border-left: 1px dashed #ccc;
+			}
+		}
+	}
+
+
+	//內容
+	.back-content{
+		background-image: url("../../images/backbg.jpg");
+		.title{
+			font-size: 30px;
+			padding: 20px;
+			color:$deep-gray;
+			h1:before{
+				content:'\f2b9';
+				font-family: fontAwesome;
+				margin-right: 30px;
+			}
+			
+		}
+		.M-booking{
+			background-color: rgba(255,255,255,0.6);
+			padding: 10px;
+			text-align: center;
+			.item{
+
+			}
+			.item1:before{content:'\f15c';font-family: fontAwesome;}
+			.item2:before{content:'\f236';font-family: fontAwesome;}
+			.item3:before{content:'\f274';font-family: fontAwesome;}
+			.item4:before{content:'\f273';font-family: fontAwesome;}
+			a{
+				color: $deep-gray;
+				transition:0.35s;
+				&:hover{color:$light-pink;}
+			}
+
+		}
+		.M-booktable{
+			margin-top: 30px;
+			margin-bottom: 30px;
+			background-color: rgba(255,255,255,0.6);
+			tr{text-align: center;}
+			th,td{padding: 5px;}
+			th{background-color: $orange;}
+		}
+	}
+
+}

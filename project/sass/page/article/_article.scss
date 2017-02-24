@@ -1,0 +1,182 @@
+@import "lg";
+@import "sm";
+@import "xs";
+
+#article-body{background-image: url(../../images/bg02.png);}
+.article{
+	//三個尺寸共用的寫在這
+	padding-top: 80px;
+	//麵包屑
+	#breadcrumbs{
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  padding-left: 60px;
+	  border-radius: 5px;
+	  box-shadow: 0 0 2px rgba(0,0,0,.2);
+	  overflow: hidden;
+	  width: 100%;
+	  li{float: left;}
+	  a{
+	  	padding: 5px;
+	  	margin-right: 0.9em;
+	  	color: $brown;
+	  	position: relative;
+	  	background-image: linear-gradient(to right, #FFFDE3, #E6C18E);  
+	  	&:before{
+	  		content: '';
+	  		position: absolute;
+	  		top: 0;
+	  		right: -15px;
+	  		z-index: 2;
+	  		border-top: 16px solid transparent;
+	 		border-bottom: 16px solid transparent;
+	  		border-left: 16px solid #E6C18E;
+	  	}
+	  	&.current{background: none;font-weight: bold;}
+	  	&.current:before{content: normal;}
+	  	&:hover{background: none;}
+	  	&:hover:before{content: normal;}
+	  }
+	}
+	
+	
+	
+	//麵包結束
+	
+	.articleTable{
+		max-width: 90%;
+		margin: auto;
+		background-color: rgba(255,255,255,0.6);
+		.firstRow{
+			padding: 20px;
+			background-color: rgba(255,168,0,0.5);
+			h3,.classLabel{float: left;}
+			h3{color: $deep-orange;}
+			.classLabel{
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				margin: 5px 25px;
+				text-align: center;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				color: #fff;
+				background-color: $shareColor;
+			}
+			.reportBtn,.shareBtn{
+				float: right;
+				width: 50px;
+				height: 25px;
+				padding: 1px;
+				margin: 5px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				transition:.3s;
+				cursor: pointer;
+			}
+			.reportBtn{
+				border:2px solid $brown;
+				color: $brown;
+				&:hover{
+					color: #fff;
+					background-color: $brown;
+				}
+			}
+			.shareBtn{
+				border:2px solid $light-pink;
+				color: $light-pink;
+				&:hover{
+					color: #fff;
+					background-color: $light-pink;
+				}
+			}
+		}
+		.secondRow{
+			padding: 20px;
+			background-color: rgba(255,168,0,0.1);
+			img,.postGroup{float: left;}
+			img{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+			}
+			.postGroup{
+				margin: 20px;
+				.author{
+					display: block;
+					margin-bottom: 5px;
+				}
+				.postDate{
+					font-size: 12px;
+				}
+			}
+		}
+		.thirdRow{
+			padding: 20px;
+			img{
+				max-width: 95%;
+				margin: 10px auto;}
+		}
+
+		//留言
+		.replyRow1{
+			padding: 20px;
+			border-top: 2px dashed #ccc;
+			background-color: rgba(255,168,0,0.1);
+			img,.postGroup{float: left;}
+			img{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+			}
+			.postGroup{
+				margin: 20px;
+				.author{
+					display: block;
+					margin-bottom: 5px;
+				}
+				.postDate{
+					font-size: 12px;
+				}
+			}
+			.reportBtn{
+				float: right;
+				width: 50px;
+				height: 25px;
+				padding: 1px;
+				margin: 5px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				transition:.3s;
+				cursor: pointer;
+				border:2px solid $brown;
+				color: $brown;
+				&:hover{
+					color: #fff;
+					background-color: $brown;
+				}
+			}
+		}
+		.replyRow2{
+			padding: 20px;
+
+		}//留言結束
+	}//table結束
+	
+	.a-reply{
+		.message{
+			max-width: 90%;
+			margin: auto;
+		.myMessage{
+			max-width: 100%;
+			margin: auto;
+			resize:none;
+			}
+		}
+	}//發表留言結束
+
+}

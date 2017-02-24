@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>註冊</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
+</head>
+
+<body>
+    <div class="signup">
+        <div class="container">
+            <div class="wrapper">
+                <div class="main">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="furkid logo"><span>furkid</span>
+                    </div>
+                    <h4>註冊帳號</h4>
+                    <div class="formDiv">
+                        <form action="signup2.html" method="post">
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_name">姓名</label>
+                                <input type="text" name="mem_name" id="mem_name">
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_mail">Email</label>
+                                <input type="email" name="mem_mail" id="mem_mail" placeholder="email為您的帳號" maxlength="50">
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_psw">密碼</label>
+                                <input type="password" name="mem_psw" id="mem_psw" placeholder="密碼需最少6位英數字" maxlength="12">
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_pswConfirm">確認密碼</label>
+                                <input type="password" id="mem_pswConfirm" placeholder="再輸入一次確認密碼" maxlength="12">
+                            </div>
+                            <div class="formGroup">
+                                <span class="labelClass">性別</span>
+                                <span class="gender">
+                                    <label for="male">男</label>
+                                        <input type="radio" name="mem_sex" id="male" value="1">
+                                        <label for="female">女</label>
+                                        <input type="radio" name="mem_sex" id="female" value="0"></span>
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_phone">手機號碼</label>
+                                <input type="text" name="mem_phone" id="mem_phone" maxlength="10" placeholder="例:0911987654">
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_addr">地址</label>
+                                <input type="text" name="mem_addr" id="mem_addr" placeholder="例:台北市大安區忠孝東路一號">
+                            </div>
+                            <div class="formGroup">
+                                <label class="labelClass" for="mem_img">照片</label>
+                                <span class="showImage"><img src="images/profileIcon.png" alt="" id="profilePhoto"></span>
+                                <input type="file" name="mem_img" id="mem_img">
+                            </div>
+                            <p>按下註冊鈕的同時，表示您已詳閱我們的<a href="">資料使用政策與使用條款</a>，同意使用furkid所提供的服務。</p>
+                            <div class="formGroup">
+                                <div class="btn">
+                                    <input id="signupBtn" type="submit" name="" value="註冊">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

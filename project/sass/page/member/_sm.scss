@@ -1,0 +1,128 @@
+@include respones(sm) {
+    //平板 container 100%
+    .member {
+        padding-top: 60px;
+        .container {
+            padding-top: 20px;
+            min-height: 65vh;
+            .memberInfo {
+                margin-bottom: 20px;
+            }
+            .top {
+                margin-left: 25px;
+            }
+            .petList {
+                margin-bottom: 20px;
+                .pet {
+                    margin-right: 20px;
+                }
+            }
+            // 會員管理
+            .accountMgt {
+                //tab選單
+                .tabMenu {
+                    a:first-child {
+                        margin-left: 25px;
+                    }
+                    a {
+                        padding: 5px 10px;
+                        letter-spacing: 2px;
+                        width: auto;
+                        margin: 0 5px;
+                    }
+                }
+            }
+            .mainContent {
+                margin-left: 25px;
+                // 我的訂單
+                .booking {
+                    padding: 20px;
+                    .roomPhoto {
+                        width: 260px;
+                    }
+                    .bookingDetail {
+                        margin-left: 20px;
+                        float: left;
+                        min-height: 151px;
+                        line-height: 1.8;
+                    }
+                    .bookingDate {
+                        width: 100%;
+                        float: left;
+                        margin: 10px 0;
+                        .checkinDate {
+                            width: 50%;
+                            padding: 0 10px;
+                            border-top: 2px dotted #ccc;
+                            border-bottom: 2px dotted #ccc;
+                            &>p,
+                            &>h4 {
+                                display: inline-block;
+                            }
+                        }
+                        .checkoutDate {
+                            width: 50%;
+                            padding: 0 10px;
+                            float: left;
+                            border-top: 2px dotted #ccc;
+                            border-bottom: 2px dotted #ccc;
+                            &>p,
+                            &>h4 {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    .btnDiv {
+                        margin-top: 10px;
+                        width: auto;
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                }
+                //我的文章
+                .post {
+                    height: 180px;
+                    padding: 20px;
+                    .postImg {
+                        width: 200px;
+                        height: 140px;
+                    }
+                    .txt {
+                        max-width: 440px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .memberLightboxTarget {
+        .content {
+            width: 500px;
+            padding: 20px;
+            input {
+                width: 350px;
+                font-size: $fz-content;
+            }
+            .formGroup {
+                padding: 10px 0;
+            }
+            .labelClass {
+                margin-right: 10px;
+            }
+        }
+    }
+    //aboutme更新會員資料燈箱
+    #aboutme {
+        .content {
+            height: 500px;
+        }
+    }
+    //mypets addPet資料燈箱
+    #mypets,
+    #addPet {
+        .content {
+            height: 610px;
+        }
+    }
+}

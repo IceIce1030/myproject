@@ -1,0 +1,367 @@
+@include respones(md){
+	//桌機 container 1170
+	//直接寫css
+	#bookbody{
+		// overflow:hidden;
+		footer{bottom: 0;position: absolute;width: 100%;}
+	}
+	.book{
+	//從這開始寫
+		.step-info-p{
+			text-align: right;
+			
+		}
+		.stepDiy{
+			width: 500px;
+			top: 100px;
+			.step-bar{
+				padding-top: 16px;
+			}
+			.step-text{
+				right: -28px;
+				bottom: -25px;
+			}
+			.step-num{
+				transition:.3s;
+				transform: scale(1);
+				&:hover{
+					transform: scale(1.1);
+				}
+			}
+		}
+		
+	.lightbox-box{
+		// margin-left:-200px;
+		// margin-top:-275px;
+
+	}
+		#mobileDate{display: none;}
+		#mobile-step{display: none;}
+		.next{
+			text-align: right;
+
+			a{
+				margin-right: 50px;
+			}
+		}
+		.step{
+			// height: 100vh;
+			// margin-top:80px;
+			padding-top: 190px;
+			padding-bottom: 40px;
+			// padding-bottom: 50px;
+			min-height: 100vh;
+
+			.steps{
+				a{
+					font-size: $fz-content;
+				}
+			}
+		}
+		.dateRoom{
+			.step-info-p{
+				position: absolute;
+				bottom: 50px;
+				right: 10px;
+
+			}
+			.yearAndMonth,.days{
+				float: left;		
+			}
+			.yearAndMonth{
+				margin-top: 100px;
+				width: 30%;
+			}
+			.days{
+				width: 70%;
+				.dayBox{
+					line-height: 2.1em;
+				}
+			}
+		}
+		.dateResult{
+			float: left;
+			width: 100%;
+			font-size: 16px;
+			padding-top: 20px;
+		}
+		.step_dateRoom{
+			.dateRoom{
+				min-height: 565px;
+				position: relative;		
+			}
+			.next{
+					position: absolute;
+					bottom: 0;
+				a{
+					margin-top: 20px;
+				}
+			}
+
+			.roomStyle{
+				.styleBox{
+					margin: 15px 0;
+					float: left;
+					width: 16.66666%;
+				}
+				.styles{
+					width: 90%;
+					height: 50px;
+					line-height: 50px;
+				}
+			}
+		}
+		.b-select-room{
+			.roomStyle{
+
+				&:after{
+					content:'';
+					width: 0;
+					display: block;
+					clear: both;
+				}
+
+			}
+			
+		}
+		.roomPic{
+			.pic-main{
+				padding-top: 25px;
+			}
+			h2{padding: 20px 0;}
+			h4{padding: 10px 0;}
+			p{line-height: 2em;}
+		}
+
+		.step_dog{
+			.por{position: relative;right: -20px;}
+			.bg{
+				padding: 10px 0;
+			}
+			.row{position: relative;}
+			.dog-kind{
+				.kinds{		
+				}
+			}
+			.dogs{
+				ul{
+					width: 100%;
+					padding: 0 10px;
+					
+					font-size: 0;
+					li{
+						float: left;
+						width: 33.3333%;
+					}
+				}
+				#dogsUl{
+					padding: 0 10px;
+					.dogk{
+						&:hover{
+							opacity: 1;
+						}
+					}
+
+				} 
+			}
+			.dog-img{
+				padding:0 10%;
+					p{
+					padding: 10px 0;
+					span{
+						font-size: 20px;
+					}
+				}
+			}
+
+		}
+		.step_mom{
+			h4{display: inline-block;}
+			.momResult{
+				position: relative;
+				top: 40px;
+			}
+			.mom-box{
+				position: relative;
+				right: 100px;
+			}
+			.mom-info{
+				padding-top: 20px;
+			}
+			.mompic{
+				padding-top: 20px;
+				.select-mon-pic{
+				}
+				
+				
+			}
+			/* Tiny Circleslider */
+			#rotatescroll {
+				display: inline-block;
+				height:300px; 
+				position:relative; 
+				width:300px;
+			}
+			#rotatescroll .viewport{ 
+				height:300px; 
+				position: relative; 
+				margin:0 auto; 
+				overflow:hidden; 
+				width:300px; 
+				pointer-events: none 
+			}
+			#rotatescroll .overview { 
+				position: absolute;
+				width: 789px; 
+				list-style: none; 
+				margin: 0; 
+				padding: 0;  
+				left: 0; 
+				top: 0; 
+
+			}
+			#rotatescroll .overview li { 
+				height:300px; 
+				width:300px; 
+				float: left; 
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				border: 15px solid $deep-orange;
+
+				img{
+					font-size: 0;
+					width: 100%;
+				}
+			}
+			// #rotatescroll .overlay {
+			// 	// background:url('../images/bg-rotatescroll.png') no-repeat 0 0;
+			// 	pointer-events: none; 
+			// 	position: absolute; 
+			// 	left: 0; 
+			// 	top: 0; 
+			// 	height:300px; 
+			// 	width:300px; 
+			// }
+			#rotatescroll .thumb { 
+				background:url('../images/thumb.png') no-repeat 50% 50%; 
+				touch-action: none; 
+				-ms-touch-action: none; 
+				position: absolute; 
+				top: -3px; 
+				cursor: pointer; 
+				left: 137px; 
+				width: 100px; 
+				z-index: 10;  
+				height: 100px; 
+			}
+			#rotatescroll .dot { 
+				cursor: pointer; 
+				height: 60px; 
+				width: 60px;
+				text-align: center; 
+				font-size: 0px; 
+				position: absolute; 
+				left: 155px; 
+				z-index: 9;
+				border-radius: 50%;
+				transition:.3s;
+				span{
+					display: none;
+				}
+				&:hover{
+					transform:scale(1.1);
+					box-shadow:0px 0px 5px $light-gray;
+				}
+			}
+			#rotatescroll .dot-1{
+				background:url('../images/active.png') no-repeat 0 0;
+			}
+			#rotatescroll .dot-2{
+				background:url('../images/Sticky.png') no-repeat 0 0;
+			}
+			#rotatescroll .dot-3{
+				background:url('../images/shy.png') no-repeat 0 0;
+			}
+			#rotatescroll .dot-4{
+				background:url('../images/naughty.png') no-repeat 0 0;
+			}
+			/* Tiny Circleslider */
+			
+			
+		}
+		.step_service{
+			.service-select-info{
+				padding-bottom: 100px;
+			}
+			.selected-box{
+				width: 100%;
+				.service-box{
+					width: 16.6666%;
+				}
+			}
+			.select-service{
+				min-height: 210px;
+				.service-all{
+					
+				}
+				// width: 63vmin;
+			}
+			.husky {
+				  height: 40vmin;
+				  width: 63vmin;
+				 //  	height: 60vmin;
+					// width: 86vmin;
+				}
+				.service-all{
+					height: 80px;
+				}
+				.add-box{
+					.service-box{
+						text-align: center;
+						padding: 8px;
+						position: absolute;
+						width: 16.666%;
+					}
+					.service-box1{
+						right: 0;
+						top: 0;
+					}
+					.service-box2{
+						right: 20%;
+						top: -50px;
+					}
+					.service-box3{
+						right: 40%;
+						top: -80px;
+					}
+					.service-box4{
+						right: 60%;
+						top: -80px;
+					}
+					.service-box5{
+						right: 80%;
+						top: -50px;
+					}
+					.service-box6{
+						right: 100%;
+						top: 0;
+					}
+					.add-service{
+						right: 0;
+						transform:translateY(40vmin) scale(0);
+						opacity: 0;
+					}
+				}
+				
+		}
+		.step_orderCheck{
+			.order-check{
+				width: 50%;
+				margin: auto;
+			}
+
+		}//step_orderCheck
+
+	}
+}

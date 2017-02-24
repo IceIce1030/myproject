@@ -1,0 +1,50 @@
+*{
+	text-decoration: none;
+	list-style-type: none;
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+.text-left{
+	text-align: left;
+}
+.hidden{
+	visibility: hidden;
+}
+.relative{
+	position: relative;
+}
+//補上去
+h1 {
+    font-size: $fz-h1;
+    // color: $deep-gray;
+}
+
+h2 {
+    font-size: $fz-h2;
+    // color: $deep-gray;
+}
+
+h3 {
+    font-size: $fz-h3;
+    // color: $deep-gray;
+}
+
+h4 {
+    font-size: $fz-h4;
+    // color: $deep-gray;
+}
+
+p {
+    font-size: $fz-content;
+    // color: $light-gray;
+}
+a{
+	text-decoration: none;
+}

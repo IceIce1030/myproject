@@ -1,0 +1,163 @@
+.bin-calendar{
+	
+	$b-red:#EB3F4B;
+	
+
+	.i-dateClick{//按鈕樣式
+		cursor: pointer;
+		position: relative;
+		max-width: 200px;//寬度
+		height: 25px;
+
+		border: 1px solid #999;
+
+	}
+	.dateResult{
+			div{
+				padding: 10px 5px;
+				span{
+					font-size: 20px;
+					color: $b-red;
+					font-weight: bold;
+				}
+			}
+		}
+		.dateRoom{
+			background-color: rgba(249, 247, 232, .5);
+			position: relative;
+			border-radius: $border-radius;
+			box-shadow: 3px 3px 10px #ccc;
+			
+		}			
+		.b-select-date{
+			width: 300px;//日曆寬度
+			display:none;  //隱藏
+			position: absolute;
+			top: 30px;
+			left: 0;
+			&:after{
+				content: '';
+				display: block;
+				width: 0;
+				clear: both;
+			}
+			.year{
+				font-size: 40px;
+			}
+			.month{
+				font-size: 50px;
+			}
+			.select-month{
+				position: relative;
+				.after{
+					border-left: 20px solid #666;
+					border-top: 20px solid transparent;
+					border-bottom: 20px solid transparent;
+					border-right: 20px solid transparent;
+					position: absolute;
+					top:20px;
+					right: 0;
+					cursor: pointer;
+					transition:.3s;
+					&:hover{
+						transform:translateX(5px);
+					}
+					
+				}
+				.before{
+					border-right: 20px solid #666;
+	    			border-top: 20px solid transparent;
+	   				border-bottom: 20px solid transparent;
+	    			border-left: 20px solid transparent;
+	    			position: absolute;
+	    			top: 20px;
+	    			left:0;
+	    			cursor: pointer;
+	    			transition:.3s;
+	    			&:hover{
+						transform:translateX(-5px);
+					}
+				}
+			}
+			.days{
+				padding-right: 10px;
+				#table{
+					width: 100%;
+					font-size: 0;
+					.dayBox{
+						width: 14.285%;
+						// height: 50px;
+						line-height: 50px;
+						font-size: 20px;
+						text-align: center;
+						float: left;					
+
+					}
+					.day{
+						border-radius: 50%;
+						width: 100%;
+						transition:.2s;
+						height: 0;
+						padding-bottom: 100%;	
+						
+					}
+					.dayPointer{
+						cursor: pointer;
+					}
+					.daycant{
+						opacity: .5;
+					}
+				}
+				#table:after,.weekend:after{
+					content: '';
+					display: block;
+					clear: both;	
+				}
+				.week{
+					float: left;
+					font-size: 0;
+					width: 14.285%;
+					text-align: center;
+					height: 50px;
+					line-height: 50px;
+				}
+				.weekday{
+					font-size: 16px;
+					font-weight: bold;
+				}
+				.weekend{
+					width: 100%;
+				}
+				
+					
+			}
+			
+		}
+
+		//叉叉
+		.closeLightBox{
+						line-height: 40px;
+						text-align: center;
+						position: absolute;
+						top: 5px;
+						right: 5px;
+						width: 60px;
+						height: 60px;
+						background-color: rgba(0,0,0,.7);
+						border-radius: 50%;
+						transition:.3s;
+						border:5px solid #ddd;
+					
+						.fa-plus{
+							position: relative;
+							left: 3px;
+							top: -1px;
+							padding-top: 10px;
+							font-size: 40px;
+							color: #fff;
+							cursor: pointer;
+							transform:rotate(45deg);
+						}
+					}
+
+}
