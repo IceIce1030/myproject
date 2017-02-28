@@ -4,12 +4,13 @@ $(document).ready(function(){
 	orderListCheck();
 
 
-	$('.search #searchOne').click(function(){
+	$('#orderlist .search #searchOne').click(function(){
 		var txt = $('#orderlist_search').val();
 		orderListCheckSearch(txt);
 		
 	});
-	$('.search #searchAll').click(function(){
+	$('#orderlist .search #searchAll').click(function(){
+        $('#orderlist_search').val('');
 		orderListCheck();
 	});
 	
@@ -32,9 +33,9 @@ $(document).ready(function(){
                 success: function(msg){
                     // alert(msg);
                     // console.log(msg);
-                    $('#table').html(msg);
+                    $('#orderlist #table').html(msg);
 
-                    	$('#table .inputBtn').click(function(){
+                    	$('#orderlist #table .inputBtn').click(function(){
 							var order_no  = $(this).siblings('.orderlistNo').val();
 							var btnVal = $(this).val();
 
@@ -96,9 +97,9 @@ $(document).ready(function(){
                 success: function(msg){
                     // alert(msg);
                     // console.log(msg);
-                    $('#table').html(msg);
+                    $('#orderlist #table').html(msg);
 
-                    	$('#table .inputBtn').click(function(){
+                    	$('#orderlist #table .inputBtn').click(function(){
 							var order_no  = $(this).siblings('.orderlistNo').val();
 							var btnVal = $(this).val();
 
@@ -116,3 +117,5 @@ $(document).ready(function(){
             
         }
 	//------------------------
+    
+    

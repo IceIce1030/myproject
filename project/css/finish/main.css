@@ -4599,6 +4599,11 @@ html.fp-enabled,
   color: #fff;
 }
 
+.back .search {
+  padding: 5px 10px;
+  background: #f9f7e8;
+}
+
 .back .backNav {
   width: 100%;
   background-image: url("../../images/wrap_bg.jpg");

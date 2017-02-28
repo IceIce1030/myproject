@@ -7,12 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="js/back-javascrip.js"></script>	
+	<script type="text/javascript" src="js/back-room-javascrip.js"></script>	
 </head>
 <style type="text/css">
 
 </style>
-<body>
+<body id="room">
 <div class="back">
 <!-- 從這開始寫 -->
 
@@ -25,10 +25,10 @@
 			</div>
 			<div class="col-xs-12 col-sm-9 col-md-9">
 				<ul class="backMenu">
-					<li><a href="#"><span>預定管理</span></a></li>
+					<li><a href="back-orderlist.html"><span>預定管理</span></a></li>
 					<li><a href="#"><span>服務管理</span></a></li>
 					<li><a href="#"><span>檢舉管理</span></a></li>
-					<li><a href="#"><span>會員管理</span></a></li>
+					<li><a href="back-member.html"><span>會員管理</span></a></li>
 				</ul>
 			</div>
 			
@@ -46,7 +46,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 title">
-				<h1>預約管理</h1>
+				<h1>房間管理</h1>
 			</div>
 			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
 				<div class="item item1">
@@ -73,7 +73,8 @@
 
 		<div class="col-xs-12 col-sm-12 col-md-12 M-booktable">
 		<div class="text-center search">
-			<input type="text" id="orderlist_search" placeholder="請輸入訂單編號">
+			<label>入住日期：</label><input type="date" name="date" id="expIn">
+			<label>退房日期：</label><input type="date" name="date" id="expOut">
 			<input type="button" value="搜尋" class="inputBtn" id="searchOne">
 			<input type="button" value="顯示全部" class="inputBtn" id="searchAll">
 
@@ -82,7 +83,7 @@
 			<table class="booktable" id="table">
 			<!-- <input type="button" value="Check-in" onclick="checkIn()"> -->
 			<!-- <input type="button" value="Check-Out" onclick="checkOut()"> -->
-			
+				<!-- <img src="images/member/" style="width: 80px;height: 80px;"> -->
 				<!-- <tr>
 					<th>訂單編號</th>
 					<th>會員編號</th>
