@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<title>back</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/back-report-arti-javascrip.js"></script>	
+</head>
+<style type="text/css">
+
+</style>
+<body id="arti">
+<div class="back">
+<div class="arti-content-box">
+	<div class="arti-content">
+	<div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+		<p></p>
+	</div>
+</div>
+<!-- 從這開始寫 -->
+
+<!-- 選單開始 -->
+<div class="backNav">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 col-md-3 logo">
+				<a href="back-room.html"><img src="images/logo.png"></a>
+			</div>
+			<div class="col-xs-12 col-sm-9 col-md-9">
+				<ul class="backMenu">
+					<li><a href="back-orderlist.html"><span>預定管理</span></a></li>
+					<li><a href="back-room.html"><span>房間狀態</span></a></li>
+					<li><a href="back-report-arti.html"><span>討論區管理</span></a></li>
+					<li><a href="back-member.html"><span>會員管理</span></a></li>
+				</ul>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+
+
+
+<!-- 選單結束 -->
+
+<!-- 內容區 -->
+<div class="back-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 title">
+				<h1>討論區管理</h1>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
+				<div class="item">
+					<span><a href="back-report-arti.html"><i class="fa fa-file-text-o" aria-hidden="true"></i>文章管理</a></span>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
+				<div class="item">
+					<span><a href="back-report-artimsg.html"><i class="fa fa-commenting-o" aria-hidden="true"></i>留言管理</a></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-xs-12 col-sm-12 col-md-12 M-booktable">
+		<div class="text-center searchbox">
+			<!-- <input type="text" class="search" id="orderlist_search" placeholder="請輸入訂單編號"> -->
+			<input type="button" value="顯示全部" class="inputBtn" id="searchAll">
+			<input type="button" value="顯示檢舉" class="inputBtn" id="searchReport">
+			
+
+		</div>
+		<center>
+			<table class="booktable" border="1" id="table">
+
+			<!-- <input type="button" value="Check-in" onclick="checkIn()"> -->
+			<!-- <input type="button" value="Check-Out" onclick="checkOut()"> -->
+				<!-- <img src="images/member/" style="width: 80px;height: 80px;"> -->
+				<!-- <tr>
+					<th>訂單編號</th>
+					<th>會員編號</th>
+					<th>房間編號</th>
+					<th>寵物編號</th>
+					<th>訂單日期</th>
+					<th>預計入住日期</th>
+					<th>預計退房日期</th>
+					<th>實際入住日期</th>
+					<th>實際退房日期</th>
+					<th>連絡電話</th>
+				</tr> -->
+				<!-- <tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr>
+				<tr>
+					<td>a01</td>
+					<td>M001</td>
+					<td>z123</td>
+					<td>P001</td>
+					<td>2017-01-30</td>
+					<td>2017-03-21</td>
+					<td>2017-03-25</td>
+					<td></td>
+					<td></td>
+					<td>0987654321</td>
+				</tr> -->
+			</table>
+		</center>
+		</div>
+
+
+
+	</div>
+</div>
+<!-- 內容區結束 -->
+
+</div>
+</body>
+</html>

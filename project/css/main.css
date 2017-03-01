@@ -4207,6 +4207,11 @@ html.fp-enabled,
   color: #b37600;
 }
 
+.back {
+  min-height: 100vh;
+  background-image: url("../images/backbg.jpg");
+}
+
 .back .inputBtn {
   /*     margin: 10px auto;
 	    width: 80%; */
@@ -4246,14 +4251,88 @@ html.fp-enabled,
   color: #fff;
 }
 
+.back .page {
+  cursor: pointer;
+}
+
+.back .arti-content-box {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.back .arti-content {
+  position: absolute;
+  padding: 5px 10px;
+  width: 90%;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  overflow-y: scroll;
+  transform: translate(-50%, -50%);
+}
+
+.back .arti-content p {
+  padding-top: 30px;
+}
+
+.back .closeLightBox {
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 33px;
+  height: 33px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  transition: .3s;
+  border: 2px solid #ddd;
+}
+
+.back .closeLightBox .fa-plus {
+  position: relative;
+  left: 3px;
+  top: -2px;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.back .btnp {
+  padding: 5px 0;
+}
+
+.back .more {
+  font-size: 13px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0);
+  padding: 2px 4px;
+}
+
+.back .inputdate {
+  padding: 5px 10px;
+  background: #f9f7e8;
+}
+
 .back .search {
   padding: 5px 10px;
   background: #f9f7e8;
 }
 
+.back .searchbox {
+  padding: 20px 0;
+}
+
 .back .backNav {
   width: 100%;
-  background-image: url("../../images/wrap_bg.jpg");
+  background-image: url("../images/wrap_bg.jpg");
   font-size: 0;
 }
 
@@ -4293,10 +4372,6 @@ html.fp-enabled,
   border-left: 1px dashed #ccc;
 }
 
-.back .back-content {
-  background-image: url("../../images/backbg.jpg");
-}
-
 .back .back-content .title {
   font-size: 30px;
   padding: 20px;
@@ -4315,24 +4390,8 @@ html.fp-enabled,
   text-align: center;
 }
 
-.back .back-content .M-booking .item1:before {
-  content: '\f15c';
-  font-family: fontAwesome;
-}
-
-.back .back-content .M-booking .item2:before {
-  content: '\f236';
-  font-family: fontAwesome;
-}
-
-.back .back-content .M-booking .item3:before {
-  content: '\f274';
-  font-family: fontAwesome;
-}
-
-.back .back-content .M-booking .item4:before {
-  content: '\f273';
-  font-family: fontAwesome;
+.back .back-content .M-booking .item .fa {
+  padding: 0 5px;
 }
 
 .back .back-content .M-booking a {
@@ -4345,9 +4404,10 @@ html.fp-enabled,
 }
 
 .back .back-content .M-booktable {
+  padding: 15px 10px;
   margin-top: 30px;
   margin-bottom: 30px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .back .back-content .M-booktable tr {
@@ -8634,7 +8694,7 @@ html.fp-enabled,
 }
 
 .book .stepDiy ul li .step-num a {
-  transiton: .3s;
+  transition: .3s;
   padding: 10px 18px;
   background: #ccc;
   border-radius: 50%;
@@ -9020,6 +9080,10 @@ html.fp-enabled,
   border-color: #EB3F4B;
 }
 
+.book .roomPic .pic-small .small:first-child img {
+  border-color: #EB3F4B;
+}
+
 .book .roomPic .pic-small .small {
   float: left;
   width: 33.333%;
@@ -9293,6 +9357,15 @@ html.fp-enabled,
   display: none;
 }
 
+.book .step_mom .circleNoWork {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 12;
+  top: -50px;
+  display: none;
+}
+
 .book .step_mom .p-l {
   padding-left: 20px;
 }
@@ -9311,6 +9384,7 @@ html.fp-enabled,
   width: 100%;
   text-align: center;
   margin-top: 50px;
+  position: relative;
 }
 
 .book .step_mom .mompic {
@@ -9350,10 +9424,6 @@ html.fp-enabled,
     height: 0%;
     opacity: 0;
   }
-}
-
-.book .step_mom .mompic h4:first-child {
-  padding-left: 10px;
 }
 
 .book .step_mom .mompic p {

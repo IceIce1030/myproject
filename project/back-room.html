@@ -21,13 +21,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-3 col-md-3 logo">
-				<a href="#"><img src="images/logo.png"></a>
+				<a href="back-room.html"><img src="images/logo.png"></a>
 			</div>
 			<div class="col-xs-12 col-sm-9 col-md-9">
 				<ul class="backMenu">
 					<li><a href="back-orderlist.html"><span>預定管理</span></a></li>
-					<li><a href="#"><span>服務管理</span></a></li>
-					<li><a href="#"><span>檢舉管理</span></a></li>
+					<li><a href="back-room.html"><span>房間狀態</span></a></li>
+					<li><a href="back-report-arti.html"><span>討論區管理</span></a></li>
 					<li><a href="back-member.html"><span>會員管理</span></a></li>
 				</ul>
 			</div>
@@ -46,9 +46,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 title">
-				<h1>房間管理</h1>
+				<h1>房間狀態</h1>
 			</div>
-			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
+			<!-- <div class="col-xs-12 col-sm-3 col-md-3 M-booking">
 				<div class="item item1">
 					<span><a href="#">訂單管理</a></span>
 				</div>
@@ -67,20 +67,20 @@
 				<div class="item item4">
 					<span><a href="#">Check-out</a></span>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 
 		<div class="col-xs-12 col-sm-12 col-md-12 M-booktable">
-		<div class="text-center search">
-			<label>入住日期：</label><input type="date" name="date" id="expIn">
-			<label>退房日期：</label><input type="date" name="date" id="expOut">
+		<div class="text-center searchbox">
+			<label>入住日期：</label><input class="inputdate" type="date" name="date" id="expIn">
+			<label>退房日期：</label><input class="inputdate" type="date" name="date" id="expOut">
 			<input type="button" value="搜尋" class="inputBtn" id="searchOne">
 			<input type="button" value="顯示全部" class="inputBtn" id="searchAll">
 
 		</div>
 		<center>
-			<table class="booktable" id="table">
+			<table class="booktable" id="table" border="1">
 			<!-- <input type="button" value="Check-in" onclick="checkIn()"> -->
 			<!-- <input type="button" value="Check-Out" onclick="checkOut()"> -->
 				<!-- <img src="images/member/" style="width: 80px;height: 80px;"> -->

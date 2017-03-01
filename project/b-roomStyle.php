@@ -23,7 +23,7 @@ try{
                       <div class='roomInfo'>";	
       $str .="<h2 class='roomStyle-selected'> {$roomRow["room_name"]} </h2>";	
       $str .= "<p> {$roomRow["room_intro"]} </p>";
-      $str .="<h4>房間價格:<span id='roomPrice'> {$roomRow["room_price"]} </span>元</h4>
+      $str .="<h4>每晚價格:<span id='roomPrice'> {$roomRow["room_price"]} </span>元</h4>
                       </div>
                     </div>";
       $str .="<div class='col-xs-12 col-sm-7 col-md-7 pic-main ''>";

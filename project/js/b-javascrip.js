@@ -298,10 +298,10 @@ function selectday(){
 
 		var roomDays = document.getElementsByClassName('roomDays');
 
-		sessionStorage.night = muchNight;
+		sessionStorage.night = parseInt(muchNight);
 
 		for(var i=0;i<roomOut.length;i++){
-			roomDays[i].innerText=muchNight;
+			roomDays[i].innerText= parseInt(muchNight);
 		}
 
 		$id('nowNeedSelectDate').innerText="請選擇房型";
@@ -385,6 +385,13 @@ $(document).ready(function(){
 	});
 	
 	
+
+	// if(localStorage["mem_id"]==undefined){
+	// 	alert('請登入');
+	// }
+	// else{
+	// 	console.log(localStorage["mem_id"]);
+	// }
 	sessionStorage.totalMoney=0;
 	sessionStorage.removeItem("roomStyle");
 	sessionStorage.removeItem("petName");
@@ -396,9 +403,12 @@ $(document).ready(function(){
 	sessionStorage.removeItem("dogSize");
 	sessionStorage.removeItem("pet_no");
 
-
+	sessionStorage.night =1;
+	sessionStorage.dogAge = 0;
 	sessionStorage.personality='活潑';
 	sessionStorage.mom = 'Amy';
+	service_arry=[];
+	service_arr=[];
 
 
 	ahref = 1;
@@ -407,7 +417,7 @@ $(document).ready(function(){
 	SoapBubbleMachineNumber2='';
 	SoapBubbleMachineNumber3='';
 	totalMoney=0;
-	roomPrice=1600;
+	roomPrice=500;
 	serviceTotal=0;
 	serviceCount=0;
 	selectWeight=0;
@@ -479,8 +489,8 @@ $(document).ready(function(){
 	//loacding動畫
 	$('.loadingbox').delay(500).fadeOut(500);
 
-
-	getMemberPet();
+	
+	
 
 			//點擊狗大小，撈出資料庫相對應狗狗
 			$('.kinds span').click(function(){
@@ -707,10 +717,15 @@ $(document).ready(function(){
 
   		//帶入狗資料
   		$('.again').click(function(){
+  			//如果有會員帶入狗狗資料
+			if(localStorage!=undefined){
+				getMemberPet();
+			}
   			$(this).css({
   				display:'none'
   			});
   			$('.mypet').fadeIn(300);
+
   		});
 
   		//選擇下拉式選單的狗狗後
@@ -836,8 +851,51 @@ $(document).ready(function(){
   					});
   				}
   			}
+  			else if(num==6){
+				if(localStorage["mem_id"]==undefined){
+			  		alert('請登入會員');
+			  	}
+			  	else{
+			  		var str = '.step'+num+' .step-bar span';
+		  			var str1 = '.step'+num+' .step-num a';
+		  			var str2 = '.step'+num+' .step-text';
+		  			var str3 ='.step'+num;
+
+		  			$(str3).css({
+		  				display:"inline-block"
+		  			});
+		  			$('.stepDiy .page-scroll').css({
+		  				borderColor: '#ccc'
+		  			});
+		  			$(str1).delay(1000).animate({
+		  				backgroundColor: $supOrange,
+		  				borderColor: $deepOrange
+		  			},500);
+					$(str).addClass('didStepBgc');
+
+
+					$('.stepDiy .step-text').css({
+						transform: 'scale(1)',
+						fontWeight: '400'
+		  			});
+
+					$(str2).animate({
+						transform: 'scale(1.2)',
+						fontWeight: '700'
+					}),500;
+
+					//這一步隱藏
+					$('#bookSection'+ nowSection ).css({
+						display: 'none'
+					});
+
+					$('#bookSection'+num).slideDown(500);
+						nowSection = num;
+			  	}
+  			}
 
   			else if(num==7){//付款
+  				
   				if (paySelected==true) {
 	  					var str = '.step'+num+' .step-bar span';
 			  			var str1 = '.step'+num+' .step-num a';
@@ -1257,9 +1315,6 @@ $(document).ready(function(){
 	
 
 
-
-
-
        // tinycircleslider
 		 $("#rotatescroll").tinycircleslider({
 			        dotsSnap : true
@@ -1339,6 +1394,7 @@ $(document).ready(function(){
 	  		//房間編號
 
 	  		sessionStorage.roomStyle=roomVal;
+	  		// console.log(sessionStorage.roomStyle);
 
 
 
@@ -1348,7 +1404,10 @@ $(document).ready(function(){
 
 
 			roomPrice=$('#roomPrice').text();
-			sessionStorage.totalMoney=parseInt(roomPrice)+parseInt(sessionStorage.totalMoney);
+			sessionStorage.totalMoney=(parseInt(roomPrice)*parent(sessionStorage.night))+parseInt(sessionStorage.totalMoney);
+			$('#totalMoney').text(sessionStorage.totalMoney);
+			console.log(sessionStorage.totalMoney);
+			
 		
 	  		getRoom(roomVal);//從這撈房間資訊
 	  	});
@@ -1387,10 +1446,7 @@ $(document).ready(function(){
 
 	    //註冊事件
 
-	    //第一個小圖邊框上色
-	  	$('.roomPic .first').animate({
-	  		borderColor: $bRed
-	  	},0);
+	   
 	    //點小房間圖，換大房間圖
 	  	$('.pic-small img').click(function(){
 	  		//清除被選到顏色
@@ -1526,7 +1582,7 @@ $(document).ready(function(){
 		  		var idNameB = idNameT;//下面的
 
 		  		var txt1 =$(this).siblings('p').find('.b-service-txt').text();
-		  		var pCss =$(this).siblings('p').attr('class');
+		  		
 
 		  		//服務id
 		  		var sId = $(this).siblings('.input-service-id').val();
@@ -1534,6 +1590,8 @@ $(document).ready(function(){
 		  		//服務價錢
 		  		var sPrice = $(this).siblings('.input-service-price').val();
 		  		sessionStorage.totalMoney = parseInt(sessionStorage.totalMoney)+parseInt(sPrice);
+		  		$('#totalMoney').text(sessionStorage.totalMoney);
+		  		console.log(sessionStorage.totalMoney);
 
 
 		  		var span = document.createElement('span');
@@ -1542,10 +1600,10 @@ $(document).ready(function(){
 		  		input.setAttribute("class",'disNoneInput');
 		  		input.type	= 'hidden';
 		  		input.value = sId;
+		  		
 
-
-
-				span.setAttribute("class",'serviceSelected '+pCss);
+				span.setAttribute("class",'serviceSelected');
+				span.setAttribute("id",'sNo'+sId);
 				span.innerText=txt1;
 
 				span.appendChild(input);
@@ -1600,9 +1658,20 @@ $(document).ready(function(){
 		  		var idNameB = $(this).attr("id");//下面的
 		  		var idNameT = idNameB;//上面的
 
+		  		var sId = $(this).siblings('.input-service-id').val();
+		  		
+		  		
+		  		//移除訂單上面的字
+		  		var a = $('#service-added').find('#sNo'+sId);
+		  		
+
+		  		$(a).remove();
+
 
 		  		var sPrice = $(this).siblings('.input-service-price').val();
 		  		sessionStorage.totalMoney = parseInt(sessionStorage.totalMoney)-parseInt(sPrice);
+		  		$('#totalMoney').text(sessionStorage.totalMoney);
+		  		console.log(sessionStorage.totalMoney);
 
 
 		  		idNameB = '.selected-box .'+idNameB;
@@ -1635,7 +1704,7 @@ $(document).ready(function(){
 
 		  		var pCss =$(this).siblings('p').attr('class');
 
-
+		  		// console.log(pCss);
 		  		$('#service-added span').remove('.'+pCss);
 
 		  });
@@ -1776,7 +1845,30 @@ $(document).ready(function(){
   			$(this).addClass('roompic-select');
   			roomPrice=$('#roomPrice').text();
 		  	roomSelected=true;
+		  	var roomVal = $(this).find('.rooms').val();
+	  		//房間編號
+
+	  		
+	  		sessionStorage.roomStyle=roomVal;
+	  		// console.log(sessionStorage.roomStyle);
+
+
+
+			var roomPrice = $(this).find('.room-price').val();
+			//房間價錢
+
+
+
+			roomPrice=$('#roomPrice').text();
+			sessionStorage.totalMoney=(parseInt(roomPrice)*parseInt(sessionStorage.night))+parseInt(sessionStorage.totalMoney);
+			$('#totalMoney').text(sessionStorage.totalMoney);
+			console.log(sessionStorage.totalMoney);
+			
+		
+	  		getRoom(roomVal);//從這撈房間資訊
+
 		});
+
 
 		//b-btn 房間印上狗圖
 		$('.b-btn-room').click(function(){
@@ -1792,6 +1884,8 @@ $(document).ready(function(){
 		//點選房間風格，撈出資料庫相對應的房間
 	  	$('.styleBox .styles').click(function(){
 	  		var roomVal = $(this).find('input').val();
+	  		sessionStorage.roomStyle = roomVal;
+
 	  		getRoom(roomVal);//從這撈房間資訊
 	  	});
 
@@ -1837,8 +1931,17 @@ $(document).ready(function(){
 
             var URLs="b-insert-orderList.php";
 
+            // var alls = document.getElementsByClassName('serviceSelected');
+            // for(var i = 0;i<alls.length;i++){
+            // 	var test = alls[i].id
+            // 	test = test.replace('sNo','');
+            // 	service_arry.push(test);
+            // }
+
+
+
             var mem_no = localStorage["mem_no"];
-            var service = [];
+            
             var dog_room = sessionStorage.roomStyle;
             var dog_name = sessionStorage.petName;
             var dog_sex = sessionStorage.petSex;
@@ -1860,21 +1963,40 @@ $(document).ready(function(){
 
 			var put_in_pet_no = sessionStorage.pet_no;
 
-			console.log(put_in_pet_no);
+			// console.log(put_in_pet_no);
 
-
+			//把每一個服務項目放進陣列
             $('#service-added .serviceSelected  input').each(function(i,itme){
-            		service.push($(itme).val());
+            		service_arr.push($(itme).val());
             });
            
             $.ajax({
                 url: URLs,
-                data: {put_in_pet_no,mem_no,service,dog_sex,dog_room,dog_name,dog_id,dog_size,dog_age,much_night,dog_personality,dog_mom,start_y,start_m,start_d,end_y,end_m,end_d,total},
+                data: {put_in_pet_no,
+                	   mem_no,
+                	   service_arr,
+                	   dog_sex,
+                	   dog_room,
+                	   dog_name,
+                	   dog_id,
+                	   dog_size,
+                	   dog_age,
+                	   much_night,
+                	   dog_personality,
+                	   dog_mom,
+                	   start_y,
+                	   start_m,
+                	   start_d,
+                	   end_y,
+                	   end_m,
+                	   end_d,
+                	   total},
                 type:"POST",
                 dataType:'html',
 
                 success: function(msg){
                     // alert(msg);
+                    console.log(msg);
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 
@@ -1894,7 +2016,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: URLs,
 			data: {pet_no},
-			type:"POST",
+			type:"GET",
 			dataType:'JSON',
 			async: false,
 
@@ -1931,6 +2053,7 @@ $(document).ready(function(){
 				  			$('.step_orderCheck .b-sex svg').hide();
 
 				  			$('.step_orderCheck .pet-boy').delay(100).show();
+				  			sessionStorage.petSex='f';
 				  			sexSelected=true;
 				  			
 
@@ -1948,6 +2071,7 @@ $(document).ready(function(){
 				  			$('.step_orderCheck .b-sex svg').hide();
 
 				  			$('.step_orderCheck .pet-girl').delay(100).show();
+				  			sessionStorage.petSex='m';
 				  			sexSelected=true;
 				  			
 
@@ -1956,23 +2080,36 @@ $(document).ready(function(){
 						//寵物個性
 						sessionStorage.personality = returnArry[0].pet_personality;
 						$('.pet-personality').text(sessionStorage.personality);
-
+						var momnum;
 						if(sessionStorage.personality=='活潑'){
 			                sessionStorage.mom = 'Amy';
+			                momnum=1;
 			                $('.momName-selectedy').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='黏人'){
 			                sessionStorage.mom = 'Sara';
+			                 momnum=2;
 			                $('.momName-selected').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='害羞'){
 			                sessionStorage.mom = 'Judy';
+			                 momnum=3;
 			                $('.momName-selected').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='調皮'){
 			                sessionStorage.mom = 'Mary';
+			                 momnum=4;
 			                $('.momName-selected').text(sessionStorage.mom);
 			            }
+			            // 保母鎖住
+			            $('.circleNoWork').show();
+
+			            
+			            var momInof='.b-mom'+momnum;
+
+			            $('.b-mom').fadeOut(0,function(){
+			                  $(momInof).fadeIn(0); 
+			            });
 
 
 						
@@ -1982,12 +2119,13 @@ $(document).ready(function(){
 						function getMemberPetSpecies(){
 				            var URLs="b-getMemberPetSpecies.php";
 				            var  mypet_dog_id = returnArry[0].dog_no;
+				            sessionStorage.dogId = mypet_dog_id;
 
 				           
 				            $.ajax({
 				                url: URLs,
 				                data: {mypet_dog_id},
-				                type:"POST",
+				                type:"GET",
 				                dataType:'text',
 
 				                success: function(msg){
@@ -1997,7 +2135,7 @@ $(document).ready(function(){
 				                	dogSize = mess["dog_size"];
 				                	sessionStorage.dogSize = mess["dog_size"];
 				                	$('.dog-size').text(mess["dog_size"]);
-				                	console.log(dogSize);
+				                	// console.log(dogSize);
 				                	getService();
 				                	//有大小才有服務
 				                	

@@ -7,8 +7,9 @@ try{
     // $expOut = '2017-02-28';
     $canNotLiveRoomNo = array();
 
-     $sql = "select *
-             from room";
+      $sql = "select r.room_no,r.room_name,r.room_price,r.room_intro,r.room_count,rimg.roomimg_name
+             from room r join roomimg rimg on r.room_no = rimg.room_no
+             group by room_no;";
      $room = $pdo->prepare( $sql );
      $room->execute();
   
@@ -23,8 +24,9 @@ try{
       $str .="<tr>
                   <th>房間編號</th>            
                   <th>房間名稱</th>
+                   <th>房間照片</th>
                   <th>房間價格</th>
-                  <th>房間介紹</th>        
+                  <th width='600'>房間介紹</th>        
              </tr>";
 
     while ( $roomRow = $room->fetch(PDO::FETCH_ASSOC) ){
@@ -71,8 +73,9 @@ try{
               $str .="<tr>
                         <td>{$roomRow["room_no"]}</td>
                         <td>{$roomRow["room_name"]}</td>
-                        <td>{$roomRow["room_price"]}</td>
-                        <td>{$roomRow["room_intro"]}</td>          
+                        <td><img width='133' height='100' src='images/room/{$roomRow["roomimg_name"]}'></td>
+                        <td>{$roomRow["room_price"]}元</td>
+                        <td width='600'>{$roomRow["room_intro"]}</td>          
                       </tr>"; 
           }
           else{

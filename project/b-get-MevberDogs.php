@@ -10,7 +10,7 @@ try{
   
   if( $pet->rowCount() == 0 ){ //找不到
     //傳回空的JSON字串
-    echo "{}";
+    // echo "{}";
   }else{ //找得到
      //取回一筆資料
     // $dogRow = $dog->fetch(PDO::FETCH_ASSOC);

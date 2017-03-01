@@ -3,7 +3,7 @@ try{
   require_once("connectFurkid.php");
 
 
-  $service = $_REQUEST["service"];
+  
   $mem_no =$_REQUEST["mem_no"];
   $dog_room = (int)$_REQUEST["dog_room"];
   $dog_name = $_REQUEST["dog_name"];
@@ -24,9 +24,8 @@ try{
   $pet_img = "pet_img.png";
 
 
-  $put_in_pet_no =(int)$_REQUEST["put_in_pet_no"];
-
-
+  $service = isset($_REQUEST["service_arr"]) == false ? null : $_REQUEST["service_arr"];
+  $put_in_pet_no = isset($_REQUEST["put_in_pet_no"]) == false ? null : $_REQUEST["put_in_pet_no"];
 
 
   $today = date("Y-m-d h:i:s");
@@ -168,6 +167,7 @@ try{
 
     // echo print_r($_POST);
   // echo date("$yyy-m-d");
+  echo "成功";
 
 
 

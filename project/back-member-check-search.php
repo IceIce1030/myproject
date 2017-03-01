@@ -50,8 +50,8 @@ try{
                   <td>{$memberRow["mem_mail"]}</td>
                   <td><img style='width: 80px;height: 80px;'' src='images/member/{$memberRow["mem_img"]}'></td>            
                 </tr>";                                        
-      }
-      }
+      
+      
       
     }//while
 
