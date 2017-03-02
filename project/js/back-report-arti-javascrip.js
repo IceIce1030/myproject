@@ -4,13 +4,15 @@ $(document).ready(function(){
     sessionStorage.where = 'all';
     artiShow();
 
-	$('#arti .search #searchReport').click(function(){
+	$('#arti  #searchReport').click(function(){
 		
+      
         sessionStorage.where = 'report';
 		artiShow();
 		
 	});
-	$('#arti .search #searchAll').click(function(){
+	$('#arti  #searchAll').click(function(){
+       
         sessionStorage.where = 'all';
 		artiShow();
 	});

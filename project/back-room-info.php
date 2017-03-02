@@ -23,7 +23,8 @@ try{
                   <th>房間照片</th>
                   <th>房間價格</th>
                   <th width='600'>房間介紹</th>
-                  <th>房間上限</th>          
+                  <th>房間上限</th>
+                  <th>編輯</th>         
              </tr>";
 
     while ( $roomRow = $room->fetch(PDO::FETCH_ASSOC) ){
@@ -34,7 +35,11 @@ try{
                   <td><img width='133' height='100' src='images/room/{$roomRow["roomimg_name"]}'></td>
                   <td>{$roomRow["room_price"]}元</td>
                   <td width='600' class='text-left'>{$roomRow["room_intro"]}</td>
-                  <td>{$roomRow["room_count"]}間</td>           
+                  <td>{$roomRow["room_count"]}間</td> 
+                  <td>
+                    <input type='button' class='inputBtn update' value='修改'>
+                    <input type='hidden' class='updateNo' value='{$roomRow["room_no"]}'>
+                  </td>          
                 </tr>";                                        
       
     }//while

@@ -11,7 +11,6 @@ $(document).ready(function(){
         var t1 = $('#expOut').val();
 
 
-
        roomSearch(t,t1);
 
 
@@ -35,6 +34,16 @@ $(document).ready(function(){
                     // alert(msg);
                     // console.log(msg);
                     $('#table').html(msg);
+
+
+                    $('.update').click(function(){
+                        var no = $(this).siblings('.updateNo').val();
+                        // alert(no);
+
+                        updateRoom(no);
+
+
+                    });
                    
                 },
 
@@ -64,7 +73,7 @@ $(document).ready(function(){
 
                 success: function(msg){
                     // alert(msg);
-                    console.log(msg);
+                   
                     $('#table').html(msg);
                  
                 },
@@ -77,5 +86,36 @@ $(document).ready(function(){
             
         }
 	//------------------------
+
+
+    //---------------------------
+    
+    
+    function updateRoom(room_no){
+           
+            var URLs="back-room-update.php";
+
+            $.ajax({
+                url: URLs,
+                data: {room_no},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    // alert(msg);
+                   console.log(msg);
+                    $('#table').html(msg);
+                 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
+    
     
     

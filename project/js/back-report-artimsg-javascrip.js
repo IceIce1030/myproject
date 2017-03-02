@@ -7,13 +7,13 @@ $(document).ready(function(){
 
     artimsgShow();
 
-	$('#artimsg .search #searchReport').click(function(){
+	$('#artimsg  #searchReport').click(function(){
 		
         sessionStorage.where = 'report';
 		artimsgShow();
 		
 	});
-	$('#artimsg .search #searchAll').click(function(){
+	$('#artimsg  #searchAll').click(function(){
         sessionStorage.where = 'all';
 		artimsgShow();
 	});
@@ -82,7 +82,7 @@ $(document).ready(function(){
                 dataType:'html',
 
                 success: function(msg){
-                    alert(msg);
+                    // alert(msg);
                     // console.log(msg);
                     artimsgShow('report');
                     // $('#table').html(msg);

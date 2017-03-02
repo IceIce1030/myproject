@@ -4,6 +4,8 @@ function doFirst(){
 	muchdays =[31,28,31,30,31,30,31,31,30,31,30,31];//月份大小
 	now = new Date();//現在時間
 
+
+
 	startDate = new Date();//入住時間
 	endDate = new Date();//退房時間
 
@@ -2028,6 +2030,8 @@ $(document).ready(function(){
 						
 						//狗狗名字
 						$('#petNameInput').val(returnArry[0].pet_name);
+						//訂單狗名字
+						$('.petName').text(returnArry[0].pet_name);
 						sessionStorage.petName = returnArry[0].pet_name;
 						nameInput=true;
 						
@@ -2085,21 +2089,25 @@ $(document).ready(function(){
 			                sessionStorage.mom = 'Amy';
 			                momnum=1;
 			                $('.momName-selectedy').text(sessionStorage.mom);
+			                $('.momName').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='黏人'){
 			                sessionStorage.mom = 'Sara';
 			                 momnum=2;
 			                $('.momName-selected').text(sessionStorage.mom);
+			                $('.momName').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='害羞'){
 			                sessionStorage.mom = 'Judy';
 			                 momnum=3;
 			                $('.momName-selected').text(sessionStorage.mom);
+			                $('.momName').text(sessionStorage.mom);
 			            }
 			            else if(sessionStorage.personality=='調皮'){
 			                sessionStorage.mom = 'Mary';
 			                 momnum=4;
 			                $('.momName-selected').text(sessionStorage.mom);
+			                $('.momName').text(sessionStorage.mom);
 			            }
 			            // 保母鎖住
 			            $('.circleNoWork').show();
@@ -2135,7 +2143,8 @@ $(document).ready(function(){
 				                	dogSize = mess["dog_size"];
 				                	sessionStorage.dogSize = mess["dog_size"];
 				                	$('.dog-size').text(mess["dog_size"]);
-				                	// console.log(dogSize);
+
+				                	
 				                	getService();
 				                	//有大小才有服務
 				                	
@@ -2148,8 +2157,7 @@ $(document).ready(function(){
 				                	$('.dogKind-img').attr('src',imgSrc);
 
 
-				                    // alert(msg);
-				                    // console.log(msg);
+				             
 				                    hasDogInfo=true;
 				                    getDog(mess["dog_size"],mypet_dog_id);
 				                    //取消註冊事件

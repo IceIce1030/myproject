@@ -4604,6 +4604,10 @@ html.fp-enabled,
   color: #fff;
 }
 
+.back .updateinput {
+  width: 100px;
+}
+
 .back .page {
   cursor: pointer;
 }
