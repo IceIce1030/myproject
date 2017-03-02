@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    imgtype=true;
     roomInfo();
 
     $('#searchAll').click(function(){
@@ -116,50 +117,41 @@ $(document).ready(function(){
                         message += 'File Type : ' + file.type + ' byte(s)\n';
                         message += 'Last Modified: '+file.lastModifiedDate.toDateString()+'\n';
 
+                        // console.log(file.type);
 
-                        // var fileExtArr = new Array("png", "jpg", "gif" , "bmp");
-                        
+                        if(file.type == 'image/png' || file.type == 'image/jpg' || file.type == 'image/gif' || file.type == 'image/jpeg' ) { 
+                                 
+                                    var img = $(this).siblings('img');
+                                    $(this).siblings('.imgName').val(file.name);
 
-                        //     for(i=0;i<fileExtArr.length;i++)
-                        //     {
-                        //         if (fileExtArr[i]==fileExt) 
-                        //         {
-                        //             document.write("合法的檔案");
-                        //             break;
-                        //         }   
-                        //     }
-                        //     if (fileExtArr.length==i) 
-                        //     {
-                        //         alert("不合法的檔案");
-                        //     }
+                                    
+                                    var readFile= new FileReader();//宣告一個物件
+                                    readFile.readAsDataURL(file);//以圖片影音格式回傳結果
+                                    readFile.addEventListener('load',function(){
+                                        // console.log(readFile);
+                                        img.attr("src",readFile.result);
+                                        // img.src=readFile.result;//result讀取到的內容
+                                        // // img.style.maxWidth = '133px';
+                                        // // img.style.maxHeight = '100px';
 
+                                    },false);
 
-                        // console.log(message);
-
-                        var img = $(this).siblings('img');
-                        // console.log(file.name);
-
-                        $(this).siblings('.imgName').val(file.name);
-
-                        
-                        var readFile= new FileReader();//宣告一個物件
-                        readFile.readAsDataURL(file);//以圖片影音格式回傳結果
-                        readFile.addEventListener('load',function(){
-                            // console.log(readFile);
-                            img.attr("src",readFile.result);
-                            // img.src=readFile.result;//result讀取到的內容
-                            // // img.style.maxWidth = '133px';
-                            // // img.style.maxHeight = '100px';
-
-                        },false);
-
-
-
-
+                                    imgtype=true;
+                        }
+                        else{
+                            alert('檔案格式不符合!');
+                            imgtype=false;
+                        }
 
                     });
                     $('.updateOk').click(function(){
-                        updateRoom();
+                        if(imgtype==false){
+                            alert('請上傳正確檔案格式!');
+                        }
+                        else{
+                            updateRoom();
+                        }
+                        
                     });
                  
                 },
