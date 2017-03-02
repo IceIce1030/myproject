@@ -4,48 +4,124 @@ function doFirst(){
 	muchdays =[31,28,31,30,31,30,31,31,30,31,30,31];//月份大小
 	now = new Date();//現在時間
 
-
-
 	startDate = new Date();//入住時間
 	endDate = new Date();//退房時間
 
 	current_year = new Date().getFullYear();//取得現在年分
 	current_month = new Date().getMonth();//取得現在月份
 
-
-	clcikCount=0;//點擊日期次數
-	
 	//檢查年分365 366天
 	CheckYear();
+	clcikCount=0;//點擊日期次數
+
+	var sY =  sessionStorage['startDateY'];
+	var sM =  sessionStorage['startDateM'];
+	var sD =  sessionStorage['startDateD'];
+
+    var  eY =  sessionStorage['endDateY'];
+    var  eM =  sessionStorage['endDateM'];
+    var  eD =  sessionStorage['endDateD'];
+   
 
 
-	//目前月份天數
-	days = muchdays[current_month];
-	// alert(days);
+	if( sY!=undefined && sM!=undefined && sD!=undefined && eY!=undefined && eM!=undefined && eD!=undefined){
+		startDate.setFullYear(sY);
+		startDate.setMonth(sM);
+		startDate.setDate(sD);
 
-	$id('before').addEventListener('click',monthLess,false);
-	$id('after').addEventListener('click',monthPlus,false);
+		endDate.setFullYear(eY);
+		endDate.setMonth(eM);
+		endDate.setDate(eD);
 
 
-	$id('year').innerText=current_year;
-	$id('month').innerText=current_month+1;
+		current_year = startDate.getFullYear();//取得現在年分
+		current_month = startDate.getMonth();//取得現在月份
 
-	//建置月曆
-	monthChange();
-
-	//顯示今天，找到今天 其他上透明
-	dayDivs = document.getElementsByClassName('dayy');
-	for(var i=0;i<dayDivs.length;i++)
-	{
-		if( now.getDate() == i+1 && now.getMonth()==current_month){
-			dayDivs[i].style.background= $grayCCC;
-			// alert('今天');
-			break;
+		//填入入住日期
+		var roomIn = document.getElementsByClassName('roomIn');
+		for(var i=0;i<roomIn.length;i++){
+			roomIn[i].innerText=startDate.toLocaleDateString("ja-JP");
 		}
-		else{
-			dayDivs[i].style.opacity= '0.4';
+		
+		//退房日期
+		var roomOut = document.getElementsByClassName('roomOut');
+		for(var i=0;i<roomOut.length;i++){
+			roomOut[i].innerText=endDate.toLocaleDateString("ja-JP");
+		}
+
+		$id('nowNeedSelectDate').innerText="請選擇房型";
+		//多少晚
+
+		muchNight=endDate-startDate;
+		muchNight=muchNight/86400000+1;
+
+		var roomDays = document.getElementsByClassName('roomDays');
+
+		sessionStorage.night = parseInt(muchNight);
+
+		for(var i=0;i<roomOut.length;i++){
+			roomDays[i].innerText= parseInt(muchNight);
+		}
+
+		days = muchdays[current_month];
+		monthChange();
+		coloringStarEnd();
+		coloring();
+		clcikCount=2;
+		getCanLiveRooms();
+
+		$id('month').innerText=current_month+1;
+		$id('year').innerText=current_year;
+		
+		
+		
+		dateSelected=true;
+
+
+		sessionStorage.removeItem("startDateY");
+		sessionStorage.removeItem("startDateM");
+		sessionStorage.removeItem("startDateD");
+
+		sessionStorage.removeItem("endDateY");
+		sessionStorage.removeItem("endDateM");
+		sessionStorage.removeItem("endDateD");
+	}
+	
+	// console.log(startDate,"||||",endDate);
+	
+
+	
+	else{
+
+		//目前月份天數
+		days = muchdays[current_month];
+		// alert(days);
+
+		$id('before').addEventListener('click',monthLess,false);
+		$id('after').addEventListener('click',monthPlus,false);
+
+
+		$id('year').innerText=current_year;
+		$id('month').innerText=current_month+1;
+
+		//建置月曆
+		monthChange();
+
+		//顯示今天，找到今天 其他上透明
+		dayDivs = document.getElementsByClassName('dayy');
+		for(var i=0;i<dayDivs.length;i++)
+		{
+			if( now.getDate() == i+1 && now.getMonth()==current_month){
+				dayDivs[i].style.background= $grayCCC;
+				// alert('今天');
+				break;
+			}
+			else{
+				dayDivs[i].style.opacity= '0.4';
+			}
 		}
 	}
+
 
 }//dofirst
 

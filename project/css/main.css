@@ -2205,68 +2205,125 @@ footer .copyright p {
 }
 
 @media screen and (min-width: 993px) {
+  #index-lightbox.pg2 {
+    position: fixed;
+    padding: 10% 250px;
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .pic {
+    width: 60%;
+    float: left;
+    padding: 5px;
+    background-color: #fff;
+  }
+  #index-lightbox.pg2 .pic img {
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text {
+    width: 40%;
+    height: 500px;
+    float: left;
+    text-align: center;
+  }
+  #index-lightbox.pg2 .text img {
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text .right {
+    width: 370px;
+    display: inline-block;
+  }
+  #index-lightbox.pg2 .text .right .inside {
+    width: 98%;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  #index-lightbox.pg2 .text .right .inside h2 {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #fff;
+    font-size: 30px;
+  }
+  #index-lightbox.pg2 .text .right .inside p {
+    color: #fff;
+    padding: 20px 0;
+  }
+  #index-lightbox.pg2 .text .right .inside a {
+    padding: 5px;
+    display: inline-block;
+    margin-top: 50px;
+    border: 2px solid #DAA356;
+    text-decoration: none;
+    color: #DAA356;
+  }
+  #index-lightbox.pg2 .text .right:before {
+    content: "";
+    width: 0;
+    height: 500px;
+    display: inline-block;
+    background-color: #f00;
+    vertical-align: middle;
+  }
+  #index-lightbox.pg2 .text .left {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #index-lightbox.pg2 .text .left .box > div {
+    padding: 10px;
+  }
   .index {
     /*PageOne end*/
     /*PageTwo end*/
     /*PageThree end*/
+    /*PageFour end*/
+    /*PageFive end*/
   }
-  .index .PageOne .page-view .project .text h1 {
+  .index .PageOne .page-view .project .text h2 {
     font-size: 50px;
     top: 60%;
   }
   .index .PageOne svg {
-    left: 0;
-    right: 0;
     top: 15%;
     max-width: 600px;
   }
   .index .PageOne .orderTable {
     padding: 15px;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, 350%);
+    top: 75%;
+    transform: translate(-50%, -50%);
   }
-  .index .PageOne .orderTable .button {
-    float: left;
-  }
-  .index .PageOne .orderTable .button a {
-    margin: 0 0 0 15px;
-  }
-  .index .PageOne .orderTable .orderText {
-    float: left;
-    margin: 0 15px 0 0;
+  .index .PageOne .orderTable .btnDiv {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 80px 0 25px;
   }
   .index .PageOne .orderTable .i-dateClick {
-    width: 200px;
+    width: 300px;
+    padding: 6px 12px;
+    margin: 0 25px 0 80px;
   }
   .index .PageTwo header {
-    padding: 50px 0 50px;
+    padding: 70px 0 30px;
     text-align: center;
     font-size: 35px;
   }
   .index .PageTwo .box {
-    margin: 0 auto;
+    max-width: 1245px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .index .PageTwo .colum {
+    width: 400px;
+    margin: 10px 0 20px;
+    float: left;
+  }
+  .index .PageTwo .colum:nth-child(2),
+  .index .PageTwo .colum:nth-child(5) {
+    margin: 10px 20px 20px 25px;
   }
   .index .PageTwo .house {
-    float: left;
-    width: 31.33%;
-    padding: 5px;
-    margin: 1%;
-  }
-  .index .PageTwo .bgDog {
-    position: absolute;
-    bottom: 0;
-  }
-  .index .PageTwo .dogmove {
-    animation: dogmove 1.7s 1s both;
-  }
-  @keyframes dogmove {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 0;
-    }
+    width: 100%;
+    overflow: hidden;
   }
   .index .PageThree header {
     padding: 150px 0 0px;
@@ -2275,13 +2332,107 @@ footer .copyright p {
   }
   .index .PageThree img {
     width: 700px;
+    border-radius: 50%;
+    overflow: hidden;
   }
-  .index .PageThree #myMovie {
-    width: 700px;
+  .index .PageThree .blackbg {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
-  .index .PageThree #preview {
-    width: 100vw;
-    height: 300px;
+  .index .PageThree .osxCountainer {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+  }
+  .index .PageThree .osx-dock {
+    width: 1020px;
+    position: absolute;
+    margin: auto;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .index .PageThree .osx-dock .dock {
+    float: left;
+    width: 150px;
+    height: 150px;
+    transform-origin: center bottom;
+    border-radius: 50%;
+    transition: 2s;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 0 10px 0;
+    transform: scale(1);
+    z-index: 300;
+    -webkit-box-reflect: below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
+  }
+  .index .PageThree .osx-dock .dock .fornt {
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: perspective(600px) rotateY(0deg);
+    position: absolute;
+    transform: scale(1);
+    left: 0;
+    top: 0;
+    transition: 1.7s;
+  }
+  .index .PageThree .osx-dock .dock .back {
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transform: perspective(600px) rotateY(180deg);
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    transition: 1.7s;
+  }
+  .index .PageFour .back {
+    display: none;
+  }
+  .index .PageFive .home_dis {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  .index .PageFive .disclass {
+    width: 25%;
+    height: 100%;
+    display: block;
+    position: relative;
+    transition: 1.7s;
+  }
+  .index .PageFive .disclass .distitle h2 {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 50%;
+    transition: .5s;
+  }
+  .index .PageFive .disclass.open .distitle h2 {
+    top: 90%;
+    opacity: 0;
+  }
+  .index .PageFive .disclass:hover {
+    width: 40%;
+  }
+  .index .PageFive .disclass.open {
+    width: 80%;
   }
   .index .PageFive .post {
     height: 180px;
@@ -2289,53 +2440,266 @@ footer .copyright p {
   }
   .index .PageFive .post .postImg {
     width: 10%;
-    height: 140px;
   }
   .index .PageFive .post .txt {
-    max-width: 650px;
-    margin-left: 20px;
+    padding: 0 15px;
+  }
+  .index .PageFive .disclass .disInfo {
+    width: 90%;
+    height: 100%;
+    transition: 1.2s;
+    border-radius: 10px;
+    position: absolute;
+    top: 150%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
+  .index .PageFive .disclass .disInfo .post {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    max-height: 150px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: box-shadow .4s ease;
+  }
+  .index .PageFive .disclass .disInfo .post:hover {
+    box-shadow: 0px 1px 3px #555;
+  }
+  .index .PageFive .disclass .disInfo .post .postImg {
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    padding-top: 50px;
+    width: 10%;
+  }
+  .index .PageFive .disclass .disInfo .post .txt {
+    float: left;
+    height: auto;
+    width: 90%;
+  }
+  .index .PageFive .disclass .disInfo .post .txt > div {
+    margin-bottom: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a {
+    color: #434343;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a:hover {
+    color: #774720;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postDate {
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postContent {
+    overflow: hidden;
+    max-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo {
+    font-size: 13px;
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .author {
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .watch:before {
+    content: '\f06e';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .message:before {
+    content: '\f27a';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 90px;
+    height: 30px;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.foodLabel {
+    background-color: #F4A66F;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.shareLabel {
+    background-color: #8CD899;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.healthLabel {
+    background-color: #57B1DA;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.newLabel {
+    background-color: #D9ABE6;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-height: 800px) and (min-width: 992px) {
+  .index .PageTwo .box {
+    max-width: 795px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+  }
+  .index .PageTwo .colum {
+    width: 250px;
+    float: left;
+  }
+  .index .PageTwo .colum:nth-child(2),
+  .index .PageTwo .colum:nth-child(5) {
+    margin: 10px 20px 20px 25px;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #index-lightbox.pg2 {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    position: fixed;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 50px 100px 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+  }
+  #index-lightbox.pg2 .pic {
+    display: inline-block;
+    width: 60%;
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+  }
+  #index-lightbox.pg2 .pic img {
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text {
+    width: 100%;
+    text-align: center;
+  }
+  #index-lightbox.pg2 .text .left {
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .left .box {
+    padding-top: 10px;
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .left .box img {
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text .left .box .img {
+    width: 100px;
+    display: inline-block;
+    padding: 5px;
+  }
+  #index-lightbox.pg2 .text .right {
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .right h2 {
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+  }
+  #index-lightbox.pg2 .text .right p {
+    margin: 20px 0;
+    color: #fff;
+  }
+  #index-lightbox.pg2 .text .right a {
+    margin: 10px 0;
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: #DAA356;
+    border: 2px solid #DAA356;
+  }
+  #index-lightbox.pg3 {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    position: fixed;
+    padding: 50px 100px 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+    margin: auto;
+  }
+  #index-lightbox.pg3 .pic {
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  #index-lightbox.pg3 .pic img {
+    border-radius: 50%;
+    max-width: 400px;
+    opacity: 1;
+  }
+  #index-lightbox.pg3 .text {
+    width: 100%;
+    text-align: center;
+    border-radius: 50%;
+  }
+  #index-lightbox.pg3 .text h2 {
+    padding: 10px 0;
+  }
+  #index-lightbox.pg3 .text p {
+    margin: 20px 0;
+    color: #fff;
+  }
+  #index-lightbox.pg3 .text a {
+    margin: 10px 0;
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: #DAA356;
+    border: 2px solid #DAA356;
+  }
   .index {
-    /*Page One end*/
+    /*PageOne end*/
     /*PageTwo end*/
     /*PageThree end*/
+    /*PageFour end*/
+    /*PageFive end*/
   }
-  .index #fp-nav {
-    display: none;
-  }
-  .index .PageOne .page-view .project .text h1 {
-    font-size: 30px;
-    top: 40%;
+  .index .PageOne .page-view .project .text h2 {
+    font-size: 40px;
+    top: 55%;
   }
   .index .PageOne svg {
-    left: 0;
-    right: 0;
     top: 20%;
-    max-width: 200px;
+    max-width: 400px;
   }
   .index .PageOne .orderTable {
-    background-color: rgba(0, 0, 0, 0.6);
-    left: 0;
-    right: 0;
-    bottom: 20%;
+    padding: 5px;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+    padding: 10px 5px 5px;
   }
-  .index .PageOne .orderTable a {
+  .index .PageOne .orderTable .btnDiv {
+    display: block;
     width: 100%;
-    padding: 10px;
+    vertical-align: middle;
+    padding: 5px;
   }
-  .index .PageOne .orderTable .orderText {
-    padding: 10px;
+  .index .PageOne .orderTable .btnDiv .btnLink {
+    width: 100%;
   }
   .index .PageOne .orderTable .bin-calendar {
     width: 100%;
-    padding: 5px 0 15px;
+    padding: 0 5px 5px 5px;
   }
   .index .PageOne .orderTable .i-dateClick {
-    width: 200px;
-    margin: auto;
+    width: 300px;
+    padding: 6px 12px;
   }
   .index .PageTwo header {
     padding: 100px 6px 20px;
@@ -2343,27 +2707,552 @@ footer .copyright p {
     font-size: 20px;
   }
   .index .PageTwo .box {
-    padding: 5px;
-    margin-bottom: 10px;
+    width: 80%;
+    margin: auto;
+    box-sizing: border-box;
+    padding-top: 10px;
+  }
+  .index .PageTwo .colum {
+    width: 48%;
+    margin: 10px 1% 20px;
+    float: left;
   }
   .index .PageTwo .house {
     max-width: 350px;
-    padding: 5px;
   }
   .index .PageThree header {
-    padding: 100px 6px 20px;
+    padding: 100px 0 0px;
+    text-align: center;
+    font-size: 35px;
+  }
+  .index .PageThree img {
+    width: 200px;
+  }
+  .index .PageThree .osx-dock {
+    padding: 50px 40px 80px;
+  }
+  .index .PageThree .osx-dock .dock {
+    float: left;
+    width: 33.33%;
+    transform-origin: center bottom;
+    border-radius: 50%;
+    transition: .6s;
+    position: relative;
+    padding: 5px 0;
+    z-index: 300;
+  }
+  .index .PageThree .osx-dock .dock .dockA {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .index .PageThree .osx-dock .dock .fornt {
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: perspective(600px) rotateY(0deg);
+    position: absolute;
+    transform: scale(1);
+    left: 0;
+    top: 0;
+    transition: 2s;
+  }
+  .index .PageThree .osx-dock .dock .back {
+    display: none;
+  }
+  .index .PageFour .back {
+    display: none;
+  }
+  .index .PageFive .home_dis {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  .index .PageFive .disclass {
+    width: 25%;
+    height: 100%;
+    display: block;
+    position: relative;
+    transition: .5s;
+  }
+  .index .PageFive .disclass .distitle h2 {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 50%;
+    transition: .5s;
+  }
+  .index .PageFive .disclass.open .distitle h2 {
+    top: 90%;
+    opacity: 0;
+  }
+  .index .PageFive .disclass:hover {
+    width: 40%;
+  }
+  .index .PageFive .disclass.open {
+    width: 80%;
+  }
+  .index .PageFive .post {
+    padding: 20px;
+  }
+  .index .PageFive .post .postImg {
+    width: 10%;
+    display: none;
+  }
+  .index .PageFive .disclass .disInfo {
+    width: 90%;
+    height: 100vh;
+    transition: 1.2s;
+    border-radius: 10px;
+    position: absolute;
+    top: 110%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
+  .index .PageFive .disclass .disInfo .post {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    transition: box-shadow .4s ease;
+  }
+  .index .PageFive .disclass .disInfo .post:hover {
+    box-shadow: 0px 1px 3px #555;
+  }
+  .index .PageFive .disclass .disInfo .post .postImg {
+    overflow: hidden;
+    float: left;
+    width: 10%;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt {
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a {
+    color: #434343;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a:hover {
+    color: #774720;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postDate {
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postContent {
+    overflow: hidden;
+    max-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo {
+    font-size: 13px;
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .author {
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .watch:before {
+    content: '\f06e';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .message:before {
+    content: '\f27a';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 90px;
+    height: 30px;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.foodLabel {
+    background-color: #F4A66F;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.shareLabel {
+    background-color: #8CD899;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.healthLabel {
+    background-color: #57B1DA;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.newLabel {
+    background-color: #D9ABE6;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #index-lightbox.pg2 {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    position: fixed;
+    padding: 60px 5px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+  }
+  #index-lightbox.pg2 .pic {
+    width: 100%;
+    max-width: 310px;
+    margin: auto;
+    background-color: #fff;
+  }
+  #index-lightbox.pg2 .pic img {
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text {
+    width: 100%;
+    text-align: center;
+  }
+  #index-lightbox.pg2 .text .left {
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .left .box {
+    padding-top: 5px;
+    width: 310px;
+    margin: auto;
+  }
+  #index-lightbox.pg2 .text .left .img {
+    display: inline-block;
+    width: 100px;
+  }
+  #index-lightbox.pg2 .text .left .img img {
+    width: 100%;
+    opacity: 1;
+  }
+  #index-lightbox.pg2 .text .right {
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .right h2 {
+    padding: 10px 0 0;
+  }
+  #index-lightbox.pg2 .text .right p {
+    margin: 10px 0;
+    color: #fff;
+  }
+  #index-lightbox.pg2 .text .right a {
+    margin: 10px 0;
+    padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: #DAA356;
+    border: 2px solid #DAA356;
+  }
+  #index-lightbox.pg3 {
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    position: fixed;
+    padding: 60px 5px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+  }
+  #index-lightbox.pg3 .left {
+    display: none;
+  }
+  #index-lightbox.pg3 .pic {
+    width: 100%;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  #index-lightbox.pg3 .pic img {
+    border-radius: 50%;
+    opacity: 1;
+  }
+  #index-lightbox.pg3 .text {
+    width: 100%;
+    text-align: center;
+    border-radius: 50%;
+  }
+  #index-lightbox.pg3 .text h2 {
+    padding: 10px 0 0;
+  }
+  #index-lightbox.pg3 .text p {
+    margin: 10px 0;
+    color: #fff;
+  }
+  #index-lightbox.pg3 .text a {
+    padding: 5px;
+    margin: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+    color: #DAA356;
+    border: 2px solid #DAA356;
+  }
+  .index {
+    /*Page One end*/
+    /*PageTwo end*/
+    /*PageThree end*/
+    /*PageFour end*/
+    /*PageFive end*/
+  }
+  .index #fp-nav {
+    display: none;
+  }
+  .index .PageOne .page-view .project .text h2 {
+    font-size: 20px;
+    top: 45%;
+  }
+  .index .PageOne svg {
+    top: 20%;
+    max-width: 200px;
+  }
+  .index .PageOne .orderTable {
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 0%;
+    right: 0%;
+    top: 60%;
+    width: 95%;
+    padding: 10px 5px 5px;
+  }
+  .index .PageOne .orderTable .btnDiv {
+    width: 100%;
+    vertical-align: middle;
+    padding: 5px;
+  }
+  .index .PageOne .orderTable .btnDiv .btnLink {
+    width: 100%;
+  }
+  .index .PageOne .orderTable .bin-calendar {
+    width: 100%;
+    padding: 0 5px 5px 5px;
+  }
+  .index .PageOne .orderTable .i-dateClick {
+    width: 100%;
+    margin: auto;
+    padding: 6px 12px;
+  }
+  .index .PageTwo {
+    padding-bottom: 50px;
+  }
+  .index .PageTwo header {
+    padding: 80px 6px 20px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .index .PageTwo .box {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  .index .PageTwo .colum {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 20px;
+  }
+  .index .PageTwo .house {
+    max-width: 350px;
+  }
+  .index .PageThree {
+    padding-bottom: 50px;
+  }
+  .index .PageThree header {
+    padding: 40px 6px;
     text-align: center;
     font-size: 20px;
   }
   .index .PageThree img {
     width: 200px;
   }
-  .index .PageThree #myMovie {
-    width: 200px;
+  .index .PageThree .blackbg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
-  .index .PageThree #preview {
-    width: 100vw;
-    height: 100vw;
+  .index .PageThree .osxCountainer {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+  }
+  .index .PageThree .osx-dock .dock {
+    float: left;
+    width: 50%;
+    transform-origin: center bottom;
+    border-radius: 50%;
+    transition: .6s;
+    position: relative;
+    padding: 5px 0;
+    z-index: 300;
+  }
+  .index .PageThree .osx-dock .dock .dockA {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .index .PageThree .osx-dock .dock .fornt {
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: perspective(600px) rotateY(0deg);
+    position: absolute;
+    transform: scale(1);
+    left: 0;
+    top: 0;
+    transition: 2s;
+  }
+  .index .PageThree .osx-dock .dock .back {
+    display: none;
+  }
+  .index .PageFour .scroll-icon {
+    display: none;
+  }
+  .index .PageFour .back {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    text-align: center;
+    font-size: 50px;
+  }
+  .index .PageFour .back span {
+    padding: 0 30px;
+    color: #f4511e;
+  }
+  .index .PageFive .home_dis {
+    width: 100%;
+  }
+  .index .PageFive .disclass {
+    width: 100%;
+    height: 100px;
+    display: block;
+    position: relative;
+    transition: .6s;
+  }
+  .index .PageFive .disclass .distitle {
+    vertical-align: middle;
+  }
+  .index .PageFive .disclass .distitle h2 {
+    text-align: center;
+    color: #fff;
+    line-height: 100px;
+    margin: auto;
+    transition: .8s;
+  }
+  .index .PageFive .disclass.open {
+    height: 800px;
+  }
+  .index .PageFive .disclass .disInfo {
+    width: 90%;
+    display: none;
+    transition: 1s;
+    border-radius: 10px;
+    position: absolute;
+    top: 140px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    opacity: 0;
+  }
+  .index .PageFive .disclass .disInfo .post {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: box-shadow .4s ease;
+  }
+  .index .PageFive .disclass .disInfo .post:hover {
+    box-shadow: 0px 1px 3px #555;
+  }
+  .index .PageFive .disclass .disInfo .post .postImg {
+    overflow: hidden;
+    display: none;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt {
+    height: auto;
+  }
+  .index .PageFive .disclass .disInfo .post .txt > div {
+    margin-bottom: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a {
+    color: #434343;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postTitle a:hover {
+    color: #774720;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postDate {
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postContent {
+    overflow: hidden;
+    max-height: 44px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo {
+    font-size: 13px;
+    color: #7d7d7d;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .author {
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .watch:before {
+    content: '\f06e';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .txt .postInfo .message:before {
+    content: '\f27a';
+    font-family: fontAwesome;
+    margin-right: 5px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel {
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 90px;
+    height: 30px;
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.foodLabel {
+    background-color: #F4A66F;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.shareLabel {
+    background-color: #8CD899;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.healthLabel {
+    background-color: #57B1DA;
+  }
+  .index .PageFive .disclass .disInfo .post .itemLabel.newLabel {
+    background-color: #D9ABE6;
   }
 }
 
@@ -2484,7 +3373,6 @@ html.fp-enabled,
 
 .iScrollIndicator {
   border: 0 !important;
-  opacity: 0;
 }
 
 .fp-notransition {
@@ -2645,12 +3533,84 @@ html.fp-enabled,
   background: #aaa;
 }
 
+#index-lightbox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3000;
+  position: fixed;
+}
+
+#index-lightbox .pic {
+  width: 100%;
+  padding: 5px;
+}
+
+#index-lightbox img {
+  opacity: 0;
+  width: 100%;
+  vertical-align: middle;
+}
+
+#index-lightbox .text a {
+  text-decoration: none;
+  border-radius: 5px;
+}
+
 .index {
   /*Page One end*/
   /*Page Two end*/
   /*Page Three end*/
   /*Page Four end*/
   /*Page Five end*/
+}
+
+.index .btnDiv {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.index .btnLink {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(244, 81, 30, 0.9);
+  letter-spacing: 2px;
+  transition: all 0.4s;
+}
+
+.index .btnLink:hover {
+  background-color: #f4511e;
+  color: #fff;
+}
+
+.index .inputBtn {
+  /*     margin: 10px auto;
+    width: 80%; */
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: solid transparent;
+  border-radius: 5px;
+  background: #f34e1b;
+  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all .4s;
+}
+
+.index .inputBtn:hover {
+  background: #da3c0b;
+  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
 }
 
 .index img {
@@ -2670,7 +3630,8 @@ html.fp-enabled,
   margin: auto;
   left: 0;
   right: 0;
-  z-index: 99;
+  bottom: 0;
+  z-index: 990;
   animation: scrollDown 2s infinite;
 }
 
@@ -2692,7 +3653,7 @@ html.fp-enabled,
 
 .index .PageOne {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: url(../img/nature-sprite.png) no-repeat -9999px -9999px;
   /*===================================*/
 }
@@ -2703,7 +3664,6 @@ html.fp-enabled,
 
 .index .PageOne .page-view .project:nth-child(1) {
   background-image: url(../img/dog1.jpg);
-  -ms-background-image: url(../img/dog1.jpg);
 }
 
 .index .PageOne .page-view .project:nth-child(2) {
@@ -2737,8 +3697,8 @@ html.fp-enabled,
 }
 
 .index .PageOne .page-view {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -2754,19 +3714,18 @@ html.fp-enabled,
 }
 
 .index .PageOne .page-view .project .text {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.index .PageOne .page-view .project .text h1 {
+.index .PageOne .page-view .project .text h2 {
   font-family: 微軟正黑體;
-  color: #fff;
+  color: white;
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  display: table;
   text-align: center;
 }
 
@@ -2797,6 +3756,8 @@ html.fp-enabled,
 }
 
 .index .PageOne svg {
+  left: 0;
+  right: 0;
   position: absolute;
   z-index: 300;
   margin: auto;
@@ -2805,10 +3766,10 @@ html.fp-enabled,
 
 .index .PageOne .ccc {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   display: none;
-  z-index: 500;
+  z-index: 5000;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
@@ -2817,7 +3778,6 @@ html.fp-enabled,
 .index .PageOne .dateRoom {
   background-color: rgba(249, 247, 232, 0.8);
   border-radius: 5px;
-  box-shadow: 3px 3px 10px #ccc;
 }
 
 .index .PageOne .b-select-date {
@@ -2914,7 +3874,8 @@ html.fp-enabled,
   opacity: .5;
 }
 
-.index .PageOne .b-select-date .days #table:after, .index .PageOne .b-select-date .days .weekend:after {
+.index .PageOne .b-select-date .days #table:after,
+.index .PageOne .b-select-date .days .weekend:after {
   content: '';
   display: block;
   clear: both;
@@ -2967,41 +3928,37 @@ html.fp-enabled,
   position: absolute;
   margin: auto;
   z-index: 300;
+  border-radius: 5px;
   text-align: center;
-  background-color: #DAA356;
-}
-
-.index .PageOne .orderTable a {
-  color: #DAA356;
-  border: 0px;
-  display: inline-block;
-  outline: 0px;
-  height: 25px;
-  padding: 0 5px;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.index .PageOne .orderTable .orderText {
-  color: #000;
-  line-height: 25px;
+  background-color: rgba(218, 163, 86, 0.6);
 }
 
 .index .PageOne .orderTable .bin-calendar {
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .index .PageOne .orderTable .bin-calendar .i-dateClick {
   cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 2px;
+  vertical-align: middle;
+  font-size: 16px;
+  border-radius: 5px;
   position: relative;
-  color: #fff;
-  height: 25px;
-  border: 1px solid #999;
+  color: rgba(0, 0, 0, 0.6);
+  height: 37px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .index .PageTwo {
-  height: 100vh;
-  width: 100vw;
-  background-image: url(../img/bg02.png);
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/bgBody.jpg);
+}
+
+.index .PageTwo header {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .index .PageTwo img {
@@ -3009,17 +3966,101 @@ html.fp-enabled,
   vertical-align: middle;
 }
 
-.index .PageTwo .box {
-  max-width: 1100px;
-  width: 100%;
+.index .PageTwo .colum {
+  padding: 5px;
+  position: relative;
+}
+
+.index .PageTwo .colum img {
+  padding: 5px;
+  border-bottom-left-radius: 20px 500px;
+  border-bottom-right-radius: 500px 30px;
+  border-top-right-radius: 5px 100px;
+}
+
+.index .PageTwo .colum:nth-child(1) {
+  transform: rotate(4deg);
+}
+
+.index .PageTwo .colum:nth-child(2) {
+  transform: rotate(-3deg);
+}
+
+.index .PageTwo .colum:nth-child(3) {
+  transform: rotate(2deg);
+}
+
+.index .PageTwo .colum:nth-child(4) {
+  transform: rotate(-2deg);
+}
+
+.index .PageTwo .colum:nth-child(5) {
+  transform: rotate(3deg);
+}
+
+.index .PageTwo .colum:nth-child(6) {
+  transform: rotate(-4deg);
+}
+
+.index .PageTwo .colum:after {
+  display: block;
+  opacity: 0;
+  width: 180px;
+  height: 30px;
+  content: "";
+  font-family: 微軟正黑體;
+  text-align: center;
+  font-size: 20px;
+  margin-left: -90px;
+  border: 1px solid rgba(200, 200, 200, 0.8);
+  background: rgba(254, 254, 254, 0.8);
+  box-shadow: 0px 0 3px rgba(0, 0, 0, 0.1);
+  transform: rotate(-5deg);
+  position: absolute;
+  transition: 3s;
+  left: 50%;
+  top: -15px;
+}
+
+.index .PageTwo .colum:nth-child(1):after {
+  content: "鄉村風";
+}
+
+.index .PageTwo .colum:nth-child(2):after {
+  content: "夢幻風";
+}
+
+.index .PageTwo .colum:nth-child(3):after {
+  content: "工業風";
+}
+
+.index .PageTwo .colum:nth-child(4):after {
+  content: "北歐風";
+}
+
+.index .PageTwo .colum:nth-child(5):after {
+  content: "現代風";
+}
+
+.index .PageTwo .colum:nth-child(6):after {
+  content: "普普風";
+}
+
+.index .PageTwo .colum.change:after {
+  opacity: 1;
 }
 
 .index .PageTwo .house {
+  vertical-align: middle;
   position: relative;
   background-color: #fff;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  margin: auto;
   cursor: pointer;
+  border-bottom-left-radius: 20px 500px;
+  border-bottom-right-radius: 500px 30px;
+  border-top-right-radius: 5px 100px;
 }
 
 .index .PageTwo .house > div {
@@ -3040,54 +4081,6 @@ html.fp-enabled,
   display: block;
   padding: 10px 0;
   margin: 40px 20px 20px 20px;
-}
-
-.index .PageTwo #lightbox {
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  box-sizing: border-box;
-  padding: 250px 250px 200px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  top: 0;
-  left: 0;
-  z-index: 3000;
-}
-
-.index .PageTwo #lightbox .pic {
-  width: 60%;
-  float: left;
-  padding: 5px;
-  background-color: #fff;
-}
-
-.index .PageTwo #lightbox .text {
-  width: 40%;
-  float: left;
-  box-sizing: border-box;
-  padding: 40px;
-}
-
-.index .PageTwo #lightbox .text h3 {
-  padding: 10px 10px 10px 0;
-  border-bottom: 1px solid #fff;
-  font-size: 30px;
-}
-
-.index .PageTwo #lightbox .text p {
-  color: #fff;
-  padding: 20px 0;
-}
-
-.index .PageTwo #lightbox .text a {
-  padding: 5px;
-  display: inline-block;
-  margin-top: 50px;
-  border: 2px solid #DAA356;
-  text-decoration: none;
-  color: #DAA356;
 }
 
 .index .PageTwo .hmoveA {
@@ -3169,92 +4162,98 @@ html.fp-enabled,
 }
 
 .index .PageThree {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background: url(../img/dog3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   position: relative;
-  /*---------------*/
-  /***** Marley *****/
-  /*---------------*/
 }
 
 .index .PageThree .blackbg {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 1;
+}
+
+.index .PageThree .scroll-icon-pg3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .index .PageThree header {
   color: #fff;
 }
 
-.index .PageThree .grid {
-  overflow: hidden;
+.index .PageThree .box {
+  width: 100%;
+  height: 100%;
+}
+
+.index .PageThree .osx-dock .dock .dockA {
+  display: block;
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 1.2s;
   cursor: pointer;
+  overflow: hidden;
+  transform: perspective(600px) rotateY(0deg);
 }
 
-.index .PageThree figure.effect-marley figcaption {
+.index .PageThree .osx-dock .dock .dockA .txt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  bottom: -65%;
+  border-radius: 50%;
   text-align: center;
-}
-
-.index .PageThree figure.effect-marley h2,
-.index .PageThree figure.effect-marley p {
-  position: absolute;
-  right: 30px;
-  left: 30px;
-  padding: 10px 0;
-  color: #fff;
-  transition: 1s;
-}
-
-.index .PageThree figure.effect-marley p {
-  bottom: 30px;
-  line-height: 1.5;
-  transform: translate3d(0, 100%, 0);
-}
-
-.index .PageThree figure.effect-marley h2 {
   background-color: rgba(0, 0, 0, 0.6);
-  bottom: 60px;
-  transition: 1s;
-  transform: translate3d(0, 20px, 0);
+  color: #fff;
+  transition: 1.5s linear;
 }
 
-.index .PageThree figure.effect-marley.open:hover h2 {
-  transform: translate3d(0, 0, 0);
-  bottom: 320px;
-  transition: 1s;
+.index .PageThree .osx-dock .dock .dockA .txt h2 {
+  padding-top: 5px;
+  transition: 0s;
 }
 
-.index .PageThree figure.effect-marley p {
-  opacity: 0;
-  transition: opacity 1s, transform 1s;
+.index .PageThree .osx-dock .dock .dockA .txt p {
+  padding-top: 30px;
 }
 
-.index .PageThree figure.effect-marley.open:hover h2::after,
-.index .PageThree figure.effect-marley.open:hover p {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+.index .PageThree .osx-dock .dock .dockA img {
+  width: 100%;
+  border-radius: 50%;
+  transition: 1.7s linear;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.index .PageThree #preview-coverflow {
-  position: absolute;
-  margin: auto;
-  bottom: 120px;
-  left: 0;
-  right: 0;
-  z-index: 2000;
+.index .PageThree .osx-dock .dock:hover {
+  transform-origin: center bottom;
+}
+
+.index .PageThree .osx-dock .dock.big {
+  transform-origin: center bottom;
+  z-index: 690;
+  transform: scale(3);
+}
+
+.index .PageThree .osx-dock .dock.small .dockA {
+  transform-origin: center;
+  transform: scale(1);
 }
 
 .index .PageFour {
   width: 100vw;
   height: 100vh;
+  position: relative;
   height: 100vh;
   overflow: hidden;
   /* Wrapper and figures */
@@ -3263,7 +4262,6 @@ html.fp-enabled,
   /* Overlay on figure */
   /* Hide figure overlay when it becomes current */
   /* Special classes for transitions and perspective */
-  /* The no-JS fallback look does not need to be boring ;) */
 }
 
 .index .PageFour img {
@@ -3288,20 +4286,18 @@ html.fp-enabled,
 }
 
 .index .PageFour .photostack figure {
-  width: 320px;
+  width: 300px;
   height: 360px;
   position: relative;
   display: inline-block;
-  background: #f0f0f0;
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   text-align: center;
-  margin: 5px;
 }
 
 .index .PageFour .photostack figure .card {
   background-color: #fdeeca;
-  border-radius: 15px;
+  border-radius: 5px;
   position: relative;
   overflow: hidden;
 }
@@ -3311,11 +4307,6 @@ html.fp-enabled,
   height: 210px;
   width: 100%;
   overflow: hidden;
-}
-
-.index .PageFour .photostack figure .card img {
-  transition: all 1s;
-  width: 100%;
 }
 
 .index .PageFour .photostack figure .card .text {
@@ -3409,27 +4400,12 @@ html.fp-enabled,
   margin: 0;
 }
 
-.index .PageFour .photostack figcaption h2 {
-  margin: 20px 0 0 0;
-  color: #a7a0a2;
-  font-size: 16px;
-}
-
-.index .PageFour .photostack-img {
-  outline: none;
-  display: block;
-  width: 240px;
-  background: #f9f9f9;
-}
-
 .index .PageFour .photostack nav {
   position: absolute;
   width: 100%;
-  bottom: 50px;
   z-index: 90;
   text-align: center;
-  left: 0;
-  -webkit-transition: opacity 0.3s;
+  display: none;
   transition: opacity 0.3s;
 }
 
@@ -3481,12 +4457,10 @@ html.fp-enabled,
 
 .index .PageFour .photostack nav span.current {
   background: #888;
-  -webkit-transform: scale(1);
   transform: scale(1);
 }
 
 .index .PageFour .photostack nav span.current.flip {
-  -webkit-transform: scale(1) rotateY(-180deg) translateZ(-1px);
   transform: scale(1) rotateY(-180deg) translateZ(-1px);
   background: #555;
 }
@@ -3502,29 +4476,27 @@ html.fp-enabled,
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 5px;
   top: 0;
   left: 0;
+  cursor: pointer;
   visibility: visible;
   opacity: 1;
   background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: opacity 0.6s;
   transition: opacity 0.6s;
 }
 
 .index .PageFour figure.photostack-current::after {
-  -webkit-transition: opacity 0.6s, visibility 0s 0.6s;
   transition: opacity 0.6s, visibility 0s 0.6s;
   opacity: 0;
   visibility: hidden;
 }
 
 .index .PageFour .photostack-transition figure {
-  transition: transform 0.6s ease-in-out;
+  transition: transform .8s ease-in-out;
 }
 
 .index .PageFour .photostack-perspective {
-  -webkit-perspective: 1800px;
   perspective: 1800px;
 }
 
@@ -3551,62 +4523,14 @@ html.fp-enabled,
   display: block;
 }
 
-.index .PageFour .no-csstransformspreserve3d figure.photostack-showback .photostack-back {
-  display: block;
-}
-
-.index .PageFour .no-js .photostack figure {
-  box-shadow: -2px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.index .PageFour .no-js .photostack figure::after {
-  display: none;
-}
-
-.index .PageFour .no-js .photostack figure:nth-child(3n) {
-  -webkit-transform: translateX(-10%) rotate(5deg);
-  transform: translateX(-10%) rotate(5deg);
-}
-
-.index .PageFour .no-js .photostack figure:nth-child(3n-2) {
-  -webkit-transform: translateY(10%) rotate(-3deg);
-  transform: translateY(10%) rotate(-3deg);
-}
-
 .index .PageFour #photostack-1 nav span.current {
   background: #888;
   -webkit-transform: scale(0.61);
   transform: scale(0.61);
 }
 
-.index .PageFive {
-  width: 100vw;
-  height: 100vh;
-}
-
-.index .PageFive .home_dis {
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  display: flex;
-  overflow: hidden;
-}
-
 .index .PageFive .disclass {
-  width: 25%;
-  height: 100vh;
-  display: block;
-  position: relative;
-  transition: .5s;
-  float: left;
-}
-
-.index .PageFive .disclass:hover {
-  width: 40%;
-}
-
-.index .PageFive .disclass.open {
-  width: 80%;
+  overflow: hidden;
 }
 
 .index .PageFive .disclass1 {
@@ -3640,134 +4564,32 @@ html.fp-enabled,
   cursor: pointer;
 }
 
+.index .PageFive .disclass .distitle.bgc {
+  background-color: transparent;
+}
+
+.index .PageFive .post {
+  border-radius: 5px;
+}
+
+.index .PageFive .post:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  clear: both;
+}
+
 .index .PageFive .disclass .distitle:hover {
   background-color: transparent;
 }
 
-.index .PageFive .disclass .distitle h2 {
-  position: absolute;
-  text-align: center;
-  color: #fff;
-  margin: auto;
-  right: 0;
-  left: 0;
-  top: 50%;
-  transition: .5s;
-}
-
-.index .PageFive .disclass.open .distitle h2 {
-  top: 90%;
-  opacity: 0;
-}
-
-.index .PageFive .disclass .disInfo {
-  width: 90%;
-  transition: 1.2s;
-  border-radius: 10px;
-  position: absolute;
-  top: 110%;
-  margin: auto;
-  left: 0;
-  right: 0;
-  opacity: 0;
-}
-
-.index .PageFive .disclass .disInfo .post {
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-  margin-bottom: 20px;
-  position: relative;
-  transition: box-shadow .4s ease;
-}
-
-.index .PageFive .disclass .disInfo .post:hover {
-  box-shadow: 0px 1px 3px #555;
-}
-
-.index .PageFive .disclass .disInfo .post .postImg {
-  overflow: hidden;
-  float: left;
-  text-align: center;
-  padding-top: 50px;
-}
-
-.index .PageFive .disclass .disInfo .post .txt {
-  float: left;
-  height: auto;
-}
-
-.index .PageFive .disclass .disInfo .post .txt > div {
-  margin-bottom: 5px;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postTitle a {
-  color: #434343;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postTitle a:hover {
-  color: #774720;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postDate {
-  color: #7d7d7d;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postContent {
-  overflow: hidden;
-  max-height: 44px;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postInfo {
-  font-size: 13px;
-  color: #7d7d7d;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postInfo .author {
-  margin-right: 5px;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postInfo .watch:before {
-  content: '\f06e';
-  font-family: fontAwesome;
-  margin-right: 5px;
-}
-
-.index .PageFive .disclass .disInfo .post .txt .postInfo .message:before {
-  content: '\f27a';
-  font-family: fontAwesome;
-  margin-right: 5px;
-}
-
-.index .PageFive .disclass .disInfo .post .itemLabel {
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  width: 90px;
-  height: 30px;
-  padding: 5px;
-  color: #fff;
-  text-align: center;
-  border-radius: 3px;
-}
-
-.index .PageFive .disclass .disInfo .post .itemLabel.foodLabel {
-  background-color: #F4A66F;
-}
-
-.index .PageFive .disclass .disInfo .post .itemLabel.shareLabel {
-  background-color: #8CD899;
-}
-
-.index .PageFive .disclass .disInfo .post .itemLabel.healthLabel {
-  background-color: #57B1DA;
-}
-
-.index .PageFive .disclass .disInfo .post .itemLabel.newLabel {
-  background-color: #D9ABE6;
+.index .PageFive .hover {
+  width: 40%;
 }
 
 .index .PageFive .disclass.open .disInfo {
-  top: 25%;
+  top: 15%;
   opacity: 1;
 }
 

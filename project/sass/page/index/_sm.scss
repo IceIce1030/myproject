@@ -1,7 +1,378 @@
-@include respones(sm){
-	//平板 container 100%
-	//直接寫css
-	.index{
-	//從這開始寫
-	}
+@include respones(sm) {
+    //平板 container 100%
+    //直接寫css
+    #index-lightbox.pg2 {
+        opacity: 1;
+        width: 100vw;
+        height: 100vh;
+        color: #fff;
+        position: fixed;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 50px 100px 100px;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 9000;
+        .pic {
+            display: inline-block;
+            width: 60%;
+            padding: 5px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff;
+            img {
+                opacity: 1;
+            }
+        }
+        .text {
+            width: 100%;
+            text-align: center;
+            .left{
+                width: 100%;
+                .box{
+                    padding-top: 10px;
+                    width: 100%;
+                    img{
+                        opacity: 1;
+                    }
+                    .img{
+                        width: 100px;
+                        display: inline-block;
+                        padding: 5px;
+                        // float: left;
+                    }
+                }
+            }
+            .right {
+                width: 100%;
+                h2 {
+                    padding: 10px 0;
+                    border-bottom: 1px solid #fff;
+                   
+                }
+                p {
+                    margin: 20px 0;
+                    color: #fff;
+                }
+                a {
+                    margin: 10px 0;
+                    padding: 5px;
+                    display: inline-block;
+                    text-decoration: none;
+                    color: #DAA356;
+                    border: 2px solid #DAA356;
+                }
+            }
+        }
+    }
+    #index-lightbox.pg3 {
+        opacity: 1;
+        width: 100vw;
+        height: 100vh;
+        color: #fff;
+        position: fixed;
+        padding: 50px 100px 100px;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 9000;
+        margin: auto;
+
+        .pic {
+            width: 100%;
+            padding: 5px;
+            margin: auto;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 50%;
+            img {
+                border-radius: 50%;
+                max-width: 400px;
+                opacity: 1;
+            }
+        }
+        .text {
+            width: 100%;
+            text-align: center;
+            border-radius: 50%;
+            h2 {
+                padding: 10px 0;
+            }
+            p {
+                margin: 20px 0;
+                color: #fff;
+            }
+            a {
+                margin: 10px 0;
+                padding: 5px;
+                display: inline-block;
+                text-decoration: none;
+                color: #DAA356;
+                border: 2px solid #DAA356;
+            }
+        }
+    }
+    .index {
+        //從這開始寫
+        .PageOne {
+            .page-view .project .text h2 {
+                font-size: 40px;
+                top: 55%;
+            }
+            svg {
+                top: 20%;
+                max-width: 400px;
+            }
+            .orderTable {
+                padding: 5px;
+                left: 50%;
+                top: 70%;
+                transform: translate(-50%, -50%);
+                padding: 10px 5px 5px;
+                .btnDiv {
+                    display: block;
+                    width: 100%;
+                    vertical-align: middle;
+                    padding: 5px;
+                    // margin:0 80px 0 25px; 
+                    .btnLink {
+                        width: 100%;
+                    }
+                }
+                .bin-calendar {
+                    width: 100%;
+                    padding: 0 5px 5px 5px;
+                }
+                .i-dateClick {
+                    width: 300px;
+                    padding: 6px 12px;
+                    // margin: 0 25px 0 80px;
+                }
+            }
+        }
+        /*PageOne end*/
+        .PageTwo {
+            header {
+                padding: 100px 6px 20px;
+                text-align: center;
+                font-size: 20px;
+            }
+            .box {
+                width: 80%;
+                margin: auto;
+                box-sizing: border-box;
+                padding-top: 10px;
+            }
+            .colum {
+                width: 48%;
+                margin: 10px 1% 20px;
+                float: left;
+            }
+            .house {
+                max-width: 350px;
+            }
+        }
+        /*PageTwo end*/
+        .PageThree {
+            header {
+                padding: 100px 0 0px;
+                text-align: center;
+                font-size: 35px;
+            }
+            img {
+                width: 200px;
+            }
+            .osx-dock {
+                // display: inline-block;
+                padding: 50px 40px 80px;
+                // transform: perspective(0px);
+            }
+            .osx-dock .dock {
+                // display: inline-block;
+                float: left;
+                width: 33.33%;
+                // height: 150px;
+                transform-origin: center bottom;
+                border-radius: 50%;
+                transition: .6s;
+                position: relative;
+                padding: 5px 0;
+                // text-align: center;
+                // margin: 0 40px 0;
+                // transform: scale(2);
+                z-index: 300;
+                // -webkit-box-reflect:below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25))); 
+            }
+            .osx-dock .dock .dockA {
+                display: block;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                border-radius: 50%;
+            }
+            .osx-dock .dock .fornt {
+                display: block;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                overflow: hidden;
+                transform: perspective(600px) rotateY(0deg);
+                position: absolute;
+                transform: scale(1);
+                left: 0;
+                top: 0;
+                transition: 2s;
+            }
+            .osx-dock .dock .back {
+                display: none;
+            }
+        }
+        /*PageThree end*/
+        .PageFour {
+            .back {
+                display: none;
+            }
+        }
+        /*PageFour end*/
+        .PageFive {
+            .home_dis {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+            }
+            .disclass {
+                width: 25%;
+                height: 100%;
+                display: block;
+                position: relative;
+                transition: .5s;
+                // float: left;
+            }
+            .disclass .distitle h2 {
+                position: absolute;
+                text-align: center;
+                color: #fff;
+                margin: auto;
+                right: 0;
+                left: 0;
+                top: 50%;
+                transition: .5s;
+            }
+            .disclass.open .distitle h2 {
+                top: 90%;
+                opacity: 0;
+            }
+            .disclass:hover {
+                width: 40%;
+            }
+            .disclass.open {
+                width: 80%;
+            }
+            .post {
+                // height: 150px;
+                padding: 20px;
+                .postImg {
+                    width: 10%;
+                    display: none;
+                    // height: 140px;
+                }
+            }
+            .disclass .disInfo {
+                width: 90%;
+                height: 100vh;
+                // background-color: #ccc;
+                transition: 1.2s;
+                border-radius: 10px;
+                position: absolute;
+                top: 110%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                opacity: 0;
+                .post {
+                    background-color: rgba(255, 255, 255, .8);
+                    width: 100%;
+                    margin-bottom: 20px;
+                    position: relative;
+                    transition: box-shadow .4s ease;
+                    &:hover {
+                        box-shadow: 0px 1px 3px #555;
+                    }
+                    .postImg {
+                        overflow: hidden;
+                        float: left;
+                        width: 10%;
+                        text-align: center;
+                        padding-top: 50px;
+                    }
+                    .txt {
+                        float: left;
+                        width: 100%;
+                        padding: 0 15px;
+                        // height: auto;
+                        // &>div {
+                        //     margin-bottom: 5px;
+                        // }
+                        .postTitle a {
+                            color: $deep-gray;
+                            &:hover {
+                                color: $brown;
+                            }
+                        }
+                        .postDate {
+                            color: $light-gray;
+                        }
+                        .postContent {
+                            overflow: hidden;
+                            max-height: 44px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap
+                        }
+                        .postInfo {
+                            font-size: $fz-mincontent;
+                            color: $light-gray;
+                            .author {
+                                margin-right: 5px;
+                            }
+                            .watch:before {
+                                content: '\f06e';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                            .message:before {
+                                content: '\f27a';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    .itemLabel {
+                        display: none;
+                        position: absolute;
+                        left: 15px;
+                        top: 15px;
+                        width: 90px;
+                        height: 30px;
+                        padding: 5px;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 3px;
+                        &.foodLabel {
+                            background-color: $foodColor;
+                        }
+                        &.shareLabel {
+                            background-color: $shareColor;
+                        }
+                        &.healthLabel {
+                            background-color: $healthColor;
+                        }
+                        &.newLabel {
+                            background-color: $newColor;
+                        }
+                    }
+                }
+            }
+        }
+        /*PageFive end*/
+    }
 }

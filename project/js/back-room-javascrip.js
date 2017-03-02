@@ -34,13 +34,15 @@ $(document).ready(function(){
                     // alert(msg);
                     // console.log(msg);
                     $('#table').html(msg);
+                   
+
 
 
                     $('.update').click(function(){
                         var no = $(this).siblings('.updateNo').val();
                         // alert(no);
 
-                        updateRoom(no);
+                        updateRoomInfo(no);
 
 
                     });
@@ -91,9 +93,9 @@ $(document).ready(function(){
     //---------------------------
     
     
-    function updateRoom(room_no){
+    function updateRoomInfo(room_no){
            
-            var URLs="back-room-update.php";
+            var URLs="back-room-update-info.php";
 
             $.ajax({
                 url: URLs,
@@ -103,8 +105,62 @@ $(document).ready(function(){
 
                 success: function(msg){
                     // alert(msg);
-                   console.log(msg);
+                   // console.log(msg);
                     $('#table').html(msg);
+
+                    $('.updateinput').change(function(){
+
+                        var file = this.files[0];
+                        var message = 'File Name : ' + file.name + '\n';
+                        message += 'File Size : ' + file.size + '\n';
+                        message += 'File Type : ' + file.type + ' byte(s)\n';
+                        message += 'Last Modified: '+file.lastModifiedDate.toDateString()+'\n';
+
+
+                        // var fileExtArr = new Array("png", "jpg", "gif" , "bmp");
+                        
+
+                        //     for(i=0;i<fileExtArr.length;i++)
+                        //     {
+                        //         if (fileExtArr[i]==fileExt) 
+                        //         {
+                        //             document.write("合法的檔案");
+                        //             break;
+                        //         }   
+                        //     }
+                        //     if (fileExtArr.length==i) 
+                        //     {
+                        //         alert("不合法的檔案");
+                        //     }
+
+
+                        // console.log(message);
+
+                        var img = $(this).siblings('img');
+                        // console.log(file.name);
+
+                        $(this).siblings('.imgName').val(file.name);
+
+                        
+                        var readFile= new FileReader();//宣告一個物件
+                        readFile.readAsDataURL(file);//以圖片影音格式回傳結果
+                        readFile.addEventListener('load',function(){
+                            // console.log(readFile);
+                            img.attr("src",readFile.result);
+                            // img.src=readFile.result;//result讀取到的內容
+                            // // img.style.maxWidth = '133px';
+                            // // img.style.maxHeight = '100px';
+
+                        },false);
+
+
+
+
+
+                    });
+                    $('.updateOk').click(function(){
+                        updateRoom();
+                    });
                  
                 },
 
@@ -115,6 +171,127 @@ $(document).ready(function(){
             });
             
         }
+    //------------------------
+
+    //---------------------------
+    
+    
+    function updateRoom(){
+           
+            var URLs="back-room-update.php";
+            var room_no =$('#room_no').val();
+            var room_name = $('#room_name').val();
+            var room_price = $('#room_price').val();
+            var room_info = $('#room_info').text();
+            var room_count =$('#room_count').val();
+
+            var img1Src = $('#imgName1').val();
+            var img2Src = $('#imgName2').val();
+            var img3Src = $('#imgName3').val();
+            var img1Id = $('#imgId1').val();
+            var img2Id = $('#imgId2').val();
+            var img3Id = $('#imgId3').val();
+
+            // img1Src = img1Src.replace('../images/room/','');
+            // img2Src = img2Src.replace('../images/room/','');
+            // img3Src = img3Src.replace('../images/room/','');
+
+
+            // console.log(room_no);
+            // console.log(room_name);
+            // console.log(room_price);
+            // console.log(room_info);
+            // console.log(room_count);
+            // console.log(img1Src);
+            // console.log(img2Src);
+            // console.log(img3Src);
+            // console.log(img1Id);
+            // console.log(img2Id);
+            // console.log(img3Id);
+
+
+            $.ajax({
+                url: URLs,
+                data: {room_no,room_name,room_price,room_info,room_count},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    // alert(msg);
+                   // console.log(msg);
+                   updateRoomimg(img1Src,img2Src,img3Src,img1Id,img2Id,img3Id);
+                   roomInfo();
+
+                   
+                    // $('#table').html(msg);
+
+
+
+                 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
+
+
+        //---------------------------
+    
+    
+    function updateRoomimg(img1Src,img2Src,img3Src,img1Id,img2Id,img3Id){
+           
+            var URLs="back-roomimg-update.php";
+            
+            // console.log(img1Src);
+            // console.log(img2Src);
+            // console.log(img3Src);
+
+
+
+            // console.log(img1Id);
+            // console.log(img2Id);
+            // console.log(img3Id);
+
+
+            $.ajax({
+                url: URLs,
+                data: {img1Src,img2Src,img3Src,img1Id,img2Id,img3Id},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    // alert(msg);
+                   // console.log(msg);
+                   uploadimg();           
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
+    function uploadimg(){
+       var xhr = new XMLHttpRequest();
+        var url = "back-roomimg-updateimg.php";
+        var form = new FormData(document.getElementById('myForm'));
+        xhr.open("Post", url, true);
+        xhr.send( form );
+
+
+        // console.log(form);
+        // alert('hi');
+    }
+
+    
+
     //------------------------
     
     

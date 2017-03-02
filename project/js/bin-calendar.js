@@ -277,6 +277,7 @@ window.addEventListener('load',doFirst,false);
 $().ready(function(){
 	//日曆出現動畫
 	$('.i-dateClick').click(function(){
+		
 		$('.ccc').fadeToggle();
 		$('.b-select-date').slideToggle();
 	});
