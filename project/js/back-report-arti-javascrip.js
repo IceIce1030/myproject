@@ -1,7 +1,14 @@
 $(document).ready(function(){
+    
+     if(sessionStorage["backlogin"] != "ok" ){
+        location.href="../back-login.html";
+    }
 
     sessionStorage.removeItem('where');
     sessionStorage.where = 'all';
+    sessionStorage.removeItem('page');
+    sessionStorage.page = '#page1';
+
     artiShow();
 
 	$('#arti  #searchReport').click(function(){
@@ -46,6 +53,7 @@ $(document).ready(function(){
 
                     $('.doWhat').click(function(){
                         var a= $(this).siblings('#artiNo').val();
+                        
 
                         var dowhat = $(this).val();
 
@@ -61,8 +69,21 @@ $(document).ready(function(){
 
                      $('.page').click(function(){
                         var no = $(this).text();
-                        artiShow(no);
+                        var id = $(this).attr('id');
+                        var whatpage = '#'+id;
+                        sessionStorage.page = whatpage;
+                      
+                        artiShow(no);         
+
                     });
+
+                     $('.page').css({
+                        color:'#000'
+                     });
+                     $(sessionStorage.page).css({
+                        color:'#EB3F4B'
+                     });
+
                    
                 },
 

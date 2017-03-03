@@ -60,7 +60,7 @@ try{
                   <th>文章標題</th>
                   <th width='250'>留言內容</th>
                   <th>留言時間</th>         
-                  <th>留言處理</th>
+                  <th>檢舉處理</th>
              </tr>";
      }
      else{
@@ -126,7 +126,7 @@ try{
 
     $str .="<tr><td colspan='6'>";
     for( $i=1; $i<=$pages; $i++){
-       $str .= "<span class='page'>$i</span> &nbsp;";
+       $str .= "<span class='page' id='page$i'>$i</span> &nbsp;";
     }
     $str .= "</td></tr>";
     echo $str;

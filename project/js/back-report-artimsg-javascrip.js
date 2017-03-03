@@ -1,8 +1,13 @@
 $(document).ready(function(){
+     if(sessionStorage["backlogin"] != 'ok'){
+        location.href="../back-login.html";
+    }
 
 
     sessionStorage.removeItem('where');
     sessionStorage.where = 'all';
+    sessionStorage.removeItem('page');
+    sessionStorage.page = '#page1';
 
 
     artimsgShow();
@@ -27,6 +32,7 @@ $(document).ready(function(){
            
             var URLs="back-artimsg-report.php";
             var txt = sessionStorage.where;
+            // alert(txt);
 
             $.ajax({
                 url: URLs,
@@ -50,9 +56,19 @@ $(document).ready(function(){
                     });
                     $('.page').click(function(){
                         var no = $(this).text();
-                        alert(no);
+                        var id = $(this).attr('id');
+                        var whatpage = '#'+id;
+                        sessionStorage.page = whatpage;
+                        // alert(no);
                         artimsgShow(no);
                     });
+
+                     $('.page').css({
+                        color:'#000'
+                     });
+                     $(sessionStorage.page).css({
+                        color:'#EB3F4B'
+                     });
                  
                    
                 },
@@ -84,7 +100,8 @@ $(document).ready(function(){
                 success: function(msg){
                     // alert(msg);
                     // console.log(msg);
-                    artimsgShow('report');
+                    sessionStorage.where= 'all';
+                    artimsgShow();
                     // $('#table').html(msg);
                  
                 },

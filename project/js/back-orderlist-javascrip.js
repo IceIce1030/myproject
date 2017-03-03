@@ -1,18 +1,23 @@
 $(document).ready(function(){
 
-
+     if(sessionStorage["backlogin"] != 'ok' ){
+        location.href="../back-login.html";
+    }
 	orderListCheck();
 
 
-	$('#orderlist .search #searchOne').click(function(){
+	$('#orderlist  #searchOne').click(function(){
 		var txt = $('#orderlist_search').val();
 		orderListCheckSearch(txt);
 		
 	});
-	$('#orderlist .search #searchAll').click(function(){
+	$('#orderlist  #searchAll').click(function(){
         $('#orderlist_search').val('');
 		orderListCheck();
 	});
+    $('.closeLightBox').click(function(){
+        $('.service_box').fadeOut();
+    });
 	
 
 
@@ -35,7 +40,7 @@ $(document).ready(function(){
                     // console.log(msg);
                     $('#orderlist #table').html(msg);
 
-                    	$('#orderlist #table .inputBtn').click(function(){
+                    	$('#orderlist #table .goCheck').click(function(){
 							var order_no  = $(this).siblings('.orderlistNo').val();
 							var btnVal = $(this).val();
 
@@ -43,6 +48,12 @@ $(document).ready(function(){
 							orderListInOut(order_no,btnVal);
 							orderListCheck();						
 						});
+                        $('.lookService').click(function(){
+                            var ord_no = $(this).siblings('input').val();
+                            lookService(ord_no);
+                            $('.service_box').fadeIn();
+                            // alert(ord_no);
+                        });
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 
@@ -117,5 +128,33 @@ $(document).ready(function(){
             
         }
 	//------------------------
+
+    //---------------------------
+  
+    function lookService(order_no){
+           
+            var URLs="back-look-orderlist-service.php";
+
+            $.ajax({
+                url: URLs,
+                data: {order_no},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    // alert(msg);
+                    // console.log(msg);
+                    $('.service-content p').text(msg);
+                   
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
     
     

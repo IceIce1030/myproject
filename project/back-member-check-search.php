@@ -22,14 +22,15 @@ try{
    
      $str='';
      $str .="<tr>
-                  <th>會員編號</th>            
+                 <th>會員編號</th>            
                   <th>會員名稱</th>
+                  <th>會員照片</th> 
                   <th>會員性別</th>
                   <th>會員帳號</th>
                   <th>會員密碼</th>
                   <th>聯絡電話</th>
                   <th>聯絡信箱</th>
-                  <th>會員照片</th>          
+                  <th>會員寵物</th>         
              </tr>";
 
     while ( $memberRow = $member->fetch(PDO::FETCH_ASSOC) ){
@@ -43,13 +44,20 @@ try{
         $str .="<tr>
                   <td>{$memberRow["mem_no"]}</td>
                   <td>{$memberRow["mem_name"]}</td>
+                  <td>
+                    <img style='width: 80px;height: auto;'' src='images/member/{$memberRow["mem_img"]}'>
+                  </td>
                   <td>{$memberRow["mem_sex"]}</td>
                   <td>{$memberRow["mem_id"]}</td>
                   <td>{$memberRow["mem_psw"]}</td>
                   <td>{$memberRow["mem_phone"]}</td>
                   <td>{$memberRow["mem_mail"]}</td>
-                  <td><img style='width: 80px;height: 80px;'' src='images/member/{$memberRow["mem_img"]}'></td>            
-                </tr>";                                        
+                  <td>
+                    <input type='button' class='lookPet inputBtn' value='查看寵物'>
+                    <input type='hidden' class='inputBtn memid' value='{$memberRow["mem_no"]}'>
+                  </td>
+
+                </tr>";                                       
       
       
       

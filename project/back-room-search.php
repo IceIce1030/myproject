@@ -73,7 +73,7 @@ try{
               $str .="<tr>
                         <td>{$roomRow["room_no"]}</td>
                         <td>{$roomRow["room_name"]}</td>
-                        <td><img width='133' height='100' src='images/room/{$roomRow["roomimg_name"]}'></td>
+                        <td><img width='120' height=auto src='images/room/{$roomRow["roomimg_name"]}'></td>
                         <td>{$roomRow["room_price"]}元</td>
                         <td width='600'>{$roomRow["room_intro"]}</td>          
                       </tr>"; 

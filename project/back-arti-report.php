@@ -63,7 +63,7 @@ try{
                   <th>發文時間</th>
                   <th>文章照片</th>
                   <th>文章分類</th>
-                  <th>編輯處理</th> 
+                  <th>檢舉處理</th> 
              </tr>";
      }
      else{
@@ -81,22 +81,11 @@ try{
      
 
     while ( $artiRow = $arti->fetch(PDO::FETCH_ASSOC) ){
-       if($artiRow["arti_sort"] =='share'){
-          $artiRow["arti_sort"] = '住宿分享';
-      }
-      else if($artiRow["arti_sort"] =='new'){
-          $artiRow["arti_sort"] = '新手爸媽';
-      }
-      else if($artiRow["arti_sort"] =='food'){
-          $artiRow["arti_sort"] = '健康鮮食';
-      }
-      else if($artiRow["arti_sort"] =='health'){
-          $artiRow["arti_sort"] = '寵物保健';
-      }
+    
 
       
       $artiRow["arti_content"] =str_replace('<br>','#',$artiRow["arti_content"]);
-      $artiRow["arti_content"] = mb_substr( $artiRow["arti_content"] , 0 , 30 ).'......';
+      $artiRow["arti_content"] = mb_substr( $artiRow["arti_content"] , 0 , 25 ).'......<br>';
       $artiRow["arti_content"] =str_replace('#','<br>',$artiRow["arti_content"]);
      
 
@@ -112,11 +101,11 @@ try{
                       <input type='hidden'  value={$artiRow["arti_no"]} id='artiNo'>
                   </td>
                   <td>{$artiRow["arti_date"]}</td>
-                  <td><img style='width: 100px;height: 100px;'' src='images/articlephoto/{$artiRow["arti_img"]}'></td>
+                  <td><img style='width: 100px;height: auto;'' src='images/articlephoto/{$artiRow["arti_img"]}'></td>
                   <td>{$artiRow["arti_sort"]}</td>
                   <td>
-                    <p class='btnp'><input type='button' class='inputBtn doWhat' value='刪除' id='dele'></p>
-                    <p class='btnp'><input type='button' class='inputBtn doWhat' value='取消' id='cancel'></p>
+                   <input type='button' class='inputBtn doWhat' value='刪除' id='dele'>
+                    <input type='button' class='inputBtn doWhat' value='取消' id='cancel'>
                     
                     <input type='hidden'  value={$artiRow["arti_no"]} id='artiNo'>
                   </td>         
@@ -134,7 +123,7 @@ try{
                       <input type='hidden'  value={$artiRow["arti_no"]} id='artiNo'>
                   </td>
                   <td>{$artiRow["arti_date"]}</td>
-                  <td><img style='width: 100px;height: 100px;'' src='images/articlephoto/{$artiRow["arti_img"]}'></td>
+                  <td><img style='width: 100px;height: auto;'' src='images/articlephoto/{$artiRow["arti_img"]}'></td>
                   <td>{$artiRow["arti_sort"]}</td>        
                 </tr>"; 
       }
@@ -146,7 +135,7 @@ try{
 
      $str .="<tr><td colspan='8'>";
     for( $i=1; $i<=$pages; $i++){
-       $str .= "<span class='page'>$i</span> &nbsp;";
+       $str .= "<span class='page' id='page$i'>$i</span> &nbsp;";
     }
     $str .= "</td></tr>";
     echo $str;

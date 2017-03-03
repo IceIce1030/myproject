@@ -102,8 +102,9 @@ try{
                  
         //多個照片
 
-        $str .= "<td>
-                    <input type='button' class='inputBtn updateOk' value='修改'>
+        $str .= " <td>
+                    <input type='button' class='inputBtn updateOk' value='確定'>
+                    <input type='button' class='inputBtn updateCancel' value='取消'>
                   </td>
                 </tr>";                                        
       

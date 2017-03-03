@@ -269,13 +269,15 @@ function CheckYear(){
 		LeapYear=false;
 	}
 }
-function selectday(){
+function selectday(){	
+
 	
 	var clickDate = this.innerText;
 	if(clcikCount>1){
 		clearColor();
 		clcikCount=0;
 		dateSelected=false;
+
 		//清除session
 		sessionStorage.roomStyle='';
 	}
@@ -284,11 +286,11 @@ function selectday(){
 		//清除入住日期跟退房日期
 		var roomIn = document.getElementsByClassName('roomIn');
 		for(var i=0;i<roomIn.length;i++){
-			roomIn[i].innerText='請選擇入住日期';
+			roomIn[i].innerText='入住日期';
 		}
 		var roomOut = document.getElementsByClassName('roomOut');
 		for(var i=0;i<roomOut.length;i++){
-			roomOut[i].innerText='請選擇退房日期';
+			roomOut[i].innerText='退房日期';
 		}
 		var roomDays = document.getElementsByClassName('roomDays');
 		for(var i=0;i<roomOut.length;i++){
@@ -332,7 +334,7 @@ function selectday(){
 			roomIn[i].innerText=startDate.toLocaleDateString("ja-JP");
 		}
 
-		$id('nowNeedSelectDate').innerText="請選擇退房日期";
+		$id('nowNeedSelectDate').innerText="退房日期";
 
 	}
 	else if(clcikCount==1){
@@ -593,6 +595,8 @@ $(document).ready(function(){
 	                success: function(msg){
 	                    // alert(msg);
 	                    $('#mypet-select').html(msg);
+	                    $('select').niceSelect();
+
 	                },
 
 	                 error:function(xhr, ajaxOptions, thrownError){ 
@@ -733,18 +737,7 @@ $(document).ready(function(){
   			checkInfo();
   		});
 
-  		//選擇體重
-  		// $('.pet-weight .add').click(function(){
-  		// 	selectWeight++;
-  		// 	$('.pet-weight .b-select-weight').text(selectWeight);
-  		// });
-  		// $('.pet-weight .less').click(function(){
-  		// 	selectWeight--;
-  		// 	if (selectWeight<0) {
-  		// 		selectWeight=0;
-  		// 	}
-  		// 	$('.pet-weight .b-select-weight').text(selectWeight);
-  		// });
+
 
   		//選擇年齡
   		//年
@@ -765,23 +758,6 @@ $(document).ready(function(){
 
   		});
 
-
-  		//月
-  		// $('.pet-age .b-dog-month .add').click(function(){
-  		// 	selectAgeMonth++;
-  		// 	if(selectAgeMonth>12){
-  		// 		selectAgeMonth=12;
-  		// 	}
-  		// 	$('.pet-age .month .b-select-month').text(selectAgeMonth);
-  		// });
-
-  		// $('.pet-age .b-dog-month .less').click(function(){
-  		// 	selectAgeMonth--;
-  		// 	if(selectAgeMonth<0){
-  		// 		selectAgeMonth=0;
-  		// 	}
-  		// 	$('.pet-age .month .b-select-month').text(selectAgeMonth);
-  		// });
 
   		//寵物姓名
   		$('#petNameInput').change(function(){
@@ -816,6 +792,7 @@ $(document).ready(function(){
   			});
   			$('.again').fadeIn(300);
   			$('.petName').text(optiontext);
+  			$('.backColor').fadeOut(300);
   			nameInput=true;
   			checkInfo();
 
@@ -930,8 +907,12 @@ $(document).ready(function(){
   				}
   			}
   			else if(num==6){
+  				//彈出會員登入燈箱
 				if(localStorage["mem_id"]==undefined){
-			  		alert('請登入會員');
+			  		// alert('請登入會員');
+			  		$('.loginlightbox').animate({
+			  			right:'0'
+			  		})
 			  	}
 			  	else{
 			  		var str = '.step'+num+' .step-bar span';
@@ -1338,6 +1319,19 @@ $(document).ready(function(){
 
 	//>767 小桌機 大桌機
   	if($(window).width()>767){
+
+  	$(document).scroll(function() {
+	    
+	    if($(document).scrollTop()>10){
+	    	$('.stepDiy').fadeOut(200);
+	    	
+
+	    }
+	    else{
+	    	$('.stepDiy').fadeIn(200);
+	    	
+	    }
+	 });
   		
 	//選單第一個字變大
 	$('.stepDiy .step1 .step-text').animate({
@@ -1406,8 +1400,7 @@ $(document).ready(function(){
 
   	}//>767
 
-  			
-
+  		
 
 	//一開始先把防煙風格印出來
   	getRoomStyle(1);
@@ -1416,8 +1409,6 @@ $(document).ready(function(){
 
 
 
-	
-  		
   		
 });//readyJQ
 
@@ -1482,9 +1473,9 @@ $(document).ready(function(){
 
 
 			roomPrice=$('#roomPrice').text();
-			sessionStorage.totalMoney=(parseInt(roomPrice)*parent(sessionStorage.night))+parseInt(sessionStorage.totalMoney);
+			sessionStorage.totalMoney=(parseInt(roomPrice)*parseInt(sessionStorage.night))+parseInt(sessionStorage.totalMoney);
 			$('#totalMoney').text(sessionStorage.totalMoney);
-			console.log(sessionStorage.totalMoney);
+			// console.log(sessionStorage.totalMoney);
 			
 		
 	  		getRoom(roomVal);//從這撈房間資訊
@@ -1940,7 +1931,7 @@ $(document).ready(function(){
 			roomPrice=$('#roomPrice').text();
 			sessionStorage.totalMoney=(parseInt(roomPrice)*parseInt(sessionStorage.night))+parseInt(sessionStorage.totalMoney);
 			$('#totalMoney').text(sessionStorage.totalMoney);
-			console.log(sessionStorage.totalMoney);
+			// console.log(sessionStorage.totalMoney);
 			
 		
 	  		getRoom(roomVal);//從這撈房間資訊

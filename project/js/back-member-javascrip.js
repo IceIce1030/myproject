@@ -1,15 +1,19 @@
 $(document).ready(function(){
-
+    if(sessionStorage["backlogin"] !='ok' ){
+        location.href="../back-login.html";
+    }
+    sessionStorage.removeItem('page');
+    sessionStorage.page = '#page1';
     memberCheck();
 
-	$('#member .search #searchOne').click(function(){
+	$('#member  #searchOne').click(function(){
 		var txt = $('#search').val();
-
+      
 		memberSearch(txt);
 		
 	});
-	$('#member .search #searchAll').click(function(){
-        
+	$('#member  #searchAll').click(function(){
+       
         $('#search').val('');
 		memberCheck();
 	});
@@ -20,13 +24,13 @@ $(document).ready(function(){
 //---------------------------
 	
 	
-	function memberCheck(){
+	function memberCheck(pageNo){
            
             var URLs="back-member-check.php";
 
             $.ajax({
                 url: URLs,
-                data: {},
+                data: {pageNo},
                 type:"GET",
                 dataType:'html',
 
@@ -34,6 +38,21 @@ $(document).ready(function(){
                     // alert(msg);
                     // console.log(msg);
                     $('#table').html(msg);
+                    $('.lookPet').click(function(){
+                        var mem_no = $(this).siblings('input').val();
+                        // alert(mem_no);
+                        showPet(mem_no);
+                    });
+                     $('.page').click(function(){
+                        var no = $(this).text();
+                        var id = $(this).attr('id');
+                        var whatpage = '#'+id;
+                        sessionStorage.page = whatpage;
+                        // alert(whatpage);
+                      
+                        memberCheck(no);      
+
+                    });
                    
                 },
 
@@ -65,6 +84,10 @@ $(document).ready(function(){
                     // alert(msg);
                     // console.log(msg);
                     $('#table').html(msg);
+                     $('.lookPet').click(function(){
+                        var mem_no = $(this).siblings('input').val();
+                        // alert(mem_no);
+                    });
                  
                 },
 
@@ -76,5 +99,46 @@ $(document).ready(function(){
             
         }
 	//------------------------
+
+    //---------------------------
+    
+    
+    function showPet(mem_no ){
+           
+            var URLs="back-member-pet.php";
+
+            $.ajax({
+                url: URLs,
+                data: {mem_no},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    // alert(msg);
+                    console.log(msg);
+                    $('#table').html(msg);
+
+                    $('.page').click(function(){
+                        var no = $(this).text();
+                        var id = $(this).attr('id');
+                        var whatpage = '#'+id;
+                        sessionStorage.page = whatpage;
+                        alert(whatpage);
+                      
+                        showPet(no);      
+
+                    });
+                     
+                 
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
     
     

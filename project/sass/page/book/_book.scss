@@ -158,7 +158,9 @@ $step-info:#FF5553;
 		
 		}
 	.step-info-p{
-		padding: 10px 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		
 			p{
 				display: inline-block;
 				color:$step-info;
@@ -242,7 +244,7 @@ $step-info:#FF5553;
 						top: -10px;
 						right: -10px;
 						width: 33px;
-						height:33px;
+						height:33px;	
 						background: rgba(0,0,0,.7);
 						border-radius: 50%;
 						transition:.3s;
@@ -748,6 +750,17 @@ $step-info:#FF5553;
 		}
 	}
 	.step_dog{
+		.b-addLess{
+			padding: 0 10px;
+		}
+		.b-dog-year{
+			&:after{
+				content: '';
+				display: block;
+				width: 0;
+				clear: both;
+			}
+		}
 		.again{
 			cursor:pointer;
 			font-size: $fz-mincontent;
@@ -894,9 +907,7 @@ $step-info:#FF5553;
 	
 	.dog-info{
 		position: relative;
-		.addLess{
-			margin:0 5px;
-		}
+		
 		.fa{
 			font-size: 40px;
 			color:$orange;
@@ -944,7 +955,7 @@ $step-info:#FF5553;
 				float: left;
 				width: 15%;
 				height: 40px;
-				margin: 0px 10px;
+				// margin: 0px 10px;
 				border: 1px solid #666;
 				.b-select-year{
 					display: inline-block;

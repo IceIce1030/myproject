@@ -7,129 +7,124 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/nav.js"></script>
 	
 
 </head>
 <style type="text/css">
+
+
 .grid {
-	max-width: 69em;
-	list-style: none;
-	margin: 30px auto;
-	padding: 0;
-	position: relative;
-	top: 100px;
-	opacity: 0;
-	animation: gridMM 0.5s 0.5s both;
+	-moz-column-count: 4;
+    -moz-column-gap: 10px;
+    -webkit-column-count:4;
+    -webkit-column-gap: 10px;
+    column-count: 4;
+    column-gap: 5px;
+    width:90%; 
+	margin:0 auto;
 }
-
-@keyframes gridMM{
-	0%	{}
-	100%{top:0px;opacity: 1;}
-}
-
-.grid li {
-	display: block;
-	float: left;
+.grid .item {
+	width:95%;
+	display: inline-block;
 	padding: 7px;
-	width: 24%;
-	opacity: 0;
+	margin-bottom: 15px;
 }
-
-.grid li.shown,
-.no-js .grid li,
-.no-cssanimations .grid li {
-	opacity: 1;
-}
-
-.grid li a,
-.grid li img {
+.grid .item a,
+.grid .item img {
 	outline: none;
 	border: none;
 	display: block;
 	max-width: 100%;
 }
 
-
-/* Effect: Move Up */
-.grid.effect li.animate {
-	-webkit-transform: translateY(200px);
-	transform: translateY(200px);
-	-webkit-animation: moveUp 0.65s ease forwards;
-	animation: moveUp 0.65s ease forwards;
-}
-
-@-webkit-keyframes moveUp {
-	0% { }
-	100% { -webkit-transform: translateY(0); opacity: 1; }
-}
-
-@keyframes moveUp {
-	0% { }
-	100% { -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; }
-}
-
-
-
-@media screen and (max-width: 900px) {
-	.grid li {
-		width: 50%;
+@media screen and (max-width: 992px) {
+	.grid {
+		-moz-column-count: 2;
+	    -moz-column-gap: 10px;
+	    -webkit-column-count:2;
+	    -webkit-column-gap: 10px;
+	    column-count: 2;
+	    column-gap: 5px;
+	    width:90%; 
+		margin:0 auto;
 	}
 }
 
-@media screen and (max-width: 400px) {
-	.grid li {
-		width: 100%;
+@media screen and (max-width: 767px) {
+	.grid {
+		-moz-column-count: 1;
+	    -moz-column-gap: 10px;
+	    -webkit-column-count:1;
+	    -webkit-column-gap: 10px;
+	    column-count: 1;
+	    column-gap: 5px;
+	    width:99%; 
+		margin:40px auto;
 	}
-	
+	.grid .item {
+		width:100%;
+		display: block;
+		padding: 7px;
+		margin-bottom: 15px;
+	}
+}
+#gotop {
+	position: fixed;
+    border-radius: 50px;
+    right: 20px;
+    bottom: 30px;
+    cursor: pointer;
+    z-index: 29;
 }
 
 </style>
 <body id="d-body">
- <!-- 選單開始 -->
+<!-- 回到頂端 -->
+<div id="gotop"><img src="images/gotop.png"></div>
+  <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
-            <div class="col-xs-2 col-sm-2 col-lg-8 menu">
+            <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
                 <!-- 手機選單的漢堡和關閉 -->
-                <header>
-                    <div id="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                    <div id="cross"><i class="fa fa-times" aria-hidden="true"></i></div>
+                <header class="hamburgerMenu" id="hamburgerMenu">
+                    <div class="bar" id="hamburgerMenuBar"></div>
                 </header>
                 <!-- 選單內容 -->
-                <ul class="content">
+                <ul class="content" id="menuContent">
                     <li>
-                        <a href="book.html" title=""><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>&nbsp; 線上訂房<span class="line"></span></a>
+                        <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
-                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp; 萌主爭霸<span class="line"></span></a></li>
+                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
                     <li>
-                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp; 主題討論<span class="line active"></span></a></li>
+                        <a href="discuss.html" class="active"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; 服務介紹<span class="line"></span></a></li>
-                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; 常見問題<span class="line"></span></a></li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
             <!-- logo回首頁 -->
-            <div class="col-xs-5 col-sm-5 col-lg-3 logo">
+            <div class="col-xs-5 col-sm-5 col-md-2 col-md-pull-9 col-lg-3 col-lg-pull-8 logo">
                 <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
             </div>
-            <!-- 登入 -->
-            <div class="col-xs-2 col-sm-2 col-lg-1 login">
-                <div class="beforeLogin" id="userlogin">
+            <!-- 登入/會員頭像 -->
+            <div class="col-xs-2 col-sm-2 col-md-1 login">
+                <div class="beforeLogin" id="beforeLogin">
                     <div class="loginIcon">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <p>登入</p>
                 </div>
-                <div class="afterLogin">
+                <div class="afterLogin" id="afterLogin">
                     <div class="profilePhotoDiv">
-                        <img id="showMemberLightbox" src="images/profilePhoto.jpg" alt="">
+                        <img id="mem_img" src="">
                     </div>
-                    <p>Hi~<span id="memberName">宋慧喬</span></p>
+                    <p>Hi~<span id="mem_name"></span></p>
                 </div>
                 <!-- 會員中心選單燈箱開始 -->
-                <div class="memberlightbox">
+                <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
                             <div class="left"><a href="member.html">會員專區</a></div>
@@ -142,7 +137,7 @@
                             <a data-tab-id="#myposts">我的文章</a></li>
                         <li>
                             <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
-                        <div class="btn" id="logoutBtn">登出</div>
+                        <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -151,24 +146,29 @@
     </nav>
     <!-- 選單結束 -->
     <!-- login燈箱開始 -->
-    <div class="loginlightbox">
+    <div class="navbarLightbox loginlightbox">
         <div class="content">
             <p class="loginLeft">登入</p>
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
-            <form action="#" method="post">
+            <p>
+                <input type="text" name="mem_id" id="mem_id" placeholder="帳號" required>
+            </p>
+            <p>
+                <input type="password" name="mem_psw" id="mem_psw" placeholder="密碼" required>
+            </p>
+            <p id="forgotPsw"><span>忘記密碼</span></p>
+            <p>
+                <input class="inputBtn" id="loginBtn" type="submit" value="登入">
+            </p>
+            <div class="notMemberYet">
                 <p>
-                    <input type="email" name="mem_mail" placeholder="email帳號">
+                    還不是會員嗎？<a href="signup.html">立刻註冊</a>
                 </p>
                 <p>
-                    <input type="password" name="mem_psw" placeholder="密碼">
+                    <input class="inputBtn" id="guestLoginBtn" type="submit" value="使用體驗帳號登入">
                 </p>
-                <p>
-                    <input id="loginBtn" type="submit" value="登入">
-                </p>
-                <p id="forgotPsw"><a href="#">忘記密碼</a></p>
-                <p><a href="signup.html">註冊新帳號</a></p>
-            </form>
+            </div>
         </div>
     </div>
     <!-- login燈箱結束 -->
@@ -181,7 +181,7 @@
 <div class="D-filter">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-7 col-lg-7 filters">
+			<div class="col-xs-12 col-sm-10 col-md-10 filters">
 				<div class="filterBtn chosen" id="allBtn">全部文章</div>
 				<div class="filterBtn" id="shareBtn">住宿分享</div>
 				<div class="filterBtn" id="healthBtn">寵物保健</div>
@@ -189,12 +189,9 @@
 				<div class="filterBtn" id="foodBtn">健康鮮食</div>
 				<div class="filterBtn" id="hotBtn">熱門HOT</div>
 			</div>
-			<div class="col-xs-12 col-sm-5 col-lg-5">
-				<div class="search">
-					
-					<span class="icon"></span>
-					<input type="text" name="" class="search-txt" placeholder="請輸入關鍵字">
-					<a href="#postArtical"><span class="post">發表文章</span></a>
+			<div class="col-xs-12 col-sm-2 col-md-2">
+				<div class="postBtn">
+					<span class="post" id="post">發表文章</span>
 				</div>
 			</div>
 		</div>
@@ -207,7 +204,7 @@
 	
 <div class="container">
 	<div class="row">
-		<select class="filterRWD">
+		<select class="filterRWD" id="filterRWD">
 			<option>全部文章</option>
 			<option>住宿分享</option>
 			<option>寵物保健</option>
@@ -216,10 +213,7 @@
 			<option>熱門HOT</option>
 		</select>	
 		<div class="search">
-					
-			<span class="icon"></span>
-			<input type="text" name="" class="search-txt" placeholder="請輸入關鍵字">
-			<a href="#postArtical"><span class="post">發表文章</span></a>
+			<span class="post" id="post">發表文章</span>
 		</div>	
 	</div>
 </div>
@@ -230,57 +224,65 @@
 
 
 <!-- 發表文章燈箱 -->
-<div class="lightbox-target" id="postArtical">
-  <div class="content">
-	<div class="postForm">
-		<form action="#" method="post">
-			<div class="formGroup">
-				<label class="labelClass" for="post-title">文章標題</label>
-				<input type="text" name="post-title" id="post-title">
-			</div>
-			<div class="formGroup">
-				<label class="labelClass" for="post-class">文章分類</label>
-				<select name="post-class">
-					<option value="post-class1">住宿分享</option>
-					<option value="post-class2">寵物保健</option>
-					<option value="post-class3">新手爸媽</option>
-					<option value="post-class4">健康飲食</option>
-				</select>
-			</div>
-			<div class="formGroup">
-				<label class="labelClass" for="post-pic">文章圖片</label>
-				<span class="showPic">
-					<img src="images/dogShadow.png" id="postPic">
-				</span>
-				<input type="file" name="post-pic" id="post-pic">
-			</div>
-			<div class="formGroup">
-				<label class="labelClass" for="post-text">文章內容</label>
-				<textarea name="post-text" id="post-text" rows="15"></textarea>
-			</div>
+<div class="lightbox">
+	<div class="lightbox-box">
+		<div class="lightbox-content">
+			<div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+				<div class="postForm">
+					<!-- <form action="#" method="post"> -->
+						<div class="formGroup">
+							<label class="labelClass" for="post-title">文章標題</label>
+							<input type="text" name="post-title" id="post-title">
+						</div>
+						<div class="formGroup">
+							<label class="labelClass" for="post-class">文章分類</label>
+							<select name="post-class" id="post-class">
+								<option value="post-class1">住宿分享</option>
+								<option value="post-class2">寵物保健</option>
+								<option value="post-class3">新手爸媽</option>
+								<option value="post-class4">健康飲食</option>
+							</select>
+						</div>
+						<div class="formGroup">
+							<label class="labelClass" for="post-pic">文章圖片</label>
+							<span class="showPic">
+								<img src="images/dogShadow.png" id="postPic">
+							</span>
+							<span class="showPannel" id="showPannel"></span>
+							 <label class="uploadImgLabel" for="post-pic">上傳圖片</label>
+							 <form id="myForm">
+							 <input type="file" name="post-pic" id="post-pic">
+							 </form>
+						</div>
+						<div class="formGroup">
+							<label class="labelClass" for="post-text">文章內容</label>
+							<textarea name="post-text" id="post-text" rows="10"></textarea>
+						</div>
+						<div class="buttons">
+							<div class="submitBtn" id="submitBtn">確認</div>
+							<!-- <input type="submit" name="submitBtn" class="submitBtn" value="送出"> -->
+							<div class="cancelBtn" id="cancelBtn">取消</div>
+							<!-- <input type="reset" name="cancelBtn" class="cancelBtn" value="重填"> -->
+							<div class="clear"></div>
+						</div>
+					<!-- </form> -->
+				</div>
 			
-		</form>
+		</div>
 	</div>
-	<div class="cross">
-		<a href="discuss.html"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
-	</div>
-  </div>
-  
 </div>
 <!-- 發表燈箱結束 -->
-
-
 
 
 <!-- 內容 -->
 <div class="D-content">
 	<div class="container">
 		<div class="row">
-			<ul class="grid effect items" id="grid">
+			<div class="grid effect items" id="grid">
 
 			<!-- 裡面的東西用資料庫改變 -->
-
-			</ul>
+			
+			</div>
 		</div>
 	</div>
 </div>
@@ -290,19 +292,18 @@
 
 </div>
 
-   <!-- footer開始 -->
+<!-- footer開始 -->
     <footer>
         <div class="container">
             <section>
-                <div class="col-xs-12 col-sm-6 col-lg-6 contactus">
+                <div class="col-xs-12 col-sm-6 col-md-6 contactus">
                     <h6>聯絡我們</h6>
                     <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
                     <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
                     <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
-                    <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
                     <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-6 info">
+                <div class="col-xs-12 col-sm-6 col-md-6 info">
                     <h6>營業資訊</h6>
                     <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; 營業時間: 週一到週日9:00-21:00</p>
                     <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; 地址: 桃園市中壢區中大路300號</p>
@@ -310,7 +311,7 @@
                 </div>
             </section>
             <section>
-                <div class="col-xs-12 col-lg-12 col-sm-12 copyright">
+                <div class="col-xs-12 col-sm-12 col-md-12 copyright">
                     <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
                 </div>
             </section>
@@ -322,19 +323,60 @@
 </body>
 </html>
 
-<script src="js/masonry.pkgd.min.js"></script>
-<script src="js/imagesloaded.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/AnimOnScroll.js"></script>
-<script>
-	function waterfall(){
-		new AnimOnScroll( document.getElementById( 'grid' ), {
-			minDuration : 0.4,
-			maxDuration : 0.7,
-			viewportFactor : 0.2
-		} )
-		
-	};
-	waterfall();
+<script type="text/javascript">
+	//JQ-----------------------------
+//點關閉燈箱
+$('.closeLightBox').click(function(){
+	$('.lightbox-content').fadeOut(0,function(){
+		// alert('1');
+		$('.lightbox-box').css({
+			width: '0px',
+			height: '0px',
+			borderRadius: '50%',
+			
+		});
+		$('.lightbox').fadeOut(800);
+	});
+
+	
+});
+ //看燈箱
+$('.post').click(function(){
+	$('.lightbox').slideDown(0,function(){
+		$('.lightbox-box').css({
+			width: '80%',
+			height: '80%',
+			borderRadius: '15px'
+			
+		});
+	});
+	$('.lightbox-content').delay(800).fadeIn(500);
+});
+
+
+//GOTOP
+$("#gotop").click(function(){
+    jQuery("html,body").animate({
+        scrollTop:0
+    },1000);
+});
+$(window).scroll(function() {
+    if ( $(this).scrollTop() > 300){
+        $('#gotop').fadeIn("fast");
+    } else {
+        $('#gotop').stop().fadeOut("fast");
+    }
+});
+
+
+$('#filterRWD').niceSelect();
+$('#post-class').niceSelect();
+
+//
+
+
 </script>
 <script type="text/javascript" src="js/javascrip-discuss.js"></script>
+<script src="js/d-discuss.js"></script>
+
+

@@ -14,20 +14,18 @@ $foodColor: #F4A66F;
 		display: none;
 	}
 	//燈箱
-	.lightbox-target{
-		.content{
-			width: 40%;
-			height: 70%;
-			.postForm{
-				margin-left: 160px;
-				margin-right: 160px;
+	.lightbox{
+		.lightbox-box{
+			.lightbox-content{
+				.postForm{
+					width: 40%;	
+				}
 			}
-			
-			
 		}
-	}//燈箱結束
+	}
+		//燈箱結束
 	.D-content{
-		.items{margin-top: 0px;}
+		.items{margin-top: 10px;}
 		.item{
 			h3{margin: 5px 0;}
 			.postDate{

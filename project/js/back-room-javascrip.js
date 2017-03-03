@@ -1,4 +1,7 @@
 $(document).ready(function(){
+     if(sessionStorage["backlogin"]  !='ok' ){
+        location.href="../back-login.html";
+    }
 
     imgtype=true;
     roomInfo();
@@ -47,6 +50,8 @@ $(document).ready(function(){
 
 
                     });
+
+                    
                    
                 },
 
@@ -152,6 +157,10 @@ $(document).ready(function(){
                             updateRoom();
                         }
                         
+                    });
+
+                    $('.updateCancel').click(function(){
+                        roomInfo();
                     });
                  
                 },

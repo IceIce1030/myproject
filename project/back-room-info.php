@@ -28,11 +28,12 @@ try{
              </tr>";
 
     while ( $roomRow = $room->fetch(PDO::FETCH_ASSOC) ){
-
+      
+        $roomRow["room_intro"] = mb_convert_encoding($roomRow["room_intro"],"UTF-8","auto");
         $str .="<tr>
                   <td>{$roomRow["room_no"]}</td>
                   <td>{$roomRow["room_name"]}</td>
-                  <td><img width='133' height='100' src='images/room/{$roomRow["roomimg_name"]}'></td>
+                  <td><img width='120' height=auto src='images/room/{$roomRow["roomimg_name"]}'></td>
                   <td>{$roomRow["room_price"]}元</td>
                   <td width='600' class='text-left'>{$roomRow["room_intro"]}</td>
                   <td>{$roomRow["room_count"]}間</td> 

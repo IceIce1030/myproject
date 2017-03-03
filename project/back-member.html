@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
+	<link href='images/furkid.ico' rel='shortcut icon'/>
 	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>back-會員管理</title>
+	<title>Furkid後端管理平台</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -29,6 +31,7 @@
 					<li><a href="back-room.html"><span>房間狀態</span></a></li>
 					<li><a href="back-report-arti.html"><span>討論區管理</span></a></li>
 					<li><a href="back-member.html"><span>會員管理</span></a></li>
+					<li><a href="index.html" class="logout"><span>登出</span></a></li>
 				</ul>
 			</div>
 			
@@ -46,28 +49,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 title">
-				<h1>會員管理</h1>
+				<h1><i class="fa fa-users" aria-hidden="true"></i>會員管理</h1>
 			</div>
-			<!-- <div class="col-xs-12 col-sm-3 col-md-3 M-booking">
-				<div class="item item1">
-					<span><a href="#">訂單管理</a></span>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
-				<div class="item item2">
-					<span><a href="#">房間狀態管理</a></span>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
-				<div class="item item3">
-					<span><a href="#">Check-in</a></span>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-3 M-booking">
-				<div class="item item4">
-					<span><a href="#">Check-out</a></span>
-				</div>
-			</div> -->
+			
 		</div>
 
 
@@ -80,238 +64,7 @@
 		</div>
 		<center>
 			<table class="booktable" id="table" border="1">
-			<!-- <tr><td colspan="5"></td></tr> -->
-			<!-- <input type="button" value="Check-in" onclick="checkIn()"> -->
-			<!-- <input type="button" value="Check-Out" onclick="checkOut()"> -->
-				<!-- <img src="images/member/" style="width: 80px;height: 80px;"> -->
-				<!-- <tr>
-					<th>訂單編號</th>
-					<th>會員編號</th>
-					<th>房間編號</th>
-					<th>寵物編號</th>
-					<th>訂單日期</th>
-					<th>預計入住日期</th>
-					<th>預計退房日期</th>
-					<th>實際入住日期</th>
-					<th>實際退房日期</th>
-					<th>連絡電話</th>
-				</tr> -->
-				<!-- <tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr>
-				<tr>
-					<td>a01</td>
-					<td>M001</td>
-					<td>z123</td>
-					<td>P001</td>
-					<td>2017-01-30</td>
-					<td>2017-03-21</td>
-					<td>2017-03-25</td>
-					<td></td>
-					<td></td>
-					<td>0987654321</td>
-				</tr> -->
+			
 			</table>
 		</center>
 		</div>

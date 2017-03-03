@@ -13,29 +13,13 @@
 			.filterRWD{
 				width: 100%;
 				margin: 10px auto 5px;
+				color: #000;
 			}
 			.search{
 				margin:  auto ;
 				padding: 5px;
 				color: #000;
 				// background-color: #000;
-			.search-txt{
-				width: 0px;
-				border: none;
-				border-radius: 3px;
-				background-color: #ececec;
-				transition:0.5s;
-				&.open{
-				width: 40%;
-				padding: 5px;
-				}
-			}
-			.icon{margin: 0 5px;}
-			.icon:after{
-				content: '\f002';
-				font-family: fontAwesome;
-				color: #000;
-				cursor: pointer;}
 			.post{
 				display: inline-block;
 				width: 120px;
@@ -57,13 +41,16 @@
 		}
 		}
 		//燈箱
-		.lightbox-target{
-			.content{
-				width: 90%;
-				height: 77%;
-				
+		.lightbox{
+			.lightbox-box{
+				.lightbox-content{
+					.postForm{
+						width: 80%;
+					}
+				}
 			}
 		}
+		//燈箱結束
 		.D-content{
 			margin-top: -25px;
 			.item{
