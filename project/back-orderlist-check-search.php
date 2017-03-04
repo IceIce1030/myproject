@@ -12,9 +12,6 @@ try{
         $orderlist = $pdo->prepare( $sql );
         $orderlist->bindValue(":orderlist_no", $order_no);
 
-
-
-
   
   $orderlist->execute();
   
@@ -27,26 +24,27 @@ try{
      $str='';
      $str .="<tr>
                   <th>訂單編號</th>
-                 
                   <th>會員名稱</th>
                   <th>房間名稱</th>
                   <th>寵物名稱</th>
+                  <th>服務</th>
                   <th>訂單日期</th>
                   <th>預計入住日期</th>
                   <th>預計退房日期</th>
                   <th>實際入住日期</th>
                   <th>實際退房日期</th>
                   <th>連絡電話</th>
+                  <th>訂單處理</th>
                 </tr>";
 
     while ( $orderlistRow = $orderlist->fetch(PDO::FETCH_ASSOC) ){
 
         if($orderlistRow["real_in"]==NULL){
-            $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn' id='{$orderlistRow["orderlist_no"]}'>";
+            $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn check' id='{$orderlistRow["orderlist_no"]}'>";
             // $str .= $orderlistRow["real_in"];
         }
         if($orderlistRow["real_out"]==NULL){
-            $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn' id='{$orderlistRow["orderlist_no"]}'>";
+            $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn check' id='{$orderlistRow["orderlist_no"]}'>";
 
              // $str .= $orderlistRow["real_out"];
            
@@ -56,6 +54,10 @@ try{
                   
                   <td>{$orderlistRow["mem_name"]}</td>
                   <td>{$orderlistRow["room_name"]}</td>
+                  <td>
+                    <input type='button' value='加值內容' class='inputBtn lookService'>
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
                   <td>{$orderlistRow["pet_name"]}</td>
                   <td>{$orderlistRow["orderlist_date"]}</td>
                   <td>{$orderlistRow["exp_in"]}</td>
@@ -69,6 +71,10 @@ try{
                     <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
                   </td>
                   <td>{$orderlistRow["mem_phone"]}</td>
+                  <td>
+                    <input type='button' value='取消訂單' class='inputBtn cancelOrder' id='{$orderlistRow["orderlist_no"]}'>
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
                   
                 </tr>";
 

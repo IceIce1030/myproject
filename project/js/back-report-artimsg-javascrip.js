@@ -1,9 +1,8 @@
-$(document).ready(function(){
-     if(sessionStorage["backlogin"] != 'ok'){
+    if(sessionStorage["backlogin"] != 'ok'){
         location.href="../back-login.html";
     }
-
-
+$(document).ready(function(){
+     
     sessionStorage.removeItem('where');
     sessionStorage.where = 'all';
     sessionStorage.removeItem('page');

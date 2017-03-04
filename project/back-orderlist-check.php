@@ -10,9 +10,6 @@ try{
                          join member m on o.mem_no = m.mem_no;";
       $orderlist = $pdo->prepare( $sql );
 
-
-
-  
   $orderlist->execute();
   
   if( $orderlist->rowCount() == 0 ){ //找不到
@@ -23,8 +20,7 @@ try{
     // $dogRow = $dog->fetch(PDO::FETCH_ASSOC);
      $str='';
      $str .="<tr>
-                  <th>訂單編號</th>
-                 
+                  <th>訂單編號</th>          
                   <th>會員名稱</th>
                   <th>房間名稱</th>
                   <th>寵物名稱</th>
@@ -35,16 +31,17 @@ try{
                   <th>實際入住日期</th>
                   <th>實際退房日期</th>
                   <th>連絡電話</th>
+                  <th>訂單處理</th>
                 </tr>";
 
     while ( $orderlistRow = $orderlist->fetch(PDO::FETCH_ASSOC) ){
 
         if($orderlistRow["real_in"]==NULL){
-            $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn goCheck' id='{$orderlistRow["orderlist_no"]}'>";
+            $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
             // $str .= $orderlistRow["real_in"];
         }
         if($orderlistRow["real_out"]==NULL){
-            $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn goCheck' id='{$orderlistRow["orderlist_no"]}'>";
+            $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
 
              // $str .= $orderlistRow["real_out"];
            
@@ -71,6 +68,10 @@ try{
                     <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
                   </td>
                   <td>{$orderlistRow["mem_phone"]}</td>
+                  <td>
+                    <input type='button' value='取消訂單' class='inputBtn cancelOrder' id='{$orderlistRow["orderlist_no"]}'>
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
                   
                 </tr>";
 

@@ -1,8 +1,9 @@
-$(document).ready(function(){
-
      if(sessionStorage["backlogin"] != 'ok' ){
         location.href="../back-login.html";
     }
+$(document).ready(function(){
+
+    
 	orderListCheck();
 
 
@@ -17,6 +18,12 @@ $(document).ready(function(){
 	});
     $('.closeLightBox').click(function(){
         $('.service_box').fadeOut();
+    });
+
+     $('#orderlist_search').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#orderlist  #searchOne').click();//Trigger search button click event
+        }
     });
 	
 
@@ -40,7 +47,7 @@ $(document).ready(function(){
                     // console.log(msg);
                     $('#orderlist #table').html(msg);
 
-                    	$('#orderlist #table .goCheck').click(function(){
+                    	$('#orderlist #table .Check').click(function(){
 							var order_no  = $(this).siblings('.orderlistNo').val();
 							var btnVal = $(this).val();
 
@@ -53,6 +60,13 @@ $(document).ready(function(){
                             lookService(ord_no);
                             $('.service_box').fadeIn();
                             // alert(ord_no);
+                        });
+
+                        $('.cancelOrder').click(function(){
+                            var _no = $(this).siblings('input').val();
+                            // alert(_no); 
+                            orderlistDele(_no);
+                            orderListCheck();
                         });
                 },
 
@@ -110,7 +124,7 @@ $(document).ready(function(){
                     // console.log(msg);
                     $('#orderlist #table').html(msg);
 
-                    	$('#orderlist #table .inputBtn').click(function(){
+                    	$('#orderlist #table .check').click(function(){
 							var order_no  = $(this).siblings('.orderlistNo').val();
 							var btnVal = $(this).val();
 
@@ -118,6 +132,19 @@ $(document).ready(function(){
 							orderListInOut(order_no,btnVal);
 							orderListCheck();						
 						});
+                        $('.lookService').click(function(){
+                            var ord_no = $(this).siblings('input').val();
+                            lookService(ord_no);
+                            $('.service_box').fadeIn();
+                            // alert(ord_no);
+                        });
+
+                        $('.cancelOrder').click(function(){
+                            var _no = $(this).siblings('input').val();
+                            // alert(_no);
+                            orderlistDele(_no); 
+                            orderListCheck();
+                        });
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 
@@ -156,5 +183,31 @@ $(document).ready(function(){
             
         }
     //------------------------
-    
+        //---------------------------
+  
+    function orderlistDele(order_no){
+           
+            var URLs="back-orderlist-dele.php";
+
+            $.ajax({
+                url: URLs,
+                data: {order_no},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    alert(msg);
+                    // console.log(msg);
+                    
+                   
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
     

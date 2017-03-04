@@ -1,7 +1,8 @@
-$(document).ready(function(){
     if(sessionStorage["backlogin"] !='ok' ){
         location.href="../back-login.html";
     }
+$(document).ready(function(){
+    
     sessionStorage.removeItem('page');
     sessionStorage.page = '#page1';
     memberCheck();
@@ -17,6 +18,12 @@ $(document).ready(function(){
         $('#search').val('');
 		memberCheck();
 	});
+
+    $('#search').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            $('#member  #searchOne').click();//Trigger search button click event
+        }
+    });
 	
 
 
@@ -53,6 +60,12 @@ $(document).ready(function(){
                         memberCheck(no);      
 
                     });
+                     $('.page').css({
+                        color:'#000'
+                     });
+                     $(sessionStorage.page).css({
+                        color:'#EB3F4B'
+                     });
                    
                 },
 
@@ -87,6 +100,7 @@ $(document).ready(function(){
                      $('.lookPet').click(function(){
                         var mem_no = $(this).siblings('input').val();
                         // alert(mem_no);
+                        showPet(mem_no);
                     });
                  
                 },
@@ -115,7 +129,7 @@ $(document).ready(function(){
 
                 success: function(msg){
                     // alert(msg);
-                    console.log(msg);
+                    // console.log(msg);
                     $('#table').html(msg);
 
                     $('.page').click(function(){

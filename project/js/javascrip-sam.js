@@ -2,6 +2,7 @@ $(document).ready(function() {
     //討論區抓資料
     //投票數點擊
     voteShow();
+    artical();
 
     $('#box .house').click(function() {
         var roomName = $(this).find('span').eq(0).text();
@@ -18,8 +19,8 @@ $(document).ready(function() {
                 var mesD = JSON.parse(msgD);
 
                 for (var i = 0; i < mesD.length; i++) {
-                    var src = 'images/' + mesD[i].roomimg_name;
-                    $('#index-lightbox .box img').eq(i).attr('src', src);
+                    var src = 'images/room/' + mesD[i].roomimg_name;
+                    $('#index-lightbox .left .imgbox img').eq(i).attr('src', src);
                 }
 
             },
@@ -32,19 +33,57 @@ $(document).ready(function() {
     })
 
 
-    $('.favorite').click(function() {
-        var voteNo = $(this).parent().parent().siblings('.textTop').find('.number').text();
-        // console.log(vote_no);
+    // $('.favorite').click(function() {
+    //     var voteNo = $(this).parent().parent().siblings('.textTop').find('.number').text();
+    //     voteNo = voteNo.substr(3);
+    //     $(this).toggleClass('liked');
+    //     $.ajax({
+
+    //         url: "iVoteCount.php",
+    //         data: { voteNo },
+    //         type: "GET",
+    //         dataType: 'text',
+    //         async: false,
+
+    //         success: function(msgC) {
+
+    //             voteShow();
+
+    //         },
+
+    //         error: function(xhr, ajaxOptions, thrownError) {
+    //             alert(xhr.status);
+    //             alert(thrownError);
+    //         }
+    //     });
+    // })
+
+    function artical() {
         $.ajax({
 
-            url: "iVoteCount.php",
-            data: { voteNo: $(this).parent().parent().siblings('.textTop').find('.number').text() },
+            url: "iArtical.php",
+            // data: $('#sentToBack').serialize(),
             type: "GET",
             dataType: 'text',
             async: false,
 
-            success: function(msgC) {
-                voteShow();
+            success: function(msgA) {
+                var mesA = JSON.parse(msgA);
+                for (var i = 0; i < mesA.length; i++) {
+                    $('.disInfo .postTitle h3').eq(i).text(mesA[i].arti_title);
+
+                    $('.disInfo .postContent').eq(i).text(mesA[i].arti_content);
+                    $('.disInfo .postContent').eq(i).text(mesA[i].arti_content.replace(/<br>/g, " "));
+                    //RegExp 比對全部的寫法
+                    $('.disInfo .postDate').eq(i).text(mesA[i].arti_date);
+                    $('.disInfo .watch').eq(i).text(mesA[i].arti_count);
+                    $('.disInfo .author').eq(i).text(mesA[i].mem_name);
+                    $('.postImg img').eq(i).attr('src', "images/articlephoto/" + mesA[i].arti_img);
+                    $('.post .postTitle a').eq(i).attr('href', "article.html?arti_no=" + mesA[i].arti_no);
+                    $('.disInfo .itemLabel').eq(i).text(mesA[i].arti_sort);
+                    $('.disInfo .message').eq(i).text(mesA[i].arti_report);
+                }
+
 
             },
 
@@ -53,31 +92,25 @@ $(document).ready(function() {
                 alert(thrownError);
             }
         });
-    })
+
+    }
+
 
     $.ajax({
 
-        url: "iArtical.php",
-        // data: $('#sentToBack').serialize(),
+        url: "iService.php",
         type: "GET",
         dataType: 'text',
         async: false,
 
-        success: function(msgA) {
-            var mesA = JSON.parse(msgA);
-            console.log(mesA);
-            for (var i = 0; i < mesA.length; i++) {
-                $('.disInfo .postTitle h3').eq(i).text(mesA[i].arti_title);
-                // console.log($('.disInfo .postTitle h3').eq(i).text());
-                $('.disInfo .postContent').eq(i).text(mesA[i].arti_content);
-                $('.disInfo .postContent').eq(i).text(mesA[i].arti_content.replace(/<br>/g, ","));
-                //RegExp 比對全部的寫法
-                $('.disInfo .postDate').eq(i).text(mesA[i].arti_date);
-                $('.disInfo .watch').eq(i).text(mesA[i].arti_count);
-                $('.disInfo .author').eq(i).text(mesA[i].mem_name);
-                // $('.disInfo .postTitle h3').eq(i).text(mesA[i].arti_sort);
-                $('.disInfo .message').eq(i).text(mesA[i].arti_report);
+        success: function(msgE) {
+            var mesE = JSON.parse(msgE);
+
+            for (var i = 0; i < mesE.length; i++) {
+                $('.dockA .iback p').eq(i).text(mesE[i].service_intro);
+
             }
+
 
 
         },
@@ -98,7 +131,7 @@ $(document).ready(function() {
             async: false,
 
             success: function(msgB) {
-                // console.log(msgB); 
+
                 var msgB = JSON.parse(msgB);
 
                 for (var i = 0; i < msgB.length; i++) {
@@ -106,10 +139,11 @@ $(document).ready(function() {
                     // console.log($('.disInfo .postTitle h3').eq(i).text());
                     $('#photostack-1 .text .personality span ').eq(i).text(msgB[i].pet_personality);
                     $('#photostack-1 .text .votes').eq(i).text(msgB[i].vote_count);
-                    $('#photostack-1 .text .number').eq(i).text(msgB[i].vote_no);
-                    $('#photostack-1 img').eq(i).attr('src', 'images/' + msgB[i].vote_img);
+                    $('#photostack-1 .text .number').eq(i).text('NO.' + msgB[i].vote_no);
+                    $('#photostack-1 img').eq(i).attr('src', 'images/race_image/' + msgB[i].vote_img);
                     // $('.disInfo .postContent').eq(i).text(mess[i].arti_content.replace(/<br>/g, ","));
                     //RegExp 比對全部的寫法
+                    $('#photostack-1 .card').eq(i).attr('class','card card'+msgB[i].vote_no);
                     $('#photostack-1 .text .size span').eq(i).text(msgB[i].dog_size);
                     $('#photostack-1 .text .sex span').eq(i).text(msgB[i].pet_sex.replace(/m/g, "男生").replace(/f/g, "女生"));
                 }
@@ -124,7 +158,7 @@ $(document).ready(function() {
         });
     }
 
-
+    var lightbox = $('#index-lightbox');
 
 
 
@@ -134,28 +168,31 @@ $(document).ready(function() {
 
 
     //燈箱
-    var lightbox = $('#index-lightbox');
+
     $('.house').click(function() {
         var src = $(this).children('img').attr('src');
         var name = $(this).find('span:first').text();
-
+        $('.closeLightBox').css({ 'display': 'block' });
         lightbox.addClass('pg2');
         $('#index-lightbox .pic img').attr('src', src);
         $('#index-lightbox .text h2').text(name);
-        $('#index-lightbox .box .img').eq(0).css({
+        $('#index-lightbox .imgbox .img').eq(0).css({
             'border': '1px solid #DAA356'
         })
         lightbox.addClass('pg2').fadeIn();
     });
 
-    var littlepic = $('#index-lightbox .box .img');
+    var littlepic = $('#index-lightbox .imgbox .img');
     littlepic.click(function() {
         var src = $(this).children('img').attr('src');
-        $('#index-lightbox .pic img').attr('src', src);
+        $('#index-lightbox .pic img').attr('src', src).addClass('op');
+        $('#index-lightbox .pic').addClass('op');
+        setTimeout(function() {
+            $('#index-lightbox .pic img').removeClass('op');
+            $('#index-lightbox .pic').removeClass('op');
+        }, 500)
         $(this).css({
             'border': '1px solid #DAA356'
-                // 'transition':'.8s'
-
         })
         $(this).siblings().css({
             'border': 'none',
@@ -164,18 +201,34 @@ $(document).ready(function() {
     })
 
     //關燈箱
-    lightbox.click(function(e) {
-        e.stopPropagation();
-
-        if (e.target.id == 'index-lightbox') {
-            $(this).removeClass('pg2').fadeOut();
-
+    $('.closeLightBox').click(function(e) {
+        if (e.target.className == 'fa fa-plus') {
+            var imgg = $('#index-lightbox .imgbox .img');
+            $(this).css({ 'display': 'none' })
+            console.log(e.target);
+            lightbox.removeClass('pg2').fadeOut();
+            imgg.eq(2).css({ 'border': 'none' });
+            imgg.eq(1).css({ 'border': 'none' });
+            imgg.eq(0).css({ 'border': 'none' });
+            $('#index-lightbox h2').text("");
         }
+
     });
 
 
 
     //========================服務=============================
+
+    // $('.dockA .back p').text()
+    $(function() {
+        var len = 40;
+        $(".dockA .iback p").each(function() {
+            if ($(this).text().length > len) {
+                var text = $(this).text().substring(0, len - 1) + "...";
+                $(this).text(text);
+            }
+        });
+    });
     var dock = $('.osx-dock .dock');
     if (windW > 992 && windH > 800) {
 
@@ -186,7 +239,7 @@ $(document).ready(function() {
             $(this).find('.fornt').css({
                 'transform': 'rotateY(-180deg)'
             })
-            $(this).find('.back').css({
+            $(this).find('.iback').css({
                 'transform': 'rotateY(0deg)'
             })
 
@@ -219,7 +272,7 @@ $(document).ready(function() {
             $(this).find('.fornt').css({
                 'transform': 'rotateY(0deg)'
             })
-            $(this).find('.back').css({
+            $(this).find('.iback').css({
                 'transform': 'rotateY(180deg)'
             })
             $(this).css({
@@ -295,7 +348,7 @@ $(document).ready(function() {
             $(this).find('.fornt').css({
                 'transform': 'rotateY(-180deg)'
             })
-            $(this).find('.back').css({
+            $(this).find('.iback').css({
                 'transform': 'rotateY(0deg)'
             })
 
@@ -328,7 +381,7 @@ $(document).ready(function() {
             $(this).find('.fornt').css({
                 'transform': 'rotateY(0deg)'
             })
-            $(this).find('.back').css({
+            $(this).find('.iback').css({
                 'transform': 'rotateY(180deg)'
             })
             $(this).css({
@@ -399,14 +452,19 @@ $(document).ready(function() {
         $('.osx-dock .dock .dockA ').click(function() {
             var src = $(this).find('img').attr('src');
             var name = $(this).find('h2').text();
+            var txt = $(this).find('.iback p').text();
+            $('.closeLightBox').css({ 'display': 'block' });
             $('#index-lightbox').addClass('pg3');
-            $('#index-lightbox img').attr('src', src);
+            $('#index-lightbox .pic img').attr('src', src);
             $('#index-lightbox .text h3').text(name);
             $('#index-lightbox').addClass('.pg3').fadeIn();
+            $('#index-lightbox .pic .txt p').text(txt);
 
         })
-        $('#index-lightbox').click(function() {
-            $(this).removeClass('pg3').fadeOut();
+        $('.closeLightBox').click(function() {
+            $('#index-lightbox').removeClass('pg3').fadeOut();
+            $('#index-lightbox .pic .txt p').text("");
+            $('.closeLightBox').css({ 'display': 'none' });
         });
         $('.scroll-icon-pg3').css({
             'display': 'none'
@@ -425,7 +483,7 @@ $(document).ready(function() {
             'fitToSectionDelay': 500,
             // 'fitToSection': false,
             'scrollingSpeed': 1700,
-            'scrollOverflow': true,
+            // 'scrollOverflow': true,
             'navigationTooltips': ['首頁', '房型介紹', '服務介紹', '萌主爭霸', '討論區'],
 
             // 'afterLoad': function(anchorLink, index) {
@@ -651,9 +709,72 @@ $(document).ready(function() {
 
     })
     $('.btnLink').click(function(e) {
-        if (sessionStorage['startDateY'] == null && sessionStorage['startDateM'] == null && sessionStorage['startDateD'] == null && sessionStorage['endDateY'] == null && sessionStorage['endDateM'] == null &&sessionStorage['endDateD'] == null ) {
+        if (sessionStorage['startDateY'] == null && sessionStorage['startDateM'] == null && sessionStorage['startDateD'] == null && sessionStorage['endDateY'] == null && sessionStorage['endDateM'] == null && sessionStorage['endDateD'] == null) {
             e.preventDefault();
             alert("請選擇入住日期");
         }
     })
+})
+
+$(document).ready(function() {
+     heartClick();
+            // 愛心動畫
+
+            function heartClick() {
+                $('.favorite').on('click', function() {
+                    $(this).toggleClass('liked');
+
+                    // 增加及減少投票數
+                    var temp = $(this).attr('class');
+                    if (temp.indexOf("liked") != -1) {
+                        // alert(temp);
+                        var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                        var voteCountInt = parseInt(voteCountString) + 1;
+                        var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
+                        cardNumber = cardNumber.substr(3);
+                        var cardLikedNum = 'liked' + cardNumber;
+                        var totalCardNum = 15;
+                            console.log(voteCountString);
+                        // 寫入localstorage投了哪一隻寵物
+                        localStorage.setItem(cardLikedNum, "1");
+
+
+                        $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
+
+                    } else {
+
+                        var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
+                        cardNumber = cardNumber.substr(3);
+                        var cardLikedNum = 'liked' + cardNumber;
+                        var totalCardNum = 15;
+                        var voteCount = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                        var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                        var voteCountInt = parseInt(voteCountString) - 1;
+
+                        $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
+                        // 清除localstorage投了哪一隻寵物
+                        localStorage.removeItem(cardLikedNum);
+                    };
+
+                }); // 愛心動畫結束
+
+
+
+                // // 以localstorage判斷客戶端是否投過票_開始
+                if (typeof(Storage) !== "undefined") {
+                    var totalCardNum = 39;
+                    for (i = 0; i <= totalCardNum; i++) {
+                        var likeCardNum = 'liked' + i;
+                        var likeStatus = localStorage.getItem(likeCardNum);
+
+                        if (likeStatus == 1) {
+                            var cardID = '.card' + i;
+                            var cardString = cardID + ' .favorite';
+                            $(cardString).addClass('liked');
+
+                        }
+                    }
+                }
+                // 以localstorage判斷客戶端是否投過票_結束 
+            }
 })

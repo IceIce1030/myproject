@@ -40,7 +40,7 @@ try{
       
       //留言內容
         $str.="<div class='replyRow1'>
-          <img src='images/doggy.png'>
+          <img src='images/member/{$articleRow["mem_img"]}'>
           <div class='postGroup'>
             <span class='author'>{$articleRow["mem_name"]}</span>
             <span class='postDate'>{$articleRow["artimsg_date"]}</span>

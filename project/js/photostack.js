@@ -89,8 +89,8 @@
 		this.inner = this.el.querySelector( 'div' );
 		this.allItems = [].slice.call( this.inner.children );
 		this.allItemsCount = this.allItems.length;
-		if( !this.allItemsCount ) return;
-		this.items = [].slice.call( this.inner.querySelectorAll( 'figure:not([data-dummy])' ) );
+		// if( !this.allItemsCount ) return;
+		this.items = [].slice.call( this.inner.querySelectorAll( 'figure' ) );
 		this.itemsCount = this.items.length;
 		// index of the current photo
 		this.current = 0;
@@ -113,11 +113,12 @@
 		this.nav = document.createElement( 'nav' )
 		var inner = '';
 		for( var i = 0; i < this.itemsCount; ++i ) {
-			inner += '<span></span>';
+			inner += '<span class="myCircle"></span>';
 		}
 		this.nav.innerHTML = inner;
 		this.el.appendChild( this.nav );
 		this.navDots = [].slice.call( this.nav.children );
+
 	}
 
 	Photostack.prototype._initEvents = function() {
@@ -150,6 +151,7 @@
 			open();
 		}
 
+		// this.items.addEventListener( 'click', function(){
 		this.navDots.forEach( function( dot, idx ) {
 			dot.addEventListener( 'click', function() {
 				// rotate the photo if clicking on the current dot
@@ -167,7 +169,9 @@
 					}
 				}
 			} );
-		} );
+			
+			} );
+		
 
 		window.addEventListener( 'resize', function() { self._resizeHandler(); } );
 	}

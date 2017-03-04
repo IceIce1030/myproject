@@ -808,6 +808,9 @@ $(document).ready(function(){
   			var num = $(this).attr('href');
   			num = num.replace('#section_0','');
 
+  			$('#stepNum').text(num);
+  			ahref = num;
+
   			var sectionId='#bookSection'+nowSection;
 
   			if(num==2){//房間房型
@@ -1175,6 +1178,9 @@ $(document).ready(function(){
   			var num = $(this).attr('href');
   			num = num.replace('#section_0','');
 
+
+  			$('#stepNum').text(num);
+
   			var str = '.stepDiy .step'+num+' .step-num a';
   			var str2 = '.stepDiy .step'+num+' .step-text';
   			var str3 = '.stepDiy .step'+num+' .step-num';
@@ -1322,15 +1328,24 @@ $(document).ready(function(){
 
   	$(document).scroll(function() {
 	    
-	    if($(document).scrollTop()>10){
-	    	$('.stepDiy').fadeOut(200);
+  			// console.log(ahref);
+  			if(ahref!=7){
+  				if($(document).scrollTop()>10){
+			    	$('.stepDiy').fadeOut(200);
+			    }
+			    else{
+			    	$('.stepDiy').fadeIn(200);	
+			    }
+  			}
+  			else{
+  				$('.stepDiy').css({
+  					display:'none'
+  				});
+  			}
 	    	
+	    
 
-	    }
-	    else{
-	    	$('.stepDiy').fadeIn(200);
-	    	
-	    }
+	    
 	 });
   		
 	//選單第一個字變大
@@ -1660,7 +1675,7 @@ $(document).ready(function(){
 		  		var sPrice = $(this).siblings('.input-service-price').val();
 		  		sessionStorage.totalMoney = parseInt(sessionStorage.totalMoney)+parseInt(sPrice);
 		  		$('#totalMoney').text(sessionStorage.totalMoney);
-		  		console.log(sessionStorage.totalMoney);
+		  		// console.log(sessionStorage.totalMoney);
 
 
 		  		var span = document.createElement('span');
@@ -2065,7 +2080,7 @@ $(document).ready(function(){
 
                 success: function(msg){
                     // alert(msg);
-                    console.log(msg);
+                    // console.log(msg);
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 

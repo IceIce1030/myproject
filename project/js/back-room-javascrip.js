@@ -1,8 +1,8 @@
-$(document).ready(function(){
      if(sessionStorage["backlogin"]  !='ok' ){
         location.href="../back-login.html";
     }
-
+$(document).ready(function(){
+    
     imgtype=true;
     roomInfo();
 
@@ -183,7 +183,7 @@ $(document).ready(function(){
             var room_no =$('#room_no').val();
             var room_name = $('#room_name').val();
             var room_price = $('#room_price').val();
-            var room_info = $('#room_info').text();
+            var room_info = $('#room_info').val();
             var room_count =$('#room_count').val();
 
             var img1Src = $('#imgName1').val();

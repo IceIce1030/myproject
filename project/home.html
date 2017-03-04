@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<link href='images/furkid.ico' rel='shortcut icon'/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>FurKid首頁</title>
@@ -16,7 +17,6 @@
     <script type="text/javascript" src="js/jquery.fullPage.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bin-calendar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
     <style type="text/css">
     * {
@@ -26,34 +26,41 @@
 </head>
 
 <body>
-    
+    <!-- 首頁燈箱 -->
     <div id="index-lightbox">
-        <div class="pic">
-            <img src="">
-        </div>
-        <div class="text">
-            <div class="left">
-                <div class="box">
-                    <div class="img">
-                        <img src="">
-                    </div>
-                    <div class="img">
-                        <img src="">
-                    </div>
-                    <div class="img">
-                        <img src="">
-                    </div>
+        <div class="box">
+            <div class="closeLightBox" id="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+            <div class="pic">
+                <img src="">
+                <div class="txt">
+                    <p></p>
                 </div>
             </div>
-            <div class="right">
-                <div class="inside">
-                    <h2></h2>
-                    <p></p>
-                    <a href="service.html">more</a>
+            <div class="text">
+                <div class="left">
+                    <div class="imgbox">
+                        <div class="img">
+                            <img src="">
+                        </div>
+                        <div class="img">
+                            <img src="">
+                        </div>
+                        <div class="img">
+                            <img src="">
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="inside">
+                        <h2></h2>
+                        <p></p>
+                        <a href="service.html">more</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- 首頁燈箱end -->
     <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
@@ -65,14 +72,14 @@
                 <!-- 選單內容 -->
                 <ul class="content" id="menuContent">
                     <li>
-                        <a href="book.html" ><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
+                        <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
                         <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                        <a href="service.html" ><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
                     <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
@@ -90,9 +97,9 @@
                 </div>
                 <div class="afterLogin" id="afterLogin">
                     <div class="profilePhotoDiv">
-                        <img id="mem_img" src="">
+                        <img id="nav_mem_img" src="">
                     </div>
-                    <p>Hi~<span id="mem_name"></span></p>
+                    <p>Hi~<span id="nav_mem_name"></span></p>
                 </div>
                 <!-- 會員中心選單燈箱開始 -->
                 <div class="navbarLightbox memberlightbox">
@@ -123,14 +130,17 @@
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
             <p>
-                <input type="text" name="mem_id" id="mem_id" placeholder="帳號" required>
+                <input type="text" name="login_mem_id" id="login_mem_id" placeholder="帳號" required>
             </p>
             <p>
-                <input type="password" name="mem_psw" id="mem_psw" placeholder="密碼" required>
+                <input type="password" name="login_mem_psw" id="login_mem_psw" placeholder="密碼" required>
             </p>
             <p id="forgotPsw"><span>忘記密碼</span></p>
             <p>
                 <input class="inputBtn" id="loginBtn" type="submit" value="登入">
+            </p>
+            <p id="wrongData">
+                <!-- 密碼錯誤，請再試一次 -->
             </p>
             <div class="notMemberYet">
                 <p>
@@ -246,51 +256,42 @@
             <div class="box" id="box">
                 <div class="colum">
                     <div class="house house-01">
-                        <img src="images/country1.jpg">
+                        <img src="images/room/country1.jpg">
                         <div><span>鄉村風</span><span>給寵物滿滿的鄉村大平台</span></div>
                     </div>
                 </div>
                 <div class="colum">
                     <div class="house house-02">
-                        <img src="images/dream1.jpg">
+                        <img src="images/room/dream1.jpg">
                         <div><span>夢幻風</span><span>給寵物滿滿的工業大平台</span></div>
                     </div>
                 </div>
                 <div class="colum">
                     <div class="house house-03">
-                        <img src="images/loft1.jpg">
+                        <img src="images/room/loft1.jpg">
                         <div><span>工業風</span><span>給寵物滿滿的夢幻大平台</span></div>
                     </div>
                 </div>
                 <div class="colum">
                     <div class="house house-04">
-                        <img src="images/north1.jpg">
+                        <img src="images/room/north1.jpg">
                         <div><span>北歐風</span><span>給寵物滿滿的普普大平台</span></div>
                     </div>
                 </div>
                 <div class="colum">
                     <div class="house house-05">
-                        <img src="images/modern1.jpg">
+                        <img src="images/room/modern1.jpg">
                         <div><span>現代風</span><span>給寵物滿滿的夢幻大平台</span></div>
                     </div>
                 </div>
                 <div class="colum">
                     <div class="house house-06">
-                        <img src="images/pop1.jpg">
+                        <img src="images/room/pop1.jpg">
                         <div><span>普普風</span><span>給寵物滿滿的鄉村大平台</span></div>
                     </div>
                 </div>
                 <div class="clear"></div>
             </div>
-            <!-- scroll -->
-            <!--  <div class="scroll-icon">
-                <i class="fa fa-angle-double-down"></i>
-            </div> -->
-            <!-- </div>row end -->
-            <!-- </div>container end -->
-            <!-- <div class="bgDog">
-                        <img src="img/pg2dog.png">
-                    </div> -->
             <div class="clear"></div>
         </div>
         <!-- pageTwo end -->
@@ -306,16 +307,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-1.jpg" alt='Whale' />
+                                        <img src="images/service/pg3-1.jpg" alt='bath' />
                                         <div class="txt">
                                             <h2>沐浴</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-1.jpg" alt='Whale' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-1.jpg" alt='bath' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -323,16 +325,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-2.jpg" alt='Moon' />
+                                        <img src="images/service/pg3-2.jpg" alt='brush' />
                                         <div class="txt">
                                             <h2>潔牙</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-2.jpg" alt='Moon' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-2.jpg" alt='brush' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -340,16 +343,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-3.jpg" alt='Dove' />
+                                        <img src="images/service/pg3-3.jpg" alt='groom' />
                                         <div class="txt">
                                             <h2>修毛</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-3.jpg" alt='Dove' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-3.jpg" alt='groom' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -357,16 +361,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-4.jpg" alt='Tree' />
+                                        <img src="images/service/pg3-4.jpg" alt='massage' />
                                         <div class="txt">
                                             <h2>按摩</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-4.jpg" alt='Tree' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-4.jpg" alt='massage' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -374,16 +379,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-5.jpg" alt='Bubble' />
+                                        <img src="images/service/pg3-5.jpg" alt='swim' />
                                         <div class="txt">
                                             <h2>游泳</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-5.jpg" alt='Bubble' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-5.jpg" alt='swim' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -391,16 +397,17 @@
                             <div class="dock">
                                 <div class="dockA">
                                     <div class="fornt">
-                                        <img src="../img/pg3-6.jpg" alt='Fish' />
+                                        <img src="images/service/pg3-6.jpg" alt='walk' />
                                         <div class="txt">
                                             <h2>遛狗</h2>
                                             <p>給你滿滿的服務</p>
                                         </div>
                                     </div>
-                                    <div class="back">
-                                        <img src="../img/pg3-6.jpg" alt='Fish' />
+                                    <div class="iback">
+                                        <img src="images/service/pg3-6.jpg" alt='walk' />
                                         <div class="txt">
-                                            <p>給你滿滿的服務</p>
+                                            <a href="service.html"><p></p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -935,7 +942,7 @@
                 </div>
             </section>
             <!-- scroll -->
-            <div class="back">
+            <div class="toback">
                 <span id="left"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                 <span id="right"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
             </div>
@@ -950,13 +957,13 @@
             <div class="home_dis">
                 <div class="disclass disclass1">
                     <div class="distitle">
-                        <h2>健康鮮食</h2>
+                        <h2>住宿分享</h2>
                     </div>
                     <div class="disInfo">
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel foodLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -972,9 +979,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel foodLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -990,9 +997,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel foodLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1015,9 +1022,9 @@
                     </div>
                     <div class="disInfo">
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel shareLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1033,9 +1040,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel shareLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1051,9 +1058,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">健康飲食</div>
+                            <div class="itemLabel shareLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1072,13 +1079,13 @@
                 </div>
                 <div class="disclass disclass3">
                     <div class="distitle">
-                        <h2>新手爸媽</h2>
+                        <h2>寵物保健</h2>
                     </div>
                     <div class="disInfo">
                         <div class="post">
-                            <div class="itemLabel foodLabel">新手爸媽</div>
+                            <div class="itemLabel healthLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1094,9 +1101,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">新手爸媽</div>
+                            <div class="itemLabel healthLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1112,10 +1119,10 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">新手爸媽</div>
+                            <div class="itemLabel healthLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
-                            </div>
+                                <img class="rwd-img"" alt=""></a>
+                        </div>
                             <div class="txt">
                                 <div class="postTitle">
                                     <a href=""><h3></h3></a></div>
@@ -1133,12 +1140,12 @@
                 </div>
                 <div class="disclass disclass4">
                     <div class="distitle">
-                        <h2>創作分享</h2></div>
+                        <h2>新手爸媽</h2></div>
                     <div class="disInfo">
                         <div class="post">
-                            <div class="itemLabel foodLabel">創作分享</div>
+                            <div class="itemLabel newLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1154,9 +1161,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">創作分享</div>
+                            <div class="itemLabel newLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1172,9 +1179,9 @@
                             </div>
                         </div>
                         <div class="post">
-                            <div class="itemLabel foodLabel">創作分享</div>
+                            <div class="itemLabel newLabel"></div>
                             <div class="postImg">
-                                <a href=""><img class="rwd-img" src="img/dogFood.jpeg" alt=""></a>
+                                <img class="rwd-img" src="" alt="">
                             </div>
                             <div class="txt">
                                 <div class="postTitle">
@@ -1191,20 +1198,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- footer開始 -->
+            </div>  
+             <!-- footer開始 -->
             <footer>
                 <div class="container">
                     <section>
-                        <div class="col-xs-12 col-sm-6 col-lg-6 contactus">
+                        <div class="col-xs-12 col-sm-6 col-md-6 contactus">
                             <h6>聯絡我們</h6>
                             <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
                             <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
                             <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
-                            <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
                             <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-lg-6 info">
+                        <div class="col-xs-12 col-sm-6 col-md-6 info">
                             <h6>營業資訊</h6>
                             <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; 營業時間: 週一到週日9:00-21:00</p>
                             <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; 地址: 桃園市中壢區中大路300號</p>
@@ -1212,15 +1218,16 @@
                         </div>
                     </section>
                     <section>
-                        <div class="col-xs-12 col-lg-12 col-sm-12 copyright">
+                        <div class="col-xs-12 col-sm-12 col-md-12 copyright">
                             <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
                         </div>
                     </section>
                 </div>
             </footer>
-            <div class="clear"></div>
+            <!-- footer結束 -->
+            <!-- <div class="clear"></div> -->
         </div>
-        <!-- 捉雞 pageFive end -->
+        <!-- pageFive end -->
     </div>
     <!-- index end -->
 </body>

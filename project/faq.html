@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>FAQ</title>
+	<title>FurKidFAQ</title>
+    <link href='images/furkid.ico' rel='shortcut icon'/>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
@@ -95,8 +96,8 @@
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html" ><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
-                    <li><a href="faq.html" class="active"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
+                        <a href="service.html" class="active"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
             <!-- logo回首頁 -->
@@ -113,9 +114,9 @@
                 </div>
                 <div class="afterLogin" id="afterLogin">
                     <div class="profilePhotoDiv">
-                        <img id="mem_img" src="">
+                        <img id="nav_mem_img" src="">
                     </div>
-                    <p>Hi~<span id="mem_name"></span></p>
+                    <p>Hi~<span id="nav_mem_name"></span></p>
                 </div>
                 <!-- 會員中心選單燈箱開始 -->
                 <div class="navbarLightbox memberlightbox">
@@ -146,14 +147,17 @@
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
             <p>
-                <input type="text" name="mem_id" id="mem_id" placeholder="帳號" required>
+                <input type="text" name="login_mem_id" id="login_mem_id" placeholder="帳號" required>
             </p>
             <p>
-                <input type="password" name="mem_psw" id="mem_psw" placeholder="密碼" required>
+                <input type="password" name="login_mem_psw" id="login_mem_psw" placeholder="密碼" required>
             </p>
             <p id="forgotPsw"><span>忘記密碼</span></p>
             <p>
                 <input class="inputBtn" id="loginBtn" type="submit" value="登入">
+            </p>
+            <p id="wrongData">
+                <!-- 密碼錯誤，請再試一次 -->
             </p>
             <div class="notMemberYet">
                 <p>

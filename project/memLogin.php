@@ -1,6 +1,4 @@
 <?php 
-// ob_start();
-// session_start();
 
 try{
   require_once("connectFurkid.php");
@@ -12,11 +10,6 @@ try{
   if( $member->rowCount() == 0){ //登入失敗
   	echo "Fail";
   }else{
-  	// $memRow = $member->fetch();
-    // $_SESSION["mem_id"]=$memRow["mem_id"];
-    // $_SESSION["mem_name"]=$memRow["mem_name"];
-    // $_SESSION["mem_mail"]=$memRow["mem_mail"];
-    // echo $memRow["mem_name"];
 
     //取回會員資料
     $memRow = $member->fetch(PDO::FETCH_ASSOC);

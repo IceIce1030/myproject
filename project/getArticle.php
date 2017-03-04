@@ -2,7 +2,10 @@
 try{
   require_once("connectFurkid.php");
 
-  $sql = "select a.mem_no, mem_name, arti_title, arti_content, arti_date, arti_count, arti_img, arti_sort, arti_report, arti_no from article a join member b where a.mem_no = b.mem_no and arti_no=:arti_no";
+  $sql = "select a.mem_no, mem_name, mem_img, arti_title, arti_content, arti_date, arti_count, arti_img, arti_sort, arti_report, arti_no 
+from article a join member b 
+where a.mem_no = b.mem_no 
+and arti_no=:arti_no";
   // $sql = "select * from article where arti_no=:arti_no";
   $article = $pdo->prepare( $sql );
   $article->bindValue(":arti_no", $_REQUEST["arti_no"]);
@@ -71,7 +74,7 @@ try{
       <tr>
         <td class='secondRow'>
           <div class='col-xs-12 col-sm-2 col-md-2 secondLeft'>
-                        <img src='images/doggy.png'>
+                        <img src='images/member/{$articleRow["mem_img"]}'>
                         <div class='postGroup'>
                             <span class='author'>{$articleRow["mem_name"]}</span>
                             <span class='postDate'>{$articleRow["arti_date"]}</span>

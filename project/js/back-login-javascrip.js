@@ -29,5 +29,8 @@ $(document).ready(function(){
             alert('輸入錯誤，請重新輸入');
         }
     });
+    $('.cancel').click(function(){
+        location.href="../index.html";
+    });
 
 });

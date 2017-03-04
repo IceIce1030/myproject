@@ -14,7 +14,9 @@ try{
           dog_size
           from pet a join dog b 
           join vote c
-          where a.dog_no = b.dog_no and a.pet_no = c.pet_no";
+          where a.dog_no = b.dog_no and a.pet_no = c.pet_no
+          order by a.pet_no desc";
+
   $vote = $pdo->prepare( $sql );
   // $eventStatus->bindValue(":eventStatus",'yes');
   $vote->execute();
