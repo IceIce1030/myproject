@@ -80,7 +80,7 @@ try{
     //送出json字串
     // echo json_encode( $str);//陣列編碼成json字串，回傳到前端
 
-    $str .="<tr><td colspan='6'>";
+    $str .="<tr><td colspan='9'>";
     for( $i=1; $i<=$pages; $i++){
        $str .= "<span class='page' id='page$i'>$i</span> &nbsp;";
     }
@@ -88,7 +88,7 @@ try{
     echo $str;
 
   } 
-}catch(PDOException $e){
+}catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";
 }

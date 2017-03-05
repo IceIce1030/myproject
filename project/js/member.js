@@ -8,15 +8,31 @@ $(document).ready(function() {
         $('select').niceSelect('update');
     });
 
+    //tab選到直接連到會員頁相對應內容tabContent
+    var _var_tabContentId = localStorage['_var_tabContentId'];
+
+    if (_var_tabContentId != "") {
+        console.log('has');
+        $('.tab').removeClass('active');
+        var _fullTabId = ".tab" + "." + _var_tabContentId;
+        $(_fullTabId).addClass('active');
+        //tab選到下方出現相對應內容tabContent
+        var tabContentId = "#" + _var_tabContentId;
+        $('.tabContent').addClass('hideItem');
+        $(tabContentId).removeClass('hideItem');
+    }
+
+
     //tab變選到active，上背景色
     $('.tab').click(function(e) {
         $('.tab').removeClass('active');
         $(this).addClass('active');
 
         //tab選到下方出現相對應內容tabContent
-        var tabContentId = $(this).attr('data-tab-id');
+        var tabContentId = "#" + $(this).attr('data-tab-id');
         // console.log(tabContentId);
         $('.tabContent').addClass('hideItem');
+
         $(tabContentId).removeClass('hideItem');
 
     });
@@ -248,12 +264,13 @@ function getPetInfo() {
             if (xhr.status == 200) { //server端順利執行完畢
                 if (xhr.responseText == "no pet") { //沒寵物
                     //顯示 錯誤 訊息
-                    console.log("無法讀取寵物資料");
+                    console.log("沒有寵物資料");
+                    document.getElementById('petCount').innerHTML = "0";
 
                 } else { //成功
                     document.getElementById('petListDiv').innerHTML = xhr.responseText;
+                    // 會員有幾隻寵物
                     document.getElementById('petCount').innerHTML = document.getElementsByClassName('pet_current').length;
-
                     //updatePetInfo lightbox
                     $('.updatePetInfo').click(function() {
                         //抓到寵物號碼 全域變數
@@ -693,7 +710,7 @@ function memDoFirst() {
     //===addPetBtn.onclick 事件處理程序是 addPetfromMemPage
     addPetBtn.addEventListener('click', addPetfromMemPage, false);
     //改寵物照片將它存到對的路徑  
-     addPetBtn.addEventListener('click', add_changePetImg, false);
+    addPetBtn.addEventListener('click', add_changePetImg, false);
     /// 上傳檔案出現圖片
     document.getElementById('add_upload_petImg').onchange = add_showUploadPetImg;
     // $('#add_upload_petImg').change(function(){

@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <link href='images/furkid.ico' rel='shortcut icon'/>
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>會員專區</title>
+    <title>Furkid | 會員專區</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- 選單要引用fontawesome/jquery和nav.js -->
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
@@ -59,16 +60,16 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                            <a class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
                         <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
                     </ul>
                 </div>
@@ -119,8 +120,8 @@
                     <div class="txt">
                         <h4 id="panel_mem_name"></h4>
                         <p><span id="petCount"></span>隻毛小孩的<span id="panel_mem_sex"></span></p>
-                        <span class="updateMemInfo" class="linktochange" id="updateMemInfo2"><i class="fa fa-pencil" aria-hidden="true"></i>更新個人資料</span>
-                        <span><a id="changepsw" class="linktochange" href="changePsw.html"><i class="fa fa-unlock-alt" aria-hidden="true"></i>變更密碼</a></span>
+                        <span class="updateMemInfo" id="updateMemInfo2"><i class="fa fa-pencil" aria-hidden="true"></i>更新個人資料</span>
+                        <span id="changepsw"><i class="fa fa-unlock-alt" aria-hidden="true"></i>變更密碼</span>
                     </div>
                 </div>
                 <!-- 寵物資料列表 -->
@@ -132,7 +133,7 @@
                             <i class="fa fa-plus addPetIcon" aria-hidden="true"></i>
                         </div>
                         <div class="txt">
-                            <p class="linktochange">新增寵物</p>
+                            <p>新增寵物</p>
                         </div>
                     </div>
                 </div>
@@ -141,9 +142,9 @@
             <div class="col-xs-12 col-sm-12 col-md-12 accountMgt">
                 <!-- 會員中心選單 -->
                 <div class="tabMenu">
-                    <a data-tab-id="#mybookings" class="tab active">我的訂單</a>
-                    <a data-tab-id="#myposts" class="tab">我的文章</a>
-                    <a data-tab-id="#myrace" class="tab">萌主參賽紀錄</a>
+                    <a data-tab-id="mybookings" class="mybookings tab active">我的訂單</a>
+                    <a data-tab-id="myposts" class="myposts tab">我的文章</a>
+                    <a data-tab-id="myrace" class="myrace tab">萌主參賽紀錄</a>
                 </div>
                 <!-- 會員資料內容 -->
                 <div class="mainContent">
@@ -152,7 +153,6 @@
                     </div>
                     <!-- 我的文章 -->
                     <div id="myposts" class="tabContent hideItem">
-                        <!-- 一篇文章 -->
                     </div>
                     <!-- 萌主參賽紀錄 -->
                     <div id="myrace" class="tabContent hideItem">

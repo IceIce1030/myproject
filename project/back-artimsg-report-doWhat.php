@@ -23,7 +23,14 @@ try{
 
     //送出json字串
     // echo json_encode( $str);//陣列編碼成json字串，回傳到前端
-    echo '成功';
+     if($doWhat == '取消'){
+        echo '取消成功';
+     }
+     else{
+        echo "刪除成功";
+     }
+
+    
 
    
 }

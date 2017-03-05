@@ -1,0 +1,124 @@
+@include respones(md) {
+    //大桌機 container 1170 (>1200)
+    //小電腦 container 970px (992~1200)
+    .member {
+        padding-top: 80px;
+        .container {
+            padding-top: 20px;
+            min-height: 75vh;
+            .memberInfo {
+                margin-bottom: 20px;
+            }
+            .top {
+                margin-left: 25px;
+            }
+            .petList {
+                margin-bottom: 20px;
+                .pet {
+                    margin-right: 20px;
+                }
+            }
+            // 會員管理
+            .accountMgt {
+                //tab選單
+                .tabMenu {
+                    a:first-child {
+                        margin-left: 25px;
+                    }
+                    a {
+                        padding: 5px 10px;
+                        letter-spacing: 2px;
+                        width: auto;
+                        margin: 0 5px;
+                    }
+                }
+                .mainContent {
+                    margin-left: 25px;
+                    // 我的訂單
+                    .booking {
+                        height: 180px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        .roomPhoto {
+                            width: 300px;
+                            height: 140px;
+                        }
+                        .bookingDetail {
+                            margin-left: 20px;
+                            float: left;
+                            line-height: 1.8;
+                        }
+                        .bookingDate {
+                            float: right;
+                            margin-bottom: 10px;
+                            .checkinDate {
+                                padding: 0 10px;
+                                height: 100px;
+                            }
+                            .checkoutDate {
+                                padding: 0 10px;
+                                float: right;
+                                height: 100px;
+                            }
+                        }
+                        .btnDiv {
+                            width: 100%;
+                            margin-top: 10px;
+                        }
+                    }
+                    //我的文章
+                    .post {
+                        height: 180px;
+                        padding: 20px;
+                        .postImg {
+                            width: 200px;
+                            height: 140px;
+                        }
+                        .txt {
+                            max-width: 700px;
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //燈箱
+    //燈箱
+    .C_lightbox {
+        .lightbox_box {
+            .lightbox_content {
+                padding-top: 20px;
+                .formDiv {
+                    font-size: $fz-content;
+                    .formGroup {
+                        padding: 5px;
+                        min-height: 44px;
+                        margin-bottom: 10px;
+                    }
+                    .labelClass {
+                        display: inline-block;
+                        width: 90px;
+                    }
+                    input {
+                        width: 250px;
+                        height: 34px;
+                        padding: 3px 6px;
+                        font-size: $fz-content;
+                    }
+                    .genderFormGroup {
+                        padding-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    //aboutme更新會員資料燈箱
+    #aboutme {
+
+    }
+    //mypets addPet資料燈箱
+    #mypets,
+    #addPet {
+    }
+}

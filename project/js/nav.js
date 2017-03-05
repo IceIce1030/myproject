@@ -55,6 +55,19 @@ $(document).ready(function() {
         }, "1s");
     });
 
+    //會員中心tab
+    $('.memberTab').click(function() {
+
+        //tab選到直接連到會員頁相對應內容tabContent
+        var _var_tabContentId = $(this).attr('data-tab-id');
+        localStorage['_var_tabContentId'] = _var_tabContentId;
+
+        // console.log(localStorage['_var_tabContentId']);
+    });
+    //只點會員專區的話，進到預設的連結位置
+    $('#memberSectionLink').click(function() {
+         localStorage['_var_tabContentId'] ="";
+    });
 
 });
 

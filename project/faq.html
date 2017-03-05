@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>FurKidFAQ</title>
+	<title>FurKid | 常見問題</title>
     <link href='images/furkid.ico' rel='shortcut icon'/>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -78,7 +78,7 @@
     
 
 </div> -->
-    <!-- 選單開始 -->
+     <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
             <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
@@ -96,8 +96,8 @@
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html" class="active"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
-                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                    <li><a href="faq.html" class="active" ><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
             <!-- logo回首頁 -->
@@ -122,17 +122,17 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn">登出</div>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
+                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -172,11 +172,10 @@
     <!-- login燈箱結束 -->
 
 
-
 <div class="faq">
 	<div class="container">
 		<div class="htitle">
-			<h1>常見問題Q&A</h1>
+			<h1>常見問題</h1>
 		</div>      
 
 		<div class="row">

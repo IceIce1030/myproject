@@ -5,7 +5,7 @@
 
 	<link href='images/furkid.ico' rel='shortcut icon'/>
 	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>FurKid線上訂房</title>
+	<title>FurKid | 線上訂房</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	
 	<!-- <link rel="stylesheet" type="text/css" href="css/nice-select.css"> -->
@@ -95,6 +95,7 @@
     </div>
 </div>
 <!-- loadingbox -->
+
    <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
@@ -139,17 +140,17 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn">登出</div>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
+                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -187,6 +188,7 @@
         </div>
     </div>
     <!-- login燈箱結束 -->
+
 
 <div class="book"> 
 <!-- 從這開始寫 -->

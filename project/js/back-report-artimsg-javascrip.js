@@ -46,12 +46,15 @@ $(document).ready(function(){
 
 
                     $('.doWhat').click(function(){
-                        var a= $(this).siblings('#artiNo').val();
-
                         var dowhat = $(this).val();
 
 
-                        artimsgReport(a,dowhat);
+                        if(confirm("確定要"+dowhat+"嗎?")){
+                            var a= $(this).siblings('#artiNo').val();
+                            
+                            artimsgReport(a,dowhat);
+                        }
+                        
                     });
                     $('.page').click(function(){
                         var no = $(this).text();

@@ -48,12 +48,13 @@ $(document).ready(function(){
                     $('#orderlist #table').html(msg);
 
                     	$('#orderlist #table .Check').click(function(){
-							var order_no  = $(this).siblings('.orderlistNo').val();
-							var btnVal = $(this).val();
-
-
-							orderListInOut(order_no,btnVal);
-							orderListCheck();						
+                           var btnVal = $(this).val();
+                           if(confirm("確定要"+btnVal+"嗎?")){
+                                var order_no  = $(this).siblings('.orderlistNo').val();
+                                orderListInOut(order_no,btnVal);
+                                orderListCheck();
+                           }
+													
 						});
                         $('.lookService').click(function(){
                             var ord_no = $(this).siblings('input').val();
@@ -63,10 +64,14 @@ $(document).ready(function(){
                         });
 
                         $('.cancelOrder').click(function(){
-                            var _no = $(this).siblings('input').val();
-                            // alert(_no); 
-                            orderlistDele(_no);
-                            orderListCheck();
+                            if(confirm("確定要取消訂單嗎?")){
+                                var _no = $(this).siblings('input').val();
+                                // alert(_no); 
+                                orderlistDele(_no);
+                                orderListCheck();
+                            }
+                            
+                            
                         });
                 },
 
@@ -140,10 +145,14 @@ $(document).ready(function(){
                         });
 
                         $('.cancelOrder').click(function(){
-                            var _no = $(this).siblings('input').val();
-                            // alert(_no);
-                            orderlistDele(_no); 
-                            orderListCheck();
+                            if(confirm("確定要取消訂單嗎?")){
+                                var _no = $(this).siblings('input').val();
+                                // alert(_no);
+                                orderlistDele(_no); 
+                                orderListCheck();
+                            }
+                            
+                            
                         });
                 },
 

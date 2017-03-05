@@ -50,8 +50,7 @@ $(document).ready(function(){
 
 
                     });
-
-                    
+           
                    
                 },
 
@@ -154,13 +153,19 @@ $(document).ready(function(){
                             alert('請上傳正確檔案格式!');
                         }
                         else{
-                            updateRoom();
+                            if(confirm("確定要修改嗎?")){
+                                updateRoom();
+                            }
+                            
                         }
                         
                     });
 
                     $('.updateCancel').click(function(){
-                        roomInfo();
+                        if(confirm("確定要取消修改嗎?")){
+                            roomInfo();
+                        }
+                        
                     });
                  
                 },

@@ -1,0 +1,376 @@
+@import "lg";
+@import "sm";
+@import "xs";
+
+$allColor: #557095;
+$shareColor: #8CD899;
+$healthColor: #57B1DA;
+$newColor: #D9ABE6;
+$foodColor: #F4A66F;
+$hotColor: #F00;
+
+#d-body{
+	// background-color: #F9F7E8;
+	background-image: url(../images/bg02.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color:#fff;
+}
+.discuss{
+	//三個尺寸共用的寫在這
+	
+	.D-filter{
+
+		.filters{
+			
+			margin-top: 20px;
+
+			.filterBtn{
+				float: left;
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				margin: 5px;
+				text-align: center;
+				letter-spacing: 1px;
+				font-weight: 600;
+				color: #efefee;
+				border-radius: 3px;
+				cursor: pointer;
+				transition: 0.3s;
+				&.chosen{
+					color:#fff;
+				}
+				&.chosen#allBtn{
+					background-color: $allColor;
+				}
+				&.chosen#shareBtn{
+					background-color: $shareColor;
+				}
+				&.chosen#healthBtn{
+					background-color: $healthColor;
+				}
+				&.chosen#newBtn{
+					background-color: $newColor;
+				}
+				&.chosen#foodBtn{
+					background-color: $foodColor;
+				}
+				&.chosen#hotBtn{
+					background-color: $hotColor;
+				}
+			}
+			.filterBtn:hover#allBtn{
+				color: #ececec;
+				background-color: $allColor;
+			}
+			.filterBtn:hover#shareBtn{
+				color: #ececec;
+				background-color: $shareColor;
+			}
+			.filterBtn:hover#healthBtn{
+				color: #ececec;
+				background-color: $healthColor;
+			}
+			.filterBtn:hover#newBtn{
+				color: #ececec;
+				background-color: $newColor;
+			}
+			.filterBtn:hover#foodBtn{
+				color: #ececec;
+				background-color: $foodColor;
+			}
+			.filterBtn:hover#hotBtn{
+				color: #ececec;
+				background-color: $hotColor;
+			}
+			.search{margin: 10px;}
+	
+		}
+
+
+		.postBtn{
+			margin: 20px auto 0;
+			padding: 5px;
+			.post{
+				display: inline-block;
+				width: 120px;
+				height: 35px;
+				padding: 5px;
+				text-align: center;
+				background-color: #B37600;
+				color: #fff;
+				border-radius: 3px;
+				cursor: pointer;
+				transition:.5s;
+				&:before{
+					content: '\f0f6';
+					font-family: fontAwesome;
+					margin: 2px;
+
+				}
+				&:hover{
+					background-color: $brown;
+				}
+			}
+
+		}
+			
+
+
+	}
+
+
+	//燈箱
+.lightbox{
+	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 30;
+	margin: auto;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,.8);
+	display: none;
+	
+	.lightbox-box{
+		background-image: url(../images/bg04.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		transform:translate(-50% ,-50%);
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 0px;
+		height: 0px;		
+		background-color: $bgc;
+		padding: 5px 10px;
+		transition:1s;
+		border-radius: 50%;
+		position: relative;
+		box-shadow: 5px 5px 50px $light-gray;
+		
+		.lightbox-content{					
+			// padding-top:10px;
+			
+			height: 100%;
+			.closeLightBox{
+				line-height: 20px;
+				text-align: center;
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				width: 33px;
+				height:33px;
+				background-color: rgba(0,0,0,.7);
+				border-radius: 50%;
+				transition:.3s;
+				border:2px solid #ddd;
+				.fa-plus{
+					position: relative;
+					left: 3px;
+					top: -2px;
+					padding-top: 10px;
+					font-size: 20px;
+					color: #fff;
+					cursor: pointer;
+					transform:rotate(45deg);
+				}
+			}
+			.postForm{
+					color: #000;
+					margin: auto;
+					input {
+                        width: 250px;
+                        height: 34px;
+                        padding: 3px 6px;
+                        font-size: $fz-content;
+                        border: 1px solid rgba(119, 71, 32, .8);
+                    	border-radius: 5px;
+                    	letter-spacing: 1px;
+                    }
+					.formGroup{
+						border-bottom: 1px dotted $brown;
+						margin: 5px 0;
+						padding: 5px;
+						min-height: 40px;
+					}
+					.labelClass{
+						display: inline-block;
+						font-weight: bold;
+						width: 70px;
+					}
+					.showPic{
+						text-align: center;
+						display: inline-block;
+						position: relative;
+						top: 5px;
+						vertical-align: bottom;
+						margin: 5px auto;
+						overflow: hidden;
+						img{width: 50px;}
+					}
+					#post-pic{
+						border: none;
+                    	display: none;
+					}
+					.uploadImgLabel{
+	                    display: inline-block;
+	                    padding: 6px 12px;
+	                    height: auto;
+	                    font-size: $fz-content;
+	                    border: 1px solid rgba(119, 71, 32, .8);
+	                    border-radius: 5px;
+	                    color: $light-gray;
+	                    cursor: pointer;
+	                    letter-spacing: 1px;
+	                    transition: all .4s;
+	                    background-color: hsla(0, 0%, 97%, 1.0);
+	                    &:hover{
+	                        color: $deep-gray;
+	                        background-color: hsla(0, 0%, 100%, 1.0);
+                    	}
+                    }
+					#post-text{
+						width: 100%;
+						margin-top: 5px;
+						resize:none;
+						border: none;
+					}
+					.buttons{
+						margin: auto;
+						.submitBtn,.cancelBtn{
+							width: 43%;
+							height: 34px;
+							float: left;
+							padding: 6px 12px;
+							margin: 5px;
+							border-radius: 4px;
+							text-align: center;
+							letter-spacing: 2px;
+							color: #fff;
+							cursor: pointer;
+							transition:.5s;
+						}
+						.submitBtn{background-color: $deep-orange;
+							&:hover{background-color:$brown;}
+						}
+						.cancelBtn{background-color: #ccc;
+							&:hover{background-color:$light-gray;}
+						}
+					}
+				}
+
+		}
+	}
+
+
+}
+//燈箱
+	 //燈箱結束
+
+		
+
+	.D-content{
+		.items{
+			animation:fadein 1s ;
+		}
+		@keyframes fadein{
+			0%{opacity: 0;}
+			100%{opacity: 1;}
+		}
+		.item{
+			background-color: rgba(255,255,255,0.8);
+			padding: 10px;
+			border-radius: 3px;
+			position: relative;
+			overflow: hidden;
+			transition:0.5s;
+			&.aa{
+				border: 4px double $shareColor ;
+			}
+			&.bb{
+				border: 4px double $foodColor ;
+			}
+			&.cc{
+				border: 4px double $newColor ;
+			}
+			&.dd{
+				border: 4px double $healthColor ;
+			}
+			h3{
+				color: #434343;
+				transition:0.5s;}
+			img{border-radius: 3px;}
+			.postDate{
+				color: $light-gray;
+				font-size: 12px;}
+			.hotLabel{
+				background-color: #f00;
+				color:#fff;
+				padding: 2px;
+				font-size: 12px;
+				margin:0 10px;
+				opacity: 0;
+				&.on{opacity: 1;}
+			}
+			.watchMess{
+					color: $light-gray;
+					font-size: 12px;
+					#articleNo{display: none;}
+					//觀看
+					.watch:before{
+						content: '\f06e';
+						font-family: fontAwesome;
+						margin: 10px;}
+					.message:before{
+						content: '\f27a';
+						font-family: fontAwesome;
+						margin: 10px;}
+				}
+
+		}
+		.itemlabel{
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				margin: 5px;
+				text-align: center;
+				letter-spacing: 1px;
+				color: #fff;
+				border-radius: 3px;
+				position: absolute;
+				left: -5px;
+				transition: 0.5s;
+				&#shareLabel{
+					background-color: $shareColor;
+				}
+				&#healthLabel{
+					background-color: $healthColor;
+				}
+				&#newLabel{
+					background-color: $newColor;
+				}
+				&#foodLabel{
+					background-color: $foodColor;
+				}
+		}
+
+
+	}//內容結束
+		.item:hover{
+			box-shadow: 0 0 10px rgba(0,0,0,0.6);
+			h3{color: $deep-orange;};
+			
+		}
+			
+
+	
+}
+
+	
+	
+
+

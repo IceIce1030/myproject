@@ -1,0 +1,284 @@
+@import "lg";
+@import "sm";
+@import "xs";
+
+#article-body{
+	background-image: url(../../images/bg03.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.article{
+	//三個尺寸共用的寫在這
+	padding-top: 80px;
+	//麵包屑
+	#breadcrumbs{
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	  padding-left: 60px;
+	  border-radius: 5px;
+	  overflow: hidden;
+	  width: 100%;
+	  li{float: left;}
+	  a{
+	  	padding: 5px;
+	  	margin-right: 0.9em;
+	  	color: $brown;
+	  	position: relative;
+	  	background-image: linear-gradient(to right, #FFFDE3, #E6C18E);  
+	  	&:before{
+	  		content: '';
+	  		position: absolute;
+	  		top: 0;
+	  		right: -15px;
+	  		z-index: 2;
+	  		border-top: 16px solid transparent;
+	 		border-bottom: 16px solid transparent;
+	  		border-left: 16px solid #E6C18E;
+	  	}
+	  	&.current{background: none;font-weight: bold;}
+	  	&.current:before{content: normal;}
+	  	&:hover{background: none;}
+	  	&:hover:before{content: normal;}
+	  }
+	}
+	
+	
+	
+	//麵包結束
+	
+	.articleTable{
+		max-width: 90%;
+		margin: auto;
+		background-color: rgba(255,255,255,0.6);
+		border: 1px solid $deep-orange;
+		
+		.firstRow{
+			padding: 20px;
+			background-color: rgba(255,168,0,0.5);
+			// border-bottom: 4px double $deep-orange;
+			h3,.classLabel{float: left;}
+			h3{color: $deep-orange;font-size: 40px;}
+			.classLabel{
+				width: 90px;
+				height: 30px;
+				padding: 5px;
+				text-align: center;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				color: #fff;
+				position: relative;
+				&#shareLabel{
+					background-color: $shareColor;
+				}
+				&#healthLabel{
+					background-color: $healthColor;
+				}
+				&#newLabel{
+					background-color: $newColor;
+				}
+				&#foodLabel{
+					background-color: $foodColor;
+				}
+				.hotLabel{
+				position: absolute;
+				padding: 2px;
+				font-size: 12px;
+				background-color: #f00;
+				opacity: 0;
+					&.on{opacity:1;}
+				}
+			}
+			
+			.reportBtn,.shareBtn,.reportedBtn{
+				float: right;
+				width: 60px;
+				height: 25px;
+				padding: 1px;
+				margin: 5px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				transition:.3s;
+				cursor: pointer;
+			}
+			.reportBtn,.reportedBtn{
+				border:2px solid $brown;
+				color: $brown;
+				&:hover{
+					color: #fff;
+					background-color: $brown;
+				}
+			}
+			.reportBtn.on{display:none;}
+			.reportedBtn{
+				color: #fff;
+				background-color: $brown;
+				display:none;
+				&.on{display: block;cursor: default;}
+			}
+			.shareBtn{
+				border:2px solid $light-pink;
+				color: $light-pink;
+				&:hover{
+					color: #fff;
+					background-color: $light-pink;
+				}
+			}
+		}
+		.secondRow{
+			padding: 20px;
+			.secondLeft{
+				text-align: center;
+				padding: 5px;
+				img{
+				width: 100px;
+				height: 100px;
+				border-radius:  50%;
+				}
+				.postGroup{
+					.author{
+						display: block;
+						margin: 5px;
+					}
+					.postDate{font-size: 12px;}
+				}
+			}
+			.secondRight{
+				padding: 15px;
+				.showBlock{
+					visibility:hidden;
+				}
+				img{
+				max-width: 95%;
+				margin: 10px auto;}
+			}
+			
+		}
+		
+
+
+	}//table結束
+	
+	.replyTable{
+		max-width: 90%;
+		margin: auto;
+		background-color: rgba(255,255,255,0.6);
+		border: 1px solid $deep-orange;
+		border-top: none;
+				//留言
+		.replyRow1{
+			padding: 10px;
+			background: linear-gradient(to bottom, rgba(255,168,0,0.3), transparent);
+			img,.postGroup{float: left;}
+			img{
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+			}
+			.postGroup{
+				margin: 10px;
+				.author{
+					display: block;
+					margin-bottom: 5px;
+				}
+				.postDate{
+					font-size: 12px;
+				}
+			}
+			.reportBtn,.reportedBtn{
+				float: right;
+				width: 60px;
+				height: 25px;
+				padding: 1px;
+				margin: 5px;
+				text-align: center;
+				font-size: 15px;
+				border-radius: 3px;
+				letter-spacing: 1px;
+				transition:.3s;
+				cursor: pointer;
+				border:2px solid $brown;
+				color: $brown;
+				&:hover{
+					color: #fff;
+					background-color: $brown;
+				}
+			}
+			.reportBtn.on{display:none;}
+			.reportedBtn{
+				color: #fff;
+				background-color: $brown;
+				display:none;
+				&.on{display: block;cursor: default;}
+			}
+		}
+		.replyRow2{
+			padding: 20px;
+			border-bottom: 2px dotted #ccc;
+		}
+		.replyRow2:nth-last-child(1){
+			border-bottom:none;
+		}
+		//留言結束
+	}
+
+
+
+	.a-reply{
+		.message{
+			max-width: 90%;
+			margin: auto;
+		.myMessage{
+			max-width: 100%;
+			margin: auto;
+			resize:none;
+			}
+		}
+		.messbtn{text-align: center;}
+		.messSubmit,.messReset{
+			width: 25%;
+			height: 34px;
+			float: right;
+			padding: 6px 12px;
+			margin: 5px;
+			border-radius: 4px;
+			text-align: center;
+			letter-spacing: 2px;
+			color: #fff;
+			cursor: pointer;
+			transition:.5s;
+		}
+		.messSubmit{background-color: $deep-orange;
+				&:hover{background-color:$brown;}}
+		.messReset{background-color: #ccc;
+				&:hover{background-color:$light-gray;}}
+	}//發表留言結束
+
+	
+	//頁面跳轉
+	.changePage{
+		margin: 10px;
+		text-align: center;
+		.forwardArti,.nextArti{
+			width: 100px;
+			height: 30px;
+			padding: 5px;
+			margin: 5px auto;
+			border-radius: 4px;
+			background-color: $light-pink;
+			color:#fff;
+			cursor: pointer;
+			transition:.5s;
+			&:hover{background-color: $b-red;}
+		}
+		.forwardArti{float: left;}
+		.nextArti{float: right;}
+	}//頁面跳轉結束
+
+
+
+
+
+}

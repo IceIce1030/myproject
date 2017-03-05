@@ -1,0 +1,92 @@
+@include respones(md) {
+    //桌機 container 1170
+    //服務介紹
+    .service {
+        padding-top: 80px;
+        .title {
+            margin: 40px auto 20px;
+        }
+        .introduction {
+            margin: 0 4.166667% 40px;
+            .imageBox {
+                text-align: center;
+                img {
+                    width: 95%;
+                    // right: 80px;
+                    // z-index: -1;
+                }
+            }
+            .contentBox {
+                .txt {
+                    p {
+                        line-height: 2;
+                    }
+                    .btnDiv {
+                        margin-top: 70px;
+                    }
+                }
+            }
+        }
+        .specialty {
+            .item {
+                margin-bottom: -65px;
+                .txt {
+                    min-height: 60px;
+                    top: -95px;
+                    padding: 105px 10px .5em;
+                }
+            }
+        }
+        .roomType {
+            .roomTypeNav {
+                .item {
+                    &:hover .txt {
+                        top: 60%;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        p {
+                            vertical-align: 90%;
+                            color: $deep-gray;
+                        }
+                    }
+                    &.active {
+                        .txt {
+                            top: 60%;
+                            background-color: rgba(255, 255, 255, 0.8);
+                            p {
+                                vertical-align: 90%;
+                                color: $deep-gray;
+                            }
+                        }
+                    }
+                    .txt {
+                        p {
+                            font-size: 24px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+            }
+            .roomInfo {
+                max-height: 440px;
+                .roomPhoto {
+                    img {
+                        bottom: 100px;
+                    }
+                }
+                .roomDetail {
+                    padding-top: 20px;
+                    line-height: 2;
+                    .txt {}
+                    h3 {}
+                    h4 {}
+                    .roomPrice {}
+                    p {}
+                    .btnDiv {
+                        margin-top: 40px;
+                        .btn {}
+                    }
+                }
+            }
+        }
+    }
+}

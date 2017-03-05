@@ -1,0 +1,247 @@
+@import "lg";
+@import "sm";
+@import "xs";
+// * {
+//     outline: 1px solid red;
+// }
+.service {
+    background-image: url(../images/bg02.png);
+    padding-bottom: 20px;
+    .btnDiv {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        .btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 2px solid $deep-orange;
+            border-radius: 4px;
+            color: $deep-orange;
+            letter-spacing: 2px;
+            transition: box-shadow .4s ease;
+            &:hover {
+                box-shadow: 1px 1px 5px #555;
+                background-color: $deep-orange;
+                color: #fff;
+            }
+        }
+    }
+    .title {
+        text-align: center;
+        h1 {
+            color: $sup-orange;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: $sup-orange;
+            text-align: center;
+            margin: 10px auto 0;
+        }
+        img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+            vertical-align: middle;
+            position: relative;
+            bottom: 2px;
+        }
+    }
+    .introduction {
+        border: double $deep-orange;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        position: relative;
+        .imageBox {
+            text-align: center;
+            img {
+                position: relative;
+            }
+        }
+        .contentBox {
+            position: relative;
+            .txt {
+                p {
+                    color: $deep-gray;
+                    margin: auto;
+                }
+                .btnDiv {}
+            }
+        }
+    }
+    .specialty {
+        .item {
+            .imageBox {
+                overflow: hidden;
+                z-index: 5;
+                position: relative;
+                img {
+                    border-radius: 50%;
+                }
+            }
+            .txt {
+                color: $deep-gray;
+                text-align: center;
+                position: relative;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+    .roomType {
+        margin-bottom: 40px;
+        .roomTypeNav {
+            margin-top: 20px;
+            .item {
+                overflow: hidden;
+                padding-left: 5px;
+                padding-right: 5px;
+                cursor: pointer;
+                position: relative;
+                img {
+                    position: relative;
+                    border: double $deep-orange;
+                }
+                .txt {
+                    width: 100%;
+                    height: 100%;
+                    font-size: 0;
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    top: 0;
+                    margin: auto;
+                    background-color: rgba(255, 255, 255, 0.6);
+                    text-align: center;
+                    transition: .5s;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 0;
+                        height: 100%;
+                    }
+                    p {
+                        color: $brown;
+                        display: inline-block;
+                        margin: auto;
+                        letter-spacing: 0.05em;
+                        vertical-align: middle;
+                        text-align: center;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+        .roomInfo {
+            font-size: 0;
+            margin: 20px;
+            border: double $deep-orange;
+            background-color: #fff;
+            overflow: hidden;
+            .roomPhoto {
+                padding: 0;
+                overflow: hidden;
+                img {
+                    position: relative;
+                }
+            }
+            .roomDetail {
+                height: 100%;
+                text-align: center;
+                .txt {
+                    text-align: left;
+                    display: inline-block;
+                    margin: auto;
+                }
+                h3 {
+                    color: $deep-gray;
+                    letter-spacing: 0.08em;
+                    font-size: $fz-h3;
+                }
+                h4 {
+                    font-size: $fz-h4;
+                    letter-spacing: 0.08em;
+                }
+                .roomPrice {
+                    color: $light-pink;
+                }
+                p {
+                    font-size: $fz-content;
+                    letter-spacing: 0.08em;
+                    &:before {
+                        content: '\f1b0';
+                        font-family: fontAwesome;
+                        margin-right: 5px;
+                    }
+                }
+                .btnDiv {
+                    .btn {
+                        font-size: $fz-content;
+                        line-height: initial;
+                    }
+                }
+            }
+        }
+    }
+    .serviceType {
+        .itemDiv {
+            padding: 10px 20px;
+        }
+        .item {
+            border-radius: 3%;
+            overflow: hidden;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            .txt {
+                padding: .5em 10px .8em;
+                h3 {
+                    color: $light-pink;
+                    img {
+                        position: relative;
+                        top: 3px;
+                        width: 26px;
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .priceList {
+        table {
+            margin: auto;
+            tr,
+            td {
+                background-color: rgba(250, 250, 250, 1.0);
+                border: solid transparent;
+                vertical-align: baseline;
+            }
+            tr {
+                font-size: 0;
+            }
+            td {
+                font-size: $fz-content;
+                padding: 15px 10px;
+                min-width: 183px;
+                border-bottom: $brown solid 1px;
+            }
+            .priceItem {
+                img {
+                    width: 17px;
+                    margin-left: 5px;
+                    vertical-align: baseline;
+                }
+            }
+            .priceTag,
+            .dogType {
+                text-align: right;
+            }
+        }
+    }
+}

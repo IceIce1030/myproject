@@ -28,8 +28,6 @@ $(document).ready(function(){
         $('.arti-content-box').fadeOut();
     });
 	
-
-
 });
 //---------------------------
 	
@@ -52,13 +50,13 @@ $(document).ready(function(){
 
 
                     $('.doWhat').click(function(){
-                        var a= $(this).siblings('#artiNo').val();
-                        
-
                         var dowhat = $(this).val();
-
-
-                        artiReport(a,dowhat);
+                        if(confirm("確定要"+dowhat+"嗎?")){
+                            var a= $(this).siblings('#artiNo').val();
+                            
+                            artiReport(a,dowhat);
+                        }
+                        
                     });
                     $('.more').click(function(){
                         var num = $(this).siblings('#artiNo').val();

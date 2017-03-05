@@ -1,0 +1,23 @@
+@include respones(md){
+	//桌機 container 1170
+	//直接寫css
+	.article{
+	//從這開始寫
+	
+		.articleTable{
+			.firstRow{
+				.classLabel{
+					margin: 5px 25px;
+					.hotLabel{
+						top: 5px;
+						left: 100px;
+					}
+				}
+			}
+			.secondRow{
+				.secondRight{border-left: 1px dotted $deep-orange;}
+			}
+		}
+
+	}
+}

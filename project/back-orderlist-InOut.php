@@ -25,11 +25,17 @@ try{
           $orderlist->bindValue(":orderlist_no", $order_no);
           $orderlist->execute();
     }
-  
+    
+    if($btnVal=='入住'){
+        echo "Check In 成功!";
+    }
+    else{
+      echo "Check Out 成功!";
+    }
 
-     echo "成功!";
+     
   
-}catch(PDOException $e){
+}catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";
 }

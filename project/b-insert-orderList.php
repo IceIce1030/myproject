@@ -21,7 +21,7 @@ try{
   $end_y = (int)$_REQUEST["end_y"];
   $end_m = (int)$_REQUEST["end_m"];
   $end_d = (int)$_REQUEST["end_d"];
-  $pet_img = "pet_img.png";
+  $pet_img = "petDefault.png";
 
 
   $service = isset($_REQUEST["service_arr"]) == false ? null : $_REQUEST["service_arr"];
@@ -175,7 +175,7 @@ try{
 }
 
 
-catch(PDOException $e){
+catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";
 }

@@ -1,0 +1,311 @@
+@include respones(xs){
+	//手機100%
+	//直接寫css
+	.race{
+	//從這開始寫
+		.section_prize{
+			background-size: cover;
+			position: relative;	
+		}
+		.cloud{
+			margin-top: 93px;
+			padding: 0px 0px 0 0px;
+			position: relative;
+			img{
+				width: 100%;
+			}
+			p{	
+				position:absolute;
+				top: 0;
+				left:5px;
+				right: 0;
+				bottom: 5px;
+				margin: auto;
+				text-align:center;
+				height: 0em;
+				font-size: $fz-mincontent;
+			}
+		}
+		.cloud1{
+			padding: 0;
+			text-align:center;
+			img{
+				width: 90%;
+			}
+			p{
+				
+			}
+			span{
+				color:$light-pink;
+				font-size: $fz-h4;
+			}
+		}	
+		.topthree{
+		margin-top: 120px;
+		position: absolute;
+		width: 100%;
+		max-width: 1170px;	
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		.item{
+			position: relative;
+			width: 100%;
+			padding-bottom: 1%;
+			display: block;
+			.lollipop{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				display: inline-block;
+				text-align: center;
+				margin-bottom: -10px;
+				.hearts{
+					vertical-align: middle;
+					height: 60px;
+					img{
+						height: 20px;
+						width: 25px;
+						display: inline-block;
+						vertical-align: middle;
+					}
+					.count{
+						color: $light-pink;
+						font-size: $fz-h3;	
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+				.candy{				
+					text-align: center;
+					position: relative;
+					img{						
+						max-width: 150px;
+						width: 100%;
+						border-radius: 50%;
+						border: 10px solid $orange;					
+					}
+					.name{
+						position: absolute;
+						right: 0;
+						left: 0;
+						margin: 0 auto;
+						bottom: 15px;
+						color: white;
+						font-size: $fz-content;
+					}
+				}
+				.stick{
+					// position: relative;
+					// z-index: -1;
+					margin-top: -50px;
+					width: 15px;
+					height: 50px;
+					display: inline-block;
+					background-color: $orange;
+					// &:after{
+					// 	content:'';
+					// 	position: absolute;
+					// 	bottom: 0;
+					// 	right: 0;
+					// 	left: 0;
+					// 	margin: auto;
+					// 	background-color: $orange;
+					// 	display: block;
+					// 	width: 15px;
+					// 	height: 100%;
+
+					// }
+				}
+
+				
+			}
+				
+			// .hearts{
+			// 	width: 80%;
+			// 	margin:0 auto;
+			// 	text-align: center;
+			// 	img{
+			// 	width: 70px;
+			// 	height: 60px;
+			// 	vertical-align:middle;
+			// 	}
+			// 	span{
+			// 		font-size: $fz-h2;
+			// 		color: $light-pink;
+			// 	}
+			// }
+			// .lollipop{
+			// 	position: relative;
+			// 	height: 420px;				
+				
+			// 	.stick{
+			// 		position: absolute;
+			// 		bottom: 0;
+			// 		left: 0;
+			// 		right: 0;
+			// 		margin:0 auto;
+			// 		width: 50%;
+			// 		height: 420px;
+			// 		background-color: rgba(255, 255, 255, 0);
+			// 		text-align: center;
+			// 		.candy{
+			// 			position: absolute;
+			// 			margin:0 auto;
+			// 			width: 90%;
+			// 			padding-bottom: 90%;
+			// 			background-color: $orange;
+			// 			border-radius:100%;
+			// 			img{
+			// 				position: absolute;
+			// 				top: 0;
+			// 				left:0;
+			// 				right:0;
+			// 				bottom: 0;
+			// 				margin: auto;
+			// 				width: 90%;
+			// 			}
+			// 			.name{
+			// 				position: absolute;
+			// 				left:0;
+			// 				right:0;
+			// 				bottom: 20px;
+			// 				text-align:center;
+			// 				font-size: $fz-h1;
+			// 				color:$white;
+			// 			}
+			// 		} 
+			// 	}
+			// 	.stick:after{
+			// 		content:'';
+		
+			// 		width: 10px;
+			// 		background-color: #fff;
+			// 		display: block;
+			// 	}
+			// 	.stick1{
+			// 		padding-bottom: 50%;
+			// 	}
+			// 	.stick2{
+			// 		padding-bottom: 0%;
+			// 	}
+			// 	.stick3{
+			// 		padding-bottom: 30%;
+			// 	}
+
+			// }
+			}
+
+		}
+		.r-cardLightbox{
+			.cardContent{
+			width: 350px;
+			height: 500px;
+			}
+		}
+		.anotherLine{
+			display: block;
+		}	
+		#sorts{
+			padding: 25px 0px 15px 0px;
+			span{
+				font-size:14px; 	
+			}
+
+		.button{
+			background-color: $light-gray;
+			border-radius:6px;
+			padding: 2px 5px;
+			font-size: 14px;
+			color:$white;
+			border: 1px solid $light-gray; 
+			&:hover{
+				background-color: $white;
+				color:$light-gray;
+			}
+			&:active{
+				position:relative;
+				top:1px;
+			}
+			&:focus {
+				outline:0;
+				background-color: $white;
+				color:$light-gray;
+				font-weight: bolder;
+				border: 2px solid $light-gray; 
+			}
+		}
+	}
+	.searchWrap{
+				display: none;
+				position: relative;
+				float: right;
+				margin-right: 25px;
+				padding: 25px 15px 15px 15px;
+				display: inline-block;
+			#search{	
+				input{
+					border:2px solid $orange;
+					border-radius:5px;
+					padding: 5px;
+					outline:none;
+					width: 100px;
+				}
+				#searchBtn{
+					position: absolute;
+					bottom: 15px;
+					font-size: 20px;
+					border-radius:5px;
+					vertical-align:middle;
+					left: 75%;
+					background-color: $orange;
+					width: 40px;
+					outline:none;
+					border:2px solid $orange;
+					i{
+						height: 100%;
+						color:$white;
+					}
+				}
+			}
+		}
+	#filters{
+		padding: 10px 0 0px 0;
+		display: inline-block;
+		span{
+			font-size: 14px;
+		}	
+		.button{
+			display: inline-block;	
+			margin:5px 0 0 0;
+			background-color: $orange;
+			border-radius:6px;
+			padding: 2px 5px;
+			font-size: 14px;
+			color:$white;
+			border: 1px solid $orange;
+			&:hover{
+				background-color: $white;
+				color:$orange;
+			}
+			&:active{
+				position:relative;
+				top:1px;
+			}
+			&:focus {
+				outline:0;
+				background-color: $white;
+				color:$orange;
+				font-weight: bolder;
+				border: 2px solid $orange;
+			}
+		}
+	}
+		.cardWrap{
+			padding: 30px 30px;
+		}
+	}
+}

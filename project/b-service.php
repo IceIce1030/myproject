@@ -45,7 +45,7 @@ try{
     echo json_encode( $str);//陣列編碼成json字串，回傳到前端
 
   } 
-}catch(PDOException $e){
+}catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";
 }

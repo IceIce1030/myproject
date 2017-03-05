@@ -1,0 +1,66 @@
+@include respones(md){
+	//桌機 container 1170
+	//直接寫css
+
+$allColor: #557095;
+$shareColor: #8CD899;
+$healthColor: #57B1DA;
+$newColor: #D9ABE6;
+$foodColor: #F4A66F;
+	.discuss{
+	//從這開始寫
+	padding-top: 80px;
+	.D-filterRWD{
+		display: none;
+	}
+	//燈箱
+	.lightbox{
+		.lightbox-box{
+			background-position: 655px;
+			.lightbox-content{
+				.postForm{
+					width: 40%;	
+					padding-top: 40px;
+					#post-title{}
+				}
+			}
+		}
+	}
+		//燈箱結束
+	.D-content{
+		.items{margin-top: 10px;}
+		.item{
+			h3{margin: 5px 0;}
+			.postDate{
+				color: #e0e0e0;
+				font-size: 12px;}
+			.txt{
+				margin: 5px 0;
+				padding-bottom: 25px;
+				color: #7d7d7d;}
+			//觀看留言數
+			.watchMess{
+				margin-top: -15px;
+				float: right;
+				
+				//觀看
+				.watch{
+					margin-right: 15px;}
+				.message{
+					margin-right: 5px;}
+				
+			}
+
+		}
+
+
+
+	}
+
+
+
+}
+
+	
+
+}

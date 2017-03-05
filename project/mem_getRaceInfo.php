@@ -25,7 +25,7 @@ try{
           $str.="<div class='cardWrap col-xs-12 col-sm-4 col-md-3 element-item transition big'>
               <div class='card card{$voteRow["vote_no"]}'>
                 <div id='openLightbox{$voteRow["vote_no"]}' class='openLightbox' value='{$voteRow["vote_no"]}'>
-                  <img src='race_image/{$voteRow["vote_img"]}'>
+                  <img src='images/race_image/{$voteRow["vote_img"]}'>
                 </div>
                 <div class='text'>
                   <div class='textTop'>

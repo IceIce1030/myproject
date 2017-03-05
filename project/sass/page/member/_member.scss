@@ -1,0 +1,516 @@
+@import "lg";
+@import "sm";
+@import "xs";
+// * {
+//     outline: 1px solid red;
+// }
+.member {
+    background: url(../images/bg07.jpg) no-repeat 80% 40%;
+    background-size: cover;
+    background-attachment: fixed;
+    .container {
+        position: relative;
+        padding-bottom: 20px;
+        // background-color: rgba(255, 145, 0, 0.2);
+        //寵物會員資料列表共同設定
+        .linktochange {
+            cursor: pointer;
+            color: #b37600;
+            &:hover {
+                color: $brown;
+            }
+        }
+        //會員資料列表
+        .memberInfo {
+            text-align: left;
+            .profilePhoto img {
+                cursor: pointer;
+                width: 100px;
+                border-radius: 50%;
+            }
+            div {
+                display: inline-block;
+            }
+            .txt {
+                margin-left: 10px;
+                height: 100px;
+                line-height: 1.9;
+                vertical-align: top;
+                text-align: left;
+                .fa {
+                    margin-right: 5px;
+                }
+                >span {
+                    margin-right: 10px;
+                }
+            }
+        }
+        //寵物資料列表 
+        .petList {
+            #petListDiv {
+                display: inline-block;
+            }
+            .petPhoto img {
+                // border: 2px solid $sup-orange;
+                width: 60px;
+                border-radius: 50%;
+            }
+            .pet {
+                display: inline-block;
+                .petPhoto {
+                    text-align: center;
+                    cursor: pointer;
+                    position: relative;
+                }
+                .txt {
+                    text-align: center;
+                }
+                .fa {
+                    margin-left: 5px;
+                    cursor: pointer;
+                    color: #b37600;
+                    &:hover {
+                        color: $brown;
+                    }
+                }
+                &.petAdd {
+                    &:hover {
+                        .fa {
+                            color: $brown;
+                        }
+                        .linktochange {
+                            color: $brown;
+                        }
+                    }
+                    .petPhoto {
+                        border: 2px solid $sup-orange;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+                    .addPetIcon {
+                        font-size: 30px;
+                        margin: auto;
+                        position: absolute;
+                        top: 15px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        // 會員管理
+        .accountMgt {
+            //tab選單
+            .tabMenu {
+                margin: 10px 0;
+                border-bottom: 3px solid $deep-orange;
+                a {
+                    cursor: pointer;
+                    color: $deep-gray;
+                    text-align: center;
+                    display: inline-block;
+                    border-radius: 5px 5px 0 0;
+                    border: 2px dotted $deep-orange;
+                    border-bottom: 1px solid $deep-orange;
+                    margin-bottom: -1px;
+                    &:hover {
+                        background-color: $deep-orange;
+                        color: #fff;
+                        border-style: solid;
+                        border-radius: 5px 5px 0 0;
+                    }
+                    &.active {
+                        background-color: $deep-orange;
+                        color: #fff;
+                        border-style: solid;
+                        border-radius: 5px 5px 0 0;
+                    }
+                }
+            }
+            .mainContent {
+                //隱藏的class
+                .hideItem {
+                    display: none;
+                }
+                // 我的訂單
+                .booking {
+                    background-color: #fff;
+                    width: 100%;
+                    // border: 1px solid $brown;
+                    transition: box-shadow .4s ease;
+                    &:hover {
+                        box-shadow: 0px 1px 3px #555;
+                    }
+                    //歷史訂單
+                    &.pastBooking {
+                        background-color: #eee;
+                        color: #999;
+                        .bookingDate {
+                            .dateTitle {
+                                color: #999;
+                            }
+                        }
+                    }
+                    .roomPhoto {
+                        float: left;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    .bookingDetail {
+                        max-width: 352px;
+                        .totalAmount {
+                            color: $light-pink;
+                            font-weight: 900;
+                        }
+                        .historyBooking {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 2px 5px;
+                            margin-left: 20px;
+                            position: relative;
+                            bottom: 2px;
+                            font-size: $fz-content;
+                            vertical-align: middle;
+                            background-color: #ccc;
+                            color: $deep-gray;
+                        }
+                    }
+                    .bookingDate {
+                        position: relative;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        .checkinDate {
+                            float: left;
+                        }
+                        .checkoutDate {
+                            border-left: 2px dotted #ccc;
+                        }
+                        .dateTitle {
+                            color: $light-gray;
+                        }
+                    }
+                    .btnDiv {
+                        text-align: center;
+                        display: inline-block;
+                    }
+                }
+                //我的文章
+                .post {
+                    background-color: #fff;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    position: relative;
+                    transition: box-shadow .4s ease;
+                    &:hover {
+                        box-shadow: 0px 1px 3px #555;
+                    }
+                    .postImg {
+                        overflow: hidden;
+                        float: left;
+                        text-align: center;
+                    }
+                    .txt {
+                        float: left;
+                        &>div {
+                            margin-bottom: 5px;
+                        }
+                        .postTitle a {
+                            color: $deep-gray;
+                            &:hover {
+                                color: $brown;
+                            }
+                        }
+                        .postDate {
+                            color: $light-gray;
+                        }
+                        .postContent {
+                            overflow: hidden;
+                            max-height: 44px;
+                        }
+                        .postInfo {
+                            font-size: $fz-mincontent;
+                            color: $light-gray;
+                            .author {
+                                margin-right: 5px;
+                            }
+                            .watch:before {
+                                content: '\f06e';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                            .message:before {
+                                content: '\f27a';
+                                font-family: fontAwesome;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    .itemLabel {
+                        position: absolute;
+                        left: 15px;
+                        top: 15px;
+                        width: 90px;
+                        height: 30px;
+                        padding: 5px;
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 3px;
+                        &.foodLabel {
+                            background-color: $foodColor;
+                        }
+                        &.shareLabel {
+                            background-color: $shareColor;
+                        }
+                        &.healthLabel {
+                            background-color: $healthColor;
+                        }
+                        &.newLabel {
+                            background-color: $newColor;
+                        }
+                    }
+                    .hotLabel {
+                        background-color: #f00;
+                        color: #fff;
+                        padding: 2px;
+                        font-size: 12px;
+                        margin: 0 10px;
+                        opacity: 0;
+                        &.on {
+                            opacity: 1;
+                        }
+                    }
+                }
+                //參賽紀錄{
+                #myrace {
+                    .cardWrap {
+                        .card {
+                            background-color: #fdeeca;
+                            border-radius: 15px;
+                            position: relative;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                            }
+                            .text {
+                                padding: 10px;
+                            }
+                            .textTop {
+                                padding: 5px;
+                                .number {
+                                    display: inline-block;
+                                    font-size: $fz-content;
+                                    color: $deep-gray;
+                                }
+                                .name {
+                                    display: inline-block;
+                                    font-size: $fz-h3;
+                                    padding: 0 0px;
+                                }
+                            }
+                            .textDown {
+                                padding: 5px;
+                                position: relative;
+                                span {
+                                    display: inline-block;
+                                    padding: 5px 0;
+                                }
+                                .like {
+                                    height: 50px;
+                                    width: 62px;
+                                    position: absolute;
+                                    bottom: 50px;
+                                    right: 10px;
+                                    text-align: center;
+                                    .votes {
+                                        display: inline-block;
+                                        font-size: $fz-h1;
+                                        color: $light-pink;
+                                        // float: right;
+                                    }
+                                    img {
+                                        width: 100%;
+                                    }
+                                    .favorite {
+                                        background: transparent;
+                                        border: 0;
+                                        .outsideheart {
+                                            font-size: 50px;
+                                            color: $light-pink;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//燈箱
+.C_lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    display: none;
+    &.petShare {
+        .lightbox_box {
+            padding: 5px 20px;
+        }
+        .nice-select {
+            width: 104px;
+        }
+    }
+    .lightbox_box {
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        background-color: $bgc;
+        padding: 5px 10px;
+        transition: 1s;
+        border-radius: 50%;
+        position: relative;
+        box-shadow: 5px 5px 50px $light-gray;
+        .lightbox_content {
+            display: none;
+            .formDiv {
+                display: inline-block;
+                margin: auto;
+                text-align: left;
+                .formGroup {}
+                .labelClass {
+                    display: inline-block;
+                    width: 70px;
+                }
+                input {
+                    border: 1px solid rgba(119, 71, 32, .8);
+                    border-radius: 5px;
+                    letter-spacing: 1px;
+                }
+                .gender input {
+                    margin-right: 10px;
+                    width: auto;
+                    height: auto;
+                    cursor: pointer;
+                }
+                #upload_mem_img {
+                    border: none;
+                    display: none;
+                }
+                #upload_petImg {
+                    border: none;
+                    display: none;
+                }
+                #add_upload_petImg {
+                    border: none;
+                    display: none;
+                }
+                .petInput {
+                    width: 104px;
+                }
+                .showImage {
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    margin-right: 10px;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    position: relative;
+                    top: 8px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .uploadImgLabel {
+                    display: inline-block;
+                    padding: 6px 12px;
+                    height: auto;
+                    font-size: $fz-content;
+                    border: 1px solid rgba(119, 71, 32, .8);
+                    border-radius: 5px;
+                    color: $light-gray;
+                    cursor: pointer;
+                    letter-spacing: 1px;
+                    transition: all .4s;
+                    background-color: hsla(0, 0%, 97%, 1.0);
+                    &:hover {
+                        color: $deep-gray;
+                        background-color: hsla(0, 0%, 100%, 1.0);
+                    }
+                }
+                p {
+                    margin: 10px 0;
+                    font-size: $fz-mincontent;
+                }
+                .btnDiv {
+                    text-align: center;
+                }
+                .inputBtn {
+                    font-weight: 300;
+                    margin: 10px auto;
+                    // width: 80%;
+                    // width:auto;
+                    padding: 6px 12px;
+                    height: auto;
+                    font-size: $fz-content;
+                    border: solid transparent;
+                    border-radius: 5px;
+                    background: #f34e1b;
+                    background: linear-gradient(to bottom, rgba(243, 78, 27, 1.0) 0, rgba(230, 50, 10, 1.0) 100%);
+                    color: #fff;
+                    cursor: pointer;
+                    letter-spacing: 2px;
+                    transition: all .4s;
+                    &:hover {
+                        background: hsla(14, 90%, 45%, 1);
+                        background: linear-gradient(to bottom, rgba(240, 60, 20, 1.0) 0, rgba(210, 50, 10, 1.0) 100%);
+                    }
+                }
+                #updatePetBtn {
+                    width: 100%;
+                }
+            }
+            .closeLightBox {
+                line-height: 20px;
+                text-align: center;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                width: 33px;
+                height: 33px;
+                background-color: rgba(0, 0, 0, .85);
+                border-radius: 50%;
+                transition: .3s;
+                border: 2px solid #ddd;
+                .fa-plus {
+                    position: relative;
+                    left: 3px;
+                    top: -2px;
+                    padding-top: 10px;
+                    font-size: 20px;
+                    color: #fff;
+                    cursor: pointer;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+//燈箱結束

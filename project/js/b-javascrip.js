@@ -1624,8 +1624,7 @@ $(document).ready(function(){
 	   
   		// dogSelectedCheck();
 
-
-		
+	
 
 	}
 	function getDog(here,Id){
