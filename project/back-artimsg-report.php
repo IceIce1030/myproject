@@ -31,12 +31,14 @@ try{
                from artimsg am join article a on am.arti_no = a.arti_no
                                join member m on am.mem_no = m.mem_no
                where artimsg_report='1'
+               order by am.artimsg_date desc
                limit $start, $pageRecords;";
     }
     else{
        $sql = "select am.artimsg_no,m.mem_name,a.arti_title,am.artimsg_content,am.artimsg_date,am.artimsg_report
                from artimsg am join article a on am.arti_no = a.arti_no
                                join member m on am.mem_no = m.mem_no
+               order by am.artimsg_date desc
                limit $start, $pageRecords;";
     }
 

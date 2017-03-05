@@ -1311,14 +1311,7 @@ $(document).ready(function(){
 	  			$('.step').animate({
 	  				left: '0px'
 	  			},500);
-
 		});
-
-		
-
-	  
- 	
-
 	}//<767
 
 
@@ -1328,13 +1321,13 @@ $(document).ready(function(){
 
   	$(document).scroll(function() {
 	    
-  			// console.log(ahref);
+  			
   			if(ahref!=7){
   				if($(document).scrollTop()>10){
-			    	$('.stepDiy').fadeOut(200);
+			    	$('.stepDiy').stop(true, false).fadeOut(300);
 			    }
 			    else{
-			    	$('.stepDiy').fadeIn(200);	
+			    	$('.stepDiy').stop(true, false).fadeIn(300);	
 			    }
   			}
   			else{
@@ -1343,8 +1336,6 @@ $(document).ready(function(){
   				});
   			}
 	    	
-	    
-
 	    
 	 });
   		

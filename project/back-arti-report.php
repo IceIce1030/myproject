@@ -33,13 +33,13 @@ try{
        $sql = "select a.arti_no,a.mem_no,m.mem_name,a.arti_title,a.arti_content,a.arti_date,a.arti_count,a.arti_img,a.arti_sort
              from article a join member m on a.mem_no = m.mem_no
              where arti_report = '1' 
-             order by arti_no
+             order by a.arti_date desc
              limit $start, $pageRecords;";
     }
     else{
        $sql = "select a.arti_no,a.mem_no,m.mem_name,a.arti_title,a.arti_content,a.arti_date,a.arti_count,a.arti_img,a.arti_sort
              from article a join member m on a.mem_no = m.mem_no
-             order by arti_no
+             order by a.arti_date desc
              limit $start, $pageRecords;";
     }
 

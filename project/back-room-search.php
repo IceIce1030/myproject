@@ -70,12 +70,14 @@ try{
               // echo $roomRow["room_no"],"能住<br>";
               // // echo $roomRow["room_no"];
               // echo $roomRow["room_name"],"<br>";
+
+            $roomRow["room_intro"] = mb_convert_encoding($roomRow["room_intro"],"UTF-8","auto");
               $str .="<tr>
                         <td>{$roomRow["room_no"]}</td>
                         <td>{$roomRow["room_name"]}</td>
                         <td><img width='120' height=auto src='images/room/{$roomRow["roomimg_name"]}'></td>
                         <td>{$roomRow["room_price"]}元</td>
-                        <td width='600'>{$roomRow["room_intro"]}</td>          
+                        <td class='text-left' width='600'>{$roomRow["room_intro"]}</td>          
                       </tr>"; 
           }
           else{

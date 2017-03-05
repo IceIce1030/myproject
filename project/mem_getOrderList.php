@@ -41,6 +41,7 @@ $service->execute();
 if($service->rowCount() == 0){
   //找不到
     //傳回
+  $serviceItem ="";
   
 }else{
   $serviceItem ="";

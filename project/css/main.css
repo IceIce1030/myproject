@@ -5556,6 +5556,7 @@ html.fp-enabled,
   height: 200px;
   background: #f9f7e8;
   position: absolute;
+  border-radius: 5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

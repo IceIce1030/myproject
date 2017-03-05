@@ -15,14 +15,17 @@ try{
      //取回一筆資料
     // $dogRow = $dog->fetch(PDO::FETCH_ASSOC);
 
-
+    
      if($dogSize=='大型犬'){
         $double=2;
       }
       else if($dogSize=='中型犬'){
         $double=1.5;
-
       }
+      else{
+        $double=1;
+      }
+      
     $str='';
 
     while ( $serviceRow = $service->fetch(PDO::FETCH_ASSOC) ){

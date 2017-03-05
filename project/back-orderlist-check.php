@@ -4,10 +4,11 @@ try{
 
 
 
-     $sql = "select o.orderlist_no,o.mem_no,m.mem_name,r.room_name,p.pet_name,o.orderlist_date,o.exp_in,o.exp_out,o.real_in,o.real_out,m.mem_phone
-        from orderlist o join pet p on o.pet_no = p.pet_no
+     $sql = "select o.orderlist_date,o.orderlist_no,o.mem_no,m.mem_name,r.room_name,p.pet_name,o.orderlist_date,o.exp_in,o.exp_out,o.real_in,o.real_out,m.mem_phone
+             from orderlist o join pet p on o.pet_no = p.pet_no
                          join room r on o.room_no = r.room_no
-                         join member m on o.mem_no = m.mem_no;";
+                         join member m on o.mem_no = m.mem_no
+              order by o.orderlist_date desc;";
       $orderlist = $pdo->prepare( $sql );
 
   $orderlist->execute();
