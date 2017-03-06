@@ -1,5 +1,5 @@
 <?php
-    
+    header("Content-Type:text/html; charset=utf-8");
     $fileName1 = isset($_FILES["image1"]["name"]) == false ? null :$_FILES["image1"]["name"];
     $fileName2 = isset($_FILES["image2"]["name"]) == false ? null :$_FILES["image2"]["name"];
     $fileName3 = isset($_FILES["image3"]["name"]) == false ? null :$_FILES["image3"]["name"];

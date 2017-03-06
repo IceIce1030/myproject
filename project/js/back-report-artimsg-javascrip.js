@@ -1,5 +1,5 @@
     if(sessionStorage["backlogin"] != 'ok'){
-        location.href="../back-login.html";
+        location.href="back-login.html";
     }
 $(document).ready(function(){
      

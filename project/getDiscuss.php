@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("connectFurkid.php");
-
+  header("Content-Type:text/html; charset=utf-8");
   // $sql = "select * from article";
   $sql = "select * from article order by article .arti_date desc";
   

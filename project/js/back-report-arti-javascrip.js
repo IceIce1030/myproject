@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
      if(sessionStorage["backlogin"] != "ok" ){
-        location.href="../back-login.html";
+        location.href="back-login.html";
     }
 
     sessionStorage.removeItem('where');

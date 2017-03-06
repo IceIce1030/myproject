@@ -1,5 +1,8 @@
+
 <?php
+
 try{
+  header("Content-Type:text/html; charset=utf-8");
   require_once("connectFurkid.php");
     $txt = $_REQUEST["txt"];
 
@@ -85,7 +88,7 @@ try{
 
       
       $artiRow["arti_content"] =str_replace('<br>','#',$artiRow["arti_content"]);
-      $artiRow["arti_content"] = mb_substr( $artiRow["arti_content"] , 0 , 25 ).'......<br>';
+      $artiRow["arti_content"] = mb_substr( $artiRow["arti_content"] , 0 , 25 ,'utf8').'......<br>';
       $artiRow["arti_content"] =str_replace('#','<br>',$artiRow["arti_content"]);
      
 

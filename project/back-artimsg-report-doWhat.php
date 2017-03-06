@@ -1,5 +1,6 @@
 <?php
 try{
+    header("Content-Type:text/html; charset=utf-8");
   require_once("connectFurkid.php");
     $a_no = $_REQUEST["a"];
     $doWhat = $_REQUEST["dowhat"];

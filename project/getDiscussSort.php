@@ -1,7 +1,7 @@
 <?php
 try{
   require_once("connectFurkid.php");
-
+  header("Content-Type:text/html; charset=utf-8");
   // $sql = "select * from article";
   // $sql = "select * from article where arti_sort like '新手爸媽'";
   $sql = "select * from article where arti_sort=:arti_sort";

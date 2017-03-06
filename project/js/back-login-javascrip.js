@@ -20,7 +20,7 @@ $(document).ready(function(){
         if(backId=='ad104g3' && backPsw=='123456'){
             sessionStorage["backlogin"] = 'ok';
             // alert('登入成功');
-            location.href="../back-orderlist.html";
+            location.href="back-orderlist.html";
         }
         else{
             $('#backid').val('');
