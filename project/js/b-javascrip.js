@@ -2215,6 +2215,16 @@ $(document).ready(function(){
 				                	dogSize = mess["dog_size"];
 				                	sessionStorage.dogSize = mess["dog_size"];
 				                	$('.dog-size').text(mess["dog_size"]);
+				                	$('.kinds .b-btn').removeClass('roompic-select');
+				                	if(sessionStorage.dogSize == '大型犬'){
+				                		$('.kinds .lg-dog').addClass('roompic-select');
+				                	}
+				                	else if(sessionStorage.dogSize == '中型犬'){
+				                		$('.kinds .md-dog').addClass('roompic-select');
+				                	}
+				                	else{
+				                		$('.kinds .sm-dog').addClass('roompic-select');
+				                	}
 
 				                	
 				                	getService();
