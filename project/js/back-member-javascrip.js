@@ -16,6 +16,7 @@ $(document).ready(function(){
 	$('#member  #searchAll').click(function(){
        
         $('#search').val('');
+        sessionStorage.page = '#page1';
 		memberCheck();
 	});
 
@@ -137,7 +138,7 @@ $(document).ready(function(){
                         var id = $(this).attr('id');
                         var whatpage = '#'+id;
                         sessionStorage.page = whatpage;
-                        alert(whatpage);
+                        // alert(whatpage);
                       
                         showPet(no);      
 

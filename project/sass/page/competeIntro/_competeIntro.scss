@@ -1,0 +1,308 @@
+//開頭
+.postCompeteIntro {
+    // background-image: url(../images/bg11.jpg);
+    background-size: cover;
+    .container {
+        color: $deep-gray;
+        text-align: center;
+        .banner {
+            //banner開頭
+            height: 250px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            border-bottom: 1px dotted $deep-orange;
+            .txt {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                color: #a91e2d;
+                font-weight: bolder;
+                .txt1 {
+                    font-size: 55px;
+                    display: inline-block;
+                }
+                .txt2 {
+                    display: inline-block;
+                    font-size: 25px;
+                    position: relative;
+                    width: 30px;
+                    .txtUp {
+                        position: absolute;
+                        bottom: 15px;
+                    }
+                    .txtDown {
+                        position: absolute;
+                        bottom: -9px;
+                    }
+                }
+                .txt3 {
+                    display: inline-block;
+                    position: relative;
+                    width: 150px;
+                    .txtUp {
+                        position: absolute;
+                        font-size: 30px;
+                        bottom: 10px;
+                        left: -3px;
+                    }
+                    .txtDown {
+                        position: absolute;
+                        font-size: 20px;
+                        bottom: -8px;
+                        left: -2px;
+                    }
+                    .heartWrap {
+                        width: 50px;
+                        height: 40px;
+                        position: absolute;
+                        left: 90px;
+                        bottom: 18px;
+                        transform: rotate(40deg);
+                        img {
+                            width: 100%;
+                            animation: heartbeat .5s infinite alternate;
+                        }
+                    }
+                }
+                .img1 {
+                    display: inline-block;
+                    width: 300px;
+                    vertical-align: bottom;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        } //banner結尾
+        .main {
+            margin: auto;
+            border-radius: 15px;
+            background-color: rgba(249, 247, 232, 0.78);
+            .petList {
+                #petListDiv {
+                    display: inline-block;
+                }
+                .petPhoto img {
+                    // border: 2px solid $sup-orange;
+                    width: 60px;
+                    border-radius: 50%;
+                }
+                .pet {
+                    display: inline-block;
+                    .petPhoto {
+                        text-align: center;
+                        cursor: pointer;
+                        position: relative;
+                    }
+                    .competeBtn {
+                        width: 60px;
+                        background-color: $orange;
+                        height: 50px;
+                    }
+                    .txt {
+                        text-align: center;
+                    }
+                    .fa {
+                        margin-left: 5px;
+                        cursor: pointer;
+                        color: #b37600;
+                        &:hover {
+                            color: $brown;
+                        }
+                    }
+                }
+            }
+        }
+        .formDiv {
+            display: inline-block;
+            margin: auto;
+            text-align: center;
+            .formGroup {}
+            .labelClass {}
+            input {
+                border: 1px solid rgba(119, 71, 32, .8);
+                border-radius: 5px;
+                letter-spacing: 1px;
+            }
+            textarea{
+                resize:none;
+                font-size: 16px;
+            }
+            #upload_voteImg {
+                display: none;
+            }
+            .uploadDiv {
+                text-align: center;
+            }
+            .showImage {
+                background: #fefefe;
+                border: 1px dotted #aaa;
+                // display: inline-block;
+                margin: 10px auto 0;
+                text-align: center;
+                // border-radius: 50%;
+                height: 200px;
+                width: 250px;
+                // margin-right: 10px;
+                overflow: hidden;
+                // vertical-align: bottom;
+                position: relative;
+                // top: 8px;
+                img {
+                    width: 100%;
+                }
+            }
+            #uploadImgLabel {
+                margin-top: 10px;
+                display: inline-block;
+                padding: 6px 12px;
+                height: auto;
+                font-size: $fz-content;
+                border: 1px solid rgba(119, 71, 32, .8);
+                border-radius: 5px;
+                color: $light-gray;
+                cursor: pointer;
+                letter-spacing: 1px;
+                transition: all .4s;
+                background-color: hsla(0, 0%, 97%, 1.0);
+                &:hover {
+                    color: $deep-gray;
+                    background-color: hsla(0, 0%, 100%, 1.0);
+                }
+            }
+            .btnDiv {
+                text-align: center;
+            }
+            .inputBtn {
+                font-weight: 300;
+                margin: 10px auto;
+                width: 100%;
+                padding: 6px 12px;
+                height: auto;
+                font-size: $fz-content;
+                border: solid transparent;
+                border-radius: 5px;
+                background: #f34e1b;
+                background: linear-gradient(to bottom, rgba(243, 78, 27, 1.0) 0, rgba(230, 50, 10, 1.0) 100%);
+                color: #fff;
+                cursor: pointer;
+                letter-spacing: 2px;
+                transition: all .4s;
+                &:hover {
+                    background: hsla(14, 90%, 45%, 1);
+                    background: linear-gradient(to bottom, rgba(240, 60, 20, 1.0) 0, rgba(210, 50, 10, 1.0) 100%);
+                }
+            }
+        }
+        h3 {
+            color: $brown;
+        }
+    }
+}
+
+// }//wrapper
+// .logo {
+//     margin-bottom: 10px;
+//     span {
+//         color: $sup-orange;
+//         font-family: "MicrosoftJhengHeiBold";
+//         line-height: 1.2;
+//         text-shadow: 1px 2px 1px rgba(252, 173, 135, 0.75);
+//         margin-left: 5px;
+//         font-size: 40px;
+//         font-weight: 900;
+//     }
+//     img {
+//         height: 60px;
+//         width: auto;
+//     }
+// }
+@keyframes heartbeat {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+//手機
+@include respones(xs) {
+    .postCompeteIntro {
+        .container {
+            padding-top: 60px;
+            .main {
+                padding: 15px;
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    }
+}
+
+//平板
+@include respones(sm) {
+    .postCompeteIntro {
+        .container {
+            padding-top: 60px;
+            .main {
+                width: 550px;
+                padding: 20px;
+            }
+        }
+    }
+}
+
+//小桌機
+@include respones(md) {
+    .postCompeteIntro {
+        .container {
+            padding: 120px 0px 40px;
+            // .wrapper {
+            .main {
+                width: auto;
+                padding: 20px 60px;
+                display: inline-block;
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 5px;
+                    min-height: 44px;
+                    margin-bottom: 10px;
+                }
+                .labelClass {}
+                .nice-select {
+                    width: 140px;
+                }
+                input {
+                    width: 140px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                p {}
+            }
+            h3 {
+                margin: 20px auto;
+            }
+            // }//wrapper
+        }
+    }
+}
+
+//大桌機
+@include respones(lg) {
+    .postCompeteIntro {
+        .main {}
+    }
+}

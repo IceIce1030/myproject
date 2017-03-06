@@ -1,25 +1,16 @@
 @import "lg";
 @import "sm";
 @import "xs";
-// * {
-//     outline: 1px solid red;
-// }
 .member {
-    background: url(../images/bg07.jpg) no-repeat 80% 40%;
+    background-image: url(../images/bg07_r.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     .container {
         position: relative;
         padding-bottom: 20px;
+        // color:$deep-gray;
         // background-color: rgba(255, 145, 0, 0.2);
-        //寵物會員資料列表共同設定
-        .linktochange {
-            cursor: pointer;
-            color: #b37600;
-            &:hover {
-                color: $brown;
-            }
-        }
         //會員資料列表
         .memberInfo {
             text-align: left;
@@ -32,21 +23,34 @@
                 display: inline-block;
             }
             .txt {
+                color: #f2f2f2;
+                letter-spacing: 0.08em;
                 margin-left: 10px;
                 height: 100px;
                 line-height: 1.9;
                 vertical-align: top;
                 text-align: left;
+                #panel_mem_name {
+                    letter-spacing: 0.1em;
+                    font-weight: 200;
+                }
                 .fa {
                     margin-right: 5px;
                 }
                 >span {
                     margin-right: 10px;
+                    cursor: pointer;
+                    // color: #f2f2f2;
+                    &:hover {
+                        color: #ffa800;
+                    }
                 }
             }
         }
         //寵物資料列表 
         .petList {
+            color: #f2f2f2;
+            letter-spacing: 0.08em;
             #petListDiv {
                 display: inline-block;
             }
@@ -57,6 +61,9 @@
             }
             .pet {
                 display: inline-block;
+                &:hover {
+                    color: #ffa800;
+                }
                 .petPhoto {
                     text-align: center;
                     cursor: pointer;
@@ -68,22 +75,16 @@
                 .fa {
                     margin-left: 5px;
                     cursor: pointer;
-                    color: #b37600;
-                    &:hover {
-                        color: $brown;
-                    }
                 }
                 &.petAdd {
                     &:hover {
-                        .fa {
-                            color: $brown;
-                        }
-                        .linktochange {
-                            color: $brown;
+                        color: #ffa800;
+                        .petPhoto {
+                            border: 2px solid #ffa800;
                         }
                     }
                     .petPhoto {
-                        border: 2px solid $sup-orange;
+                        border: 2px solid #f2f2f2;
                         width: 60px;
                         height: 60px;
                         border-radius: 50%;
@@ -108,13 +109,14 @@
                 border-bottom: 3px solid $deep-orange;
                 a {
                     cursor: pointer;
-                    color: $deep-gray;
+                    color: #f2f2f2;
                     text-align: center;
                     display: inline-block;
                     border-radius: 5px 5px 0 0;
                     border: 2px dotted $deep-orange;
                     border-bottom: 1px solid $deep-orange;
                     margin-bottom: -1px;
+                    font-weight: 300;
                     &:hover {
                         background-color: $deep-orange;
                         color: #fff;
@@ -134,21 +136,60 @@
                 .hideItem {
                     display: none;
                 }
+                //沒記錄顯示
+                .reminder {
+                    border-radius: 5px;
+                    color: $deep-gray;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    .txt {
+                        background-color: rgba(255, 255, 255, 0.5);
+                        height: 100%;
+                        text-align: center;
+                    }
+                    .btnDiv {
+                        margin-top: 20px;
+                    }
+                    &#bookingReminder {
+                        background-image: url(../images/dogOnSofa.jpg);
+                    }
+                    &#discussReminder {
+                        background-image: url(../images/bg_post.jpg);
+                    }
+                    &#raceReminder {
+                        background-image: url(../images/bg12.jpg);
+                    }
+                }
                 // 我的訂單
                 .booking {
-                    background-color: #fff;
+                    background-color: rgba(255, 255, 255, 0.75);
                     width: 100%;
-                    // border: 1px solid $brown;
-                    transition: box-shadow .4s ease;
-                    &:hover {
-                        box-shadow: 0px 1px 3px #555;
-                    }
+                    border-radius: 5px;
+                    color: #333;
                     //歷史訂單
                     &.pastBooking {
-                        background-color: #eee;
+                        background-color: rgba(238, 238, 238, 0.8);
                         color: #999;
                         .bookingDate {
                             .dateTitle {
+                                color: #999;
+                            }
+                            .checkoutDate {
+                                border-left: 2px dotted #aaa;
+                            }
+                            .btnFunction {
+                                display: block;
+                            }
+                            .date {
+                                color: #999;
+                            }
+                        }
+                        .bookingDetail {
+                            .stayDay,
+                            .serviceItem,
+                            .sitter_name,
+                            .roomType,
+                            .orderlist_Total {
                                 color: #999;
                             }
                         }
@@ -163,7 +204,10 @@
                     }
                     .bookingDetail {
                         max-width: 352px;
-                        .totalAmount {
+                        p {
+                            font-size: 18px;
+                        }
+                        .orderlist_Total {
                             color: $light-pink;
                             font-weight: 900;
                         }
@@ -179,6 +223,14 @@
                             background-color: #ccc;
                             color: $deep-gray;
                         }
+                        .stayDay,
+                        .serviceItem,
+                        .sitter_name,
+                        .roomType {
+                            // font-size: 18px;
+                            font-weight: 900;
+                            color: $brown;
+                        }
                     }
                     .bookingDate {
                         position: relative;
@@ -188,107 +240,133 @@
                             float: left;
                         }
                         .checkoutDate {
-                            border-left: 2px dotted #ccc;
+                            border-left: 2px dotted #888;
                         }
                         .dateTitle {
                             color: $light-gray;
                         }
+                        .day {
+                            font-size: 18px;
+                            font-weight: 500;
+                        }
+                        .date {
+                            color: $brown;
+                        }
                     }
                     .btnDiv {
                         text-align: center;
-                        display: inline-block;
+                        // display: inline-block;
+                        .fa-repeat {
+                            margin-left: 5px;
+                        }
+                        .btnPast {
+                            background: #ffa800;
+                            background: linear-gradient(to bottom, #ffa800 0, #f0a000 100%);
+                            &:hover {
+                                background: #e69900;
+                                background: linear-gradient(to bottom, #f0a000 0, #e69900 100%);
+                            }
+                        }
                     }
                 }
                 //我的文章
-                .post {
-                    background-color: #fff;
-                    width: 100%;
-                    margin-bottom: 20px;
-                    position: relative;
-                    transition: box-shadow .4s ease;
-                    &:hover {
-                        box-shadow: 0px 1px 3px #555;
-                    }
-                    .postImg {
-                        overflow: hidden;
-                        float: left;
-                        text-align: center;
-                    }
-                    .txt {
-                        float: left;
-                        &>div {
-                            margin-bottom: 5px;
-                        }
-                        .postTitle a {
-                            color: $deep-gray;
-                            &:hover {
-                                color: $brown;
+                .postLink {
+                    color: $deep-gray;
+                    .post {
+                        border-radius: 5px;
+                        background-color: rgba(238, 238, 238, 0.9);
+                        width: 100%;
+                        margin-bottom: 20px;
+                        position: relative;
+                        transition: all .3s ease;
+                        &:hover {
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+                            .postTitle {
+                                color: $deep-orange;
                             }
                         }
-                        .postDate {
-                            color: $light-gray;
-                        }
-                        .postContent {
+                        .postImg {
                             overflow: hidden;
-                            max-height: 44px;
+                            float: left;
+                            text-align: center;
                         }
-                        .postInfo {
-                            font-size: $fz-mincontent;
-                            color: $light-gray;
-                            .author {
-                                margin-right: 5px;
+                        .txt {
+                            float: left;
+                            &>div {
+                                margin-bottom: 5px;
                             }
-                            .watch:before {
-                                content: '\f06e';
-                                font-family: fontAwesome;
-                                margin-right: 5px;
+                            .postTitle {
+                                overflow: hidden;
                             }
-                            .message:before {
-                                content: '\f27a';
-                                font-family: fontAwesome;
-                                margin-right: 5px;
+                            .postDate {
+                                color: $light-gray;
+                            }
+                            .postContent {
+                                overflow: hidden;
+                                max-height: 44px;
+                            }
+                            .postInfo {
+                                font-size: $fz-mincontent;
+                                color: $light-gray;
+                                .author {
+                                    margin-right: 5px;
+                                }
+                                .watch:before {
+                                    content: '\f06e';
+                                    font-family: fontAwesome;
+                                    margin-right: 5px;
+                                }
+                                .message:before {
+                                    content: '\f27a';
+                                    font-family: fontAwesome;
+                                    margin-right: 5px;
+                                }
                             }
                         }
-                    }
-                    .itemLabel {
-                        position: absolute;
-                        left: 15px;
-                        top: 15px;
-                        width: 90px;
-                        height: 30px;
-                        padding: 5px;
-                        color: #fff;
-                        text-align: center;
-                        border-radius: 3px;
-                        &.foodLabel {
-                            background-color: $foodColor;
+                        .itemLabel {
+                            position: absolute;
+                            left: 15px;
+                            top: 15px;
+                            width: 90px;
+                            height: 30px;
+                            padding: 5px;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 3px;
+                            &.foodLabel {
+                                background-color: $foodColor;
+                            }
+                            &.shareLabel {
+                                background-color: $shareColor;
+                            }
+                            &.healthLabel {
+                                background-color: $healthColor;
+                            }
+                            &.newLabel {
+                                background-color: $newColor;
+                            }
                         }
-                        &.shareLabel {
-                            background-color: $shareColor;
-                        }
-                        &.healthLabel {
-                            background-color: $healthColor;
-                        }
-                        &.newLabel {
-                            background-color: $newColor;
-                        }
-                    }
-                    .hotLabel {
-                        background-color: #f00;
-                        color: #fff;
-                        padding: 2px;
-                        font-size: 12px;
-                        margin: 0 10px;
-                        opacity: 0;
-                        &.on {
-                            opacity: 1;
+                        .hotLabel {
+                            background-color: #f00;
+                            color: #fff;
+                            padding: 2px;
+                            font-size: 12px;
+                            margin: 0 10px;
+                            opacity: 0;
+                            &.on {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
                 //參賽紀錄{
                 #myrace {
                     .cardWrap {
+                          color:#434343;
                         .card {
+                            a{
+                                color:#434343;
+                            }
                             background-color: #fdeeca;
                             border-radius: 15px;
                             position: relative;
@@ -323,7 +401,7 @@
                                     height: 50px;
                                     width: 62px;
                                     position: absolute;
-                                    bottom: 50px;
+                                    bottom: 56px;
                                     right: 10px;
                                     text-align: center;
                                     .votes {

@@ -21,8 +21,18 @@ function doFirst(){
     var  eY =  sessionStorage['endDateY'];
     var  eM =  sessionStorage['endDateM'];
     var  eD =  sessionStorage['endDateD'];
-   
 
+
+
+    sessionStorage.removeItem("startDateY");
+    sessionStorage.removeItem("startDateM");
+    sessionStorage.removeItem("startDateD");
+
+    sessionStorage.removeItem("endDateY");
+    sessionStorage.removeItem("endDateM");
+    sessionStorage.removeItem("endDateD");
+
+   
 
 	if( sY!=undefined && sM!=undefined && sD!=undefined && eY!=undefined && eM!=undefined && eD!=undefined){
 		startDate.setFullYear(sY);
@@ -563,7 +573,9 @@ $(document).ready(function(){
 	//total
 	$('#totalMoney').text(roomPrice);
 	//drop
-	$('.mobile-step').draggable();
+	$('.mobile-step').draggable({
+		containment: ".book"
+	});
 	//step的號碼
 	$('#stepNum').text(ahref);
 	//loacding動畫
@@ -772,13 +784,20 @@ $(document).ready(function(){
   		//帶入狗資料
   		$('.again').click(function(){
   			//如果有會員帶入狗狗資料
-			if(localStorage!=undefined){
+  			console.log(localStorage["mem_id"]);
+			if(localStorage["mem_id"]!=undefined){
 				getMemberPet();
+				$(this).css({
+  					display:'none'
+	  			});
+	  			$('.mypet').fadeIn(300);
 			}
-  			$(this).css({
-  				display:'none'
-  			});
-  			$('.mypet').fadeIn(300);
+			else{
+				$('.loginlightbox').animate({
+					right: '0'
+				});
+			}
+  			
 
   		});
 
@@ -802,7 +821,110 @@ $(document).ready(function(){
   			$('#petNameInput').prop( "disabled", true );
   		});
 
-  		//點擊下一步
+  		
+
+  		//點上方的step 跳轉步驟
+		$('.stepDiy .page-scroll').click(function(){
+			
+			ahref =$(this).attr('href');
+	  		ahref = ahref.replace("#section_0", "");
+
+	  		$('#stepNum').text(ahref);
+	
+			if(ahref=="7"){
+				$('.stepDiy').css({
+					display:'none'
+				});
+				$('#mobile-step').css({
+					display:'none'
+				});
+				$('.payanimation').css({
+					display:'block'
+				});
+
+				$('#cssload-contain').delay(800).fadeOut();
+
+				$('.payanimation .check-ok .fa').delay(2500).addClass('checkmm');
+				$('.payanimation .check-ok h1').delay(1500).animate({
+					opacity:'1'
+				});
+
+				$('.payanimation').delay(3300).fadeOut();
+
+
+			}	
+
+			//這一步隱藏
+			$('#bookSection'+ nowSection ).css({
+				display: 'none'
+			});
+
+			//下一步出現
+			$('#bookSection'+ahref).slideDown(500);
+				nowSection = ahref;	
+			});
+  	
+
+	  	//點關閉燈箱
+	  	$('.closeLightBox').click(function(){
+	  		$('.lightbox-content').fadeOut(0,function(){
+	  			$('.lightbox-box').css({
+		  			width: '0px',
+		  			height: '0px',
+		  			borderRadius: '50%',
+		  			
+		  		});
+		  		$('.lightbox').fadeOut(800);
+	  		});
+
+	  		
+	  	});
+
+
+	  	
+		
+		//b-btn 純放大縮小
+		$('.b-btn').click(function(){
+			$(this).addClass('btnScale');
+  			var e =this;
+  			var t =setTimeout(function(){
+  				$(e).removeClass('btnScale');
+  			},500);
+		});
+
+		
+
+
+		//pay
+		$('.pay-method').click(function(){
+			$('.pay-method').css({
+				opacity:0.3
+			});
+			$(this).animate({
+				opacity:1
+			},300);
+
+			paySelected=true;
+		});
+
+
+
+
+	//<767 平板+手機
+  	if($(window).width()<=767){
+
+  		//選單第一個字變大 這要轉90度
+		$('.stepDiy .step1 .step-text').animate({
+			transform: 'scale(1.2)',
+			transform: 'rotate(-90deg)',
+			fontWeight: 'bold'
+		});
+		//轉90度
+		$('.stepDiy .step-text').css({
+			transform: 'rotate(-90deg)'
+		});
+
+		//點擊下一步
   		$('.next .page-scroll').click(function(){
 
   			var num = $(this).attr('href');
@@ -814,6 +936,444 @@ $(document).ready(function(){
   			var sectionId='#bookSection'+nowSection;
 
   			if(num==2){//房間房型
+  				if (dateSelected==true && roomSelected==true) {
+  					var str = '.step'+num+' .step-bar span';
+		  			var str1 = '.step'+num+' .step-num a';
+		  			var str2 = '.step'+num+' .step-text';
+		  			var str3 ='.step'+num;
+
+		  			$(str3).css({
+		  				display:"inline-block"
+		  			});
+		  			$('.stepDiy .page-scroll').css({
+		  				borderColor: '#ccc'
+		  			});
+		  			$(str1).delay(1000).animate({
+		  				backgroundColor: $supOrange,
+		  				borderColor: $deepOrange
+		  			},500);
+					$(str).addClass('didStepBgc');
+
+
+					$('.stepDiy .step-text').css({
+						transform: 'scale(1) rotate(-90deg)',
+						fontWeight: '400'
+		  			});
+
+					$(str2).animate({
+						transform: 'scale(1.2) rotate(-90deg)',
+						fontWeight: '700'
+					}),500;
+
+					//這一步隱藏
+					$('#bookSection'+ nowSection ).css({
+						display: 'none'
+					});
+
+					$('#bookSection'+num).slideDown(500);
+						nowSection = num;
+
+					$(sectionId).find('.step-info-p p').css({
+  						opacity:0
+  					});
+  				}
+  				else{
+  					$(sectionId).find('.step-info-p p').css({
+  						opacity:1
+  					});
+  				}
+  			}
+  			else if(num==3){//狗的資料
+  				if (dogSelected==true && nameInput==true && sexSelected==true && ageSelected==true) {
+  					var str = '.step'+num+' .step-bar span';
+		  			var str1 = '.step'+num+' .step-num a';
+		  			var str2 = '.step'+num+' .step-text';
+		  			var str3 ='.step'+num;
+
+		  			$(str3).css({
+		  				display:"inline-block"
+		  			});
+		  			$('.stepDiy .page-scroll').css({
+		  				borderColor: '#ccc'
+		  			});
+		  			$(str1).delay(1000).animate({
+		  				backgroundColor: $supOrange,
+		  				borderColor: $deepOrange
+		  			},500);
+					$(str).addClass('didStepBgc');
+
+
+					$('.stepDiy .step-text').css({
+						transform: 'scale(1) rotate(-90deg)',
+						fontWeight: '400'
+		  			});
+
+					$(str2).animate({
+						transform: 'scale(1.2) rotate(-90deg)',
+						fontWeight: '700'
+					}),500;
+
+					//這一步隱藏
+					$('#bookSection'+ nowSection ).css({
+						display: 'none'
+					});
+
+					$('#bookSection'+num).slideDown(500);
+						nowSection = num;
+
+					$(sectionId).find('.step-info-p p').css({
+  						opacity:0
+  					});
+  				}
+  				else{
+  					$(sectionId).find('.step-info-p p').css({
+  						opacity:1
+  					});
+  				}
+  			}
+  			else if(num==6){
+  				//彈出會員登入燈箱
+				if(localStorage["mem_id"]==undefined){
+			  		// alert('請登入會員');
+			  		$('.loginlightbox').animate({
+			  			right:'0'
+			  		})
+			  	}
+			  	else{
+			  		var str = '.step'+num+' .step-bar span';
+		  			var str1 = '.step'+num+' .step-num a';
+		  			var str2 = '.step'+num+' .step-text';
+		  			var str3 ='.step'+num;
+
+		  			$(str3).css({
+		  				display:"inline-block"
+		  			});
+		  			$('.stepDiy .page-scroll').css({
+		  				borderColor: '#ccc'
+		  			});
+		  			$(str1).delay(1000).animate({
+		  				backgroundColor: $supOrange,
+		  				borderColor: $deepOrange
+		  			},500);
+					$(str).addClass('didStepBgc');
+
+
+					$('.stepDiy .step-text').css({
+						transform: 'scale(1) rotate(-90deg)',
+						fontWeight: '400'
+		  			});
+
+					$(str2).animate({
+						transform: 'scale(1.2) rotate(-90deg)',
+						fontWeight: '700'
+					}),500;
+
+					//這一步隱藏
+					$('#bookSection'+ nowSection ).css({
+						display: 'none'
+					});
+
+					$('#bookSection'+num).slideDown(500);
+						nowSection = num;
+			  	}
+  			}
+
+  			else if(num==7){//付款
+  				
+  				if (paySelected==true) {
+	  					var str = '.step'+num+' .step-bar span';
+			  			var str1 = '.step'+num+' .step-num a';
+			  			var str2 = '.step'+num+' .step-text';
+			  			var str3 ='.step'+num;
+
+			  			$(str3).css({
+			  				display:"inline-block"
+			  			});
+			  			$('.stepDiy .page-scroll').css({
+			  				borderColor: '#ccc'
+			  			});
+			  			$(str1).delay(1000).animate({
+			  				backgroundColor: $supOrange,
+			  				borderColor: $deepOrange
+			  			},500);
+						$(str).addClass('didStepBgc');
+
+
+						$('.stepDiy .step-text').css({
+							transform: 'scale(1) rotate(-90deg)',
+							fontWeight: '400'
+			  			});
+
+						$(str2).animate({
+							transform: 'scale(1.2) rotate(-90deg)',
+							fontWeight: '700'
+						}),500;
+
+						//這一步隱藏
+						$('#bookSection'+ nowSection ).css({
+							display: 'none'
+						});
+
+						$('#bookSection'+num).slideDown(500);
+							nowSection = num;
+
+						$('.stepDiy').css({
+							display:'none'
+						});
+						$('#mobile-step').css({
+							display:'none'
+						});
+						$('.payanimation').css({
+							display:'block'
+						});
+
+						$('#cssload-contain').delay(800).fadeOut();
+
+						$('.payanimation .check-ok .fa').delay(2500).addClass('checkmm');
+						$('.payanimation .check-ok h1').delay(1500).animate({
+							opacity:'1'
+						});
+
+						$('.payanimation').delay(3300).fadeOut();
+
+						$(sectionId).find('.step-info-p p').css({
+	  						opacity:0
+	  					});
+
+
+	  				}
+
+  				else{
+
+	  					$(sectionId).find('.step-info-p p').css({
+	  						opacity:1
+	  					});
+  				}
+  			}
+
+  			else{
+  					var str = '.step'+num+' .step-bar span';
+		  			var str1 = '.step'+num+' .step-num a';
+		  			var str2 = '.step'+num+' .step-text';
+		  			var str3 ='.step'+num;
+
+		  			$(str3).css({
+		  				display:"inline-block"
+		  			});
+		  			$('.stepDiy .page-scroll').css({
+		  				borderColor: '#ccc'
+		  			});
+		  			$(str1).delay(1000).animate({
+		  				backgroundColor: $supOrange,
+		  				borderColor: $deepOrange
+		  			},500);
+					$(str).addClass('didStepBgc');
+
+
+					$('.stepDiy .step-text').css({
+						transform: 'scale(1) rotate(-90deg)',
+						fontWeight: '400'
+		  			});
+
+					$(str2).animate({
+						transform: 'scale(1.2) rotate(-90deg)',
+						fontWeight: '700'
+					}),500;
+
+					//這一步隱藏
+					$('#bookSection'+ nowSection ).css({
+						display: 'none'
+					});
+
+					$('#bookSection'+num).slideDown(500);
+						nowSection = num;
+  			}
+
+  				
+		
+
+  		});
+
+
+
+		//點上方步驟列的事件
+  		$('.stepDiy .page-scroll').click(function(){
+  			var num = $(this).attr('href');
+  			num = num.replace('#section_0','');
+
+
+  			$('#stepNum').text(num);
+
+  			var str = '.stepDiy .step'+num+' .step-num a';
+  			var str2 = '.stepDiy .step'+num+' .step-text';
+  			var str3 = '.stepDiy .step'+num+' .step-num';
+
+  			//目前的邊框上紅色
+  			$('.stepDiy .page-scroll').animate({
+  				borderColor: '#ccc'
+  			});
+  			$(str).animate({
+  				borderColor: $deepOrange
+  			},1000);
+
+  			$('.stepDiy .step-text').animate({
+  				transform: 'scale(1)',
+  				transform: 'rotate(-90deg)',
+				fontWeight: '400'
+  			});
+
+			$(str2).animate({
+				transform: 'scale(1.2)',
+				transform: 'rotate(-90deg)',
+				fontWeight: '700'
+			}),500;
+
+  		});
+
+  		var mobileStepClick=0;
+	
+ 		// tinycircleslider
+		 $("#rotatescroll").tinycircleslider({
+			        dotsSnap : true
+			    ,   radius   : 130
+			    ,   dotsHide : false
+		});
+		// tinycircleslider
+
+  		
+
+		//手機麵包屑顯示
+	  	$('#mobile-step').click(function(){
+	  		if(mobileStepClick==0){
+	  			//選單出現
+	  			mobileStepClick++;
+	  			$('.stepDiy').animate({ 
+	  				left: '-175px'
+	  			},800);
+
+	  			$('#UpLeft').removeClass('rightUpUp');
+	  			$('#UpRight').removeClass('leftUpUp');
+
+	  			$('#UpLeft').addClass('leftUpUp');
+	  			$('#UpRight').addClass('rightUpUp');
+
+	  			$('.step').animate({
+	  				left: '190px'
+	  			});
+	  		}
+	  		else{
+	  			//收合選單
+	  			mobileStepClick=0;
+	  			
+	  			$('.stepDiy').animate({ 
+	  				left: '-500px'
+	  			},500);
+
+
+	  			$('#UpLeft').removeClass('leftUpUp');
+	  			$('#UpRight').removeClass('rightUpUp');
+
+	  			$('#UpLeft').addClass('rightUpUp');
+	  			$('#UpRight').addClass('leftUpUp');
+
+
+	  			$('.step').animate({
+	  				left: '0px'
+	  			});
+	  		}
+	  		
+	  	});
+
+	  	//mStepA 按完之後收起來
+	  	$('.mStepA').click(function(){
+	  		mobileStepClick=0;
+	  			
+
+	  		//填上step的數字
+	  		ahref =$(this).attr('href');
+	  		ahref = ahref.replace("#section_0", "");
+	  		// $('#stepNum').text(ahref);
+
+	  		//要回去方向
+	  		$('#UpLeft').removeClass('leftUpUp');
+	  		$('#UpRight').removeClass('rightUpUp');
+
+	  		$('#UpLeft').addClass('rightUpUp');
+	  		$('#UpRight').addClass('leftUpUp');
+
+	  		$('.stepDiy').animate({ 
+	  				left: '-400px'
+	  			},500);
+	  		$('.step').animate({
+	  			left: '0px'
+	  		});
+
+
+
+	  	});
+	  	
+
+		//按了下一步,箭頭方向
+		$('.page-scroll').click(function(){
+			//先換step的字
+	  		
+
+	  		$('#UpLeft').removeClass('leftUpUp');
+	  		$('#UpRight').removeClass('rightUpUp');
+
+	  		$('#UpLeft').addClass('rightUpUp');
+	  		$('#UpRight').addClass('leftUpUp');
+			//收合選單
+	  			mobileStepClick=0;
+	  			
+	  			$('.stepDiy').animate({ 
+	  				left: '-400px'
+	  			},500);
+
+
+	  			$('.step').animate({
+	  				left: '0px'
+	  			},500);
+		});
+	}//<767
+
+
+
+	//>767 小桌機 大桌機
+  	if($(window).width()>767){
+
+  	$(document).scroll(function() {
+	    
+  			
+  			if(ahref!=7){
+  				if($(document).scrollTop()>10){
+			    	$('.stepDiy').stop(true, false).fadeOut(300);
+			    }
+			    else{
+			    	$('.stepDiy').stop(true, false).fadeIn(300);	
+			    }
+  			}
+  			else{
+  				$('.stepDiy').css({
+  					display:'none'
+  				});
+  			}
+	    	
+	    
+	 });
+
+  	//點擊下一步
+  		$('.next .page-scroll').click(function(){
+
+  			var num = $(this).attr('href');
+  			num = num.replace('#section_0','');
+
+  			$('#stepNum').text(num);
+  			ahref = num;
+
+  			var sectionId='#bookSection'+nowSection;
+
+  			if(num==2){//房間房型桌機
   				if (dateSelected==true && roomSelected==true) {
   					var str = '.step'+num+' .step-bar span';
 		  			var str1 = '.step'+num+' .step-num a';
@@ -1071,273 +1631,6 @@ $(document).ready(function(){
 		
 
   		});
-
-  		//點上方的step 跳轉步驟
-		$('.stepDiy .page-scroll').click(function(){
-			
-			ahref =$(this).attr('href');
-	  		ahref = ahref.replace("#section_0", "");
-
-	  		$('#stepNum').text(ahref);
-	
-			if(ahref=="7"){
-				$('.stepDiy').css({
-					display:'none'
-				});
-				$('#mobile-step').css({
-					display:'none'
-				});
-				$('.payanimation').css({
-					display:'block'
-				});
-
-				$('#cssload-contain').delay(800).fadeOut();
-
-				$('.payanimation .check-ok .fa').delay(2500).addClass('checkmm');
-				$('.payanimation .check-ok h1').delay(1500).animate({
-					opacity:'1'
-				});
-
-				$('.payanimation').delay(3300).fadeOut();
-
-
-			}	
-
-			//這一步隱藏
-			$('#bookSection'+ nowSection ).css({
-				display: 'none'
-			});
-
-			//下一步出現
-			$('#bookSection'+ahref).slideDown(500);
-				nowSection = ahref;	
-			});
-  	
-
-	  	//點關閉燈箱
-	  	$('.closeLightBox').click(function(){
-	  		$('.lightbox-content').fadeOut(0,function(){
-	  			$('.lightbox-box').css({
-		  			width: '0px',
-		  			height: '0px',
-		  			borderRadius: '50%',
-		  			
-		  		});
-		  		$('.lightbox').fadeOut(800);
-	  		});
-
-	  		
-	  	});
-
-
-	  	
-		
-		//b-btn 純放大縮小
-		$('.b-btn').click(function(){
-			$(this).addClass('btnScale');
-  			var e =this;
-  			var t =setTimeout(function(){
-  				$(e).removeClass('btnScale');
-  			},500);
-		});
-
-		
-
-
-		//pay
-		$('.pay-method').click(function(){
-			$('.pay-method').css({
-				opacity:0.3
-			});
-			$(this).animate({
-				opacity:1
-			},300);
-
-			paySelected=true;
-		});
-
-
-
-
-	//<767 平板+手機
-  	if($(window).width()<=767){
-
-  		//選單第一個字變大 這要轉90度
-		$('.stepDiy .step1 .step-text').animate({
-			transform: 'scale(1.2)',
-			transform: 'rotate(-90deg)',
-			fontWeight: 'bold'
-		});
-		//轉90度
-		$('.stepDiy .step-text').css({
-			transform: 'rotate(-90deg)'
-		});
-
-		//點上方步驟列的事件
-  		$('.stepDiy .page-scroll').click(function(){
-  			var num = $(this).attr('href');
-  			num = num.replace('#section_0','');
-
-
-  			$('#stepNum').text(num);
-
-  			var str = '.stepDiy .step'+num+' .step-num a';
-  			var str2 = '.stepDiy .step'+num+' .step-text';
-  			var str3 = '.stepDiy .step'+num+' .step-num';
-
-  			//目前的邊框上紅色
-  			$('.stepDiy .page-scroll').animate({
-  				borderColor: '#ccc'
-  			});
-  			$(str).animate({
-  				borderColor: $deepOrange
-  			},1000);
-
-  			$('.stepDiy .step-text').animate({
-  				transform: 'scale(1)',
-  				transform: 'rotate(-90deg)',
-				fontWeight: '400'
-  			});
-
-			$(str2).animate({
-				transform: 'scale(1.2)',
-				transform: 'rotate(-90deg)',
-				fontWeight: '700'
-			}),500;
-
-  		});
-
-  		var mobileStepClick=0;
-	
- 		// tinycircleslider
-		 $("#rotatescroll").tinycircleslider({
-			        dotsSnap : true
-			    ,   radius   : 130
-			    ,   dotsHide : false
-		});
-		// tinycircleslider
-
-  		
-
-		//手機麵包屑顯示
-	  	$('#mobile-step').click(function(){
-	  		if(mobileStepClick==0){
-	  			//選單出現
-	  			mobileStepClick++;
-	  			$('.stepDiy').animate({ 
-	  				left: '-175px'
-	  			},800);
-
-	  			$('#UpLeft').removeClass('rightUpUp');
-	  			$('#UpRight').removeClass('leftUpUp');
-
-	  			$('#UpLeft').addClass('leftUpUp');
-	  			$('#UpRight').addClass('rightUpUp');
-
-	  			$('.step').animate({
-	  				left: '190px'
-	  			});
-	  		}
-	  		else{
-	  			//收合選單
-	  			mobileStepClick=0;
-	  			
-	  			$('.stepDiy').animate({ 
-	  				left: '-500px'
-	  			},500);
-
-
-	  			$('#UpLeft').removeClass('leftUpUp');
-	  			$('#UpRight').removeClass('rightUpUp');
-
-	  			$('#UpLeft').addClass('rightUpUp');
-	  			$('#UpRight').addClass('leftUpUp');
-
-
-	  			$('.step').animate({
-	  				left: '0px'
-	  			});
-	  		}
-	  		
-	  	});
-
-	  	//mStepA 按完之後收起來
-	  	$('.mStepA').click(function(){
-	  		mobileStepClick=0;
-	  			
-
-	  		//填上step的數字
-	  		ahref =$(this).attr('href');
-	  		ahref = ahref.replace("#section_0", "");
-	  		// $('#stepNum').text(ahref);
-
-	  		//要回去方向
-	  		$('#UpLeft').removeClass('leftUpUp');
-	  		$('#UpRight').removeClass('rightUpUp');
-
-	  		$('#UpLeft').addClass('rightUpUp');
-	  		$('#UpRight').addClass('leftUpUp');
-
-	  		$('.stepDiy').animate({ 
-	  				left: '-400px'
-	  			},500);
-	  		$('.step').animate({
-	  			left: '0px'
-	  		});
-
-
-
-	  	});
-	  	
-
-		//按了下一步,箭頭方向
-		$('.page-scroll').click(function(){
-			//先換step的字
-	  		
-
-	  		$('#UpLeft').removeClass('leftUpUp');
-	  		$('#UpRight').removeClass('rightUpUp');
-
-	  		$('#UpLeft').addClass('rightUpUp');
-	  		$('#UpRight').addClass('leftUpUp');
-			//收合選單
-	  			mobileStepClick=0;
-	  			
-	  			$('.stepDiy').animate({ 
-	  				left: '-400px'
-	  			},500);
-
-
-	  			$('.step').animate({
-	  				left: '0px'
-	  			},500);
-		});
-	}//<767
-
-
-
-	//>767 小桌機 大桌機
-  	if($(window).width()>767){
-
-  	$(document).scroll(function() {
-	    
-  			
-  			if(ahref!=7){
-  				if($(document).scrollTop()>10){
-			    	$('.stepDiy').stop(true, false).fadeOut(300);
-			    }
-			    else{
-			    	$('.stepDiy').stop(true, false).fadeIn(300);	
-			    }
-  			}
-  			else{
-  				$('.stepDiy').css({
-  					display:'none'
-  				});
-  			}
-	    	
-	    
-	 });
   		
 	//選單第一個字變大
 	$('.stepDiy .step1 .step-text').animate({
@@ -1526,11 +1819,11 @@ $(document).ready(function(){
 	  	$('.pic-small img').click(function(){
 	  		//清除被選到顏色
 	  		$('.pic-small img').animate({
-	  			borderColor: $orange
+	  			borderColor: 'rgba(0,0,0,0)'
 	  		},100);
 	  		//被選到上色
 	  		$(this).animate({
-	  			borderColor: $bRed
+	  			borderColor: $orange
 	  		},100);
 	  		$('#roomPicBig').attr('src',$(this).attr('src'));
 	  	});

@@ -7,6 +7,14 @@
 	}
 	.book{
 	//從這開始寫
+		.step{
+			-moz-background-size: 100%;
+			-webkit-background-size:100%;
+			-o-background-size: 100%;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			// background-position: 100% 100%;
+		}
 		.step-info-p{
 			text-align: right;
 			

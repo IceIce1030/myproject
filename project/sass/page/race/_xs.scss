@@ -3,16 +3,270 @@
 	//直接寫css
 	.race{
 	//從這開始寫
+
+		#showlightbox{
+			.cardlightbox{
+				position: relative;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 30;
+				margin: auto;
+				width: 100%;
+				height: 100vh;
+				background-color: rgba(0,0,0,.8);
+				display: none;			
+				.lightbox-box{
+					transform:translate(-50% ,-50%);
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					// margin: 35px auto;
+					width: 0px;
+					height: 0px;		
+					// border: 1px solid $brown;
+					background-color: $bgc;
+					// padding: 5px 10px;
+					transition:1s;
+					// border-radius: 50%;
+					border-radius: 15px;
+					position: relative;
+					box-shadow: 5px 5px 50px $light-gray;
+					.lightbox-content{
+						background-color:$bgc;
+						border-radius: 15px;
+						.infobox{		
+							height: 100%;
+							.petinfo{
+								padding: 5px;
+								width: 100%;
+								height: 100%;
+								.maininfo{
+									padding: 15px 15px 5px 15px;
+									height: 65%;
+									width: 100%;
+									.txtboxwrap{
+											width: 100%;
+											margin-top: -20px;							
+										.txtbox{
+											color: #888;
+											p{
+												color: #888;
+											}
+											span{
+												color: black;
+											}
+										}	
+									}			
+									.imgbox{
+										text-align: center;
+										max-width:280px;
+										max-height: 150px;
+										overflow: hidden;
+										border-radius: 15px;					
+										img{
+											width: 100%;
+											border-radius: 15px;
+										}
+									}
+									.intro{
+										display:block;
+										border-bottom:1px dashed #ccc;
+										p{	
+											padding: 3px 0;
+											color:#666;
+										}			
+									}
+									.number{
+										font-size: $fz-content;
+										color: #888;
+										font-weight: bold;
+									}
+									.name{
+										padding-left: 10px;
+										font-size: $fz-h4;
+										// color: $foodColor;
+										font-weight: bold;
+									}
+									.vote{
+										font-size: $fz-h4;
+										// color: $foodColor;
+										font-weight: bold;
+									}
+								}
+								.detailinfo{
+									// padding:  0 20px 20px 20px;
+									height: 35%;
+									width: 100%;
+									.detailLeft{
+										width: 60%;
+										p{
+											font-size: $fz-mincontent;
+											color:#888;
+										}
+										span:nth-child(1){
+											padding-top: 0px;
+										}
+										span{
+											display: inline-block;
+											padding: 1px;
+											font-size: 15px;
+											// color:$foodColor;
+											color:black;	
+										}
+									}				
+									.detailRight{
+										width: 40%;
+										.like{
+											float: right;
+											height: 50px;
+											width: 62px;
+											text-align:center;
+											.votes{					
+												display: inline-block;
+												font-size: $fz-h3;
+												color:$light-pink;
+											}						
+											img{
+												width: 100%;
+											}
+											.favorite{
+												cursor: pointer;
+												background: transparent;
+					  							border: 0;
+					  							&:focus{
+					  								outline: 0;
+					  							}
+					  							.outsideheart{			  									
+					  								position: relative;
+					  								font-size: 40px;
+					  								color: #ffd5cc;
+					  								&:hover{
+						  								color: $light-pink;
+						  							}
+					  								.insideheart{
+														position: absolute;
+														top: 0;
+														right: 0;
+														opacity: 0.5;
+					  								}
+					  							}
+					  							&.liked{
+					  								.outsideheart{	  									
+					  									color: $light-pink;
+					  									z-index: 0;
+					  									animation: heart 0.5s;
+					  									.insideheart{	
+					  										z-index: 1000;
+					  										animation: heartHollow 1s;
+					  									} 
+					  								}
+					  							}
+											}
+										}
+									}				
+								}
+							}
+						}
+						.msgbox{
+							height: 100%;
+							.msg{
+								padding: 5px 20px 20px 20px;
+								width: 100%;
+								height: 100%;
+								.msgContent{
+									background-color: #FFF;
+									font-size: 15px;
+									display:block;
+									padding: 5px 5px 5px 5px;						
+									height: 150px;
+									width: 100%;	
+									border-radius:5px;
+									overflow: auto;
+									word-break: break-all;
+									ul{	
+										height: 100%;
+										border-bottom:1px solid #ccc;
+										display: block;
+
+										span{
+											width: 100%;
+									
+										}		
+									}
+								}			
+								.msginput{
+									border-radius:5px;
+									padding: 0 5px;
+									width: 100%;
+									height: 30px;
+									background-color: #fff;
+									.somebody{
+										display: inline-block;
+										.name{
+											padding: 3px;
+											line-height: 30px;
+											font-size: 15px;
+										}						
+									}
+									.msgtype{
+										border: none;
+										outline:none;
+										width: 120px;										
+									}
+									.cardmsgbutton{
+										border:none;
+										outline:none;
+										border-radius:5px;
+										padding: 2px 6px;
+										background-color: $foodColor;
+										color:$white;
+										cursor:pointer;
+										&:hover{
+											background-color: $sup-orange;
+										}
+									}
+								}					
+							}
+						}					
+						.closeLightBox{
+							line-height: 20px;
+							text-align: center;
+							position: absolute;
+							top: -10px;
+							right: -10px;
+							width: 33px;
+							height:33px;
+							background-color: rgba(0,0,0,.7);
+							border-radius: 50%;
+							transition:.3s;
+							border:2px solid #ddd;					
+							.fa-plus{
+								position: relative;
+								left: 3px;
+								top: -2px;
+								padding-top: 10px;
+								font-size: 20px;
+								color: #fff;
+								cursor: pointer;
+								transform:rotate(45deg);
+							}
+						}
+					}
+				} 		
+			}
+		}
 		.section_prize{
 			background-size: cover;
 			position: relative;	
 		}
 		.cloud{
+			margin-left: -10px;
 			margin-top: 93px;
 			padding: 0px 0px 0 0px;
 			position: relative;
 			img{
-				width: 100%;
+				width: 105%;
 			}
 			p{	
 				position:absolute;
@@ -23,7 +277,9 @@
 				margin: auto;
 				text-align:center;
 				height: 0em;
-				font-size: $fz-mincontent;
+				font-size: 12px;
+				color: #53a1da;
+				text-shadow:0.3px 0.3px 0.3px #4d5dbb;
 			}
 		}
 		.cloud1{
@@ -33,7 +289,7 @@
 				width: 90%;
 			}
 			p{
-				
+				color: #53a1da;			
 			}
 			span{
 				color:$light-pink;
@@ -82,11 +338,18 @@
 				.candy{				
 					text-align: center;
 					position: relative;
-					img{						
-						max-width: 150px;
-						width: 100%;
-						border-radius: 50%;
-						border: 10px solid $orange;					
+					border-radius: 50%;
+					border: 5px solid $orange;	
+					width: 120px;
+					height: 120px;
+					margin: 0 auto;
+					overflow: hidden;
+					img{	
+						height: 100%;					
+						// max-width: 150px;
+						// width: 100%;
+						// border-radius: 50%;
+						// border: 10px solid $orange;					
 					}
 					.name{
 						position: absolute;
@@ -102,7 +365,7 @@
 					// position: relative;
 					// z-index: -1;
 					margin-top: -50px;
-					width: 15px;
+					width: 10px;
 					height: 50px;
 					display: inline-block;
 					background-color: $orange;
@@ -210,41 +473,34 @@
 			display: block;
 		}	
 		#sorts{
-			padding: 25px 0px 15px 0px;
+			.button{
+				letter-spacing: 0.05em;
+				width: 60px;
+				height: 30px;
+				padding: 2px;
+				margin: 2px;
+				text-align: center;
+				letter-spacing: 1px;
+				color: #000;
+				border-radius: 3px;
+				cursor: pointer;
+				transition: 0.3s;
+				border: none;
+				font-size: $fz-content;	
+				background-color: transparent;
+				outline: none;		
+				}
+			padding: 10px 0px 5px 0px;
 			span{
 				font-size:14px; 	
 			}
-
-		.button{
-			background-color: $light-gray;
-			border-radius:6px;
-			padding: 2px 5px;
-			font-size: 14px;
-			color:$white;
-			border: 1px solid $light-gray; 
-			&:hover{
-				background-color: $white;
-				color:$light-gray;
-			}
-			&:active{
-				position:relative;
-				top:1px;
-			}
-			&:focus {
-				outline:0;
-				background-color: $white;
-				color:$light-gray;
-				font-weight: bolder;
-				border: 2px solid $light-gray; 
-			}
-		}
 	}
 	.searchWrap{
 				display: none;
 				position: relative;
 				float: right;
 				margin-right: 25px;
-				padding: 25px 15px 15px 15px;
+				padding: 0px 0px 0px 0px;
 				display: inline-block;
 			#search{	
 				input{
@@ -273,39 +529,32 @@
 			}
 		}
 	#filters{
-		padding: 10px 0 0px 0;
+		.button{
+			letter-spacing: 0.05em;
+			width: 60px;
+			height: 30px;
+			padding: 2px;
+			margin: 2px;
+			text-align: center;
+			letter-spacing: 1px;
+			color: #000;
+			border-radius: 3px;
+			cursor: pointer;
+			transition: 0.3s;
+			border: none;
+			font-size: $fz-content;	
+			background-color: transparent;
+			outline: none;		
+		}
+		padding: 0px 0 0px 0;
 		display: inline-block;
 		span{
 			font-size: 14px;
 		}	
-		.button{
-			display: inline-block;	
-			margin:5px 0 0 0;
-			background-color: $orange;
-			border-radius:6px;
-			padding: 2px 5px;
-			font-size: 14px;
-			color:$white;
-			border: 1px solid $orange;
-			&:hover{
-				background-color: $white;
-				color:$orange;
-			}
-			&:active{
-				position:relative;
-				top:1px;
-			}
-			&:focus {
-				outline:0;
-				background-color: $white;
-				color:$orange;
-				font-weight: bolder;
-				border: 2px solid $orange;
-			}
-		}
 	}
 		.cardWrap{
 			padding: 30px 30px;
 		}
 	}
+
 }

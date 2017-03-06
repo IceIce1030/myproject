@@ -2,14 +2,6 @@
 @import "sm";
 @import "xs";
 @import "jquery.fullPage";
-
-
-#home-index{
-    .navbarLightbox{
-        position: fixed;
-        z-index:9999;
-    }
-}
 #fp-nav span,
 .fp-slidesNav span {
     border-color: #aaa;
@@ -24,6 +16,7 @@
     animation: opa 2s;
 }
 
+
 @keyframes opa {
     from {
         opacity: 0;
@@ -32,8 +25,8 @@
         opacity: 1;
     }
 }
-#home-nav-header{
-    z-index: 2000;
+#home-nav-header,.h-navbarLightbox{
+    z-index: 4000;
 }
 #index-lightbox {
     // opacity: 0;
@@ -211,7 +204,7 @@
         }
     }
     .PageOne {
-        height: 100vh;
+        min-height: 86vh;
         width: 100%;
         background: url(../images/background/nature-sprite.png) no-repeat -9999px -9999px;
         // overflow-y: hidden;

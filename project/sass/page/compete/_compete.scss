@@ -1,203 +1,313 @@
-@import "lg";
-@import "sm";
-@import "xs";
-
-#competeBody{
-        background-color: #f9f7e8;   
-    }
-.compete{
-	//三個尺寸共用的寫在這
-    
-    .banner{
-        height: 250px;
-        width: 100%;
-        position: relative;
-        text-align:center;
-        border-bottom:1px dotted $deep-orange;
-        .txt{
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            color:#a91e2d;
-            font-weight: bolder;
-            .txt1{
-            font-size: 55px;
-            display: inline-block;
-        }
-            .txt2{
-                display: inline-block;
-                font-size: 25px;
-                position: relative;
-                width: 30px;
-
-                .txtUp{
-                    position: absolute;
-                    bottom: 15px;   
+//開頭
+.postCompete {
+    background-image: url(../images/race_image/compete_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% 80%;
+    .container {
+        color: $deep-gray;
+        text-align: center;
+        .banner {
+            //banner開頭
+            height: 150px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+            border-bottom: 1px dotted $deep-orange;
+            .txt {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+                color: #a91e2d;
+                font-weight: bolder;
+                .txt1 {
+                    font-size: 55px;
+                    display: inline-block;
                 }
-                .txtDown{
-                    position: absolute;
-                    bottom: -9px; 
-                }
-            }
-            .txt3{
-                display: inline-block; 
-                position: relative;
-                width: 150px;      
-                .txtUp{
-                    position: absolute;
-                    font-size: 30px;
-                    bottom: 10px;
-                    left: -3px;
-                }
-                .txtDown{
-                    position: absolute;
-                    font-size: 20px;
-                    bottom: -8px;
-                    left: -2px;
-                }
-                .heartWrap{
-                    width: 50px;
-                    height: 40px;
-                    position: absolute;
-                    left: 90px;
-                    bottom: 18px;
-                    transform: rotate(40deg);
-                    img{
-                    width: 100%;
-                    animation: heartbeat .5s infinite alternate;                   
+                .txt2 {
+                    display: inline-block;
+                    font-size: 25px;
+                    position: relative;
+                    width: 30px;
+                    .txtUp {
+                        position: absolute;
+                        bottom: 15px;
+                    }
+                    .txtDown {
+                        position: absolute;
+                        bottom: -9px;
                     }
                 }
-                
-            }
-            .img1{
-                display: inline-block;
-                width: 300px;
-                vertical-align: bottom;
-                img{
-                    width: 100%;
+                .txt3 {
+                    display: inline-block;
+                    position: relative;
+                    width: 150px;
+                    .txtUp {
+                        position: absolute;
+                        font-size: 30px;
+                        bottom: 10px;
+                        left: -3px;
+                    }
+                    .txtDown {
+                        position: absolute;
+                        font-size: 20px;
+                        bottom: -8px;
+                        left: -2px;
+                    }
+                    .heartWrap {
+                        width: 50px;
+                        height: 40px;
+                        position: absolute;
+                        left: 90px;
+                        bottom: 18px;
+                        transform: rotate(40deg);
+                        img {
+                            width: 100%;
+                            animation: heartbeat .5s infinite alternate;
+                        }
+                    }
+                }
+                .img1 {
+                    display: inline-block;
+                    width: 300px;
+                    vertical-align: bottom;
+                    img {
+                        width: 100%;
+                    }
                 }
             }
-        }
-        
-    }
-    .container{
-        max-width: 1170px;
-    }
-    .competeForm{
-        text-align: center;
-        .txt{
-            padding: 10px 0 5px 0;
-            font-size: $fz-h4;
-        }
-        .formDiv {
-            display: inline-block;
+        } //banner結尾
+        .main {
             margin: auto;
-            text-align: left;
-            background-color: #fff;
-            padding: 15px;
-            .formGroup {
-                border-bottom: 1px dotted $brown;
-                margin: 5px 0;
-                min-height: 40px;
-            }
-            .labelClass {
-                font-weight: bold;
-                display: inline-block;
-                width: 64px;
-            }
-            input {
-                height: 34px;
-                padding: 3px 3px;
-                letter-spacing: 1px;
-                border: 1px solid rgba(119, 71, 32, .8);
-                border-radius: 4px;
-                float: right;
-            }
-            .sex{
-                margin-top: 5px;
-                margin-left: 5px;
-            }
-            select{
-                float: right;
-            }
-            option {
-                font-size: $fz-content;
-            }
-            span{
-                float: right;
-            }
-            .genderInput {
-                margin-left: 5px;
-            }
-            .genderInput input {
-                margin-right: 10px;
-                width: auto;
-                height: auto;
-                cursor: pointer;
-            }
-            .showImage {
-                text-align: center;
-                display: inline-block;
-                position: relative;
-                top: 5px;
-                vertical-align: middle;
-                margin: 5px auto;
-                // overflow: hidden;
-                img {
-                    margin-top: -13px;
-                    width: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            .petList {
+                #petListDiv {}
+                .petPhoto img {
+                    width: 80px;
                     border-radius: 50%;
                 }
-            }
-            .inputImg {
-                border: none;
-                width: 78px;
-            }
-            .linktochange {
-                padding: 5px 0;
-                color: $deep-orange;
-                cursor: pointer;
-                &:hover {
-                    color: $brown;
+                .pet {
+                    padding: 5px;
+                    display: inline-block;
+                    .petPhoto {
+                        text-align: center;
+                        cursor: pointer;
+                        position: relative;
+                    }
+                    .competeBtn {
+                        margin-top: 10px;
+                        text-decoration: none;
+                        .btnFunction {
+                            background: #ffa800;
+                            background: linear-gradient(to bottom, #ffa800 0, #f0a000 100%);
+                            &:hover {
+                                background: #e69900;
+                                background: linear-gradient(to bottom, #f0a000 0, #e69900 100%);
+                            }
+                        }
+                        a {
+                            color: #fff;
+                            font-weight: 300;
+                        }
+                    }
                 }
-                .fa {
-                    margin-right: 5px;
+            }
+            // .addTitle {
+            //     margin-top: 40px;
+            //     margin-bottom:10px;
+            // }
+            .addPetForm {
+                width: 350px;
+                border: 1px dotted #ccc;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .formDiv {
+                h3 {
+                    text-align: center;
+                }
+                display: inline-block;
+                margin: 40px auto 0;
+                text-align: left;
+                .alertInform {
+                    display: none;
+                }
+                .formGroup {}
+                .labelClass {
+                    display: inline-block;
+                    width: 70px;
+                }
+                input {
+                    border: 1px solid rgba(119, 71, 32, .8);
+                    border-radius: 5px;
+                    letter-spacing: 1px;
+                }
+                .gender input {
+                    margin-right: 10px;
+                    width: auto;
+                    height: auto;
+                    cursor: pointer;
+                }
+                #upload_petImg {
+                    border: none;
+                    display: none;
+                }
+                .showImage {
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    margin-right: 10px;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    position: relative;
+                    top: 8px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                #uploadImgLabel {
+                    display: inline-block;
+                    padding: 6px 12px;
+                    height: auto;
+                    font-size: $fz-content;
+                    border: 1px solid rgba(119, 71, 32, .8);
+                    border-radius: 5px;
+                    color: $light-gray;
+                    cursor: pointer;
+                    letter-spacing: 1px;
+                    transition: all .4s;
+                    background-color: hsla(0, 0%, 97%, 1.0);
+                    &:hover {
+                        color: $deep-gray;
+                        background-color: hsla(0, 0%, 100%, 1.0);
+                    }
+                }
+                p {
+                    margin: 10px 0;
+                    text-align: center;
+                    a {
+                        color: $deep-gray;
+                        &:hover {
+                            color: $brown;
+                        }
+                    }
+                }
+                .btnDiv {
+                    text-align: center;
+                }
+                .inputBtn {
+                    font-weight: 300;
+                    margin: 10px auto;
+                    width: 100%;
+                    padding: 6px 12px;
+                    height: auto;
+                    font-size: $fz-content;
+                    border: solid transparent;
+                    border-radius: 5px;
+                    background: #f34e1b;
+                    background: linear-gradient(to bottom, rgba(243, 78, 27, 1.0) 0, rgba(230, 50, 10, 1.0) 100%);
+                    color: #fff;
+                    cursor: pointer;
+                    letter-spacing: 2px;
+                    transition: all .4s;
+                    &:hover {
+                        background: hsla(14, 90%, 45%, 1);
+                        background: linear-gradient(to bottom, rgba(240, 60, 20, 1.0) 0, rgba(210, 50, 10, 1.0) 100%);
+                    }
                 }
             }
-            .btnDiv {
-                text-align: center;
-                position: relative;
-                height: 40px;
-            }
-            .inputBtn {
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: auto;
-                margin: 10px auto;
-                width: 120px;
-                border: 1px solid transparent;
-                background-color: $deep-orange;
-                color: #fff;
-                cursor: pointer;
-                letter-spacing: 2px;
-                transition: box-shadow .4s ease;
-                font-size:16px; 
-                &:hover {
-                    box-shadow: 1px 1px 5px #555;
-                    background-color: $brown;
-                }
+            h3 {
+                color: $brown;
             }
         }
     }
-    @keyframes heartbeat{
-        0% { transform: scale(1.2);
-             }
-        50% { transform: scale(1.4);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+//手機
+@include respones(xs) {
+    .postCompete {
+        .container {
+            padding-top: 60px;
+            .main {
+                padding: 15px;
+                width: 100%;
+                height: 100vh;
             }
-        100% { transform: scale(1.1);
+        }
+    }
+}
+
+//平板
+@include respones(sm) {
+    .postCompete {
+        .container {
+            padding-top: 60px;
+            .main {
+                width: 550px;
+                padding: 20px;
             }
-        }      
+        }
+    }
+}
+
+//小桌機
+@include respones(md) {
+    .postCompete {
+        .container {
+            padding: 120px 0px 40px;
+            .main {
+                width: auto;
+                padding: 40px 60px 20px;
+                display: inline-block;
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 5px;
+                    min-height: 44px;
+                    margin-bottom: 10px;
+                }
+                .labelClass {
+                    display: inline-block;
+                    width: 90px;
+                }
+                .nice-select {
+                    width: 140px;
+                }
+                input {
+                    width: 140px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                p {}
+            }
+        }
+    }
+}
+
+//大桌機
+@include respones(lg) {
+    .postCompete {
+        .main {}
+    }
 }

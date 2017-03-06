@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <link href='images/furkid.ico' rel='shortcut icon'/>
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Furkid | 會員專區</title>
+    <title>會員專區</title>
+    <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- 選單要引用fontawesome/jquery和nav.js -->
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
@@ -60,17 +60,17 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a class="memberTab" data-tab-id="myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
+                        <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -210,34 +210,35 @@
     </div>
     <!-- 個人資料燈箱結束 -->
     <!-- 變更密碼燈箱 -->
-    <!-- <div class="lightbox" id="changePsw">
-        <div class="lightbox-box">
-            <div class="lightbox-content">
+    <div class="C_lightbox" id="changePswLb">
+        <div class="lightbox_box">
+            <div class="lightbox_content">
                 <div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
                 <div class="formDiv">
-                    <form action="mem_signup.php" method="post" enctype="multipart/form-data">
-                        <div class="formGroup">
-                            <label class="labelClass" for="mem_psw">原密碼</label>
-                            <input type="password" name="mem_psw" id="mem_psw" placeholder="請輸入原密碼" minlength="6" maxlength="12">
+                    <div class="formGroup">
+                        <label class="labelClass" for="changePsw_mem_id">帳號</label>
+                        <input type="text" name="changePsw_mem_id" id="changePsw_mem_id" placeholder="3-12位英數字" minlength="3" maxlength="12" disabled>
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="mem_pswConfirm">舊密碼</label>
+                        <input type="password" name="mem_pswConfirm" id="mem_pswConfirm" placeholder="輸入舊的密碼" minlength="6" maxlength="12">
+                    </div>
+                    <div class="formGroup">
+                        <label class="labelClass" for="changePsw_mem_psw">新密碼</label>
+                        <input type="password" id="changePsw_mem_psw" placeholder="6-12位英數字" minlength="6" maxlength="12">
+                    </div>
+                    <div class="alertInform" id="pswDoAgainDiv">
+                        <label class="labelClass"></label><span class="txt" id="pswDoAgain"><!-- 兩次輸入的密碼不同，請再輸一次 --></span>
+                    </div>
+                    <div class="formGroup">
+                        <div class="btnDiv">
+                            <input class="inputBtn" id="changePswBtn" type="button" name="" value="變更密碼">
                         </div>
-                        <div class="formGroup">
-                            <label class="labelClass" for="mem_psw">新密碼</label>
-                            <input type="password" name="mem_psw" id="mem_psw" placeholder="6-12位英數字" minlength="6" maxlength="12">
-                        </div>
-                        <div class="formGroup">
-                            <label class="labelClass" for="mem_pswConfirm">確認新密碼</label>
-                            <input type="password" id="mem_pswConfirm" placeholder="再輸入一次以確認" minlength="6" maxlength="12">
-                        </div>
-                        <div class="formGroup">
-                            <div class="btnDiv">
-                                <input class="inputBtn" id="signupBtn" type="submit" name="" value="變更密碼">
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- 變更密碼燈箱結束 -->
     <!-- 寵物資料燈箱內容 -->
     <div class="C_lightbox petShare" id="mypets">
@@ -246,12 +247,12 @@
                 <div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
                 <div class="formDiv">
                     <div class="formGroup">
-                        <label class="labelClass" for="pet_name">狗狗名字</label>
-                        <input type="text" name="pet_name" class="petInput" id="pet_name" placeholder="2-6位中英文字" minlength="2" maxlength="6">
+                        <label class="labelClass" for="pet_name">名字</label>
+                        <input type="text" name="pet_name" class="petInput" id="pet_name" placeholder="2-5個字" minlength="2" maxlength="5">
                     </div>
                     <div class="formGroup">
                         <label class="labelClass" for="pet_age">年齡</label>
-                        <input type="number" name="pet_age" id="pet_age" class="petInput" placeholder="不到1歲請填0歲" min="0" max="20">&nbsp;歲
+                        <input type="number" name="pet_age" id="pet_age" class="petInput" placeholder="未滿1填0" min="0" max="20">&nbsp;歲
                     </div>
                     <div class="formGroup">
                         <span class="labelClass">體型</span>
@@ -311,7 +312,7 @@
                 <div class="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
                 <div class="formDiv">
                     <div class="formGroup">
-                        <label class="labelClass" for="pet_name">狗狗名字</label>
+                        <label class="labelClass" for="pet_name">名字</label>
                         <input type="text" name="pet_name" class="petInput" id="add_pet_name" placeholder="2-5個字" minlength="2" maxlength="5">
                     </div>
                     <div class="formGroup">
@@ -371,82 +372,6 @@
     <!-- 新增寵物燈箱結束 -->
     <!-- 訂單燈箱內容 -->
     <!-- <div class="memberLightboxTarget" id="mybookingContent">
-        <div class="content">
-            <div class="cross">
-                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
-            </div>
-            <div class="formDiv">
-                <form action="#" method="post">
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_name">名字</label>
-                        <input class="" type="text" name="pet_name" id="pet_name" value="貝貝">
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_birthday">生日</label>
-                        <input class="" type="date" name="pet_birthday" id="pet_birthday" maxlength="50" value="2014-05-05">
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_age">年齡</label>
-                        <input class="" type="number" name="pet_age" id="pet_age" maxlength="50" value="3">
-                    </div>
-                    <div class="formGroup">
-                        <span class="labelClass">性別</span>
-                        <span class="genderInput">
-                                <label for="male">男生</label>
-                                    <input type="radio" name="mem_sex" id="male" value="1">
-                                 <label for="female">女生</label>
-                                    <input type="radio" name="mem_sex" id="female" value="0" checked>
-                    </span>
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_person">個性</label>
-                        <select name="pet_person">
-                            <option value="personality1">活潑</option>
-                            <option value="personality2">害羞</option>
-                            <option value="personality3">調皮</option>
-                            <option value="personality4">黏人</option>
-                        </select>
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_weight">體重</label>
-                        <select name="pet_weight">
-                            <option value="weight1">小於10kg</option>
-                            <option value="weight2">10kg~25kg</option>
-                            <option value="weight3">26kg~39kg</option>
-                            <option value="weight4">40kg以上</option>
-                        </select>
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet_size">體型</label>
-                        <select name="pet_size">
-                            <option value="size1">小型犬</option>
-                            <option value="size2">中型犬</option>
-                            <option value="size3">大型犬</option>
-                            <option value="size4">超大型犬</option>
-                        </select>
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="petSort _name">品種</label>
-                        <select name="petSort _name">
-                            <option value="petSort1">黃金獵犬</option>
-                            <option value="petSort2">拉布拉多</option>
-                            <option value="petSort3">哈士奇</option>
-                            <option value="petSort4">米克斯</option>
-                        </select>
-                    </div>
-                    <div class="formGroup">
-                        <label class="labelClass" for="pet _img">照片</label>
-                        <span class="showImage"><img src="images/beibei.JPG" alt="" id="petInfoPhoto"></span>
-                        <input class="inputImg" type="file" name="pet _img" id="pet _img">
-                    </div>
-                    <div id="confirmUpdate">
-                        <div class="btnDiv">
-                            <input class="inputBtn" id="updatePetBtn" type="submit" name="" value="更新資料">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div> -->
     <!-- 訂單燈箱結束 -->
     <!-- footer開始 -->

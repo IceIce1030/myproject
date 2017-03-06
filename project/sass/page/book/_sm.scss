@@ -3,6 +3,17 @@
 	//直接寫css
 	.book{
 	//從這開始寫
+	.step{
+		// -moz-background-size:auto 100%;
+		// -webkit-background-size:auto 100%;
+		// -o-background-size:auto 100%;
+		// background-size:auto 100%;
+		background-repeat: no-repeat;
+		// background-position: 100% 100%;
+	}
+		.step-info{
+			text-align: right;
+		}
 		.step-info{
 			text-align: center;
 		}
@@ -50,7 +61,7 @@
 		.next{
 			text-align: center;
 			a{
-				margin-top: 30px;
+				margin-top: 5px;
 			}
 		}
 		.step{

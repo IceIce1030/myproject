@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href='images/furkid.ico' rel='shortcut icon'/>
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Furkid | 建立寵物資料</title>
+    <title>建立寵物資料</title>
+    <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -39,7 +39,7 @@
             </div>
             <!-- logo回首頁 -->
             <div class="col-xs-5 col-sm-5 col-md-2 col-md-pull-9 col-lg-3 col-lg-pull-8 logo">
-                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+                <a href="home.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
             </div>
             <!-- 登入/會員頭像 -->
             <div class="col-xs-2 col-sm-2 col-md-1 login">
@@ -59,16 +59,16 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a href="member.html" data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a href="member.html" data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a href="member.html" data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
                         <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
@@ -111,67 +111,74 @@
     <div class="addPetInfo">
         <div class="container">
             <!-- <div class="wrapper"> -->
-                <div class="main">
-                    <h3>建立寵物資料</h3>
-                    <div class="formDiv">
-                        <form action="addPet.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="mem_no" id="mem_no">
-                            <div class="formGroup">
-                                <label class="labelClass" for="pet_name">狗狗名字</label>
-                                <input type="text" name="pet_name" id="pet_name" placeholder="2-5位中英文字" minlength="2" maxlength="5">
-                            </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="pet_age">年齡</label>
-                                <input type="number" name="pet_age" id="pet_age" placeholder="不到1歲填0歲" min="0" max="20">
-                            </div>
-                            <div class="formGroup">
-                                <span class="labelClass">體型</span>
-                                <select name="dog_size" id="dog_size">
-                                    <option data-display="選擇體型">選擇體型</option>
-                                    <option value="小型犬">小型犬</option>
-                                    <option value="中型犬">中型犬</option>
-                                    <option value="大型犬">大型犬</option>
-                                </select>
-                            </div>
-                            <div class="formGroup">
-                                <span class="labelClass">品種</span>
-                                <select name="dog_no" id="dog_no_select">
-                                    <option data-display="選擇品種">選擇品種</option>
-                                </select>
-                            </div>
-                            <div class="formGroup">
-                                <span class="labelClass">個性</span>
-                                <select name="pet_personality" id="pet_personality_select">
-                                    <option data-display="選擇個性">選擇個性</option>
-                                    <option class="pet_personality" value="活潑">活潑</option>
-                                    <option class="pet_personality" value="害羞">害羞</option>
-                                    <option class="pet_personality" value="調皮">調皮</option>
-                                    <option class="pet_personality" value="黏人">黏人</option>
-                                </select>
-                            </div>
-                            <div class="formGroup genderFormGroup">
-                                <span class="labelClass">性別</span>
-                                <span class="gender">
+            <div class="main">
+                <h3>建立寵物資料</h3>
+                <div class="formDiv">
+                    <form id="addPetForm" action="addPet.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="mem_no" id="mem_no">
+                        <div class="formGroup">
+                            <label class="labelClass" for="pet_name">名字</label>
+                            <input type="text" name="pet_name" id="pet_name" placeholder="2-5位中英文字" minlength="2" maxlength="5" pattern="[A-Za-z\u4e00-\u9fa5]{2,5}" required>
+                        </div>
+                        <div class="formGroup">
+                            <label class="labelClass" for="pet_age">年齡</label>
+                            <input type="number" name="pet_age" id="pet_age" placeholder="不到1歲填0歲" min="0" max="20" required>
+                        </div>
+                        <div class="formGroup">
+                            <span class="labelClass">體型</span>
+                            <select name="dog_size" id="dog_size">
+                                <option data-display="選擇體型">選擇體型</option>
+                                <option value="小型犬">小型犬</option>
+                                <option value="中型犬">中型犬</option>
+                                <option value="大型犬">大型犬</option>
+                            </select>
+                        </div>
+                        <div class="alertInform" id="chooseSizeDiv">
+                            <label class="labelClass"></label><span class="txt" id="chooseSize"><!-- 請選擇體型 --></span>
+                        </div>
+                        <div class="formGroup">
+                            <span class="labelClass">品種</span>
+                            <select name="dog_no" id="dog_no_select">
+                                <option data-display="選擇品種">選擇品種</option>
+                            </select>
+                        </div>
+                        <div class="formGroup" id="choosePDiv">
+                            <span class="labelClass">個性</span>
+                            <select name="pet_personality" id="pet_personality_select">
+                                <option data-display="選擇個性">選擇個性</option>
+                                <option class="pet_personality" value="活潑">活潑</option>
+                                <option class="pet_personality" value="害羞">害羞</option>
+                                <option class="pet_personality" value="調皮">調皮</option>
+                                <option class="pet_personality" value="黏人">黏人</option>
+                            </select>
+                        </div>
+                        <div class="alertInform" id="choosePDiv">
+                            <label class="labelClass"></label><span class="txt" id="chooseP"><!-- 請選擇個性 --></span>
+                        </div>
+                        <div class="formGroup genderFormGroup">
+                            <span class="labelClass">性別</span>
+                            <span class="gender">
                             <label for="male">男生</label>
-                                <input type="radio" class="pet_sex" name="pet_sex" value="m">
+                                <input type="radio" class="pet_sex" name="pet_sex" value="m" required>
                                 <label for="female">女生</label>
-                                <input type="radio" class="pet_sex" name="pet_sex" value="f"></span>
+                                <input type="radio" class="pet_sex" name="pet_sex" value="f" required></span>
+                        </div>
+                        <div class="formGroup">
+                            <span class="labelClass">照片</span>
+                            <span class="showImage"><img src="images/pet/petDefault.png" id="petImg"></span>
+                            <input type="file" name="pet_img" id="upload_petImg">
+                            <label for="upload_petImg" id="uploadImgLabel">上傳照片</label>
+                            <input type="hidden" name="default_pet_img" value="petDefault.png">
+                        </div>
+                        <div class="formGroup">
+                            <div class="btnDiv">
+                                <input class="inputBtn" id="addPetBtn" type="submit" name="" value="建立寵物資料">
                             </div>
-                            <div class="formGroup">
-                                <span class="labelClass">照片</span>
-                                <span class="showImage"><img src="images/pet/petDefault.png" id="petImg"></span>
-                                <input type="file" name="pet_img" id="upload_petImg">
-                                <label for="upload_petImg" id="uploadImgLabel">上傳照片</label>
-                            </div>
-                            <div class="formGroup">
-                                <div class="btnDiv">
-                                    <input class="inputBtn" id="addPetBtn" type="submit" name="" value="建立寵物資料">
-                                </div>
-                            </div>
-                            <p><a href="member.html">先略過，之後再建立寵物資料</a></p>
-                        </form>
-                    </div>
+                        </div>
+                        <p><a href="member.html">先略過，之後再建立寵物資料</a></p>
+                    </form>
                 </div>
+            </div>
             <!-- </div>wrapper -->
         </div>
     </div>

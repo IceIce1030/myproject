@@ -2,73 +2,79 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href='images/furkid.ico' rel='shortcut icon'/>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>Furkid萌主爭霸</title>
+	<title>萌主爭霸</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="libs/isotope/isotope.pkgd.min.js"></script>
+	<!-- <script type="text/javascript" src="libs/isotope/isotope.pkgd.min.js"></script> -->
 	<script type="text/javascript" src="js/nav.js"></script>
 <!-- 	<script type="text/javascript" src="libs/"></script> -->
 	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/race_showJS_save.js"></script>  
+<!-- 	<script type="text/javascript" src="sortVote.js"></script> -->
+	<script type="text/javascript" src="js/race_showTopThree.js"></script>
+<!-- 	<script type="text/javascript" src="race_showLightbox.js"></script> -->
+
+
 </head>
 <body>
-	    <!-- 選單開始 -->
+    <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
-            <div class="col-xs-2 col-sm-2 col-lg-8 menu">
+            <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
                 <!-- 手機選單的漢堡和關閉 -->
-                <header>
-                    <div id="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
-                    <div id="cross"><i class="fa fa-times" aria-hidden="true"></i></div>
+                <header class="hamburgerMenu" id="hamburgerMenu">
+                    <div class="bar" id="hamburgerMenuBar"></div>
                 </header>
                 <!-- 選單內容 -->
-                <ul class="content">
+                <ul class="content" id="menuContent">
                     <li>
-                        <a href="book.html" title=""><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>&nbsp; 線上訂房<span class="line"></span></a>
+                        <a href="book.html" class="active"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
-                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp; 萌主爭霸<span class="line actiive"></span></a></li>
+                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
                     <li>
-                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp; 主題討論<span class="line"></span></a></li>
+                        <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; 服務介紹<span class="line"></span></a></li>
-                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; 常見問題<span class="line"></span></a></li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
             <!-- logo回首頁 -->
-            <div class="col-xs-5 col-sm-5 col-lg-3 logo">
-                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+            <div class="col-xs-5 col-sm-5 col-md-2 col-md-pull-9 col-lg-3 col-lg-pull-8 logo">
+                <a href="home.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
             </div>
-            <!-- 登入 -->
-            <div class="col-xs-2 col-sm-2 col-lg-1 login">
-                <div class="beforeLogin" id="userlogin">
+            <!-- 登入/會員頭像 -->
+            <div class="col-xs-2 col-sm-2 col-md-1 login">
+                <div class="beforeLogin" id="beforeLogin">
                     <div class="loginIcon">
                         <i class="fa fa-user" aria-hidden="true"></i>
                     </div>
                     <p>登入</p>
                 </div>
-                <div class="afterLogin">
+                <div class="afterLogin" id="afterLogin">
                     <div class="profilePhotoDiv">
-                        <img id="showMemberLightbox" src="images/profilePhoto.jpg" alt="">
+                        <img id="nav_mem_img" src="">
                     </div>
-                    <p>Hi~<span id="memberName">宋慧喬</span></p>
+                    <p>Hi~<span id="nav_mem_name"></span></p>
                 </div>
                 <!-- 會員中心選單燈箱開始 -->
-                <div class="memberlightbox">
+                <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
-                        <div class="btn" id="logoutBtn">登出</div>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
+                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -77,24 +83,32 @@
     </nav>
     <!-- 選單結束 -->
     <!-- login燈箱開始 -->
-    <div class="loginlightbox">
+    <div class="navbarLightbox loginlightbox">
         <div class="content">
             <p class="loginLeft">登入</p>
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
-            <form action="#" method="post">
+            <p>
+                <input type="text" name="login_mem_id" id="login_mem_id" placeholder="帳號" required>
+            </p>
+            <p>
+                <input type="password" name="login_mem_psw" id="login_mem_psw" placeholder="密碼" required>
+            </p>
+            <p id="forgotPsw"><span>忘記密碼</span></p>
+            <p>
+                <input class="inputBtn" id="loginBtn" type="submit" value="登入">
+            </p>
+            <p id="wrongData">
+                <!-- 密碼錯誤，請再試一次 -->
+            </p>
+            <div class="notMemberYet">
                 <p>
-                    <input type="email" name="mem_mail" placeholder="email帳號">
+                    還不是會員嗎？<a href="signup.html">立刻註冊</a>
                 </p>
                 <p>
-                    <input type="password" name="mem_psw" placeholder="密碼">
+                    <input class="inputBtn" id="guestLoginBtn" type="submit" value="使用體驗帳號登入">
                 </p>
-                <p>
-                    <input id="loginBtn" type="submit" value="登入">
-                </p>
-                <p id="forgotPsw"><a href="#">忘記密碼</a></p>
-                <p><a href="signup.html">註冊新帳號</a></p>
-            </form>
+            </div>
         </div>
     </div>
     <!-- login燈箱結束 -->
@@ -106,21 +120,21 @@
 			<div class="container">
 				<div class="prize_items">
 					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-lg-6">
+						<div class="col-xs-6 col-sm-6 col-md-6">
 							<div class="cloud cloud1">
-								<img src="race_image/r_bigcloud.png">
-								<p>比賽倒數<span>5</span>天!大獎等你喔</p>
+								<img src="images/race_image/r_bigcloud.png">
+								<p>票選萌主!比賽倒數<span>5</span>天!</p>
 							</div>	
 						</div>
-						<div class="col-xs-3 col-sm-3 col-lg-3">
+						<div class="col-xs-3 col-sm-3 col-md-3">
 							<div class="cloud cloud2">
-								<img src="race_image/r_bigcloud.png">
+								<img src="images/race_image/r_bigcloud.png">
 								<p>免費住宿券</p>
 							</div>
 						</div>
-						<div class="col-xs-3 col-sm-3 col-lg-3">
+						<div class="col-xs-3 col-sm-3 col-md-3">
 							<div class="cloud cloud2">
-								<img src="race_image/r_bigcloud.png">
+								<img src="images/race_image/r_bigcloud.png">
 								<p>可愛狗抱枕</p>
 							</div>
 						</div>
@@ -128,8 +142,8 @@
 				</div>
 				
 				<div class="topthree">
-					<div class="row">
-						<div class="col-xs-4 col-sm-4 col-lg-4">
+					<div class="row" id="showTopThree">
+						<!-- <div class="col-xs-4 col-sm-4 col-md-4">
 							<div class="item item1">						
 								<div class="lollipop lollipop1">
 									<div class="hearts hearts1">
@@ -144,7 +158,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-4 col-sm-4 col-lg-4">
+						<div class="col-xs-4 col-sm-4 col-md-4">
 							<div class="item item2">
 								
 								<div class="lollipop lollipop2">
@@ -162,7 +176,7 @@
 								</div>
 							</div>			
 						</div>
-						<div class="col-xs-4 col-sm-4 col-lg-4">
+						<div class="col-xs-4 col-sm-4 col-md-4">
 							<div class="item item3">
 								
 								<div class="lollipop lollipop3">
@@ -179,7 +193,7 @@
 									<div class="stick stick3"></div>
 								</div>
 							</div>
-						</div>	
+						</div> -->	
 					</div>
 				</div>
 			</div>
@@ -187,391 +201,128 @@
 		<!-- 報名連結 -->
 			
 			<div class="toCompete">
-					<div id="competeBtn">
+					<!-- <div id="competeBtn" class="btnFunction">
 						<a href="compete.html">我要報名參賽</a>
-					</div>
+					</div> -->
+					<button  class="btnLink" onclick="window.location.href='/compete_register.html'">我要報名參賽</button>
 				</div>
 			</div>	
 
 		<!-- 頒獎台結束-->
-					
 
 		<div class="main">
 			<div class="container">
 
 			<!-- 搜尋條 -->
-				<div class="searchWrap">
+				<!-- <div class="searchWrap">
 					<div id="search">
 						<input type="text" name="searchTerm" placeholder=".....">
 						<button id="searchBtn"><i class="fa fa-search"></i></button>				
 					</div>
-				</div>
+				</div> -->
 
 			<!-- 排序 -->
 
 				<div id="sorts" class="button-group">
 				  <span class="anotherLine">排序方式:&nbsp</span>  
-				  <button class="button is-checked" data-sort-by="original-order">更新日期</button>
-				  <button class="button" data-sort-by="number">編號</button>
-				  <button class="button" data-sort-by="votes">票數</button>		
+				  <button class="button is-checked" data-sort-by="number" id="voteNum" value="date">編號</button>
+				  <button class="button" data-sort-by="votes" id="voteCount" value="votes">票數</button>		
 				</div>
 				
 			<!-- 篩選器 -->
 
 				<div id="filters" class="button-group">
 				  <span class="anotherLine">分類方式:&nbsp</span>
-				  <button class="button is-checked" data-filter="*">全部</button>
-				  <button class="button" data-filter=".giant">超大型犬</button>
-				  <button class="button" data-filter=".big">大型犬</button>
-				  <button class="button" data-filter=".medium">中型犬</button>
-				  <button class="button" data-filter=".small">小型犬</button>
+				  <button class="button is-checked" data-filter="*" id="sizeAll" value="*">全部</button>
+				  <button class="button" data-filter=".big" id="sizeBig" value="大型犬">大型犬</button>
+				  <button class="button" data-filter=".medium" id="sizeMedium" value="中型犬">中型犬</button>
+				  <button class="button" data-filter=".small" id="sizeSmall" value="小型犬">小型犬</button>
 				</div>
 
 			
 						
 			<!-- 投票所 -->
 
-				<div class="section_vote aaaa">
-					<div class="row">
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item transition big">
-							<div class="card">
-								<a href="#anchorCard">
-									<img src="race_image/dog001.png">
-								</a>
-								<div class="text">
-									<div class="textTop">
-										<p class="number">002</p>
-										<p class="name">皮皮</p>
-										<p class="votes">599</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>大型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">				
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item giant">
-							<div class="card">
-								<img src="race_image/dog002.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">001</p>
-										<p class="name">餅乾</p>
-										<p class="votes">343</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>超大型</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item small">
-							<div class="card">
-								<img src="race_image/dog003.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">008</p>
-										<p class="name">瓶瓶</p>
-										<p class="votes">555</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>小型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item small">
-							<div class="card">
-								<img src="race_image/dog004.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">004</p>
-										<p class="name">阿怪</p>
-										<p class="votes">120</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>小型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item small">
-							<div class="card">
-								<img src="race_image/dog005.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">005</p>
-										<p class="name">牙齒</p>
-										<p class="votes">99</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>小型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item small">
-							<div class="card">
-								<img src="race_image/dog006.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">006</p>
-										<p class="name">爸葛</p>
-										<p class="votes">668</p>
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>小型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item small">
-							<div class="card">
-								<img src="race_image/dog007.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">007</p>
-										<p class="name">賴皮</p>
-										<p class="votes">120</p>								
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>小型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-						<div class="cardWrap col-xs-12 col-sm-4 col-lg-3 element-item medium">
-							<div class="card">
-								<img src="race_image/dog008.png">
-								<div class="text">
-									<div class="textTop">
-										<p class="number">003</p>
-										<p class="name">小鬼</p>
-										<p class="votes">75</p>							
-									</div>
-									<div class="textDown">
-										<div class="size">
-											<span>體型:</span>
-											<span>中型犬</span>
-										</div>
-										<div class="personality">
-											<span>個性:</span>
-											<span>活潑愛搗蛋</span>
-										</div>
-										<div class="sex">
-											<span>性別:</span>
-											<span>女生</span>
-										</div>
-										<div class="like">
-											<!-- <img src="race_image/r_heart.png"> -->
-											<button class="favorite">						
-													<i class="fa fa-heart outsideheart" aria-hidden="true">
-														<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-													</i>
-											</button>
-										</div>										
-									</div>
-								</div>
-								<div class="messageBorad">
-									<section class="post">
-									</section>
-									<input type="text" class="msg dropzone">
-									<button class="add_table" type="submit">submit<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div class="section_vote aaaa">
+				<div class="row"  id="cccc">
+					
 				</div>					
 			</div>
+		</div>
+		<div id="showlightbox">
+		  <div class='cardlightbox cardlightboxCss'>
+	        <div class='lightbox-box'>
+	          <div class='lightbox-content'>
+	            <div class='closeLightBox'><i class='fa fa-plus' aria-hidden='true'></i></div>
+	            <div class='col-xs-12 col-sm-6 col-md-6 infobox'>
+	              <div class='petinfo'>
+	                <div class='maininfo'>  
+	                  <div class='txtboxwrap'>      
+	                    <div class='txtbox'>          
+	                      <span>No.<span class='number' id='LBnumber'></span></span>
+	                      <span class='name' id='LBname'></span>
+	                    </div>
+	                  </div>        
+	                  <div class='imgbox'>
+	                    <img id='LBimg' src=''>       
+	                  </div>
+	                  <div class='intro' id='LBintro'>
+	                    <p></p>
+	                  </div>                  
+	                </div>
+	                <div class='detailinfo'>
+	                  <div class='col-xs-6 col-sm-6 detailLeft'>
+	                    <P>姓別：<span id='LBsex'></span></P>
+	                    <P>年齡：<span id='LBage'></span></P>
+	                    <P>個性：<span id='LBpersonality'></span></P>
+	                    <P>犬種：<span id='LBtype'></span></P>
+	                  </div>
+	                  <div class='col-xs-6 col-sm-6 detailRight'>
+	                    <div class='like'>
+	                        <p class='votes' id='LBvote'></p>
+	                        <button class='favorite'>       
+	                          <i class='fa fa-heart outsideheart' aria-hidden='true'>
+	                            <i class='fa fa-heart insideheart' aria-hidden='true'></i>
+	                          </i>
+	                        </button>
+	                     </div>
+	                  </div>          
+	                </div>
+	              </div>
+	            </div>
+	            <div class='col-xs-12 col-sm-6 col-md-6 msgbox'>
+	              <div class='msg'>       
+	                  <ul class='msgContent'> 
+	                  	<li><span></span><span></span></li>         
+	                  </ul>       
+	                  <div class='msginput'>
+	                    <div class='somebody'>
+	                      <span class='name' id='msgname'></span>
+	                    </div>
+	                    <input type='hidden' name='voteNum' id='voteNum' value=''>
+	                    <input type='hidden' name='memberNum' id='memberNum' value=''>
+	                    <input class='msgtype' type='text' id='msgtype' name='msgtype' placeholder='留言...'>
+	                    <button type='submit' class='cardmsgbutton'>送出</button>
+	                  </div>	                  
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
 		</div>
     <!-- footer開始 -->
     <footer>
         <div class="container">
             <section>
-                <div class="col-xs-12 col-sm-6 col-lg-6 contactus">
+                <div class="col-xs-12 col-sm-6 col-md-6 contactus">
                     <h6>聯絡我們</h6>
                     <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
                     <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
                     <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
-                    <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
                     <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-lg-6 info">
+                <div class="col-xs-12 col-sm-6 col-md-6 info">
                     <h6>營業資訊</h6>
                     <p><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp; 營業時間: 週一到週日9:00-21:00</p>
                     <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; 地址: 桃園市中壢區中大路300號</p>
@@ -579,59 +330,16 @@
                 </div>
             </section>
             <section>
-                <div class="col-xs-12 col-lg-12 col-sm-12 copyright">
+                <div class="col-xs-12 col-sm-12 col-md-12 copyright">
                     <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
                 </div>
             </section>
         </div>
     </footer>
     <!-- footer結束 -->
-			<!-- 卡片燈箱 -->
-		<div class="r-cardLightbox" id="anchorCard">		
-			<div class="cardContent">
-				<div class="r_cross">
-                <a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a>
-           		</div>
-				<img src="race_image/dog001.png">
-				<div class="text">				
-					<div class="textTop">
-						<span class="number">002</span>
-						<span class="name">皮皮</span>
-						<span class="votes">599</span>					
-					</div>
-					<div class="textDown">
-						<div class="size">
-							<span>體型:</span>
-							<span>大型犬</span>
-						</div>
-						<div class="personality">
-							<span>個性:</span>
-							<span>活潑愛搗蛋</span>
-						</div>
-						<div class="sex">
-							<span>性別:</span>
-							<span>女生</span>
-						</div>
-						<div class="like">
-							<!-- <img src="race_image/r_heart.png"> -->
-							<button class="favorite">						
-									<i class="fa fa-heart outsideheart" aria-hidden="true">
-										<i class="fa fa-heart insideheart" aria-hidden="true"></i>
-									</i>
-							</button>
-						</div>										
-					</div>
-				</div>
-				<div class="messageBorad">
-					<section class="post">
-					</section>
-					<input type="text" class="msg dropzone" size="25">
-					<button class="add_table" type="submit">送出<!-- <i class="fa fa-arrow-right fa-4x"></i> --></button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 卡片燈箱 -->
+
+
+			
 	
 <script type="text/javascript" src="js/javascrip_race.js"></script>				
 <script type="text/javascript">
@@ -641,29 +349,44 @@ $(function() {
 			// 棒棒糖長高
 	$(window).load(function() {
 	 	var wdth=$(window).width();
-	 	console.log(wdth);
+	 	var wdh=$(window).height();
+	 	var wdratio = (wdh/wdth)/3;
+	 	var pb1 = 240*wdratio;
+	 	var pb2 = 320*wdratio;
+	 	var pb3 = 280*wdratio;
+	 	console.log(wdth,wdh,wdratio,pb1);
 		// $("span").text(wdth);
+		// var windowh = window.screen.height; 
+		// var windoww = window.screen.width;
+		// console.log(windowh,windoww);
+
+		// var bodyh = document.body.clientWidth;
+		// var bodyw = document.body.clientHeight;
+		// console.log(bodyh,windoww);
+
 		if(wdth<768){
+			var pb1 = 350*wdratio;
+		 	var pb2 = 480*wdratio;
+		 	var pb3 = 425*wdratio;
 			$(".topthree .item .lollipop .stick.stick1").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    	
 		    $(this).animate({
-		      'padding-bottom' : "140%"
+		      'padding-bottom' : pb1+"%"
 		    }, 4000);
-		    console.log(123);
 		  });
 		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(3000).animate({
-		      'padding-bottom' : "200%"
+		      'padding-bottom' : pb2+"%"
 		    }, 4000);
 		  });
 		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(1500).animate({
-		      'padding-bottom' : '170%'
+		      'padding-bottom' : pb3+"%"
 		    }, 4000);
 		  });
 		}
@@ -673,82 +396,77 @@ $(function() {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).animate({
-		      'padding-bottom' : "80%"
+		      'padding-bottom' : pb1+"%"
 		    }, 4000);
 		  });
 		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(3000).animate({
-		      'padding-bottom' : "110%"
+		      'padding-bottom' : pb2+"%"
 		    }, 4000);
 		  });
 		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(1500).animate({
-		      'padding-bottom' : '95%'
+		      'padding-bottom' : pb3+"%"
 		    }, 4000);
 		  });
 		}
 
 		if(wdth>1200){
+			var wdth=1170;
+			var wdratio = (wdh/wdth)/3;
+			console.log(wdth,wdh,wdratio);
+			var pb1 = 240*wdratio;
+		 	var pb2 = 320*wdratio;
+		 	var pb3 = 280*wdratio;
 			$(".topthree .item .lollipop .stick.stick1").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
-		    
 		    $(this).animate({
-		      'padding-bottom' : "60%"
+		      'padding-bottom' : pb1+"%"
 		    }, 4000);
 		  });
 		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(3000).animate({
-		      'padding-bottom' : "100%"
+		      'padding-bottom' : pb2+"%"
 		    }, 4000);
 		  });
 		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
 		    var percentage = $(this).data('percentage');
 		    
 		    $(this).delay(1500).animate({
-		      'padding-bottom' : '80%'
+		      'padding-bottom' : pb3+"%"
 		    }, 4000);
 		  });
 		}
 	});
-	
-  
 
 
+
+
+ 
 
 	// 雲淡入
-    TweenMax.staggerFromTo(".cloud1", 5, {
-        x: 1200,
-        opacity: 0
-    }, {
-        x: 0,
-        opacity: 1,
-    }, 1);
+ //    TweenMax.staggerFromTo(".cloud1", 5, {
+ //        x: 1200,
+ //        opacity: 0
+ //    }, {
+ //        x: 0,
+ //        opacity: 1,
+ //    }, 1);
 
-    TweenMax.staggerFromTo(".cloud2", 5, {
-        x: -1200,
-        opacity: 0
-    }, {
-        x: 0,
-        opacity: 1,
-    }, 1);
+ //    TweenMax.staggerFromTo(".cloud2", 5, {
+ //        x: -1200,
+ //        opacity: 0
+ //    }, {
+ //        x: 0,
+ //        opacity: 1,
+ //    }, 1);
 
-
-    $('.favorite').on('click', function(){
-	  $(this).toggleClass('liked');
-	});
-
-	// $('.favorite').on('click', function(){
-	//   $(this).
-	// });
-	// $('.favorite').on('click', function(){
-	//   $().toggleClass('liked');
-	// });
 
 
 	// 卡片燈箱
@@ -756,7 +474,11 @@ $(function() {
 	// 	setHref = setMdw.attr('href'),
 	// 	setSource = setHref.html(),
 	// 	abbb= '';
-		$('body').append('<div class="r-cardLightbox" id="anchorCard"><div class="r_cross"><a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a></div><div class="cardContent"></div></div>');
+		// $('body').append('<div class="r-cardLightbox" id="anchorCard"><div class="r_cross"><a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a></div><div class="cardContent"></div></div>');
+
+	
+
+
 });
 </script>
 

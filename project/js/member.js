@@ -11,17 +11,22 @@ $(document).ready(function() {
     //tab選到直接連到會員頁相對應內容tabContent
     var _var_tabContentId = localStorage['_var_tabContentId'];
 
-    if (_var_tabContentId != "") {
-        console.log('has');
-        $('.tab').removeClass('active');
-        var _fullTabId = ".tab" + "." + _var_tabContentId;
-        $(_fullTabId).addClass('active');
-        //tab選到下方出現相對應內容tabContent
-        var tabContentId = "#" + _var_tabContentId;
-        $('.tabContent').addClass('hideItem');
-        $(tabContentId).removeClass('hideItem');
+    function navMemMenu() {
+        if (_var_tabContentId != "") {
+            $('.tab').removeClass('active');
+            var _fullTabId = ".tab" + "." + _var_tabContentId;
+            $(_fullTabId).addClass('active');
+            //tab選到下方出現相對應內容tabContent
+            var tabContentId = "#" + _var_tabContentId;
+            $('.tabContent').addClass('hideItem');
+            $(tabContentId).removeClass('hideItem');
+        }
     }
+    navMemMenu();
 
+    $('.memberTab').on('click', function() {
+        navMemMenu();
+    });
 
     //tab變選到active，上背景色
     $('.tab').click(function(e) {
@@ -32,7 +37,6 @@ $(document).ready(function() {
         var tabContentId = "#" + $(this).attr('data-tab-id');
         // console.log(tabContentId);
         $('.tabContent').addClass('hideItem');
-
         $(tabContentId).removeClass('hideItem');
 
     });
@@ -73,6 +77,18 @@ $(document).ready(function() {
             });
         });
         $('#addpet .lightbox_content').delay(800).fadeIn(500);
+    });
+
+    //改密碼的燈箱
+    $('#changepsw').click(function() {
+        $('#changePswLb').slideDown(0, function() {
+            $('#changePswLb .lightbox_box').css({
+               width: '360px',
+                height: '300px',
+                borderRadius: '15px'
+            });
+        });
+        $('#changePswLb .lightbox_content').delay(800).fadeIn(500);
     });
 
 });
@@ -163,8 +179,15 @@ function addPetfromMemPage() {
     var dog_no = $('#add_dog_no_select option:selected').val();
     var pet_personality = $('#add_pet_personality_select option:selected').val();
     var pet_sex = $('#add_pet_sex_span input:checked').val();
+
+
     var file = document.getElementById('add_upload_petImg').files[0];
-    var pet_img = file.name;
+    if (file == null) {
+        var pet_img = "petDefault.png";
+    } else {
+        var pet_img = file.name;
+    }
+
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
@@ -198,11 +221,19 @@ function addPetfromMemPage() {
 
 // 新增寵物資料//改寵物照片將它存到對的路徑
 function add_changePetImg() {
-    var xhr = new XMLHttpRequest();
-    var url = "add_change_pet_img.php";
-    var form = new FormData(document.getElementById('add_upload_petimg_form'));
-    xhr.open("Post", url, true);
-    xhr.send(form);
+
+    var file = document.getElementById('add_upload_petImg').files[0];
+
+    if (file == null) {
+
+    } else {
+        var xhr = new XMLHttpRequest();
+        var url = "add_change_pet_img.php";
+        var form = new FormData(document.getElementById('add_upload_petimg_form'));
+        xhr.open("Post", url, true);
+        xhr.send(form);
+    }
+
 }
 
 
@@ -263,8 +294,7 @@ function getPetInfo() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) { //server端順利執行完畢
                 if (xhr.responseText == "no pet") { //沒寵物
-                    //顯示 錯誤 訊息
-                    console.log("沒有寵物資料");
+                    //顯示 訊息
                     document.getElementById('petCount').innerHTML = "0";
 
                 } else { //成功
@@ -468,6 +498,7 @@ function showPetLightboxInfo(jsonStr) {
     }
     //照片
     document.getElementById("petImg").src = "images/pet/" + pet.pet_img;
+    console.log(pet.pet_img);
     _var_pet_img = pet.pet_img;
 }
 
@@ -642,6 +673,9 @@ function showMemInfo(jsonStr) {
     document.getElementById("mem_mail").value = member.mem_mail;
     document.getElementById("profilePhoto").src = "images/member/" + member.mem_img;
     _var_member_img = member.mem_img;
+
+    //將會員密碼帶入會員
+    document.getElementById("changePsw_mem_id").value = member.mem_id;
 }
 
 

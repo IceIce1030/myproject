@@ -123,7 +123,7 @@ $(document).ready(function(){
 
                         // console.log(file.type);
 
-                        if(file.type == 'image/png' || file.type == 'image/jpg' || file.type == 'image/gif' || file.type == 'image/jpeg' ) { 
+                        if(file.type == 'image/png' || file.type == 'image/jpg' || file.type == 'image/gif' || file.type == 'image/jpeg' || file.type == 'image/bmp' ) { 
                                  
                                     var img = $(this).siblings('img');
                                     $(this).siblings('.imgName').val(file.name);

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>服務介紹</title>
+    <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -57,16 +58,16 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
                         <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
@@ -91,7 +92,9 @@
             <p>
                 <input class="inputBtn" id="loginBtn" type="submit" value="登入">
             </p>
-            <p id="wrongData"><!-- 密碼錯誤，請再試一次 --></p>
+            <p id="wrongData">
+                <!-- 密碼錯誤，請再試一次 -->
+            </p>
             <div class="notMemberYet">
                 <p>
                     還不是會員嗎？<a href="signup.html">立刻註冊</a>
@@ -124,7 +127,7 @@
                                 <br>讓您安心出門無負擔，「毛基地」的寶貝們都快樂、幸福、翻肚肚。
                             </p>
                             <div class="btnDiv">
-                                <a href="book.html" class="btnLink">馬上訂房</a>
+                                <a href="book.html" class="btnFunction">馬上訂房</a>
                             </div>
                         </div>
                     </div>

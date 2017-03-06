@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href='images/furkid.ico' rel='shortcut icon'/>
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Furkid | 註冊帳號</title>
+    <title>註冊會員</title>
+    <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -38,7 +38,7 @@
             </div>
             <!-- logo回首頁 -->
             <div class="col-xs-5 col-sm-5 col-md-2 col-md-pull-9 col-lg-3 col-lg-pull-8 logo">
-                <a href="index.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
+                <a href="home.html" title=""><img src="images/logo.png" alt="furkid logo"><span>furkid</span></a>
             </div>
             <!-- 登入/會員頭像 -->
             <div class="col-xs-2 col-sm-2 col-md-1 login">
@@ -58,16 +58,16 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
                         <li>
-                            <a data-tab-id="#mybookings">我的訂單</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="mybookings">我的訂單</a></li>
                         <li>
-                            <a data-tab-id="#myposts">我的文章</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
-                            <a data-tab-id="#myrace">萌主參賽紀錄</a></li>
+                            <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
                         <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
@@ -112,49 +112,56 @@
                 <div class="main">
                     <h3>註冊會員</h3>
                     <div class="formDiv">
-                        <form action="mem_signup.php" method="post" enctype="multipart/form-data">
+                        <form id="signupForm" name="signupForm" action="mem_signup.php" method="post" enctype="multipart/form-data">
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_name">姓名</label>
-                                <input type="text" name="mem_name" id="mem_name" placeholder="2-10位中英文字" minlength="2" maxlength="10">
+                                <input type="text" name="mem_name" id="mem_name" placeholder="2-8位中英文字" minlength="2" maxlength="8" pattern="[A-Za-z\u4e00-\u9fa5]{2,8}" required>
                             </div>
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_id">帳號</label>
-                                <input type="text" name="mem_id" id="mem_id" placeholder="3-12位英數字" minlength="3" maxlength="12">
+                                <input type="text" name="mem_id" id="mem_id" placeholder="3-12位英數字" minlength="3" maxlength="12" pattern="[A-Za-z0-9]{3,12}" required>
+                            </div>
+                            <div class="alertInform" id="accountRepeatDiv">
+                                <label class="labelClass"></label><span class="txt" id="accountRepeat"><!-- 帳號重複，請再輸入一次 --></span>
                             </div>
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_psw">密碼</label>
-                                <input type="password" name="mem_psw" id="mem_psw" placeholder="6-12位英數字" minlength="6" maxlength="12">
+                                <input type="password" name="mem_psw" id="mem_psw" placeholder="6-12位英數字" minlength="6" maxlength="12" pattern="[A-Za-z0-9]{6,12}" required>
                             </div>
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_pswConfirm">確認密碼</label>
-                                <input type="password" id="mem_pswConfirm" placeholder="再輸入一次以確認" minlength="6" maxlength="12">
+                                <input type="password" id="mem_pswConfirm" placeholder="再輸入一次以確認" minlength="6" maxlength="12" pattern="[A-Za-z0-9]{6,12}" required>
+                            </div>
+                            <div class="alertInform" id="pswDoAgainDiv">
+                                <label class="labelClass"></label><span class="txt" id="pswDoAgain"><!-- 兩次輸入的密碼不同，請再輸一次 --></span>
                             </div>
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_phone">手機號碼</label>
-                                <input type="text" name="mem_phone" id="mem_phone" minlength="10" maxlength="10" placeholder="例:0911987654">
+                                <input type="text" name="mem_phone" id="mem_phone" minlength="10" maxlength="10" placeholder="例:0911987654" pattern="[0-9]{10,10}" required>
                             </div>
                             <div class="formGroup">
                                 <label class="labelClass" for="mem_mail">Email</label>
-                                <input type="email" name="mem_mail" id="mem_mail" placeholder="" maxlength="50">
+                                <input type="email" name="mem_mail" id="mem_mail" maxlength="50" placeholder="例:furkid@mail.com" required>
                             </div>
                             <div class="formGroup genderFormGroup">
                                 <span class="labelClass">性別</span>
                                 <span class="gender">
                             <label for="male">男</label>
-                                <input type="radio" name="mem_sex" id="male" value="m">
+                                <input type="radio" name="mem_sex" id="male" value="m" required>
                                 <label for="female">女</label>
-                                <input type="radio" name="mem_sex" id="female" value="f"></span>
+                                <input type="radio" name="mem_sex" id="female" value="f" required></span>
                             </div>
                             <div class="formGroup">
                                 <span class="labelClass">照片</span>
                                 <span class="showImage"><img src="images/member/memphoto01.png" id="profilePhoto"></span>
                                 <input type="file" name="mem_img" id="upload_mem_img">
                                 <label for="upload_mem_img" id="uploadImgLabel">上傳照片</label>
+                                <input type="hidden" name="default_mem_img" value="memphoto01.png">
                             </div>
                             <p>按下註冊鈕的同時，表示您已詳閱我們的<a href="">資料使用政策與使用條款</a>，同意使用furkid所提供的服務。</p>
                             <div class="formGroup">
                                 <div class="btnDiv">
-                                    <input class="inputBtn" id="signupBtn" type="submit" name="" value="註冊會員">
+                                    <input class="inputBtn" id="signupBtn" type="submit" value="註冊會員">
                                 </div>
                             </div>
                         </form>

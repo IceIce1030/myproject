@@ -8,8 +8,15 @@ try{
   $discuss->execute();
   
   if( $discuss->rowCount() == 0 ){ //找不到
-    //傳回空的JSON字串
-    echo "no article";
+    $noposts ='<div class="reminder" id="discussReminder">
+                            <div class="txt">
+                                <h4>你還沒有發表過文章，來跟我們分享你和毛小孩的生活點滴吧～</h4>
+                                <div class="btnDiv">
+                                    <a class="btnFunction" href="discuss.html">加入討論</a>
+                                </div>
+                            </div>
+                        </div>';
+    echo $noposts;
   }
   else{ //找得到
      //取回一筆資料
@@ -42,12 +49,12 @@ try{
       if ($discussRow["arti_count"]>120) {
           $hot='on';
       }
-      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 60 );
+      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 50 );
 
-      $str.="<a href='article.html?arti_no={$discussRow["arti_no"]}'><div class='post'>
+      $str.="<a class='postLink' href='article.html?arti_no={$discussRow["arti_no"]}'><div class='post'>
         <div class='itemLabel $label'>{$discussRow["arti_sort"]}</div>
         <div class='postImg'>
-            <img src='images/articlephoto/{$discussRow["arti_img"]}'>
+            <img class='rwd-img' src='images/articlephoto/{$discussRow["arti_img"]}'>
         </div>
         <div class='txt'>
             <div class='postTitle'>

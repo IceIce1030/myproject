@@ -5,24 +5,30 @@ try{
   $vote = $pdo->prepare( $sql );
   $vote->bindValue(":mem_no", $_REQUEST["mem_no"]);
   $vote->execute();
-
+  $str='';
   if( $vote->rowCount() == 0 ){ //找不到
-    //傳回
-    echo "no race record";
+    
+    $str="<div class='reminder' id='raceReminder'>
+    <div class='txt'>
+        <h4>快來幫你可愛的毛小孩報名萌主爭霸贏得大獎～</h4>
+        <div class='btnDiv'>
+            <a class='btnFunction' href='compete_register.html'>報名參賽</a>
+        </div>
+    </div>
+</div>";
   }
   else{ //找得到取回資料
-  		$str='';
+  	 while ( $voteRow = $vote->fetch()){ 
 
-   	while ( $voteRow = $vote->fetch()){ 
-
-      // 抓到性別
+     // 抓到性別
    if($voteRow["pet_sex"] =="m"){
           $sex = "男生";
         }else{
           $sex = "女生";
         };
 
-          $str.="<div class='cardWrap col-xs-12 col-sm-4 col-md-3 element-item transition big'>
+          $str.="
+          <a href='race.html#openLightbox{$voteRow["vote_no"]}'><div class='cardWrap col-xs-12 col-sm-4 col-md-3 element-item transition big'>
               <div class='card card{$voteRow["vote_no"]}'>
                 <div id='openLightbox{$voteRow["vote_no"]}' class='openLightbox' value='{$voteRow["vote_no"]}'>
                   <img src='images/race_image/{$voteRow["vote_img"]}'>
@@ -54,11 +60,11 @@ try{
                   </div>
                 </div>
               </div>
-            </div>";
+            </div></a>";
 
-      }//while
-         echo $str;
+      }//while         
      }//else
+     echo $str;
 }catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";

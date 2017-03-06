@@ -1,6 +1,14 @@
 @include respones(sm){
 	//平板 container 100%
 	//直接寫css
+	#d-body{
+	// background-color: #F9F7E8;
+	background-image: url(../images/bg02.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color:#fff;
+}
 	.discuss{
 	//從這開始寫
 	}

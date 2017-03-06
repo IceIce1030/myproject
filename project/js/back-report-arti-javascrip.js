@@ -21,6 +21,7 @@ $(document).ready(function(){
 	$('#arti  #searchAll').click(function(){
        
         sessionStorage.where = 'all';
+        sessionStorage.page = '#page1';
 		artiShow();
 	});
 
@@ -112,7 +113,8 @@ $(document).ready(function(){
                 success: function(msg){
                     alert(msg);
                     // console.log(msg);
-                    artiShow();
+                    var p = sessionStorage.page.replace("#page",'');
+                    artiShow(p);
                     // $('#table').html(msg);
                  
                 },

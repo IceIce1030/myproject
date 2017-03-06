@@ -25,7 +25,8 @@ try{
   //建立檔案名稱
 
 
-//上傳圖片
+if($_FILES["mem_img"]["tmp_name"] != NULL){
+  //如果有上傳照片
 switch( $_FILES["mem_img"]["error"]){
   case 0:
     $from = $_FILES["mem_img"]["tmp_name"];
@@ -67,9 +68,10 @@ switch( $_FILES["mem_img"]["error"]){
      }//switch
 
   $member->bindValue(":mem_img", $fileName);
+}else{
+ $member->bindValue(":mem_img", $_REQUEST["default_mem_img"]);
+}
   $member->execute();
-
-
 }catch(PDOException $ex){
   header("Location:signup.html");
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
@@ -110,14 +112,10 @@ function signupMemberlogin() {
                 if (xhr.responseText == "Fail") { //錯誤
                     //顯示 錯誤 訊息
                     console.log('註冊會員後登入失敗');
+                    document.location.href="signup.html";
                 } else { //登入成功
                     //帶入抓到的資料啟動showMember function
                     showMember(xhr.responseText);
-                    // //將登入表單上的資料清空
-                    // document.getElementById("login_mem_id").value = "";
-                    // document.getElementById("login_mem_psw").value = "";
-                    // //清除帳密錯誤 訊息
-                    // document.getElementById("wrongData").innerText = "";
                     // 將選單上登入的div隱藏起來
                     document.getElementById("beforeLogin").style.display = "none";
                     // 顯示選單上會員頭像和名字的div
@@ -143,15 +141,13 @@ function signupMemberlogin() {
 }
 
 
-  function doFirst() {
+function aftersignupDoFirst() {
     signupMemberlogin();
    
 }; //window.onload
 
-window.onload = doFirst;
+window.addEventListener('load', aftersignupDoFirst, false);
 </script>
-
-
 
 </body>
 </html>

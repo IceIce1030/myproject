@@ -4,6 +4,244 @@
 	//平板 container 100%
 	//直接寫css
 	.race{
+		#showlightbox{
+			.cardlightbox{
+				position: relative;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 30;
+				margin: auto;
+				width: 100%;
+				height: 100vh;
+				background-color: rgba(0,0,0,.8);
+				display: none;			
+				.lightbox-box{
+					transform:translate(-50% ,-50%);
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					// margin: 35px auto;
+					width: 0px;
+					height: 0px;		
+					// border: 1px solid $brown;
+					background-color: $bgc;
+					// padding: 5px 10px;
+					transition:1s;
+					// border-radius: 50%;
+					border-radius: 15px;
+					position: relative;
+					box-shadow: 5px 5px 50px $light-gray;
+					.lightbox-content{
+						background-color:$bgc;
+						border-radius: 15px;
+						.infobox{		
+							height: 100%;
+							.petinfo{
+								padding: 20px 20px 20px 20px;
+								width: 100%;
+								height: 100%;
+								.maininfo{
+									padding: 20px;
+									height: 65%;
+									width: 100%;
+									.txtboxwrap{
+											width: 100%;
+											margin-top: -20px;							
+										.txtbox{
+											color: #888;
+											p{
+												color: #888;
+											}
+											span{
+												color: black;
+											}
+										}	
+									}			
+									.imgbox{
+										text-align: center;
+										max-width:320px;					
+										img{
+											width: 100%;
+											border-radius: 15px;
+										}
+									}
+									.intro{
+										display:block;
+										border-bottom:1px dashed #ccc;
+										p{	
+											padding: 3px 0;
+											color:#666;
+										}			
+									}
+									.number{
+										font-size: $fz-content;
+										color: #888;
+										font-weight: bold;
+									}
+									.name{
+										padding-left: 10px;
+										font-size: $fz-h2;
+										// color: $foodColor;
+										font-weight: bold;
+									}
+									.vote{
+										font-size: $fz-h1;
+										// color: $foodColor;
+										font-weight: bold;
+									}
+								}
+								.detailinfo{
+									padding:  0 20px 20px 20px;
+									height: 35%;
+									width: 100%;
+									.detailLeft{
+										width: 50%;
+										p{
+											font-size: 16px;
+											color:#888;
+										}
+										span:nth-child(1){
+											padding-top: 8px;
+										}
+										span{
+											display: inline-block;
+											padding: 3px;
+											font-size: 23px;
+											// color:$foodColor;
+											color:black;	
+										}
+									}				
+									.detailRight{
+										width: 50%;
+										.like{
+											float: right;
+											height: 50px;
+											width: 62px;
+											text-align:center;
+											.votes{					
+												display: inline-block;
+												font-size: $fz-h1;
+												color:$light-pink;
+											}						
+											img{
+												width: 100%;
+											}
+											.favorite{
+												cursor: pointer;
+												background: transparent;
+					  							border: 0;
+					  							&:focus{
+					  								outline: 0;
+					  							}
+					  							.outsideheart{			  									
+					  								position: relative;
+					  								font-size: 50px;
+					  								color: #ffd5cc;
+					  								&:hover{
+						  								color: $light-pink;
+						  							}
+					  								.insideheart{
+														position: absolute;
+														top: 0;
+														right: 0;
+														opacity: 0.5;
+					  								}
+					  							}
+					  							&.liked{
+					  								.outsideheart{	  									
+					  									color: $light-pink;
+					  									z-index: 0;
+					  									animation: heart 0.5s;
+					  									.insideheart{	
+					  										z-index: 1000;
+					  										animation: heartHollow 1s;
+					  									} 
+					  								}
+					  							}
+											}
+										}
+									}				
+								}
+							}
+						}
+						.msgbox{
+							height: 100%;
+							.msg{
+								padding: 20px 20px 20px 20px;
+								width: 100%;
+								height: 100%;
+								.msgContent{
+									background-color: #FFF;
+									display:block;
+									padding: 20px 20px 0 20px;						
+									height: 500px;
+									width: 100%;	
+									ul{	
+										height: 100%;
+										border-bottom:1px solid #ccc;
+										display: block;		
+									}
+								}			
+								.msginput{
+									padding: 0 20px;
+									width: 100%;
+									height: 60px;
+									background-color: #fff;
+									.somebody{
+										display: inline-block;
+										.name{
+											padding: 3px;
+											line-height: 60px;
+										}						
+									}
+									.msgtype{
+										border: none;
+										outline:none;
+										width: 180px;
+									}
+									.cardmsgbutton{
+										border:none;
+										outline:none;
+										border-radius:10px;
+										padding: 3px 10px;
+										background-color: $foodColor;
+										color:$white;
+										cursor:pointer;
+										&:hover{
+											background-color: $sup-orange;
+										}
+									}
+								}					
+							}
+						}					
+						.closeLightBox{
+							line-height: 20px;
+							text-align: center;
+							position: absolute;
+							top: -10px;
+							right: -10px;
+							width: 33px;
+							height:33px;
+							background-color: rgba(0,0,0,.7);
+							border-radius: 50%;
+							transition:.3s;
+							border:2px solid #ddd;					
+							.fa-plus{
+								position: relative;
+								left: 3px;
+								top: -2px;
+								padding-top: 10px;
+								font-size: 20px;
+								color: #fff;
+								cursor: pointer;
+								transform:rotate(45deg);
+							}
+						}
+					}
+				} 		
+			}
+		}
 		.section_prize{
 			background-size: cover;
 			position: relative;	
@@ -25,6 +263,8 @@
 				text-align:center;
 				height: 0em;
 				font-size: $fz-h4;
+				color: #53a1da;
+				text-shadow:0.3px 0.3px 0.3px #4d5dbb;
 			}
 		}
 		.cloud1{
@@ -34,7 +274,7 @@
 				width: 80%;
 			}
 			p{
-				
+				color: #53a1da;				
 			}
 			span{
 				color:$light-pink;
@@ -42,181 +282,81 @@
 			}
 		}	
 		.topthree{
-		margin-top: 120px;
-		position: absolute;
-		width: 100%;
-		max-width: 1170px;	
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		.item{
-			position: relative;
+			margin-top: 120px;
+			position: absolute;
 			width: 100%;
-			padding-bottom: 1%;
-			display: block;
-			.lollipop{
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				display: inline-block;
-				text-align: center;
-				margin-bottom: -10px;
-				.hearts{
-					vertical-align: middle;
-					height: 60px;
-					img{
-						height: 60px;
-						width: 80px;
-						display: inline-block;
-						vertical-align: middle;
-					}
-					.count{
-						color: $light-pink;
-						font-size: $fz-h1;	
-						display: inline-block;
-						vertical-align: middle;
-					}
-				}
-				.candy{				
-					text-align: center;
-					position: relative;
-					img{						
-						width: 200px;
-						border-radius: 50%;
-						border: 10px solid $orange;					
-					}
-					.name{
-						position: absolute;
-						right: 0;
-						left: 0;
-						margin: 0 auto;
-						bottom: 30px;
-						color: white;
-						font-size: $fz-h1;
-					}
-				}
-				.stick{
-					margin-top: -50px;
-					width: 20px;
-					height: 50px;
-					background-color: $orange;
+			max-width: 1170px;	
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			.item{
+				position: relative;
+				width: 100%;
+				padding-bottom: 1%;
+				display: block;
+				.lollipop{
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
 					display: inline-block;
+					text-align: center;
+					margin-bottom: -10px;
+					.hearts{
+						vertical-align: middle;
+						height: 60px;
+						img{
+							height: 60px;
+							width: 80px;
+							display: inline-block;
+							vertical-align: middle;
+						}
+						.count{
+							color: $light-pink;
+							font-size: $fz-h1;	
+							display: inline-block;
+							vertical-align: middle;
+						}
+					}
+					.candy{				
+						text-align: center;
+						position: relative;
+						width: 200px;
+						height: 200px;
+						border-radius: 50%;
+						border: 10px solid $orange;
+						margin: 0 auto;
+						overflow: hidden;	
+						img{		
+							height: 100%;				
+							// width: 200px;
+							// border-radius: 50%;
+							// border: 10px solid $orange;					
+						}
+						.name{
+							position: absolute;
+							right: 0;
+							left: 0;
+							margin: 0 auto;
+							bottom: 30px;
+							color: white;
+							font-size: $fz-h1;
+						}
+					}
+					.stick{
+						margin-top: -50px;
+						width: 20px;
+						height: 50px;
+						background-color: $orange;
+						display: inline-block;
+					}
+					
 				}
-				
-			}
-				
-			// .hearts{
-			// 	width: 80%;
-			// 	margin:0 auto;
-			// 	text-align: center;
-			// 	img{
-			// 	width: 70px;
-			// 	height: 60px;
-			// 	vertical-align:middle;
-			// 	}
-			// 	span{
-			// 		font-size: $fz-h2;
-			// 		color: $light-pink;
-			// 	}
-			// }
-			// .lollipop{
-			// 	position: relative;
-			// 	height: 420px;				
-				
-			// 	.stick{
-			// 		position: absolute;
-			// 		bottom: 0;
-			// 		left: 0;
-			// 		right: 0;
-			// 		margin:0 auto;
-			// 		width: 50%;
-			// 		height: 420px;
-			// 		background-color: rgba(255, 255, 255, 0);
-			// 		text-align: center;
-			// 		.candy{
-			// 			position: absolute;
-			// 			margin:0 auto;
-			// 			width: 90%;
-			// 			padding-bottom: 90%;
-			// 			background-color: $orange;
-			// 			border-radius:100%;
-			// 			img{
-			// 				position: absolute;
-			// 				top: 0;
-			// 				left:0;
-			// 				right:0;
-			// 				bottom: 0;
-			// 				margin: auto;
-			// 				width: 90%;
-			// 			}
-			// 			.name{
-			// 				position: absolute;
-			// 				left:0;
-			// 				right:0;
-			// 				bottom: 20px;
-			// 				text-align:center;
-			// 				font-size: $fz-h1;
-			// 				color:$white;
-			// 			}
-			// 		} 
-			// 	}
-			// 	.stick:after{
-			// 		content:'';
-		
-			// 		width: 10px;
-			// 		background-color: #fff;
-			// 		display: block;
-			// 	}
-			// 	.stick1{
-			// 		padding-bottom: 50%;
-			// 	}
-			// 	.stick2{
-			// 		padding-bottom: 0%;
-			// 	}
-			// 	.stick3{
-			// 		padding-bottom: 30%;
-			// 	}
-
-			// }
-			}
-
-		}
-		.r-cardLightbox{
-			.cardContent{
-			width: 400px;
-			height: 650px;
+					
 			}
 		}
-		#sorts{
-		padding: 25px 15px 15px 15px;
-		.button{
-			background-color: $light-gray;
-			border-radius:15px;
-			padding: 5px 15px;
-			font-size: $fz-content;
-			color:$white;
-			border: 1px solid $light-gray;
-			cursor:pointer; 
-			&:hover{
-				background-color: $white;
-				color:$light-gray;
-			}
-			&:active{
-				position:relative;
-				top:1px;
-			}
-			&:focus {
-				outline:0;
-				background-color: $white;
-				color:$light-gray;
-				font-weight: bolder;
-				border: 2px solid $light-gray; 
-			}
-		}
-	}
 	.searchWrap{
 				margin-right: 40px;
 				padding: 25px 15px 15px 15px;
@@ -250,34 +390,6 @@
 				}
 			}
 		}
-	#filters{
-		padding: 15px;
-		display: inline-block;
-		.button{
-			background-color: $orange;
-			border-radius:15px;
-			padding: 5px 15px;
-			font-size: $fz-content;
-			color:$white;
-			border: 1px solid $orange;
-			cursor:pointer;
-			&:hover{
-				background-color: $white;
-				color:$orange;
-			}
-			&:active{
-				position:relative;
-				top:1px;
-			}
-			&:focus {
-				outline:0;
-				background-color: $white;
-				color:$orange;
-				font-weight: bolder;
-				border: 2px solid $orange;
-			}
-		}
-	}
 		.cardWrap{
 			padding: 15px;
 		}

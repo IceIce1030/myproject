@@ -1,6 +1,14 @@
 @include respones(xs){
 	//手機100%
 	//直接寫css
+	#d-body{
+	// background-color: #F9F7E8;
+	background-image: url(../images/background/index-bg6.jpg);
+	background-attachment: !important;
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	color:#fff;
+}
 	.discuss{
 	//從這開始寫
 	padding-top: 60px;

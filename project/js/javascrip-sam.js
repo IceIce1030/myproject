@@ -79,7 +79,7 @@ $(document).ready(function() {
                     $('.disInfo .watch').eq(i).text(mesA[i].arti_count);
                     $('.disInfo .author').eq(i).text(mesA[i].mem_name);
                     $('.postImg img').eq(i).attr('src', "images/articlephoto/" + mesA[i].arti_img);
-                    $('.post .postTitle a').eq(i).attr('href', "article.html?arti_no=" + mesA[i].arti_no);
+                    $('.post .postTitle a').eq(i).attr('href', "artical.html?arti_no=" + mesA[i].arti_no);
                     $('.disInfo .itemLabel').eq(i).text(mesA[i].arti_sort);
                     $('.disInfo .message').eq(i).text(mesA[i].arti_report);
                 }
@@ -172,7 +172,7 @@ $(document).ready(function() {
     $('.house').click(function() {
         var src = $(this).children('img').attr('src');
         var name = $(this).find('span:first').text();
-        $('.closeLightBox').css({ 'display': 'block' });
+        $('#closeBox').css({ 'display': 'block' });
         lightbox.addClass('pg2');
         $('#index-lightbox .pic img').attr('src', src);
         $('#index-lightbox .text h2').text(name);
@@ -201,11 +201,11 @@ $(document).ready(function() {
     })
 
     //關燈箱
-    $('.closeLightBox').click(function(e) {
+    $('#closeBox').click(function(e) {
         if (e.target.className == 'fa fa-plus') {
             var imgg = $('#index-lightbox .imgbox .img');
             $(this).css({ 'display': 'none' })
-            console.log(e.target);
+            
             lightbox.removeClass('pg2').fadeOut();
             imgg.eq(2).css({ 'border': 'none' });
             imgg.eq(1).css({ 'border': 'none' });
@@ -453,7 +453,7 @@ $(document).ready(function() {
             var src = $(this).find('img').attr('src');
             var name = $(this).find('h2').text();
             var txt = $(this).find('.iback p').text();
-            $('.closeLightBox').css({ 'display': 'block' });
+            $('#closeBox').css({ 'display': 'block' });
             $('#index-lightbox').addClass('pg3');
             $('#index-lightbox .pic img').attr('src', src);
             $('#index-lightbox .text h3').text(name);
@@ -461,10 +461,10 @@ $(document).ready(function() {
             $('#index-lightbox .pic .txt p').text(txt);
 
         })
-        $('.closeLightBox').click(function() {
+        $('#closeBox').click(function() {
             $('#index-lightbox').removeClass('pg3').fadeOut();
             $('#index-lightbox .pic .txt p').text("");
-            $('.closeLightBox').css({ 'display': 'none' });
+            $(this).css({ 'display': 'none' });
         });
         $('.scroll-icon-pg3').css({
             'display': 'none'
@@ -686,13 +686,15 @@ $(document).ready(function() {
 
     $('.i-dateClick').click(function() {
         $('#placeholder').fadeOut();
+        $('#closeBox').css({'display':'block'});
     })
-    $('.closeLightBox').click(function(e) {
+    $('#closeBox').click(function(e) {
         var roomin = startDate;
         var roomout = endDate;
         var ri = $('#roomIn').text();
         var ro = $('#roomOut').text();
         // alert(aa);
+        $('#closeBox').css({'display':'none'});
         if (ri == "" || ro == "") {
             $('#placeholder').fadeIn();
         } else {
@@ -734,7 +736,7 @@ $(document).ready(function() {
                         cardNumber = cardNumber.substr(3);
                         var cardLikedNum = 'liked' + cardNumber;
                         var totalCardNum = 15;
-                            console.log(voteCountString);
+                            
                         // 寫入localstorage投了哪一隻寵物
                         localStorage.setItem(cardLikedNum, "1");
 

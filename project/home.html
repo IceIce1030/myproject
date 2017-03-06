@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <link href='images/furkid.ico' rel='shortcut icon'/>
+<link href='images/furkid.ico' rel='shortcut icon'/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>FurKid首頁</title>
+    <title>FurKid | 首頁</title>
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -18,19 +18,18 @@
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bin-calendar.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
-   <!--  <script type="text/javascript" src="js/member.js"></script> -->
     <style type="text/css">
-    * {
-        /*outline: 1px solid #f00;*/
-    }
+   /* * {
+        outline: 1px solid #f00;
+    }*/
     </style>
 </head>
 
-<body id="home-index">
+<body>
     <!-- 首頁燈箱 -->
     <div id="index-lightbox">
         <div class="box">
-            <div class="closeLightBox" id="closeLightBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
+            <div class="closeLightBox" id="closeBox"><i class="fa fa-plus" aria-hidden="true"></i></div>
             <div class="pic">
                 <img src="">
                 <div class="txt">
@@ -62,10 +61,10 @@
         </div>
     </div>
     <!-- 首頁燈箱end -->
-    
-                    <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
+
+
      <!-- 選單開始 -->
-    <nav class="nav-header">
+    <nav class="nav-header" id="home-nav-header">
         <div class="fullcontainer">
             <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
                 <!-- 手機選單的漢堡和關閉 -->
@@ -105,7 +104,7 @@
                     <p>Hi~<span id="nav_mem_name"></span></p>
                 </div>
                 <!-- 會員中心選單燈箱開始 -->
-                <div class="navbarLightbox memberlightbox">
+                <div class="navbarLightbox h-navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
                             <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
@@ -118,7 +117,7 @@
                             <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
                             <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn">登出</div>
+                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -127,7 +126,7 @@
     </nav>
     <!-- 選單結束 -->
     <!-- login燈箱開始 -->
-    <div class="navbarLightbox loginlightbox">
+    <div class="navbarLightbox h-navbarLightbox loginlightbox">
         <div class="content">
             <p class="loginLeft">登入</p>
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
@@ -1202,8 +1201,8 @@
                         </div>
                     </div>
                 </div>
-            </div>  
-             <!-- footer開始 -->
+            </div>
+           <!-- footer開始 -->
             <footer>
                 <div class="container">
                     <section>
@@ -1212,6 +1211,7 @@
                             <p><i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; 電話: 0912098765</p>
                             <p><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; Email: furkidhotel@gmail.com</p>
                             <p><img src="images/lineIcon.png" alt="">&nbsp; Line ID: furkidHotel</p>
+                            <!-- <p><img src="images/fb_messenger_white.png" alt="">&nbsp; 傳facebook訊息</p> -->
                             <p><a class="fb" href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; 毛基地臉書</a></p>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 info">
@@ -1222,7 +1222,7 @@
                         </div>
                     </section>
                     <section>
-                        <div class="col-xs-12 col-sm-12 col-md-12 copyright">
+                        <div class="col-xs-12 col-md-12 col-sm-12 copyright">
                             <p><i class="fa fa-copyright" aria-hidden="true"></i> 2017 furkid 毛基地寵物旅館</p>
                         </div>
                     </section>

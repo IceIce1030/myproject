@@ -23,6 +23,15 @@
                 .labelClass {
                     width: 70px;
                 }
+                .alertInform{
+                    display:none;
+                    margin-top:-10px;
+                    font-size: 14px;
+                    color:$b-red;
+                    .txt{
+                        padding-left: 10px;
+                    }
+                }
                 input {
                     border: 1px solid rgba(119, 71, 32, .8);
                     border-radius: 5px;

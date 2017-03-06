@@ -110,19 +110,18 @@ function showMember(jsonStr) {
 //帳密錯誤
 function wrongLoginData() {
     //將登入表單上的資料清空
-    document.getElementById("login_mem_id").value = "";
+    // document.getElementById("login_mem_id").value = "";
     document.getElementById("login_mem_psw").value = "";
     // focus會員帳號
     document.getElementById("login_mem_id").focus();
     //顯示 帳密錯誤 訊息
-    document.getElementById("wrongData").innerText = "密碼錯誤，請再試一次";
+    document.getElementById("wrongData").innerText = "帳號密碼錯誤，請再試一次";
 }
 
 
 // 會員登入
 function memberlogin() {
-    console.log('memberlogin');
-    //帳號 song , 密碼111111
+    // console.log('memberlogin');
     var mem_id = document.getElementById("login_mem_id").value;
     var mem_psw = document.getElementById("login_mem_psw").value;
 
@@ -185,7 +184,7 @@ function navDoFirst() {
     document.getElementById("guestLoginBtn").onclick = guestlogin;
 
     //===檢查會員有沒有登入，有登入的話
-    if (localStorage["mem_name"] != null) {
+    if (localStorage["mem_no"] != null) {
         // 將選單上登入的div隱藏起來
         document.getElementById("beforeLogin").style.display = "none";
         // 顯示選單上會員頭像和名字的div

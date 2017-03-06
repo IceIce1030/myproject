@@ -1,7 +1,7 @@
 @include respones(md) {
-    //大桌機 container 1170 (>1200)
     //小電腦 container 970px (992~1200)
     .member {
+        background-position: 80% 50%;
         padding-top: 80px;
         .container {
             padding-top: 20px;
@@ -34,36 +34,65 @@
                 }
                 .mainContent {
                     margin-left: 25px;
+                    //沒記錄顯示
+                    .reminder {
+                        height: 380px;
+                        .txt {
+                            padding-top: 15%;
+                        }
+                        &#raceReminder {
+                            background-position: 50% 20%;
+                        }
+                    }
                     // 我的訂單
                     .booking {
-                        height: 180px;
+                        overflow: hidden;
+                        height: 240px;
                         padding: 20px;
                         margin-bottom: 20px;
                         .roomPhoto {
                             width: 300px;
-                            height: 140px;
+                            height: 200px;
                         }
                         .bookingDetail {
                             margin-left: 20px;
                             float: left;
-                            line-height: 1.8;
+                            line-height: 2;
                         }
                         .bookingDate {
+                            width: 260px;
+                            padding-top: 9px;
                             float: right;
                             margin-bottom: 10px;
+                            // line-height: 1.5;
+                            height: 100%;
+                            p {
+                                margin-bottom: 5px;
+                            }
+                            h4 {
+                                margin-bottom: 5px;
+                            }
                             .checkinDate {
                                 padding: 0 10px;
-                                height: 100px;
+                                width: 50%;
                             }
                             .checkoutDate {
                                 padding: 0 10px;
                                 float: right;
-                                height: 100px;
+                                width: 50%;
                             }
                         }
                         .btnDiv {
+                            position: absolute;
+                            bottom: 10px;
+                            // right:0;
+                            // left:0;
+                            line-height: normal;
                             width: 100%;
-                            margin-top: 10px;
+                            .btnFunction {
+                                width: 203px;
+                                margin: auto;
+                            }
                         }
                     }
                     //我的文章
@@ -75,10 +104,15 @@
                             height: 140px;
                         }
                         .txt {
-                            max-width: 700px;
+                            max-width: 630px;
                             margin-left: 20px;
+                            .postTitle {
+                                max-height: 40px;
+                            }
                         }
                     }
+                    //萌主
+                    .cardWrap {}
                 }
             }
         }
@@ -114,11 +148,27 @@
         }
     }
     //aboutme更新會員資料燈箱
-    #aboutme {
-
-    }
+    #aboutme {}
     //mypets addPet資料燈箱
     #mypets,
-    #addPet {
+    #addPet {}
+}
+
+//大桌機 container 1170 (>1200)
+@include respones(lg) {
+    .member {
+        background-position: 80% 45%;
+        .container {
+            .accountMgt {
+                .mainContent {
+                    //我的文章
+                    .post {
+                        .txt {
+                            max-width: 850px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

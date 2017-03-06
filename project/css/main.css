@@ -3299,9 +3299,9 @@ footer .copyright p {
     margin-bottom: 10px;
   }
   .index .PageTwo .colum {
-    width: 100%;
+    width: 90%;
     text-align: center;
-    margin: 10px 0 20px;
+    margin: 40px auto;
   }
   .index .PageTwo .house {
     max-width: 350px;
@@ -3755,11 +3755,6 @@ html.fp-enabled,
   height: auto !important;
 }
 
-#home-index .navbarLightbox {
-  position: fixed;
-  z-index: 9999;
-}
-
 #fp-nav span,
 .fp-slidesNav span {
   border-color: #aaa;
@@ -3783,8 +3778,8 @@ html.fp-enabled,
   }
 }
 
-#home-nav-header {
-  z-index: 2000;
+#home-nav-header, .h-navbarLightbox {
+  z-index: 4000;
 }
 
 #index-lightbox {
@@ -3991,7 +3986,7 @@ html.fp-enabled,
 }
 
 .index .PageOne {
-  height: 100vh;
+  min-height: 86vh;
   width: 100%;
   background: url(../images/background/nature-sprite.png) no-repeat -9999px -9999px;
   /*===================================*/
@@ -4992,6 +4987,13 @@ html.fp-enabled,
 }
 
 @media screen and (min-width: 993px) {
+  #d-body {
+    background-image: url(../images/bg02.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
   .discuss {
     padding-top: 80px;
   }
@@ -5032,7 +5034,22 @@ html.fp-enabled,
   }
 }
 
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #d-body {
+    background-image: url(../images/bg02.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  #d-body {
+    background-image: url(../images/background/index-bg6.jpg);
+    background-attachment: !important;
+    color: #fff;
+  }
   .discuss {
     padding-top: 60px;
   }
@@ -5097,14 +5114,6 @@ html.fp-enabled,
     margin: 15px 0;
     color: #7d7d7d;
   }
-}
-
-#d-body {
-  background-image: url(../images/bg02.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
 }
 
 .discuss .D-filter .filters {
@@ -5682,6 +5691,7 @@ html.fp-enabled,
 }
 
 .backpage #table {
+  border-collapse: collapse;
   width: 100%;
 }
 
@@ -5726,11 +5736,11 @@ html.fp-enabled,
 .backpage .backNav .backMenu li {
   display: inline-block;
   padding: 25px;
-  width: 20%;
+  width: 16.6666666%;
 }
 
 .backpage .backNav .backMenu li a {
-  font-size: 20px;
+  font-size: 18px;
   color: #434343;
   position: relative;
 }
@@ -6278,6 +6288,7 @@ html.fp-enabled,
 
 @media screen and (min-width: 993px) {
   .member {
+    background-position: 80% 50%;
     padding-top: 80px;
   }
   .member .container {
@@ -6308,36 +6319,61 @@ html.fp-enabled,
   .member .container .accountMgt .mainContent {
     margin-left: 25px;
   }
+  .member .container .accountMgt .mainContent .reminder {
+    height: 380px;
+  }
+  .member .container .accountMgt .mainContent .reminder .txt {
+    padding-top: 15%;
+  }
+  .member .container .accountMgt .mainContent .reminder#raceReminder {
+    background-position: 50% 20%;
+  }
   .member .container .accountMgt .mainContent .booking {
-    height: 180px;
+    overflow: hidden;
+    height: 240px;
     padding: 20px;
     margin-bottom: 20px;
   }
   .member .container .accountMgt .mainContent .booking .roomPhoto {
     width: 300px;
-    height: 140px;
+    height: 200px;
   }
   .member .container .accountMgt .mainContent .booking .bookingDetail {
     margin-left: 20px;
     float: left;
-    line-height: 1.8;
+    line-height: 2;
   }
   .member .container .accountMgt .mainContent .booking .bookingDate {
+    width: 260px;
+    padding-top: 9px;
     float: right;
     margin-bottom: 10px;
+    height: 100%;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate p {
+    margin-bottom: 5px;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate h4 {
+    margin-bottom: 5px;
   }
   .member .container .accountMgt .mainContent .booking .bookingDate .checkinDate {
     padding: 0 10px;
-    height: 100px;
+    width: 50%;
   }
   .member .container .accountMgt .mainContent .booking .bookingDate .checkoutDate {
     padding: 0 10px;
     float: right;
-    height: 100px;
+    width: 50%;
   }
   .member .container .accountMgt .mainContent .booking .btnDiv {
+    position: absolute;
+    bottom: 10px;
+    line-height: normal;
     width: 100%;
-    margin-top: 10px;
+  }
+  .member .container .accountMgt .mainContent .booking .btnDiv .btnFunction {
+    width: 203px;
+    margin: auto;
   }
   .member .container .accountMgt .mainContent .post {
     height: 180px;
@@ -6348,8 +6384,11 @@ html.fp-enabled,
     height: 140px;
   }
   .member .container .accountMgt .mainContent .post .txt {
-    max-width: 700px;
+    max-width: 630px;
     margin-left: 20px;
+  }
+  .member .container .accountMgt .mainContent .post .txt .postTitle {
+    max-height: 40px;
   }
   .C_lightbox .lightbox_box .lightbox_content {
     padding-top: 20px;
@@ -6377,8 +6416,18 @@ html.fp-enabled,
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .member {
+    background-position: 80% 45%;
+  }
+  .member .container .accountMgt .mainContent .post .txt {
+    max-width: 850px;
+  }
+}
+
 @media screen and (max-width: 992px) and (min-width: 768px) {
   .member {
+    background-position: 80% 100%;
     padding-top: 60px;
   }
   .member .container {
@@ -6408,6 +6457,15 @@ html.fp-enabled,
   }
   .member .container .mainContent {
     margin-left: 25px;
+  }
+  .member .container .mainContent .reminder {
+    height: 300px;
+  }
+  .member .container .mainContent .reminder .txt {
+    padding-top: 18%;
+  }
+  .member .container .mainContent .reminder#raceReminder {
+    background-position: 50% 20%;
   }
   .member .container .mainContent .booking {
     padding: 20px;
@@ -6459,26 +6517,15 @@ html.fp-enabled,
     padding: 20px;
   }
   .member .container .mainContent .post .postImg {
-    width: 200px;
+    width: 160px;
     height: 140px;
   }
   .member .container .mainContent .post .txt {
-    max-width: 440px;
+    max-width: 425px;
     margin-left: 20px;
   }
-  .memberLightboxTarget .content {
-    width: 500px;
-    padding: 20px;
-  }
-  .memberLightboxTarget .content input {
-    width: 350px;
-    font-size: 16px;
-  }
-  .memberLightboxTarget .content .formGroup {
-    padding: 10px 0;
-  }
-  .memberLightboxTarget .content .labelClass {
-    margin-right: 10px;
+  .member .container .mainContent .post .txt .postTitle {
+    max-height: 40px;
   }
   #aboutme .content {
     height: 500px;
@@ -6572,7 +6619,8 @@ html.fp-enabled,
 }
 
 .member {
-  background: url(../images/bg07.jpg) no-repeat 80% 40%;
+  background-image: url(../images/bg07_r.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -6580,15 +6628,6 @@ html.fp-enabled,
 .member .container {
   position: relative;
   padding-bottom: 20px;
-}
-
-.member .container .linktochange {
-  cursor: pointer;
-  color: #b37600;
-}
-
-.member .container .linktochange:hover {
-  color: #774720;
 }
 
 .member .container .memberInfo {
@@ -6606,11 +6645,18 @@ html.fp-enabled,
 }
 
 .member .container .memberInfo .txt {
+  color: #f2f2f2;
+  letter-spacing: 0.08em;
   margin-left: 10px;
   height: 100px;
   line-height: 1.9;
   vertical-align: top;
   text-align: left;
+}
+
+.member .container .memberInfo .txt #panel_mem_name {
+  letter-spacing: 0.1em;
+  font-weight: 200;
 }
 
 .member .container .memberInfo .txt .fa {
@@ -6619,6 +6665,16 @@ html.fp-enabled,
 
 .member .container .memberInfo .txt > span {
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.member .container .memberInfo .txt > span:hover {
+  color: #ffa800;
+}
+
+.member .container .petList {
+  color: #f2f2f2;
+  letter-spacing: 0.08em;
 }
 
 .member .container .petList #petListDiv {
@@ -6634,6 +6690,10 @@ html.fp-enabled,
   display: inline-block;
 }
 
+.member .container .petList .pet:hover {
+  color: #ffa800;
+}
+
 .member .container .petList .pet .petPhoto {
   text-align: center;
   cursor: pointer;
@@ -6647,23 +6707,18 @@ html.fp-enabled,
 .member .container .petList .pet .fa {
   margin-left: 5px;
   cursor: pointer;
-  color: #b37600;
 }
 
-.member .container .petList .pet .fa:hover {
-  color: #774720;
+.member .container .petList .pet.petAdd:hover {
+  color: #ffa800;
 }
 
-.member .container .petList .pet.petAdd:hover .fa {
-  color: #774720;
-}
-
-.member .container .petList .pet.petAdd:hover .linktochange {
-  color: #774720;
+.member .container .petList .pet.petAdd:hover .petPhoto {
+  border: 2px solid #ffa800;
 }
 
 .member .container .petList .pet.petAdd .petPhoto {
-  border: 2px solid #ff9100;
+  border: 2px solid #f2f2f2;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -6686,13 +6741,14 @@ html.fp-enabled,
 
 .member .container .accountMgt .tabMenu a {
   cursor: pointer;
-  color: #434343;
+  color: #f2f2f2;
   text-align: center;
   display: inline-block;
   border-radius: 5px 5px 0 0;
   border: 2px dotted #b37600;
   border-bottom: 1px solid #b37600;
   margin-bottom: -1px;
+  font-weight: 300;
 }
 
 .member .container .accountMgt .tabMenu a:hover {
@@ -6713,22 +6769,68 @@ html.fp-enabled,
   display: none;
 }
 
-.member .container .accountMgt .mainContent .booking {
-  background-color: #fff;
-  width: 100%;
-  transition: box-shadow .4s ease;
+.member .container .accountMgt .mainContent .reminder {
+  border-radius: 5px;
+  color: #434343;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.member .container .accountMgt .mainContent .booking:hover {
-  box-shadow: 0px 1px 3px #555;
+.member .container .accountMgt .mainContent .reminder .txt {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  text-align: center;
+}
+
+.member .container .accountMgt .mainContent .reminder .btnDiv {
+  margin-top: 20px;
+}
+
+.member .container .accountMgt .mainContent .reminder#bookingReminder {
+  background-image: url(../images/dogOnSofa.jpg);
+}
+
+.member .container .accountMgt .mainContent .reminder#discussReminder {
+  background-image: url(../images/bg_post.jpg);
+}
+
+.member .container .accountMgt .mainContent .reminder#raceReminder {
+  background-image: url(../images/bg12.jpg);
+}
+
+.member .container .accountMgt .mainContent .booking {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  border-radius: 5px;
+  color: #333;
 }
 
 .member .container .accountMgt .mainContent .booking.pastBooking {
-  background-color: #eee;
+  background-color: rgba(238, 238, 238, 0.8);
   color: #999;
 }
 
 .member .container .accountMgt .mainContent .booking.pastBooking .bookingDate .dateTitle {
+  color: #999;
+}
+
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDate .checkoutDate {
+  border-left: 2px dotted #aaa;
+}
+
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDate .btnFunction {
+  display: block;
+}
+
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDate .date {
+  color: #999;
+}
+
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDetail .stayDay,
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDetail .serviceItem,
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDetail .sitter_name,
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDetail .roomType,
+.member .container .accountMgt .mainContent .booking.pastBooking .bookingDetail .orderlist_Total {
   color: #999;
 }
 
@@ -6746,7 +6848,11 @@ html.fp-enabled,
   max-width: 352px;
 }
 
-.member .container .accountMgt .mainContent .booking .bookingDetail .totalAmount {
+.member .container .accountMgt .mainContent .booking .bookingDetail p {
+  font-size: 18px;
+}
+
+.member .container .accountMgt .mainContent .booking .bookingDetail .orderlist_Total {
   color: #ef715a;
   font-weight: 900;
 }
@@ -6764,6 +6870,14 @@ html.fp-enabled,
   color: #434343;
 }
 
+.member .container .accountMgt .mainContent .booking .bookingDetail .stayDay,
+.member .container .accountMgt .mainContent .booking .bookingDetail .serviceItem,
+.member .container .accountMgt .mainContent .booking .bookingDetail .sitter_name,
+.member .container .accountMgt .mainContent .booking .bookingDetail .roomType {
+  font-weight: 900;
+  color: #774720;
+}
+
 .member .container .accountMgt .mainContent .booking .bookingDate {
   position: relative;
   text-align: center;
@@ -6775,83 +6889,110 @@ html.fp-enabled,
 }
 
 .member .container .accountMgt .mainContent .booking .bookingDate .checkoutDate {
-  border-left: 2px dotted #ccc;
+  border-left: 2px dotted #888;
 }
 
 .member .container .accountMgt .mainContent .booking .bookingDate .dateTitle {
   color: #7d7d7d;
 }
 
-.member .container .accountMgt .mainContent .booking .btnDiv {
-  text-align: center;
-  display: inline-block;
+.member .container .accountMgt .mainContent .booking .bookingDate .day {
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.member .container .accountMgt .mainContent .post {
-  background-color: #fff;
+.member .container .accountMgt .mainContent .booking .bookingDate .date {
+  color: #774720;
+}
+
+.member .container .accountMgt .mainContent .booking .btnDiv {
+  text-align: center;
+}
+
+.member .container .accountMgt .mainContent .booking .btnDiv .fa-repeat {
+  margin-left: 5px;
+}
+
+.member .container .accountMgt .mainContent .booking .btnDiv .btnPast {
+  background: #ffa800;
+  background: linear-gradient(to bottom, #ffa800 0, #f0a000 100%);
+}
+
+.member .container .accountMgt .mainContent .booking .btnDiv .btnPast:hover {
+  background: #e69900;
+  background: linear-gradient(to bottom, #f0a000 0, #e69900 100%);
+}
+
+.member .container .accountMgt .mainContent .postLink {
+  color: #434343;
+}
+
+.member .container .accountMgt .mainContent .postLink .post {
+  border-radius: 5px;
+  background-color: rgba(238, 238, 238, 0.9);
   width: 100%;
   margin-bottom: 20px;
   position: relative;
-  transition: box-shadow .4s ease;
+  transition: all .3s ease;
 }
 
-.member .container .accountMgt .mainContent .post:hover {
-  box-shadow: 0px 1px 3px #555;
+.member .container .accountMgt .mainContent .postLink .post:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.member .container .accountMgt .mainContent .post .postImg {
+.member .container .accountMgt .mainContent .postLink .post:hover .postTitle {
+  color: #b37600;
+}
+
+.member .container .accountMgt .mainContent .postLink .post .postImg {
   overflow: hidden;
   float: left;
   text-align: center;
 }
 
-.member .container .accountMgt .mainContent .post .txt {
+.member .container .accountMgt .mainContent .postLink .post .txt {
   float: left;
 }
 
-.member .container .accountMgt .mainContent .post .txt > div {
+.member .container .accountMgt .mainContent .postLink .post .txt > div {
   margin-bottom: 5px;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postTitle a {
-  color: #434343;
+.member .container .accountMgt .mainContent .postLink .post .txt .postTitle {
+  overflow: hidden;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postTitle a:hover {
-  color: #774720;
-}
-
-.member .container .accountMgt .mainContent .post .txt .postDate {
+.member .container .accountMgt .mainContent .postLink .post .txt .postDate {
   color: #7d7d7d;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postContent {
+.member .container .accountMgt .mainContent .postLink .post .txt .postContent {
   overflow: hidden;
   max-height: 44px;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postInfo {
+.member .container .accountMgt .mainContent .postLink .post .txt .postInfo {
   font-size: 13px;
   color: #7d7d7d;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postInfo .author {
+.member .container .accountMgt .mainContent .postLink .post .txt .postInfo .author {
   margin-right: 5px;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postInfo .watch:before {
+.member .container .accountMgt .mainContent .postLink .post .txt .postInfo .watch:before {
   content: '\f06e';
   font-family: fontAwesome;
   margin-right: 5px;
 }
 
-.member .container .accountMgt .mainContent .post .txt .postInfo .message:before {
+.member .container .accountMgt .mainContent .postLink .post .txt .postInfo .message:before {
   content: '\f27a';
   font-family: fontAwesome;
   margin-right: 5px;
 }
 
-.member .container .accountMgt .mainContent .post .itemLabel {
+.member .container .accountMgt .mainContent .postLink .post .itemLabel {
   position: absolute;
   left: 15px;
   top: 15px;
@@ -6863,23 +7004,23 @@ html.fp-enabled,
   border-radius: 3px;
 }
 
-.member .container .accountMgt .mainContent .post .itemLabel.foodLabel {
+.member .container .accountMgt .mainContent .postLink .post .itemLabel.foodLabel {
   background-color: #F4A66F;
 }
 
-.member .container .accountMgt .mainContent .post .itemLabel.shareLabel {
+.member .container .accountMgt .mainContent .postLink .post .itemLabel.shareLabel {
   background-color: #8CD899;
 }
 
-.member .container .accountMgt .mainContent .post .itemLabel.healthLabel {
+.member .container .accountMgt .mainContent .postLink .post .itemLabel.healthLabel {
   background-color: #57B1DA;
 }
 
-.member .container .accountMgt .mainContent .post .itemLabel.newLabel {
+.member .container .accountMgt .mainContent .postLink .post .itemLabel.newLabel {
   background-color: #D9ABE6;
 }
 
-.member .container .accountMgt .mainContent .post .hotLabel {
+.member .container .accountMgt .mainContent .postLink .post .hotLabel {
   background-color: #f00;
   color: #fff;
   padding: 2px;
@@ -6888,8 +7029,12 @@ html.fp-enabled,
   opacity: 0;
 }
 
-.member .container .accountMgt .mainContent .post .hotLabel.on {
+.member .container .accountMgt .mainContent .postLink .post .hotLabel.on {
   opacity: 1;
+}
+
+.member .container .accountMgt .mainContent #myrace .cardWrap {
+  color: #434343;
 }
 
 .member .container .accountMgt .mainContent #myrace .cardWrap .card {
@@ -6897,6 +7042,10 @@ html.fp-enabled,
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+}
+
+.member .container .accountMgt .mainContent #myrace .cardWrap .card a {
+  color: #434343;
 }
 
 .member .container .accountMgt .mainContent #myrace .cardWrap .card img {
@@ -6937,7 +7086,7 @@ html.fp-enabled,
   height: 50px;
   width: 62px;
   position: absolute;
-  bottom: 50px;
+  bottom: 56px;
   right: 10px;
   text-align: center;
 }
@@ -7167,6 +7316,17 @@ html.fp-enabled,
 
 .signup .container .wrapper .formDiv .labelClass {
   width: 70px;
+}
+
+.signup .container .wrapper .formDiv .alertInform {
+  display: none;
+  margin-top: -10px;
+  font-size: 14px;
+  color: #EB3F4B;
+}
+
+.signup .container .wrapper .formDiv .alertInform .txt {
+  padding-left: 10px;
 }
 
 .signup .container .wrapper .formDiv input {
@@ -7516,6 +7676,8 @@ html.fp-enabled,
   }
   .service .roomType .roomInfo .roomDetail {
     padding-top: 20px;
+  }
+  .service .roomType .roomInfo .roomDetail .txt {
     line-height: 2;
   }
   .service .roomType .roomInfo .roomDetail .btnDiv {
@@ -7611,33 +7773,8 @@ html.fp-enabled,
 }
 
 .service {
-  background-image: url(../images/bg02.png);
+  background: url(../images/bg02.png) repeat;
   padding-bottom: 20px;
-}
-
-.service .btnDiv {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.service .btnDiv .btn {
-  width: auto;
-  text-align: center;
-  display: inline-block;
-  padding: 5px 10px;
-  cursor: pointer;
-  border: 2px solid #b37600;
-  border-radius: 4px;
-  color: #b37600;
-  letter-spacing: 2px;
-  transition: box-shadow .4s ease;
-}
-
-.service .btnDiv .btn:hover {
-  box-shadow: 1px 1px 5px #555;
-  background-color: #b37600;
-  color: #fff;
 }
 
 .service .title {
@@ -7668,10 +7805,10 @@ html.fp-enabled,
 }
 
 .service .introduction {
-  border: double #b37600;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   position: relative;
+  margin-bottom: 80px;
 }
 
 .service .introduction .imageBox {
@@ -7881,7 +8018,220 @@ html.fp-enabled,
   text-align: right;
 }
 
-@media screen and (min-width: 1200px) {
+.addPetInfo {
+  background-image: url(../images/bg11.jpg);
+  background-size: cover;
+}
+
+.addPetInfo .container {
+  color: #434343;
+  text-align: center;
+}
+
+.addPetInfo .container .main {
+  margin: auto;
+  border-radius: 15px;
+  background-color: rgba(249, 247, 232, 0.78);
+}
+
+.addPetInfo .container .formDiv {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+.addPetInfo .container .formDiv .labelClass {
+  display: inline-block;
+  width: 70px;
+}
+
+.addPetInfo .container .formDiv .alertInform {
+  margin-top: -10px;
+  font-size: 14px;
+  color: #EB3F4B;
+  display: none;
+}
+
+.addPetInfo .container .formDiv .alertInform .txt {
+  padding-left: 15px;
+}
+
+.addPetInfo .container .formDiv input {
+  border: 1px solid rgba(119, 71, 32, 0.8);
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.addPetInfo .container .formDiv .gender input {
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.addPetInfo .container .formDiv #upload_petImg {
+  border: none;
+  display: none;
+}
+
+.addPetInfo .container .formDiv .showImage {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+  top: 8px;
+}
+
+.addPetInfo .container .formDiv .showImage img {
+  width: 100%;
+}
+
+.addPetInfo .container .formDiv #uploadImgLabel {
+  display: inline-block;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: 1px solid rgba(119, 71, 32, 0.8);
+  border-radius: 5px;
+  color: #7d7d7d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all .4s;
+  background-color: #f7f7f7;
+}
+
+.addPetInfo .container .formDiv #uploadImgLabel:hover {
+  color: #434343;
+  background-color: white;
+}
+
+.addPetInfo .container .formDiv p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.addPetInfo .container .formDiv p a {
+  color: #434343;
+}
+
+.addPetInfo .container .formDiv p a:hover {
+  color: #774720;
+}
+
+.addPetInfo .container .formDiv .btnDiv {
+  text-align: center;
+}
+
+.addPetInfo .container .formDiv .inputBtn {
+  font-weight: 300;
+  margin: 10px auto;
+  width: 100%;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: solid transparent;
+  border-radius: 5px;
+  background: #f34e1b;
+  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all .4s;
+}
+
+.addPetInfo .container .formDiv .inputBtn:hover {
+  background: #da3c0b;
+  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
+}
+
+.addPetInfo .container h3 {
+  color: #774720;
+}
+
+.addPetInfo .container .logo {
+  margin-bottom: 10px;
+}
+
+.addPetInfo .container .logo span {
+  color: #ff9100;
+  font-family: "MicrosoftJhengHeiBold";
+  line-height: 1.2;
+  text-shadow: 1px 2px 1px rgba(252, 173, 135, 0.75);
+  margin-left: 5px;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.addPetInfo .container .logo img {
+  height: 60px;
+  width: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .addPetInfo .container {
+    padding-top: 60px;
+  }
+  .addPetInfo .container .main {
+    padding: 15px;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .addPetInfo .container {
+    padding-top: 60px;
+  }
+  .addPetInfo .container .main {
+    width: 550px;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .addPetInfo .container {
+    padding: 120px 0px 40px;
+  }
+  .addPetInfo .container .main {
+    width: auto;
+    padding: 20px 60px;
+    display: inline-block;
+  }
+  .addPetInfo .container .formDiv {
+    font-size: 16px;
+  }
+  .addPetInfo .container .formDiv .formGroup {
+    padding: 5px;
+    min-height: 44px;
+    margin-bottom: 10px;
+  }
+  .addPetInfo .container .formDiv .labelClass {
+    display: inline-block;
+    width: 90px;
+  }
+  .addPetInfo .container .formDiv .nice-select {
+    width: 140px;
+  }
+  .addPetInfo .container .formDiv input {
+    width: 140px;
+    height: 34px;
+    padding: 3px 6px;
+    font-size: 16px;
+  }
+  .addPetInfo .container .formDiv .genderFormGroup {
+    padding-top: 10px;
+  }
+  .addPetInfo .container h3 {
+    margin: 20px auto;
+  }
+}
+
+@media screen and (min-width: 993px) {
   .race .section_prize {
     background-size: cover;
     position: relative;
@@ -7904,6 +8254,8 @@ html.fp-enabled,
     text-align: center;
     height: 0em;
     font-size: 25px;
+    color: #53a1da;
+    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
   }
   .race .cloud1 {
     padding: 0;
@@ -7911,6 +8263,9 @@ html.fp-enabled,
   }
   .race .cloud1 img {
     width: 80%;
+  }
+  .race .cloud1 p {
+    color: #53a1da;
   }
   .race .cloud1 span {
     color: #ef715a;
@@ -7961,11 +8316,15 @@ html.fp-enabled,
   .race .topthree .item .lollipop .candy {
     text-align: center;
     position: relative;
-  }
-  .race .topthree .item .lollipop .candy img {
+    overflow: hidden;
     width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 10px solid #ffa800;
+    margin: 0 auto;
+  }
+  .race .topthree .item .lollipop .candy img {
+    height: 100%;
   }
   .race .topthree .item .lollipop .candy .name {
     position: absolute;
@@ -7975,6 +8334,7 @@ html.fp-enabled,
     bottom: 30px;
     color: white;
     font-size: 36px;
+    text-shadow: 0.5px 0.5px 0.5px black;
   }
   .race .topthree .item .lollipop .stick {
     margin-top: -50px;
@@ -7982,37 +8342,6 @@ html.fp-enabled,
     height: 50px;
     background-color: #ffa800;
     display: inline-block;
-  }
-  .race .r-cardLightbox .cardContent {
-    width: 400px;
-    height: 650px;
-  }
-  .race #sorts {
-    padding: 25px 15px 15px 15px;
-  }
-  .race #sorts .button {
-    background-color: #7d7d7d;
-    border-radius: 15px;
-    padding: 5px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    border: 1px solid #7d7d7d;
-    cursor: pointer;
-  }
-  .race #sorts .button:hover {
-    background-color: #ffffff;
-    color: #7d7d7d;
-  }
-  .race #sorts .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #sorts .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #7d7d7d;
-    font-weight: bolder;
-    border: 2px solid #7d7d7d;
   }
   .race .searchWrap {
     margin-right: 40px;
@@ -8046,40 +8375,239 @@ html.fp-enabled,
     height: 100%;
     color: #ffffff;
   }
-  .race #filters {
-    display: inline-block;
-    padding: 15px;
-  }
-  .race #filters .button {
-    background-color: #ffa800;
-    border-radius: 15px;
-    padding: 5px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    border: 1px solid #ffa800;
-    cursor: pointer;
-  }
-  .race #filters .button:hover {
-    background-color: #ffffff;
-    color: #ffa800;
-  }
-  .race #filters .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #filters .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #ffa800;
-    font-weight: bolder;
-    border: 2px solid #ffa800;
-  }
   .race .cardWrap {
     padding: 25px;
   }
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
+  .race #showlightbox .cardlightbox {
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    background-color: #f9f7e8;
+    transition: 1s;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 5px 5px 50px #7d7d7d;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content {
+    background-color: #f9f7e8;
+    border-radius: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox {
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo {
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo {
+    padding: 20px;
+    height: 65%;
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap {
+    width: 100%;
+    margin-top: -20px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox {
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox p {
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox span {
+    color: black;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox {
+    text-align: center;
+    max-width: 320px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro {
+    display: block;
+    border-bottom: 1px dashed #ccc;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro p {
+    padding: 3px 0;
+    color: #666;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .number {
+    font-size: 16px;
+    color: #888;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .name {
+    padding-left: 10px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .vote {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo {
+    padding: 0 20px 20px 20px;
+    height: 35%;
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft {
+    width: 50%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft p {
+    font-size: 16px;
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span:nth-child(1) {
+    padding-top: 8px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span {
+    display: inline-block;
+    padding: 3px;
+    font-size: 23px;
+    color: black;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight {
+    width: 50%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like {
+    float: right;
+    height: 50px;
+    width: 62px;
+    text-align: center;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .votes {
+    display: inline-block;
+    font-size: 36px;
+    color: #ef715a;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like img {
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite:focus {
+    outline: 0;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart {
+    position: relative;
+    font-size: 50px;
+    color: #ffd5cc;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
+    color: #ef715a;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart {
+    color: #ef715a;
+    z-index: 0;
+    animation: heart 0.5s;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart .insideheart {
+    z-index: 1000;
+    animation: heartHollow 1s;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox {
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg {
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent {
+    background-color: #FFF;
+    display: block;
+    padding: 20px 20px 0 20px;
+    height: 500px;
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul {
+    height: 100%;
+    border-bottom: 1px solid #ccc;
+    display: block;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput {
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody {
+    display: inline-block;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody .name {
+    padding: 3px;
+    line-height: 60px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .msgtype {
+    border: none;
+    outline: none;
+    width: 180px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 3px 10px;
+    background-color: #F4A66F;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton:hover {
+    background-color: #ff9100;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .closeLightBox {
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 33px;
+    height: 33px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    transition: .3s;
+    border: 2px solid #ddd;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .closeLightBox .fa-plus {
+    position: relative;
+    left: 3px;
+    top: -2px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transform: rotate(45deg);
+  }
   .race .section_prize {
     background-size: cover;
     position: relative;
@@ -8102,6 +8630,8 @@ html.fp-enabled,
     text-align: center;
     height: 0em;
     font-size: 24px;
+    color: #53a1da;
+    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
   }
   .race .cloud1 {
     padding: 0;
@@ -8109,6 +8639,9 @@ html.fp-enabled,
   }
   .race .cloud1 img {
     width: 80%;
+  }
+  .race .cloud1 p {
+    color: #53a1da;
   }
   .race .cloud1 span {
     color: #ef715a;
@@ -8159,11 +8692,15 @@ html.fp-enabled,
   .race .topthree .item .lollipop .candy {
     text-align: center;
     position: relative;
-  }
-  .race .topthree .item .lollipop .candy img {
     width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 10px solid #ffa800;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .race .topthree .item .lollipop .candy img {
+    height: 100%;
   }
   .race .topthree .item .lollipop .candy .name {
     position: absolute;
@@ -8180,37 +8717,6 @@ html.fp-enabled,
     height: 50px;
     background-color: #ffa800;
     display: inline-block;
-  }
-  .race .r-cardLightbox .cardContent {
-    width: 400px;
-    height: 650px;
-  }
-  .race #sorts {
-    padding: 25px 15px 15px 15px;
-  }
-  .race #sorts .button {
-    background-color: #7d7d7d;
-    border-radius: 15px;
-    padding: 5px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    border: 1px solid #7d7d7d;
-    cursor: pointer;
-  }
-  .race #sorts .button:hover {
-    background-color: #ffffff;
-    color: #7d7d7d;
-  }
-  .race #sorts .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #sorts .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #7d7d7d;
-    font-weight: bolder;
-    border: 2px solid #7d7d7d;
   }
   .race .searchWrap {
     margin-right: 40px;
@@ -8243,51 +8749,262 @@ html.fp-enabled,
     height: 100%;
     color: #ffffff;
   }
-  .race #filters {
-    padding: 15px;
-    display: inline-block;
-  }
-  .race #filters .button {
-    background-color: #ffa800;
-    border-radius: 15px;
-    padding: 5px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    border: 1px solid #ffa800;
-    cursor: pointer;
-  }
-  .race #filters .button:hover {
-    background-color: #ffffff;
-    color: #ffa800;
-  }
-  .race #filters .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #filters .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #ffa800;
-    font-weight: bolder;
-    border: 2px solid #ffa800;
-  }
   .race .cardWrap {
     padding: 15px;
   }
 }
 
 @media screen and (max-width: 767px) {
+  .race #showlightbox .cardlightbox {
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box {
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    background-color: #f9f7e8;
+    transition: 1s;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 5px 5px 50px #7d7d7d;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content {
+    background-color: #f9f7e8;
+    border-radius: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox {
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo {
+    padding: 15px 15px 5px 15px;
+    height: 65%;
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap {
+    width: 100%;
+    margin-top: -20px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox {
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox p {
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox span {
+    color: black;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox {
+    text-align: center;
+    max-width: 280px;
+    max-height: 150px;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro {
+    display: block;
+    border-bottom: 1px dashed #ccc;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro p {
+    padding: 3px 0;
+    color: #666;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .number {
+    font-size: 16px;
+    color: #888;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .name {
+    padding-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .vote {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo {
+    height: 35%;
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft {
+    width: 60%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft p {
+    font-size: 13px;
+    color: #888;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span:nth-child(1) {
+    padding-top: 0px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span {
+    display: inline-block;
+    padding: 1px;
+    font-size: 15px;
+    color: black;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight {
+    width: 40%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like {
+    float: right;
+    height: 50px;
+    width: 62px;
+    text-align: center;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .votes {
+    display: inline-block;
+    font-size: 28px;
+    color: #ef715a;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like img {
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite:focus {
+    outline: 0;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart {
+    position: relative;
+    font-size: 40px;
+    color: #ffd5cc;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
+    color: #ef715a;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart {
+    color: #ef715a;
+    z-index: 0;
+    animation: heart 0.5s;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart .insideheart {
+    z-index: 1000;
+    animation: heartHollow 1s;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox {
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg {
+    padding: 5px 20px 20px 20px;
+    width: 100%;
+    height: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent {
+    background-color: #FFF;
+    font-size: 15px;
+    display: block;
+    padding: 5px 5px 5px 5px;
+    height: 150px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: auto;
+    word-break: break-all;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul {
+    height: 100%;
+    border-bottom: 1px solid #ccc;
+    display: block;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul span {
+    width: 100%;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput {
+    border-radius: 5px;
+    padding: 0 5px;
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody {
+    display: inline-block;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody .name {
+    padding: 3px;
+    line-height: 30px;
+    font-size: 15px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .msgtype {
+    border: none;
+    outline: none;
+    width: 120px;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 2px 6px;
+    background-color: #F4A66F;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton:hover {
+    background-color: #ff9100;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .closeLightBox {
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 33px;
+    height: 33px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    transition: .3s;
+    border: 2px solid #ddd;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .closeLightBox .fa-plus {
+    position: relative;
+    left: 3px;
+    top: -2px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transform: rotate(45deg);
+  }
   .race .section_prize {
     background-size: cover;
     position: relative;
   }
   .race .cloud {
+    margin-left: -10px;
     margin-top: 93px;
     padding: 0px 0px 0 0px;
     position: relative;
   }
   .race .cloud img {
-    width: 100%;
+    width: 105%;
   }
   .race .cloud p {
     position: absolute;
@@ -8298,7 +9015,9 @@ html.fp-enabled,
     margin: auto;
     text-align: center;
     height: 0em;
-    font-size: 13px;
+    font-size: 12px;
+    color: #53a1da;
+    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
   }
   .race .cloud1 {
     padding: 0;
@@ -8306,6 +9025,9 @@ html.fp-enabled,
   }
   .race .cloud1 img {
     width: 90%;
+  }
+  .race .cloud1 p {
+    color: #53a1da;
   }
   .race .cloud1 span {
     color: #ef715a;
@@ -8356,12 +9078,15 @@ html.fp-enabled,
   .race .topthree .item .lollipop .candy {
     text-align: center;
     position: relative;
+    border-radius: 50%;
+    border: 5px solid #ffa800;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
   }
   .race .topthree .item .lollipop .candy img {
-    max-width: 150px;
-    width: 100%;
-    border-radius: 50%;
-    border: 10px solid #ffa800;
+    height: 100%;
   }
   .race .topthree .item .lollipop .candy .name {
     position: absolute;
@@ -8374,7 +9099,7 @@ html.fp-enabled,
   }
   .race .topthree .item .lollipop .stick {
     margin-top: -50px;
-    width: 15px;
+    width: 10px;
     height: 50px;
     display: inline-block;
     background-color: #ffa800;
@@ -8387,40 +9112,34 @@ html.fp-enabled,
     display: block;
   }
   .race #sorts {
-    padding: 25px 0px 15px 0px;
+    padding: 10px 0px 5px 0px;
+  }
+  .race #sorts .button {
+    letter-spacing: 0.05em;
+    width: 60px;
+    height: 30px;
+    padding: 2px;
+    margin: 2px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
   }
   .race #sorts span {
     font-size: 14px;
-  }
-  .race #sorts .button {
-    background-color: #7d7d7d;
-    border-radius: 6px;
-    padding: 2px 5px;
-    font-size: 14px;
-    color: #ffffff;
-    border: 1px solid #7d7d7d;
-  }
-  .race #sorts .button:hover {
-    background-color: #ffffff;
-    color: #7d7d7d;
-  }
-  .race #sorts .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #sorts .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #7d7d7d;
-    font-weight: bolder;
-    border: 2px solid #7d7d7d;
   }
   .race .searchWrap {
     display: none;
     position: relative;
     float: right;
     margin-right: 25px;
-    padding: 25px 15px 15px 15px;
+    padding: 0px 0px 0px 0px;
     display: inline-block;
   }
   .race .searchWrap #search input {
@@ -8447,36 +9166,28 @@ html.fp-enabled,
     color: #ffffff;
   }
   .race #filters {
-    padding: 10px 0 0px 0;
+    padding: 0px 0 0px 0;
     display: inline-block;
+  }
+  .race #filters .button {
+    letter-spacing: 0.05em;
+    width: 60px;
+    height: 30px;
+    padding: 2px;
+    margin: 2px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
   }
   .race #filters span {
     font-size: 14px;
-  }
-  .race #filters .button {
-    display: inline-block;
-    margin: 5px 0 0 0;
-    background-color: #ffa800;
-    border-radius: 6px;
-    padding: 2px 5px;
-    font-size: 14px;
-    color: #ffffff;
-    border: 1px solid #ffa800;
-  }
-  .race #filters .button:hover {
-    background-color: #ffffff;
-    color: #ffa800;
-  }
-  .race #filters .button:active {
-    position: relative;
-    top: 1px;
-  }
-  .race #filters .button:focus {
-    outline: 0;
-    background-color: #ffffff;
-    color: #ffa800;
-    font-weight: bolder;
-    border: 2px solid #ffa800;
   }
   .race .cardWrap {
     padding: 30px 30px;
@@ -8488,10 +9199,296 @@ html.fp-enabled,
   position: relative;
 }
 
+.race .cardlightbox {
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.race .cardlightbox .lightbox-box {
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  background-color: #f9f7e8;
+  transition: 1s;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 5px 5px 50px #7d7d7d;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content {
+  background-color: #f9f7e8;
+  border-radius: 15px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox {
+  height: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo {
+  padding: 20px 0px 20px 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo {
+  padding: 20px;
+  height: 65%;
+  width: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox {
+  color: #888;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox p {
+  color: #888;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox span {
+  color: black;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox {
+  text-align: center;
+  max-width: 320px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro {
+  display: block;
+  border-bottom: 1px dashed #ccc;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .intro p {
+  padding: 3px 0;
+  color: #666;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .number {
+  font-size: 16px;
+  color: #888;
+  font-weight: bold;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .name {
+  padding-left: 10px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .vote {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo {
+  padding: 0 20px 20px 20px;
+  height: 35%;
+  width: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft {
+  width: 60%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft p {
+  font-size: 16px;
+  color: #888;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span:nth-child(1) {
+  padding-top: 8px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailLeft span {
+  display: inline-block;
+  padding: 3px;
+  font-size: 23px;
+  color: black;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight {
+  width: 40%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like {
+  float: right;
+  height: 50px;
+  width: 62px;
+  text-align: center;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .votes {
+  display: inline-block;
+  font-size: 36px;
+  color: #ef715a;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like img {
+  width: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite:focus {
+  outline: 0;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart {
+  position: relative;
+  font-size: 50px;
+  color: #ffd5cc;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
+  color: #ef715a;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart {
+  color: #ef715a;
+  z-index: 0;
+  animation: heart 0.5s;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite.liked .outsideheart .insideheart {
+  z-index: 1000;
+  animation: heartHollow 1s;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox {
+  height: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg {
+  padding: 20px 20px 20px 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent {
+  background-color: #FFF;
+  display: block;
+  padding: 20px 20px 20px 20px;
+  height: 500px;
+  width: 100%;
+  overflow: auto;
+  word-break: break-all;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul {
+  height: 100%;
+  border-bottom: 1px solid #ccc;
+  display: block;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul li {
+  width: 100%;
+  word-break: break-all;
+  padding: 0 50px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul span {
+  width: 100%;
+  word-break: break-all;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput {
+  display: block;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody {
+  display: inline-block;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .somebody .name {
+  padding: 3px;
+  line-height: 60px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .msgtype {
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 3px 10px;
+  background-color: #F4A66F;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton:hover {
+  background-color: #ff9100;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .closeLightBox {
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 33px;
+  height: 33px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  transition: .3s;
+  border: 2px solid #ddd;
+}
+
+.race .cardlightbox .lightbox-box .lightbox-content .closeLightBox .fa-plus {
+  position: relative;
+  left: 3px;
+  top: -2px;
+  padding-top: 10px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
 .race .section_prize {
   width: 100%;
   height: 100vh;
-  background-image: url("../race_image/r_bgimg.png");
+  background-image: url("../images/race_image/r_bgimg.png");
   background-position: center center;
   background-color: #ccc;
   overflow: hidden;
@@ -8507,38 +9504,160 @@ html.fp-enabled,
 
 .race .toCompete {
   position: absolute;
-  padding: 5px;
   text-align: center;
   right: 10px;
   bottom: 20px;
-  z-index: 10;
+  z-index: 1;
 }
 
-.race .toCompete #competeBtn a {
-  padding: 5px 10px;
-  background-color: #b37600;
-  border-radius: 15px;
+.race .btnFunction {
+  text-align: center;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: #f34e1b;
+  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all .4s;
+  border: none;
+}
+
+.race .btnFunction:hover {
+  background: #da3c0b;
+  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
+}
+
+.race .btnLink {
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 2px solid #f4511e;
+  border-radius: 5px;
+  color: #f4511e;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+}
+
+.race .btnLink:hover {
+  background-color: #f4511e;
+  color: #fff;
+}
+
+.race #sorts {
+  padding: 25px 15px 15px 15px;
+}
+
+.race #sorts .button:hover {
+  background-color: #ffa800;
   color: #ffffff;
+}
+
+.race #sorts .button.is-checked {
+  background-color: #ffa800;
+  color: #7d7d7d;
+  color: #ffffff;
+}
+
+.race #sorts span {
+  color: #7d7d7d;
+}
+
+.race #filters {
+  display: inline-block;
+  padding: 15px;
+}
+
+.race #filters .button:hover {
+  background-color: #ffa800;
+  color: #ffffff;
+}
+
+.race #filters .button.is-checked {
+  background-color: #ffa800;
+  color: #7d7d7d;
+  color: #ffffff;
+}
+
+.race #filters span {
+  color: #7d7d7d;
 }
 
 .race .button {
   letter-spacing: 0.05em;
+  width: 90px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #000;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  outline: none;
+}
+
+.race .section_vote .cardWrap .infoIcon {
+  display: none;
+}
+
+.race .section_vote .cardWrap :hover .infoIcon {
+  padding: 0 8px 0 4px;
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  border-radius: 10px;
+  background-color: #ffaeaf;
+  color: white;
+  height: 25px;
+  vertical-align: -5px;
+}
+
+.race .section_vote .cardWrap :hover .infoIcon span {
+  line-height: 25px;
+  display: block;
+  vertical-align: -5px;
+}
+
+.race .section_vote .cardWrap :hover .infoIcon img {
+  height: 25px;
+  width: 25px;
+  vertical-align: -5px;
 }
 
 .race .section_vote .cardWrap .card {
+  width: 100%;
   background-color: #fdeeca;
   border-radius: 15px;
   position: relative;
   overflow: hidden;
 }
 
-.race .section_vote .cardWrap .card img {
-  transition: all 1s;
+.race .section_vote .cardWrap .card .openLightbox {
+  cursor: pointer;
+}
+
+.race .section_vote .cardWrap .card .cardImgbox {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.race .section_vote .cardWrap .card .cardImgbox .cardVoteImg {
   width: 100%;
 }
 
 .race .section_vote .cardWrap .card .text {
-  padding: 15px;
+  padding: 10px;
 }
 
 .race .section_vote .cardWrap .card .textTop {
@@ -8554,14 +9673,7 @@ html.fp-enabled,
 .race .section_vote .cardWrap .card .textTop .name {
   display: inline-block;
   font-size: 28px;
-  padding: 0 5px;
-}
-
-.race .section_vote .cardWrap .card .textTop .votes {
-  display: inline-block;
-  font-size: 36px;
-  color: #ef715a;
-  float: right;
+  padding: 0 0px;
 }
 
 .race .section_vote .cardWrap .card .textDown {
@@ -8576,10 +9688,17 @@ html.fp-enabled,
 
 .race .section_vote .cardWrap .card .textDown .like {
   height: 50px;
-  width: 50px;
+  width: 62px;
   position: absolute;
   bottom: 50px;
   right: 10px;
+  text-align: center;
+}
+
+.race .section_vote .cardWrap .card .textDown .like .votes {
+  display: inline-block;
+  font-size: 36px;
+  color: #ef715a;
 }
 
 .race .section_vote .cardWrap .card .textDown .like img {
@@ -8599,7 +9718,11 @@ html.fp-enabled,
 .race .section_vote .cardWrap .card .textDown .like .favorite .outsideheart {
   position: relative;
   font-size: 50px;
-  color: #ccc;
+  color: #ffd5cc;
+}
+
+.race .section_vote .cardWrap .card .textDown .like .favorite .outsideheart:hover {
+  color: #ef715a;
 }
 
 .race .section_vote .cardWrap .card .textDown .like .favorite .outsideheart .insideheart {
@@ -8626,7 +9749,7 @@ html.fp-enabled,
   position: relative;
   left: 0;
   bottom: 0;
-  background-color: #ffb67e;
+  background-color: #f7a05d;
   border-radius: 0 0 15px 15px;
 }
 
@@ -8643,7 +9766,7 @@ html.fp-enabled,
   border: none;
   border-radius: 4px;
   outline: none;
-  background-color: #ffb67e;
+  background-color: #f7a05d;
   display: inline-block;
   display: none;
 }
@@ -8656,177 +9779,19 @@ html.fp-enabled,
   width: 100%;
   height: 30px;
   overflow: hidden;
+  line-height: 30px;
   display: inline-block;
-  color: #ffffff;
-}
-
-.race .r-cardLightbox {
-  position: fixed;
-  opacity: 0;
-  top: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.race .r-cardLightbox .cardContent {
-  background-color: #ffb67e;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border-radius: 42px;
-}
-
-.race .r-cardLightbox .cardContent img {
-  width: 100%;
-}
-
-.race .r-cardLightbox .cardContent .text .textTop {
-  display: block;
-  padding: 5px 20px;
-}
-
-.race .r-cardLightbox .cardContent .text .textTop .number {
-  font-size: 24px;
-  color: #7d7d7d;
-  vertical-align: middle;
-}
-
-.race .r-cardLightbox .cardContent .text .textTop .name {
-  font-size: 28px;
-  vertical-align: middle;
-  padding-left: 10px;
-}
-
-.race .r-cardLightbox .cardContent .text .textTop .votes {
-  font-size: 32px;
-  color: #ef715a;
-  font-weight: bold;
-  vertical-align: middle;
-  float: right;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown {
-  position: relative;
-  padding: 0 20px;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  bottom: 0px;
-  right: 23px;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like img {
-  width: 100%;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite {
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite:focus {
-  outline: 0;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite .outsideheart {
-  position: relative;
-  font-size: 50px;
-  color: #ccc;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite .outsideheart .insideheart {
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0.5;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite.liked .outsideheart {
-  color: #ef715a;
-  z-index: 0;
-  animation: heart 0.5s;
-}
-
-.race .r-cardLightbox .cardContent .text .textDown .like .favorite.liked .outsideheart .insideheart {
-  z-index: 1000;
-  animation: heartHollow 1s;
-}
-
-.race .r-cardLightbox .cardContent .messageBorad {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 0px;
-  width: 80%;
-  padding: 20px;
+  color: #fff;
+  word-break: break-all;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
 }
 
-.race .r-cardLightbox .cardContent .messageBorad .post {
-  max-height: 100px;
-  overflow: hidden;
+.race .section_vote .cardWrap .card .messageBorad .post span {
+  font-size: 17px;
 }
 
-.race .r-cardLightbox .cardContent .messageBorad .add_table {
-  background-color: #b37600;
-  border-radius: 15px;
-  padding: 5px 15px;
-  font-size: 16px;
-  color: #ffffff;
-  border: 1px solid #b37600;
-}
-
-.race .r-cardLightbox .cardContent .messageBorad .add_table:hover {
-  border-color: #ffffff;
-}
-
-.race .r-cardLightbox .cardContent .messageBorad .add_table:active {
-  position: relative;
-  top: 1px;
-}
-
-.race .r-cardLightbox .cardContent .messageBorad .add_table:focus {
-  outline: 0;
-}
-
-.race .r-cardLightbox:target {
-  top: 0;
-  opacity: 1;
-}
-
-.race .r-cardLightbox .r_cross {
-  cursor: pointer;
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  border: 2px solid #fff;
-  border-radius: 50%;
+.race .section_vote .cardWrap .card .messageBorad .post #lastestMsg {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-}
-
-.race .r-cardLightbox .r_cross .fa-times {
-  font-size: 20px;
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 4px;
 }
 
 @keyframes heart {
@@ -8867,43 +9832,27 @@ html.fp-enabled,
   }
 }
 
-@media screen and (min-width: 993px) {
-  .compete {
-    height: 100vh;
-  }
-  .compete .formGroup {
-    width: 450px;
-  }
+.postCompete {
+  background-image: url(../images/race_image/compete_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60% 80%;
 }
 
-@media screen and (max-width: 992px) and (min-width: 768px) {
-  .compete .formGroup {
-    width: 400px;
-  }
+.postCompete .container {
+  color: #434343;
+  text-align: center;
 }
 
-@media screen and (min-width: 993px) {
-  .compete {
-    padding-top: 60px;
-  }
-  .compete .formGroup {
-    width: 300px;
-  }
-}
-
-#competeBody {
-  background-color: #f9f7e8;
-}
-
-.compete .banner {
-  height: 250px;
+.postCompete .container .banner {
+  height: 150px;
   width: 100%;
   position: relative;
   text-align: center;
   border-bottom: 1px dotted #b37600;
 }
 
-.compete .banner .txt {
+.postCompete .container .banner .txt {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -8913,49 +9862,49 @@ html.fp-enabled,
   font-weight: bolder;
 }
 
-.compete .banner .txt .txt1 {
+.postCompete .container .banner .txt .txt1 {
   font-size: 55px;
   display: inline-block;
 }
 
-.compete .banner .txt .txt2 {
+.postCompete .container .banner .txt .txt2 {
   display: inline-block;
   font-size: 25px;
   position: relative;
   width: 30px;
 }
 
-.compete .banner .txt .txt2 .txtUp {
+.postCompete .container .banner .txt .txt2 .txtUp {
   position: absolute;
   bottom: 15px;
 }
 
-.compete .banner .txt .txt2 .txtDown {
+.postCompete .container .banner .txt .txt2 .txtDown {
   position: absolute;
   bottom: -9px;
 }
 
-.compete .banner .txt .txt3 {
+.postCompete .container .banner .txt .txt3 {
   display: inline-block;
   position: relative;
   width: 150px;
 }
 
-.compete .banner .txt .txt3 .txtUp {
+.postCompete .container .banner .txt .txt3 .txtUp {
   position: absolute;
   font-size: 30px;
   bottom: 10px;
   left: -3px;
 }
 
-.compete .banner .txt .txt3 .txtDown {
+.postCompete .container .banner .txt .txt3 .txtDown {
   position: absolute;
   font-size: 20px;
   bottom: -8px;
   left: -2px;
 }
 
-.compete .banner .txt .txt3 .heartWrap {
+.postCompete .container .banner .txt .txt3 .heartWrap {
   width: 50px;
   height: 40px;
   position: absolute;
@@ -8964,150 +9913,183 @@ html.fp-enabled,
   transform: rotate(40deg);
 }
 
-.compete .banner .txt .txt3 .heartWrap img {
+.postCompete .container .banner .txt .txt3 .heartWrap img {
   width: 100%;
   animation: heartbeat .5s infinite alternate;
 }
 
-.compete .banner .txt .img1 {
+.postCompete .container .banner .txt .img1 {
   display: inline-block;
   width: 300px;
   vertical-align: bottom;
 }
 
-.compete .banner .txt .img1 img {
+.postCompete .container .banner .txt .img1 img {
   width: 100%;
 }
 
-.compete .container {
-  max-width: 1170px;
+.postCompete .container .main {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-.compete .competeForm {
+.postCompete .container .main .petList .petPhoto img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.postCompete .container .main .petList .pet {
+  padding: 5px;
+  display: inline-block;
+}
+
+.postCompete .container .main .petList .pet .petPhoto {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.postCompete .container .main .petList .pet .competeBtn {
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.postCompete .container .main .petList .pet .competeBtn .btnFunction {
+  background: #ffa800;
+  background: linear-gradient(to bottom, #ffa800 0, #f0a000 100%);
+}
+
+.postCompete .container .main .petList .pet .competeBtn .btnFunction:hover {
+  background: #e69900;
+  background: linear-gradient(to bottom, #f0a000 0, #e69900 100%);
+}
+
+.postCompete .container .main .petList .pet .competeBtn a {
+  color: #fff;
+  font-weight: 300;
+}
+
+.postCompete .container .main .addPetForm {
+  width: 350px;
+  border: 1px dotted #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.postCompete .container .main .formDiv {
+  display: inline-block;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.postCompete .container .main .formDiv h3 {
   text-align: center;
 }
 
-.compete .competeForm .txt {
-  padding: 10px 0 5px 0;
-  font-size: 24px;
+.postCompete .container .main .formDiv .alertInform {
+  display: none;
 }
 
-.compete .competeForm .formDiv {
+.postCompete .container .main .formDiv .labelClass {
   display: inline-block;
-  margin: auto;
-  text-align: left;
-  background-color: #fff;
-  padding: 15px;
+  width: 70px;
 }
 
-.compete .competeForm .formDiv .formGroup {
-  border-bottom: 1px dotted #774720;
-  margin: 5px 0;
-  min-height: 40px;
-}
-
-.compete .competeForm .formDiv .labelClass {
-  font-weight: bold;
-  display: inline-block;
-  width: 64px;
-}
-
-.compete .competeForm .formDiv input {
-  height: 34px;
-  padding: 3px 3px;
-  letter-spacing: 1px;
+.postCompete .container .main .formDiv input {
   border: 1px solid rgba(119, 71, 32, 0.8);
-  border-radius: 4px;
-  float: right;
+  border-radius: 5px;
+  letter-spacing: 1px;
 }
 
-.compete .competeForm .formDiv .sex {
-  margin-top: 5px;
-  margin-left: 5px;
-}
-
-.compete .competeForm .formDiv select {
-  float: right;
-}
-
-.compete .competeForm .formDiv option {
-  font-size: 16px;
-}
-
-.compete .competeForm .formDiv span {
-  float: right;
-}
-
-.compete .competeForm .formDiv .genderInput {
-  margin-left: 5px;
-}
-
-.compete .competeForm .formDiv .genderInput input {
+.postCompete .container .main .formDiv .gender input {
   margin-right: 10px;
   width: auto;
   height: auto;
   cursor: pointer;
 }
 
-.compete .competeForm .formDiv .showImage {
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  top: 5px;
-  vertical-align: middle;
-  margin: 5px auto;
-}
-
-.compete .competeForm .formDiv .showImage img {
-  margin-top: -13px;
-  width: 40px;
-  border-radius: 50%;
-}
-
-.compete .competeForm .formDiv .inputImg {
+.postCompete .container .main .formDiv #upload_petImg {
   border: none;
-  width: 78px;
+  display: none;
 }
 
-.compete .competeForm .formDiv .linktochange {
-  padding: 5px 0;
-  color: #b37600;
+.postCompete .container .main .formDiv .showImage {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+  top: 8px;
+}
+
+.postCompete .container .main .formDiv .showImage img {
+  width: 100%;
+}
+
+.postCompete .container .main .formDiv #uploadImgLabel {
+  display: inline-block;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: 1px solid rgba(119, 71, 32, 0.8);
+  border-radius: 5px;
+  color: #7d7d7d;
   cursor: pointer;
+  letter-spacing: 1px;
+  transition: all .4s;
+  background-color: #f7f7f7;
 }
 
-.compete .competeForm .formDiv .linktochange:hover {
+.postCompete .container .main .formDiv #uploadImgLabel:hover {
+  color: #434343;
+  background-color: white;
+}
+
+.postCompete .container .main .formDiv p {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.postCompete .container .main .formDiv p a {
+  color: #434343;
+}
+
+.postCompete .container .main .formDiv p a:hover {
   color: #774720;
 }
 
-.compete .competeForm .formDiv .linktochange .fa {
-  margin-right: 5px;
-}
-
-.compete .competeForm .formDiv .btnDiv {
+.postCompete .container .main .formDiv .btnDiv {
   text-align: center;
-  position: relative;
-  height: 40px;
 }
 
-.compete .competeForm .formDiv .inputBtn {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+.postCompete .container .main .formDiv .inputBtn {
+  font-weight: 300;
   margin: 10px auto;
-  width: 120px;
-  border: 1px solid transparent;
-  background-color: #b37600;
+  width: 100%;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: solid transparent;
+  border-radius: 5px;
+  background: #f34e1b;
+  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
   color: #fff;
   cursor: pointer;
   letter-spacing: 2px;
-  transition: box-shadow .4s ease;
-  font-size: 16px;
+  transition: all .4s;
 }
 
-.compete .competeForm .formDiv .inputBtn:hover {
-  box-shadow: 1px 1px 5px #555;
-  background-color: #774720;
+.postCompete .container .main .formDiv .inputBtn:hover {
+  background: #da3c0b;
+  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
+}
+
+.postCompete .container .main h3 {
+  color: #774720;
 }
 
 @keyframes heartbeat {
@@ -9122,11 +10104,369 @@ html.fp-enabled,
   }
 }
 
+@media screen and (max-width: 767px) {
+  .postCompete .container {
+    padding-top: 60px;
+  }
+  .postCompete .container .main {
+    padding: 15px;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .postCompete .container {
+    padding-top: 60px;
+  }
+  .postCompete .container .main {
+    width: 550px;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .postCompete .container {
+    padding: 120px 0px 40px;
+  }
+  .postCompete .container .main {
+    width: auto;
+    padding: 40px 60px 20px;
+    display: inline-block;
+  }
+  .postCompete .container .formDiv {
+    font-size: 16px;
+  }
+  .postCompete .container .formDiv .formGroup {
+    padding: 5px;
+    min-height: 44px;
+    margin-bottom: 10px;
+  }
+  .postCompete .container .formDiv .labelClass {
+    display: inline-block;
+    width: 90px;
+  }
+  .postCompete .container .formDiv .nice-select {
+    width: 140px;
+  }
+  .postCompete .container .formDiv input {
+    width: 140px;
+    height: 34px;
+    padding: 3px 6px;
+    font-size: 16px;
+  }
+  .postCompete .container .formDiv .genderFormGroup {
+    padding-top: 10px;
+  }
+}
+
+.postCompeteIntro {
+  background-size: cover;
+}
+
+.postCompeteIntro .container {
+  color: #434343;
+  text-align: center;
+}
+
+.postCompeteIntro .container .banner {
+  height: 250px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px dotted #b37600;
+}
+
+.postCompeteIntro .container .banner .txt {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  color: #a91e2d;
+  font-weight: bolder;
+}
+
+.postCompeteIntro .container .banner .txt .txt1 {
+  font-size: 55px;
+  display: inline-block;
+}
+
+.postCompeteIntro .container .banner .txt .txt2 {
+  display: inline-block;
+  font-size: 25px;
+  position: relative;
+  width: 30px;
+}
+
+.postCompeteIntro .container .banner .txt .txt2 .txtUp {
+  position: absolute;
+  bottom: 15px;
+}
+
+.postCompeteIntro .container .banner .txt .txt2 .txtDown {
+  position: absolute;
+  bottom: -9px;
+}
+
+.postCompeteIntro .container .banner .txt .txt3 {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+}
+
+.postCompeteIntro .container .banner .txt .txt3 .txtUp {
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  left: -3px;
+}
+
+.postCompeteIntro .container .banner .txt .txt3 .txtDown {
+  position: absolute;
+  font-size: 20px;
+  bottom: -8px;
+  left: -2px;
+}
+
+.postCompeteIntro .container .banner .txt .txt3 .heartWrap {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  left: 90px;
+  bottom: 18px;
+  transform: rotate(40deg);
+}
+
+.postCompeteIntro .container .banner .txt .txt3 .heartWrap img {
+  width: 100%;
+  animation: heartbeat .5s infinite alternate;
+}
+
+.postCompeteIntro .container .banner .txt .img1 {
+  display: inline-block;
+  width: 300px;
+  vertical-align: bottom;
+}
+
+.postCompeteIntro .container .banner .txt .img1 img {
+  width: 100%;
+}
+
+.postCompeteIntro .container .main {
+  margin: auto;
+  border-radius: 15px;
+  background-color: rgba(249, 247, 232, 0.78);
+}
+
+.postCompeteIntro .container .main .petList #petListDiv {
+  display: inline-block;
+}
+
+.postCompeteIntro .container .main .petList .petPhoto img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.postCompeteIntro .container .main .petList .pet {
+  display: inline-block;
+}
+
+.postCompeteIntro .container .main .petList .pet .petPhoto {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.postCompeteIntro .container .main .petList .pet .competeBtn {
+  width: 60px;
+  background-color: #ffa800;
+  height: 50px;
+}
+
+.postCompeteIntro .container .main .petList .pet .txt {
+  text-align: center;
+}
+
+.postCompeteIntro .container .main .petList .pet .fa {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #b37600;
+}
+
+.postCompeteIntro .container .main .petList .pet .fa:hover {
+  color: #774720;
+}
+
+.postCompeteIntro .container .formDiv {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+}
+
+.postCompeteIntro .container .formDiv input {
+  border: 1px solid rgba(119, 71, 32, 0.8);
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.postCompeteIntro .container .formDiv textarea {
+  resize: none;
+  font-size: 16px;
+}
+
+.postCompeteIntro .container .formDiv #upload_voteImg {
+  display: none;
+}
+
+.postCompeteIntro .container .formDiv .uploadDiv {
+  text-align: center;
+}
+
+.postCompeteIntro .container .formDiv .showImage {
+  background: #fefefe;
+  border: 1px dotted #aaa;
+  margin: 10px auto 0;
+  text-align: center;
+  height: 200px;
+  width: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.postCompeteIntro .container .formDiv .showImage img {
+  width: 100%;
+}
+
+.postCompeteIntro .container .formDiv #uploadImgLabel {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: 1px solid rgba(119, 71, 32, 0.8);
+  border-radius: 5px;
+  color: #7d7d7d;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all .4s;
+  background-color: #f7f7f7;
+}
+
+.postCompeteIntro .container .formDiv #uploadImgLabel:hover {
+  color: #434343;
+  background-color: white;
+}
+
+.postCompeteIntro .container .formDiv .btnDiv {
+  text-align: center;
+}
+
+.postCompeteIntro .container .formDiv .inputBtn {
+  font-weight: 300;
+  margin: 10px auto;
+  width: 100%;
+  padding: 6px 12px;
+  height: auto;
+  font-size: 16px;
+  border: solid transparent;
+  border-radius: 5px;
+  background: #f34e1b;
+  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all .4s;
+}
+
+.postCompeteIntro .container .formDiv .inputBtn:hover {
+  background: #da3c0b;
+  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
+}
+
+.postCompeteIntro .container h3 {
+  color: #774720;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .postCompeteIntro .container {
+    padding-top: 60px;
+  }
+  .postCompeteIntro .container .main {
+    padding: 15px;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .postCompeteIntro .container {
+    padding-top: 60px;
+  }
+  .postCompeteIntro .container .main {
+    width: 550px;
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .postCompeteIntro .container {
+    padding: 120px 0px 40px;
+  }
+  .postCompeteIntro .container .main {
+    width: auto;
+    padding: 20px 60px;
+    display: inline-block;
+  }
+  .postCompeteIntro .container .formDiv {
+    font-size: 16px;
+  }
+  .postCompeteIntro .container .formDiv .formGroup {
+    padding: 5px;
+    min-height: 44px;
+    margin-bottom: 10px;
+  }
+  .postCompeteIntro .container .formDiv .nice-select {
+    width: 140px;
+  }
+  .postCompeteIntro .container .formDiv input {
+    width: 140px;
+    height: 34px;
+    padding: 3px 6px;
+    font-size: 16px;
+  }
+  .postCompeteIntro .container .formDiv .genderFormGroup {
+    padding-top: 10px;
+  }
+  .postCompeteIntro .container h3 {
+    margin: 20px auto;
+  }
+}
+
 @media screen and (min-width: 993px) {
   #bookbody footer {
     bottom: 0;
     position: absolute;
     width: 100%;
+  }
+  .book .step {
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
   .book .step-info-p {
     text-align: right;
@@ -9430,6 +10770,12 @@ html.fp-enabled,
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
+  .book .step {
+    background-repeat: no-repeat;
+  }
+  .book .step-info {
+    text-align: right;
+  }
   .book .step-info {
     text-align: center;
   }
@@ -9475,7 +10821,7 @@ html.fp-enabled,
     text-align: center;
   }
   .book .next a {
-    margin-top: 30px;
+    margin-top: 5px;
   }
   .book .step {
     padding-top: 70px;
@@ -9691,8 +11037,14 @@ html.fp-enabled,
 }
 
 @media screen and (max-width: 767px) {
+  .book .step {
+    background-repeat: no-repeat;
+  }
   .book .step-info-p {
     text-align: center;
+  }
+  .book .step-info {
+    text-align: right;
   }
   .book .stepDiy {
     width: 400px;
@@ -9736,7 +11088,7 @@ html.fp-enabled,
     text-align: center;
   }
   .book .next a {
-    margin-top: 30px;
+    margin-top: 5px;
   }
   .book .step {
     padding-top: 70px;
@@ -9952,7 +11304,7 @@ html.fp-enabled,
 }
 
 .book {
-  color: #111;
+  color: rgba(0, 0, 0, 0.7);
   overflow-x: hidden;
   width: 100%;
   background: transparent url("../images/bg02.png") left top repeat;
@@ -10019,7 +11371,6 @@ html.fp-enabled,
 
 .book .mypet {
   display: none;
-  padding-left: 20px;
   padding-bottom: 10px;
 }
 
@@ -10127,10 +11478,10 @@ html.fp-enabled,
 }
 
 .book .step-info {
-  padding: 10px 20px;
+  padding: 5px 0px;
 }
 
-.book .step-info h2 {
+.book .step-info p {
   display: inline-block;
   color: #7d7d7d;
   letter-spacing: 0.3em;
@@ -10160,7 +11511,7 @@ html.fp-enabled,
 
 .book h4 span {
   font-size: 28px;
-  color: #EB3F4B;
+  color: #ef715a;
   font-weight: bold;
 }
 
@@ -10422,7 +11773,6 @@ html.fp-enabled,
   text-align: center;
   line-height: 50px;
   cursor: pointer;
-  box-shadow: 3px 3px 10px #ccc;
 }
 
 .book #mobile-step span {
@@ -10485,7 +11835,9 @@ html.fp-enabled,
 .book .step {
   position: relative;
   box-shadow: 0px 0px 10px #333;
-  background: transparent url("../images/book-step-bg.jpg") left top no-repeat;
+  background-image: url("../images/book-step-bg.jpg");
+  width: 100%;
+  min-height: 100vh;
 }
 
 .book .step .steps {
@@ -10512,6 +11864,7 @@ html.fp-enabled,
   position: relative;
   box-shadow: 3px 3px 25px #bbb;
   background: rgba(230, 230, 200, 0.9);
+  padding: 10px 20px;
 }
 
 .book .step_dateRoom {
@@ -10685,7 +12038,7 @@ html.fp-enabled,
 }
 
 .book .b-select-room .styles {
-  border: 2px dashed #ff9100;
+  border: 2px dashed #ffa800;
   border-radius: 5px;
   cursor: pointer;
   transition: .2s;
@@ -10710,22 +12063,22 @@ html.fp-enabled,
 .book .roomPic .pic-main img {
   width: 100%;
   border-radius: 5px;
-  border: 3px solid #ff9100;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #ff9100;
 }
 
 .book .roomPic .big {
   padding: 5px 10px;
 }
 
-.book .roomPic .big img {
-  border-color: #EB3F4B;
+.book .roomPic .pic-small img {
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
 }
 
 .book .roomPic .pic-small .small:first-child img {
-  border-color: #EB3F4B;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffa800;
 }
 
 .book .roomPic .pic-small .small {
@@ -10768,12 +12121,11 @@ html.fp-enabled,
 }
 
 .book .step_dog .again-p {
-  padding-left: 20px;
   padding-bottom: 10px;
 }
 
 .book .step_dog h4 {
-  padding: 10px 20px;
+  padding: 10px 0px;
 }
 
 .book .step_dog .dogbgc {
@@ -10791,11 +12143,6 @@ html.fp-enabled,
 
 .book .step_dog .select-dog .dogKind-img {
   border-radius: 5px;
-  border: 3px solid #ffa800;
-}
-
-.book .step_dog .pd {
-  padding: 0 20px;
 }
 
 .book .step_dog .dogdog .backColor {
@@ -10840,7 +12187,7 @@ html.fp-enabled,
   display: block;
   padding: 10px 5px;
   border-radius: 5px;
-  border: 2px dashed #ff9100;
+  border: 2px dashed #ffa800;
   text-align: center;
   cursor: pointer;
   transition: .3s;
@@ -10907,7 +12254,6 @@ html.fp-enabled,
 .book .step_dog .dogs #dogsUl .dogk .img-box img {
   border-radius: 5px;
   width: 100%;
-  border: 3px solid #ffa800;
 }
 
 .book .dog-info {
@@ -11102,7 +12448,6 @@ html.fp-enabled,
   position: relative;
   z-index: 6;
   padding: 10px 0;
-  padding-left: 20px;
 }
 
 .book .step_service .husky-box {
@@ -12328,19 +13673,15 @@ html.fp-enabled,
 
 .book .step_orderCheck {
   background-image: cover;
-  padding-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .book .step_orderCheck h4 {
-  padding: 10px 0;
+  padding-bottom: 10px;
 }
 
 .book .step_orderCheck #service-added span {
   padding: 0 5px;
-}
-
-.book .step_orderCheck .step-info {
-  padding: 10px 0;
 }
 
 .book .step_orderCheck .order-content {
@@ -12368,7 +13709,7 @@ html.fp-enabled,
 }
 
 .book .step_orderCheck .order-check {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .book .step_orderCheck .order-check p {

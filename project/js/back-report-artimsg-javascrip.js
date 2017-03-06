@@ -19,6 +19,7 @@ $(document).ready(function(){
 	});
 	$('#artimsg  #searchAll').click(function(){
         sessionStorage.where = 'all';
+        sessionStorage.page = '#page1';
 		artimsgShow();
 	});
 
@@ -103,7 +104,8 @@ $(document).ready(function(){
                     // alert(msg);
                     // console.log(msg);
                     sessionStorage.where= 'all';
-                    artimsgShow();
+                    var p = sessionStorage.page.replace("#page",'');
+                    artimsgShow(p);
                     // $('#table').html(msg);
                  
                 },

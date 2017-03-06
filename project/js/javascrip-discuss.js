@@ -75,7 +75,7 @@ $(function(){
 		alert('請輸入文章內容');
 	}else{getAll+=1;}
 	//判斷是否為圖檔
-	var fileExtArr = new Array("png","jpg","gif","bmp");
+	var fileExtArr = new Array("png","jpg","gif","bmp","jpeg");
 	for (var i = 0; i < fileExtArr.length; i++) {
 		if ( fileExtArr[i] == ImgExt) {
 			getAll+=1;

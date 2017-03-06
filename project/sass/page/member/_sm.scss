@@ -1,6 +1,7 @@
 @include respones(sm) {
     //平板 container 100%
     .member {
+        background-position: 80% 100%;
         padding-top: 60px;
         .container {
             padding-top: 20px;
@@ -34,6 +35,16 @@
             }
             .mainContent {
                 margin-left: 25px;
+                //沒記錄顯示
+                .reminder {
+                    height: 300px;
+                    .txt {
+                        padding-top: 18%;
+                    }
+                    &#raceReminder {
+                        background-position: 50% 20%;
+                    }
+                }
                 // 我的訂單
                 .booking {
                     padding: 20px;
@@ -85,30 +96,19 @@
                     height: 180px;
                     padding: 20px;
                     .postImg {
-                        width: 200px;
+                        width: 160px;
                         height: 140px;
                     }
                     .txt {
-                        max-width: 440px;
+                        max-width: 425px;
                         margin-left: 20px;
+                        .postTitle {
+                            max-height: 40px;
+                        }
                     }
                 }
-            }
-        }
-    }
-    .memberLightboxTarget {
-        .content {
-            width: 500px;
-            padding: 20px;
-            input {
-                width: 350px;
-                font-size: $fz-content;
-            }
-            .formGroup {
-                padding: 10px 0;
-            }
-            .labelClass {
-                margin-right: 10px;
+                //萌主
+                .cardWrap {}
             }
         }
     }
