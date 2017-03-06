@@ -1,4 +1,17 @@
 function doFirst(){
+	$orange='#ffa800';
+	$deepOrange='#b37600';
+	$lightPink='#ef715a';
+	$supOrange='#ff9100';
+	$deepGray='#434343';
+	$lightGray='#7d7d7d';
+	$brown='#774720';
+	$white='#ffffff';
+	$bgc='#f9f7e8';
+	$bRed='#EB3F4B';
+	$grayCCC='#ccc';
+	$black='#222';
+	
 	SetDate=new Date();
 	LeapYear=false;
 	muchdays =[31,28,31,30,31,30,31,31,30,31,30,31];
@@ -18,7 +31,7 @@ function doFirst(){
 	dayDivs = document.getElementsByClassName('dayy');
 	for(var i=0;i<dayDivs.length;i++){
 		if( now.getDate() == i+1 && now.getMonth()==current_month){
-			dayDivs[i].style.background= '#999';
+			dayDivs[i].style.background= $grayCCC;
 			break;
 		}
 		else{
@@ -114,7 +127,7 @@ function monthChange(){
 	dayDivs = document.getElementsByClassName('dayy');
 	for(var i=0;i<dayDivs.length;i++){
 		if( now.getDate() == i+1 && now.getMonth()==current_month && now.getFullYear()==current_year ){
-			dayDivs[i].style.background = '#999';
+			dayDivs[i].style.background = $grayCCC;
 			break;
 		}
 
@@ -168,21 +181,21 @@ function selectday(){
 		for(var i=0;i<dayDivs.length;i++)
 		{
 			if( now.getDate() == i+1 && now.getMonth()==current_month && now.getFullYear()==current_year ){
-				dayDivs[i].style.background = '#999';
+				dayDivs[i].style.background = $grayCCC;
 			}
 			else if(current_month<=now.getMonth() && current_year<=now.getFullYear() && now.getDate() > i+1 ){
 				dayDivs[i].style.opacity= '0.4';
 			}
 			else{
 				dayDivs[i].style.background ='';
-				dayDivs[i].style.color ='#000';
+				dayDivs[i].style.color =$black;
 			}
 		}
 		clcikCount++;
 		startDate.setDate(clickDate);
 		startDate.setMonth(current_month);
 		startDate.setFullYear(current_year);
-		this.style.background='#ffa800';
+		this.style.background=$orange;
 
 		var roomIn = document.getElementsByClassName('roomIn');
 		for(var i=0;i<roomIn.length;i++){
@@ -210,7 +223,7 @@ function selectday(){
 			}
 
 		}
-		this.style.background='#ffa800';
+		this.style.background=$orange;
 		var roomOut = document.getElementsByClassName('roomOut');
 		for(var i=0;i<roomOut.length;i++){
 			roomOut[i].innerText=endDate.toLocaleDateString("ja-JP");
@@ -232,7 +245,7 @@ function clearColor(){
 	dayDivs = document.getElementsByClassName('dayy');
 	for(var i=0;i<dayDivs.length;i++){
 		if( now.getDate() == i+1 && now.getMonth()==current_month){
-			dayDivs[i].style.background= '#999';
+			dayDivs[i].style.background= $grayCCC;
 		}
 		else{
 			dayDivs[i].style.background= 'none';
@@ -245,32 +258,29 @@ function coloring(){
 		var start=startDate.getDate();
 		for(var i=1; i<=muchNight-2; i++ ){	
 			var a=i+start;
-			document.getElementById('day'+a).style.background='#774720';
-			document.getElementById('day'+a).style.color='#ddd';
+			document.getElementById('day'+a).style.background=$supOrange;
 		}
 	}
 	else if(current_month==startDate.getMonth() && current_month != endDate.getMonth() ){
 		var start=startDate.getDate();
 		for( i=1; i<=dds.length-start ; i++ ){
 			var aa=i+start;
-			document.getElementById('day'+aa).style.background='#774720';
+			document.getElementById('day'+aa).style.background=$supOrange;
 		}
 	}
 	else if(current_month != startDate.getMonth() && current_month == endDate.getMonth() ){
 		var end=endDate.getDate();
 		for( i=1; i<end; i++ ){
-			document.getElementById('day'+i).style.background='#774720';
+			document.getElementById('day'+i).style.background=$supOrange;
 		}
 	}
 }
 function coloringStarEnd(){
 	if(current_month==startDate.getMonth()){
-		document.getElementById('day'+startDate.getDate()).style.background='#ffa800';
-		document.getElementById('day'+startDate.getDate()).style.color='#ddd';
+		document.getElementById('day'+startDate.getDate()).style.background=$orange;
 	}
 	if(current_month==endDate.getMonth()){
-		document.getElementById('day'+endDate.getDate()).style.background='#ffa800';
-		document.getElementById('day'+startDate.getDate()).style.color='#ddd';
+		document.getElementById('day'+endDate.getDate()).style.background=$orange;
 	}
 }
 window.addEventListener('load',doFirst,false);
