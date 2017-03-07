@@ -47,6 +47,8 @@ $(document).ready(function(){
                     }
                     else{
                         alert(msg);
+                           $('#backid').val('');
+                           $('#backpsw').val('');
                     }
                     
                    
