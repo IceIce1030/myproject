@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost
--- 產生時間： 2017-03-07 00:05:39
+-- 產生時間： 2017-03-07 22:22:59
 -- 伺服器版本: 5.7.13-log
 -- PHP 版本： 5.6.30
 
@@ -191,6 +191,25 @@ INSERT INTO `dog` (`dog_no`, `dog_name`, `dog_img`, `dog_size`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `manger`
+--
+
+CREATE TABLE `manger` (
+  `man_no` int(20) NOT NULL,
+  `man_id` varchar(30) NOT NULL,
+  `man_psw` varchar(30) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `manger`
+--
+
+INSERT INTO `manger` (`man_no`, `man_id`, `man_psw`) VALUES
+(1, 'ad104g3', 'furkid');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `member`
 --
 
@@ -249,8 +268,7 @@ INSERT INTO `orderlist` (`orderlist_no`, `mem_no`, `room_no`, `pet_no`, `sitter_
 (19, 5, 2, 49, 'Judy', '2017-03-02 01:32:01', '2017-03-03', '2017-03-31', '2017-03-05 04:50:32', NULL, 32200),
 (20, 5, 2, 52, 'Amy', '2017-03-02 01:32:37', '2017-03-03', '2017-03-28', NULL, NULL, 13000),
 (21, 5, 3, 54, 'Sara', '2017-03-04 02:09:08', '2017-03-10', '2017-03-11', NULL, NULL, 3000),
-(28, 5, 6, 12, 'Sara', '2017-03-05 07:52:34', '2017-04-07', '2017-04-08', NULL, NULL, 1000),
-(29, 1, 2, 3, 'Mary', '2017-03-06 06:03:22', '2017-03-30', '2017-03-31', NULL, NULL, 1000);
+(28, 5, 6, 12, 'Sara', '2017-03-05 07:52:34', '2017-04-07', '2017-04-08', NULL, NULL, 1000);
 
 -- --------------------------------------------------------
 
@@ -391,7 +409,7 @@ CREATE TABLE `roomimg` (
 --
 
 INSERT INTO `roomimg` (`roomimg_no`, `room_no`, `roomimg_name`) VALUES
-(1, 1, 'country1.jpg'),
+(1, 1, '888.jpeg'),
 (2, 1, 'country2.jpg'),
 (3, 1, 'country3.jpg'),
 (4, 2, 'dream1.jpg'),
@@ -459,7 +477,7 @@ CREATE TABLE `vote` (
 --
 
 INSERT INTO `vote` (`vote_no`, `pet_no`, `vote_img`, `vote_date`, `vote_intro`, `vote_count`) VALUES
-(1, 1, 'vote_001.png', '2017-02-23', '快來幫可愛的麥麥投一票喔!', 87),
+(1, 1, 'vote_001.png', '2017-02-23', '快來幫可愛的麥麥投一票喔!', 88),
 (2, 2, 'vote_002.png', '2017-02-23', '咩!~', 486),
 (3, 3, 'vote_003.png', '2017-02-23', '來對決吧!', 386),
 (4, 4, 'vote_004.png', '2017-02-23', '你在看我嗎? 可以再靠近一點喔!', 233),
@@ -522,7 +540,8 @@ INSERT INTO `votemsg` (`votemsg_no`, `vote_no`, `votemsg_date`, `votemsg_content
 (1, 39, '2017-03-06 22:19:27', 'cc', 5),
 (2, 39, '2017-03-06 22:19:36', 'ccc', 5),
 (3, 39, '2017-03-06 22:19:43', 'hey', 5),
-(4, 42, '2017-03-06 22:27:21', '555', 5);
+(4, 42, '2017-03-06 22:27:21', '555', 5),
+(5, 1, '2017-03-07 12:43:40', '好可愛', 1);
 
 --
 -- 已匯出資料表的索引
@@ -548,6 +567,12 @@ ALTER TABLE `artimsg`
 --
 ALTER TABLE `dog`
   ADD PRIMARY KEY (`dog_no`);
+
+--
+-- 資料表索引 `manger`
+--
+ALTER TABLE `manger`
+  ADD PRIMARY KEY (`man_no`);
 
 --
 -- 資料表索引 `member`
@@ -634,6 +659,11 @@ ALTER TABLE `artimsg`
 ALTER TABLE `dog`
   MODIFY `dog_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
+-- 使用資料表 AUTO_INCREMENT `manger`
+--
+ALTER TABLE `manger`
+  MODIFY `man_no` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
@@ -642,7 +672,7 @@ ALTER TABLE `member`
 -- 使用資料表 AUTO_INCREMENT `orderlist`
 --
 ALTER TABLE `orderlist`
-  MODIFY `orderlist_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `orderlist_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- 使用資料表 AUTO_INCREMENT `orderservice`
 --
@@ -657,7 +687,7 @@ ALTER TABLE `pet`
 -- 使用資料表 AUTO_INCREMENT `room`
 --
 ALTER TABLE `room`
-  MODIFY `room_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `room_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- 使用資料表 AUTO_INCREMENT `roomimg`
 --
@@ -677,7 +707,7 @@ ALTER TABLE `vote`
 -- 使用資料表 AUTO_INCREMENT `votemsg`
 --
 ALTER TABLE `votemsg`
-  MODIFY `votemsg_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `votemsg_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- 已匯出資料表的限制(Constraint)
 --

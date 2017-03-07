@@ -17,20 +17,46 @@ $(document).ready(function(){
         var backId = $('#backid').val();
         var backPsw = $('#backpsw').val();
 
-        if(backId=='ad104g3' && backPsw=='123456'){
-            sessionStorage["backlogin"] = 'ok';
-            // alert('登入成功');
-            location.href="back-orderlist.html";
-        }
-        else{
-            $('#backid').val('');
-            $('#backpsw').val('');
 
-            alert('輸入錯誤，請重新輸入');
-        }
+        mangerCheck(backId,backPsw);
     });
     $('.cancel').click(function(){
-        location.href="../index.html";
+        location.href="index.html";
     });
 
 });
+
+//---------------------------
+    
+    
+    function mangerCheck(man_id,man_psw){
+           
+            var URLs="back-login.php";
+
+            $.ajax({
+                url: URLs,
+                data: {man_id,man_psw},
+                type:"GET",
+                dataType:'html',
+
+                success: function(msg){
+                    if(msg=='登入成功'){
+                        alert(msg);
+                        sessionStorage["backlogin"] = 'ok';
+                        location.href="back-orderlist.html";
+                    }
+                    else{
+                        alert(msg);
+                    }
+                    
+                   
+                },
+
+                 error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+            });
+            
+        }
+    //------------------------
