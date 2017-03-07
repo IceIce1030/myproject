@@ -1,6 +1,6 @@
 //開頭
 .postCompete {
-    background-image: url(../images/race_image/compete_bg.png);
+    background-image: url(../images/race_image/compete_registerBg3.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 60% 80%;
@@ -9,17 +9,21 @@
         text-align: center;
         .banner {
             //banner開頭
-            height: 150px;
-            width: 100%;
+            height: 200px;
+            width: 90%;
             position: relative;
+            right: 0;
+            left: 0;
+            margin: auto;
             text-align: center;
             border-bottom: 1px dotted $deep-orange;
-            .txt {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                margin: auto;
+            .txt {       
+                // position: relative;
+                margin-top: 120px;
+                // left: 120px;
+                // right: 0;
+                // left: 0;
+                // margin: auto;
                 color: #a91e2d;
                 font-weight: bolder;
                 .txt1 {
@@ -68,15 +72,20 @@
                             animation: heartbeat .5s infinite alternate;
                         }
                     }
-                }
-                .img1 {
-                    display: inline-block;
-                    width: 300px;
+                }             
+            }
+            .img1 {
+                // position: relative;
+                // right: 120px;
+                 display: inline-block;
+                    // width: 300px;              
+                    height: 200px;
                     vertical-align: bottom;
                     img {
-                        width: 100%;
+
+                        // width: 100%;
+                        // width: 300px;
                     }
-                }
             }
         } //banner結尾
         .main {
@@ -119,7 +128,8 @@
             //     margin-bottom:10px;
             // }
             .addPetForm {
-                width: 350px;
+                width: 100%;
+                max-width: 320px;
                 border: 1px dotted #ccc;
                 border-radius: 5px;
                 padding: 10px;
@@ -243,11 +253,53 @@
 @include respones(xs) {
     .postCompete {
         .container {
-            padding-top: 60px;
+            // padding-top: 60px;
+            padding:60px 0 20px;
+            .banner {
+                //banner開頭
+                height: 280px;
+                width: 100%;
+                .txt {       
+                // position: relative;
+                margin-top: 50px;
+                }
+                .img1{
+                    img{
+                        width: 300px;
+                    }
+                }
+            }
             .main {
+                width: 100%;
+                // width: 350px;
                 padding: 15px;
                 width: 100%;
-                height: 100vh;
+                // height: 100vh;
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 2px;
+                    min-height: 44px;
+                    margin-bottom: 15px;
+                }
+                .labelClass {
+                    display: inline-block;
+                    width: 90px;
+                }
+                .nice-select {
+                    width: 140px;
+                }
+                input {
+                    width: 140px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                p {}
             }
         }
     }
@@ -258,9 +310,42 @@
     .postCompete {
         .container {
             padding-top: 60px;
+            .banner{
+                .img1{
+                    img{
+                        width: 380px;
+                    }
+                }
+            }
             .main {
                 width: 550px;
                 padding: 20px;
+
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 5px;
+                    min-height: 44px;
+                    margin-bottom: 10px;
+                }
+                .labelClass {
+                    display: inline-block;
+                    width: 90px;
+                }
+                .nice-select {
+                    width: 140px;
+                }
+                input {
+                    width: 140px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                p {}
             }
         }
     }
@@ -271,10 +356,19 @@
     .postCompete {
         .container {
             padding: 120px 0px 40px;
+            .banner{
+                width: 70%;
+                .img1{
+                    img{
+                        width: 380px;
+                    }
+                }
+            }
             .main {
                 width: auto;
                 padding: 40px 60px 20px;
                 display: inline-block;
+                border-radius: 15px;
             }
             .formDiv {
                 font-size: $fz-content;

@@ -4,6 +4,15 @@ try{
   require_once("connectFurkid.php");
     $vote_no = $_REQUEST["vote_no"];
 
+    $sql1 = "delete from votemsg
+                where vote_no = :vote_no;";
+
+    $vote1 = $pdo->prepare( $sql1 );
+     $vote1->bindValue(":vote_no", $vote_no);
+     $vote1->execute();
+
+
+
     $sql = "delete from vote
                 where vote_no = :vote_no;";
     

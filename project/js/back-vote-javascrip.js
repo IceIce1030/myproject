@@ -51,7 +51,7 @@ $(document).ready(function(){
                     $('.dele').click(function(){
                         if(confirm("確定要刪除嗎?")){
                             var vote_no = $(this).siblings('input').val();
-                            delevote(vote_no );
+                            delevote(vote_no);
                         }
                         
                         

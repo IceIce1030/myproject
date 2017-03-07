@@ -2,21 +2,20 @@
 <html lang="en">
 
 <head>
-    <link href='images/furkid.ico' rel='shortcut icon'/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Furkid | 建立寵物資料</title>
+    <title>建立寵物資料</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/nav.js?<%=Timer()%>"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/jquery.nice-select.js"></script>
-    <script type="text/javascript" src="js/compete_register.js?<%=Timer()%>"></script>
+    <script type="text/javascript" src="js/compete_register.js"></script>
 </head>
 
 <body>
-   <!-- 選單開始 -->
+    <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
             <div class="col-xs-2 col-sm-2 col-md-9 col-md-push-2 col-lg-8 col-lg-push-3 menu">
@@ -27,7 +26,7 @@
                 <!-- 選單內容 -->
                 <ul class="content" id="menuContent">
                     <li>
-                        <a href="book.html" class="active"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
+                        <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
                         <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
@@ -60,7 +59,7 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
@@ -70,7 +69,7 @@
                             <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
                             <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
+                        <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -81,7 +80,7 @@
     <!-- login燈箱開始 -->
     <div class="navbarLightbox loginlightbox">
         <div class="content">
-            <p class="loginLeft">登入</p>
+            <p class="loginLeft">參賽前請先登入會員</p>
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
             <p>
@@ -112,25 +111,30 @@
     <div class="postCompete">
         <div class="container">
             <div class="banner">
-                <div class="txt">
-                    <div class="txt1">
-                        寵物
-                    </div>
-                    <div class="txt2">
-                        <div class="txtUp">萌</div>
-                        <div class="txtDown">主</div>
-                    </div>
-                    <div class="txt3">
-                        <div class="txtUp">選拔賽</div>
-                        <div class="txtDown">每月15日結算</div>
-                        <div class="heartWrap">
-                            <img class="img" src="images/race_image/r_heart.png">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="txt">
+                        <div class="txt1">
+                            寵物
                         </div>
+                        <div class="txt2">
+                            <div class="txtUp">萌</div>
+                            <div class="txtDown">主</div>
+                        </div>
+                        <div class="txt3">
+                            <div class="txtUp">選拔賽</div>
+                            <div class="txtDown">每月15日結算</div>
+                            <div class="heartWrap">
+                                <img class="img" src="images/race_image/r_heart.png">
+                            </div>
+                        </div>                    
                     </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="img1">
                         <img src="images/race_image/topThreeSmall.png">
                     </div>
-                </div>
+                </div> 
+                <div class="clear"></div>                         
             </div>
             <div class="main">
                 <div class="col-xs-12 col-sm-12 col-md-12 petList" id="petList">
@@ -195,7 +199,7 @@
                         </div>
                         <div class="formGroup">
                             <span class="labelClass">照片</span>
-                            <span class="showImage"><img src="images/pet/petDefault.png" id="petImg"></span>
+                            <span class="showImage"><img src="images/race_image/petDefault.png" id="petImg"></span>
                             <input type="file" name="pet_img" id="upload_petImg">
                             <label for="upload_petImg" id="uploadImgLabel">上傳照片</label>
                         </div>
@@ -212,7 +216,7 @@
             </div>
         </div>
     </div>
-   <!-- footer開始 -->
+    <!-- footer開始 -->
     <footer>
         <div class="container">
             <section>

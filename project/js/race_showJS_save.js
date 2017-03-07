@@ -1,6 +1,9 @@
 $(function(){	
-	// 卡片分類開始
+  $('.cardmsgbutton').click(function(){
+        postMSg()
+  });
 
+	// 卡片分類開始
 	function getVoteBySort(sortStyle,filterStyle){
 	
 	  var xhr = new XMLHttpRequest();
@@ -27,12 +30,9 @@ $(function(){
               localStorage.setItem('race_totalCardNum', totalCardNum);
             };
           // 以localstorage判斷客戶端是否投過票_開始
-         
-
-
+          $( document ).ready(function() {
             if (typeof(Storage) !== "undefined") { 
-                var  totalCardNum = localStorage.getItem('race_totalCardNum');
-                     
+                var  totalCardNum = localStorage.getItem('race_totalCardNum');         
                 for (i = 0; i <= totalCardNum; i++) { 
                     var likeCardNum = 'liked'+i;
                     var likeStatus = localStorage.getItem(likeCardNum);
@@ -46,7 +46,7 @@ $(function(){
             }else{
 
             };   
-         
+          });
           
           // 以localstorage判斷客戶端是否投過票_結束	 
           heartClick();
@@ -432,7 +432,7 @@ $(function(){
 
 
 // 發表留言
-          postMSg();
+          // postMSg();
 
  });
 
@@ -553,11 +553,11 @@ $(function(){
 
       }// 卡片燈箱事件結束
 
+      
+    //發表留言
 
-
-//發表留言
 function postMSg(){
-  $('.cardmsgbutton').click(function(){
+ 
     var txt = $('#msgtype').val();    //找到textarea裡的值
     // alert(txt_str);
     if (txt=='') {
@@ -596,13 +596,24 @@ function postMSg(){
            }
        }
       }
-    var mem_no = localStorage["mem_no"];
-    var memUrl = '&mem_no='+mem_no;
-    var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl;  
+      if(localStorage.mem_no){
+        var mem_no = localStorage["mem_no"];
+        var memUrl = '&mem_no='+mem_no;
+        var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl;
+        }else{
+        var mem_no = 'guest';
+        var memUrl = '&mem_no='+ mem_no;
+        var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl; 
+        alert(url);
+      }
+
+        // var mem_no = localStorage["mem_no"];
+        // var memUrl = '&mem_no='+mem_no;
+        // var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl;
+    
     // alert(url);
 
-      xhr.open("Get", url, true);
-      
+      xhr.open("Get", url, true);    
       xhr.send( null );
       //
       // 清空輸入盒
@@ -631,6 +642,7 @@ function postMSg(){
            // 動態新增後js檔
           
       }
+
       // 取燈箱留言
       function getRefreshLightboxMsg(lightboxNum){
         var xhr = new XMLHttpRequest();
@@ -666,7 +678,7 @@ function postMSg(){
 
 
 
-  });//發表留言結束
+  //發表留言結束
 }			
 
         // 愛心動畫

@@ -21,14 +21,14 @@
                 text-align: left;
                 .formGroup {}
                 .labelClass {
-                    width: 70px;
+                    display: inline-block;
                 }
-                .alertInform{
-                    display:none;
-                    margin-top:-10px;
+                .alertInform {
+                    display: none;
+                    margin-top: -10px;
                     font-size: 14px;
-                    color:$b-red;
-                    .txt{
+                    color: $b-red;
+                    .txt {
                         padding-left: 10px;
                     }
                 }
@@ -110,22 +110,7 @@
             }
             h3 {
                 color: $brown;
-            }
-        }
-        .logo {
-            margin-bottom: 10px;
-            span {
-                color: $sup-orange;
-                font-family: "MicrosoftJhengHeiBold";
-                line-height: 1.2;
-                text-shadow: 1px 2px 1px rgba(252, 173, 135, 0.75);
-                margin-left: 5px;
-                font-size: 40px;
-                font-weight: 900;
-            }
-            img {
-                height: 60px;
-                width: auto;
+                margin: 20px auto;
             }
         }
     }
@@ -135,11 +120,34 @@
 @include respones(xs) {
     .signup {
         .container {
-            padding-top: 60px;
+            padding: 60px 0 0px;
             .main {
                 padding: 15px;
                 width: 100%;
-                height: 100vh;
+                // height: 100vh;
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 5px;
+                    min-height: 44px;
+                    margin-bottom: 10px;
+                }
+                .labelClass {
+                    width: 68px;
+                }
+                input {
+                    width: 200px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                #signupBtn {
+                    width: 100%;
+                }
             }
         }
     }
@@ -176,7 +184,6 @@
                         margin-bottom: 10px;
                     }
                     .labelClass {
-                        display: inline-block;
                         width: 90px;
                     }
                     input {
@@ -191,9 +198,6 @@
                     p {
                         width: 455px;
                     }
-                }
-                h3 {
-                    margin: 20px auto;
                 }
             }
         }

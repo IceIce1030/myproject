@@ -19,7 +19,6 @@
             display: inline-block;
             margin: auto;
             text-align: left;
-            .formGroup {}
             .labelClass {
                 display: inline-block;
                 width: 70px;
@@ -28,7 +27,7 @@
                 margin-top: -10px;
                 font-size: 14px;
                 color: $b-red;
-                display:none;
+                display: none;
                 .txt {
                     padding-left: 15px;
                 }
@@ -116,23 +115,7 @@
         }
         h3 {
             color: $brown;
-        }
-        // }//wrapper
-        .logo {
-            margin-bottom: 10px;
-            span {
-                color: $sup-orange;
-                font-family: "MicrosoftJhengHeiBold";
-                line-height: 1.2;
-                text-shadow: 1px 2px 1px rgba(252, 173, 135, 0.75);
-                margin-left: 5px;
-                font-size: 40px;
-                font-weight: 900;
-            }
-            img {
-                height: 60px;
-                width: auto;
-            }
+            margin: 20px auto;
         }
     }
 }
@@ -141,11 +124,36 @@
 @include respones(xs) {
     .addPetInfo {
         .container {
-            padding-top: 60px;
+            padding: 60px 0 0px;
             .main {
                 padding: 15px;
                 width: 100%;
-                height: 100vh;
+            }
+            .formDiv {
+                font-size: $fz-content;
+                .formGroup {
+                    padding: 5px;
+                    min-height: 44px;
+                    margin-bottom: 10px;
+                }
+                .labelClass {
+                    width: 68px;
+                }
+                .nice-select {
+                    width: 140px;
+                }
+                input {
+                    width: 140px;
+                    height: 34px;
+                    padding: 3px 6px;
+                    font-size: $fz-content;
+                }
+                .genderFormGroup {
+                    padding-top: 10px;
+                }
+                #signupBtn {
+                    width: 100%;
+                }
             }
         }
     }
@@ -169,7 +177,6 @@
     .addPetInfo {
         .container {
             padding: 120px 0px 40px;
-            // .wrapper {
             .main {
                 width: auto;
                 padding: 20px 60px;
@@ -203,7 +210,6 @@
             h3 {
                 margin: 20px auto;
             }
-            // }//wrapper
         }
     }
 }

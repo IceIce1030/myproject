@@ -4,12 +4,8 @@
 // * {
 //     outline: 1px solid red;
 // }
-
-
 //service的scss開始
 .service {
-    background: url(../images/bg02.png) repeat;
-    padding-bottom: 20px;
     .title {
         text-align: center;
         h1 {
@@ -34,29 +30,26 @@
         }
     }
     .introduction {
-        // border: double $deep-orange;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 20px;
         position: relative;
-        margin-bottom: 80px;
-        .imageBox {
-            text-align: center;
-            img {
-                position: relative;
-            }
-        }
-        .contentBox {
-            position: relative;
-            .txt {
-                p {
-                    color: $deep-gray;
-                    margin: auto;
-                }
-                .btnDiv {}
+        text-align: center;
+        background: url(../images/background/bg_start.png) no-repeat;
+        .txt {
+            font-size: 18px;
+            color: #333;
+            line-height: 2;
+            letter-spacing: 0.08em;
+            background-color: rgba(255, 255, 255, 0.8);
+            .btnDiv {
+                margin-top: 20px;
             }
         }
     }
     .specialty {
+        position: relative;
+        background: url(../images/background/bg16.jpg) no-repeat;
+        background-size: cover;
+        background-position: 50% 100%;
+        background-attachment: fixed;
         .item {
             .imageBox {
                 overflow: hidden;
@@ -67,26 +60,36 @@
                 }
             }
             .txt {
+                letter-spacing: 0.05em;
                 color: $deep-gray;
                 text-align: center;
                 position: relative;
-                background-color: rgba(255, 255, 255, 0.8);
+                background-color: rgba(220, 220, 220, 0.7);
             }
         }
     }
     .roomType {
-        margin-bottom: 40px;
+        background: url(../images/background/index-bg6.jpg) repeat;
+        #roomContainer {}
         .roomTypeNav {
-            margin-top: 20px;
-            .item {
-                overflow: hidden;
+            > .row {
+                font-size: 0;
+            }
+            .itemDiv {
                 padding-left: 5px;
                 padding-right: 5px;
+            }
+            margin-top: 20px;
+            .item {
+                // margin: 0 5px;
+                overflow: hidden;
+                // padding-left: 0px;
+                // padding-right: 0px;
                 cursor: pointer;
                 position: relative;
                 img {
                     position: relative;
-                    border: double $deep-orange;
+                    border: 2px solid $deep-orange;
                 }
                 .txt {
                     width: 100%;
@@ -97,7 +100,7 @@
                     left: 0;
                     top: 0;
                     margin: auto;
-                    background-color: rgba(255, 255, 255, 0.6);
+                    background-color: rgba(255, 255, 255, 0.8);
                     text-align: center;
                     transition: .5s;
                     &:before {
@@ -121,16 +124,12 @@
         }
         .roomInfo {
             font-size: 0;
-            margin: 20px;
-            border: double $deep-orange;
-            background-color: #fff;
+            border: 2px solid $deep-orange;
+            background-color: rgba(255, 255, 255, 0.8);
             overflow: hidden;
             .roomPhoto {
                 padding: 0;
-                overflow: hidden;
-                img {
-                    position: relative;
-                }
+                img {}
             }
             .roomDetail {
                 height: 100%;
@@ -153,12 +152,19 @@
                     color: $light-pink;
                 }
                 p {
+                    color: $deep-gray;
                     font-size: $fz-content;
                     letter-spacing: 0.08em;
-                    &:before {
-                        content: '\f1b0';
-                        font-family: fontAwesome;
-                        margin-right: 5px;
+                    &#roomTypeIntro {
+                        margin-bottom: 20px;
+                    }
+                    &.listDetail {
+                        font-weight: 900;
+                        &:before {
+                            content: '\f1b0';
+                            font-family: fontAwesome;
+                            margin-right: 5px;
+                        }
                     }
                 }
                 .btnDiv {
@@ -171,18 +177,27 @@
         }
     }
     .serviceType {
+        background: url(../images/background/bg16.jpg) no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         .itemDiv {
             padding: 10px 20px;
         }
         .item {
-            border-radius: 3%;
+            border-radius: 5px;
             overflow: hidden;
             display: inline-block;
             text-align: center;
             position: relative;
             background-color: rgba(255, 255, 255, 0.8);
             .txt {
-                padding: .5em 10px .8em;
+                position: relative;
+                bottom: 10px;
+                border: 1px solid #aaa;
+                border-radius: 3%;
+                border-top: none;
+                letter-spacing: 0.1em;
+                line-height: 1.5;
                 h3 {
                     color: $light-pink;
                     img {
@@ -192,37 +207,6 @@
                         margin-left: 8px;
                     }
                 }
-            }
-        }
-    }
-    .priceList {
-        table {
-            margin: auto;
-            tr,
-            td {
-                background-color: rgba(250, 250, 250, 1.0);
-                border: solid transparent;
-                vertical-align: baseline;
-            }
-            tr {
-                font-size: 0;
-            }
-            td {
-                font-size: $fz-content;
-                padding: 15px 10px;
-                min-width: 183px;
-                border-bottom: $brown solid 1px;
-            }
-            .priceItem {
-                img {
-                    width: 17px;
-                    margin-left: 5px;
-                    vertical-align: baseline;
-                }
-            }
-            .priceTag,
-            .dogType {
-                text-align: right;
             }
         }
     }

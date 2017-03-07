@@ -636,7 +636,7 @@ $(document).ready(function(){
 	          particleAnimationVariance:  500,
 	          particleScatteringX:        150,
 	          particleScatteringY:        100,
-	          imgSource: "../images/b-heart1.png",
+	          imgSource: "images/b-heart1.png",
 	          gravity:                    -100
 	         
 	        });
@@ -663,7 +663,7 @@ $(document).ready(function(){
 	          particleAnimationVariance:  500,
 	          particleScatteringX:        300,
 	          particleScatteringY:        300,
-	          imgSource: "../images/b-heart2.png",
+	          imgSource: "images/b-heart2.png",
 	          gravity:                    -100,
 	         
 	        });

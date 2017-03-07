@@ -16,6 +16,7 @@
                 margin-bottom: 20px;
                 .pet {
                     margin-right: 20px;
+                    margin-bottom:10px;
                 }
             }
             // 會員管理
@@ -116,42 +117,40 @@
                 }
             }
         }
-    }
-    //燈箱
-    //燈箱
-    .C_lightbox {
-        .lightbox_box {
-            .lightbox_content {
-                padding-top: 20px;
-                .formDiv {
-                    font-size: $fz-content;
-                    .formGroup {
-                        padding: 5px;
-                        min-height: 44px;
-                        margin-bottom: 10px;
-                    }
-                    .labelClass {
-                        display: inline-block;
-                        width: 90px;
-                    }
-                    input {
-                        width: 250px;
-                        height: 34px;
-                        padding: 3px 6px;
+        //燈箱
+        .C_lightbox {
+            .lightbox_box {
+                .lightbox_content {
+                    padding-top: 20px;
+                    .formDiv {
                         font-size: $fz-content;
-                    }
-                    .genderFormGroup {
-                        padding-top: 10px;
+                        .formGroup {
+                            padding: 5px;
+                            min-height: 44px;
+                            margin-bottom: 10px;
+                        }
+                        .labelClass {
+                            width: 50px;
+                        }
+                        input {
+                            width: 200px;
+                            height: 34px;
+                            padding: 3px 6px;
+                            font-size: $fz-content;
+                        }
+                        .genderFormGroup {
+                            padding-top: 10px;
+                        }
                     }
                 }
             }
         }
-    }
-    //aboutme更新會員資料燈箱
-    #aboutme {}
-    //mypets addPet資料燈箱
-    #mypets,
-    #addPet {}
+        //aboutme更新會員資料燈箱
+        #aboutme {}
+        //mypets addPet資料燈箱
+        #mypets,
+        #addPet {}
+    }//member
 }
 
 //大桌機 container 1170 (>1200)

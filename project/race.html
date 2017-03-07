@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link href='images/furkid.ico' rel='shortcut icon'/>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<title>萌主爭霸</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<!-- <script type="text/javascript" src="libs/isotope/isotope.pkgd.min.js"></script> -->
-	<script type="text/javascript" src="js/nav.js?<%=Timer()%>"></script>
+	<script type="text/javascript" src="js/nav.js"></script>
 <!-- 	<script type="text/javascript" src="libs/"></script> -->
 	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
-	<script type="text/javascript" src="js/race_showJS_save.js?<%=Timer()%>"></script>  
+	<script type="text/javascript" src="js/race_showJS_save.js"></script>  
 <!-- 	<script type="text/javascript" src="sortVote.js"></script> -->
-	<script type="text/javascript" src="js/race_showTopThree.js?<%=Timer()%>"></script>
+	<script type="text/javascript" src="js/race_showTopThree.js"></script>
 <!-- 	<script type="text/javascript" src="race_showLightbox.js"></script> -->
 
 
@@ -31,14 +30,14 @@
                 <!-- 選單內容 -->
                 <ul class="content" id="menuContent">
                     <li>
-                        <a href="book.html" class="active"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
+                        <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
-                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
+                        <a href="race.html" class="active"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                        <a href="service.html" class="active"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
                     <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
@@ -64,7 +63,7 @@
                 <div class="navbarLightbox memberlightbox">
                     <ul class="subMenu">
                         <li>
-                            <div class="left"><a href="member.html" id="memberSectionLink">會員專區</a></div>
+                            <div class="left"><a href="member.html" id="memberSectionLink" data-tab-id="">會員專區</a></div>
                             <div class="right"><i id="closeMemberLightBox" class="fa fa-times" aria-hidden="true"></i></div>
                             <div class="clear"></div>
                         </li>
@@ -74,7 +73,7 @@
                             <a href="member.html" class="memberTab" data-tab-id="myposts">我的文章</a></li>
                         <li>
                             <a href="member.html" class="memberTab" data-tab-id="myrace">萌主參賽紀錄</a></li>
-                        <div class="btnFunction" id="logoutBtn" onClick="logoutOnMemberPage()">登出</div>
+                        <div class="btnFunction" id="logoutBtn">登出</div>
                     </ul>
                 </div>
                 <!-- 會員中心選單燈箱結束 -->
@@ -204,7 +203,7 @@
 					<!-- <div id="competeBtn" class="btnFunction">
 						<a href="compete.html">我要報名參賽</a>
 					</div> -->
-					<button  class="btnLink" onclick="window.location.href='/compete_register.html'">我要報名參賽</button>
+					<button  class="btnLink" onclick="window.location.href='compete_register.html'">我要報名參賽</button>
 				</div>
 			</div>	
 
@@ -341,7 +340,7 @@
 
 			
 	
-<script type="text/javascript" src="js/javascrip_race.js"></script>				
+			
 <script type="text/javascript">
 
 

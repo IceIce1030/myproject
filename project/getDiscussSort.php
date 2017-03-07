@@ -49,7 +49,7 @@ try{
           $hot='on';
 
       }
-      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 30 );
+      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 30 ,'utf8' );
 
       $str.="<a href='article.html?arti_no={$discussRow["arti_no"]}'><div class='item $sort'><div class='itemlabel' id='$label'>{$discussRow["arti_sort"]}</div>
             <img src='images/articlephoto/{$discussRow["arti_img"]}'>

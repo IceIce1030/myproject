@@ -23,7 +23,7 @@ try{
         <p><span class='petName'>{$petRow["pet_name"]}      
         </p>
     </div>
-    <div class='competeBtn' data-pet_no='{$petRow["pet_no"]}'><a class='btnFunction' href='/compete_registerIntro.html'>我要參賽</a></div>
+    <div class='competeBtn' data-pet_no='{$petRow["pet_no"]}'><a class='btnFunction' href='compete_registerIntro.html'>我要參賽</a></div>
     </div>";
       }//while
      //送出字串

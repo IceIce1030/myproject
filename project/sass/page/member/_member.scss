@@ -60,7 +60,9 @@
                 border-radius: 50%;
             }
             .pet {
+                text-align: center;
                 display: inline-block;
+                padding: 5px;
                 &:hover {
                     color: #ffa800;
                 }
@@ -362,10 +364,11 @@
                 //參賽紀錄{
                 #myrace {
                     .cardWrap {
-                          color:#434343;
+                        margin-bottom:10px;
+                        color: #434343;
                         .card {
-                            a{
-                                color:#434343;
+                            a {
+                                color: #434343;
                             }
                             background-color: #fdeeca;
                             border-radius: 15px;
@@ -429,166 +432,163 @@
             }
         }
     }
-}
-
-//燈箱
-.C_lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 30;
-    margin: auto;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .8);
-    display: none;
-    &.petShare {
-        .lightbox_box {
-            padding: 5px 20px;
-        }
-        .nice-select {
-            width: 104px;
-        }
-    }
-    .lightbox_box {
-        transform: translate(-50%, -50%);
+    //燈箱
+    .C_lightbox {
         position: fixed;
-        top: 50%;
-        left: 50%;
-        width: 0px;
-        height: 0px;
-        background-color: $bgc;
-        padding: 5px 10px;
-        transition: 1s;
-        border-radius: 50%;
-        position: relative;
-        box-shadow: 5px 5px 50px $light-gray;
-        .lightbox_content {
-            display: none;
-            .formDiv {
-                display: inline-block;
-                margin: auto;
-                text-align: left;
-                .formGroup {}
-                .labelClass {
+        top: 0;
+        left: 0;
+        z-index: 30;
+        margin: auto;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .8);
+        display: none;
+        &.petShare {
+            .lightbox_box {
+                padding: 5px 20px;
+            }
+            .nice-select {
+                width: 104px;
+            }
+        }
+        .lightbox_box {
+            transform: translate(-50%, -50%);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 0px;
+            height: 0px;
+            background-color: $bgc;
+            padding: 5px 10px;
+            transition: 1s;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 5px 5px 50px $light-gray;
+            .lightbox_content {
+                display: none;
+                .formDiv {
                     display: inline-block;
-                    width: 70px;
-                }
-                input {
-                    border: 1px solid rgba(119, 71, 32, .8);
-                    border-radius: 5px;
-                    letter-spacing: 1px;
-                }
-                .gender input {
-                    margin-right: 10px;
-                    width: auto;
-                    height: auto;
-                    cursor: pointer;
-                }
-                #upload_mem_img {
-                    border: none;
-                    display: none;
-                }
-                #upload_petImg {
-                    border: none;
-                    display: none;
-                }
-                #add_upload_petImg {
-                    border: none;
-                    display: none;
-                }
-                .petInput {
-                    width: 104px;
-                }
-                .showImage {
-                    display: inline-block;
-                    text-align: center;
-                    border-radius: 50%;
-                    height: 50px;
-                    width: 50px;
-                    margin-right: 10px;
-                    overflow: hidden;
-                    vertical-align: bottom;
-                    position: relative;
-                    top: 8px;
-                    img {
+                    margin: auto;
+                    text-align: left;
+                    .formGroup {}
+                    .labelClass {
+                        display: inline-block;
+                    }
+                    input {
+                        border: 1px solid rgba(119, 71, 32, .8);
+                        border-radius: 5px;
+                        letter-spacing: 1px;
+                    }
+                    .gender input {
+                        margin-right: 10px;
+                        width: auto;
+                        height: auto;
+                        cursor: pointer;
+                    }
+                    #upload_mem_img {
+                        border: none;
+                        display: none;
+                    }
+                    #upload_petImg {
+                        border: none;
+                        display: none;
+                    }
+                    #add_upload_petImg {
+                        border: none;
+                        display: none;
+                    }
+                    .petInput {
+                        width: 104px;
+                    }
+                    .showImage {
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 50%;
+                        height: 50px;
+                        width: 50px;
+                        margin-right: 10px;
+                        overflow: hidden;
+                        vertical-align: bottom;
+                        position: relative;
+                        top: 8px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .uploadImgLabel {
+                        display: inline-block;
+                        padding: 6px 12px;
+                        height: auto;
+                        font-size: $fz-content;
+                        border: 1px solid rgba(119, 71, 32, .8);
+                        border-radius: 5px;
+                        color: $deep-gray;
+                        cursor: pointer;
+                        letter-spacing: 1px;
+                        transition: all .4s;
+                        background-color: hsla(0, 0%, 97%, 1.0);
+                        &:hover {
+                            color: $deep-gray;
+                            background-color: hsla(0, 0%, 100%, 1.0);
+                        }
+                    }
+                    p {
+                        margin: 10px 0;
+                        font-size: $fz-mincontent;
+                    }
+                    .btnDiv {
+                        text-align: center;
+                    }
+                    .inputBtn {
+                        font-weight: 300;
+                        margin: 10px auto;
+                        // width: 80%;
+                        // width:auto;
+                        padding: 6px 12px;
+                        height: auto;
+                        font-size: $fz-content;
+                        border: solid transparent;
+                        border-radius: 5px;
+                        background: #f34e1b;
+                        background: linear-gradient(to bottom, rgba(243, 78, 27, 1.0) 0, rgba(230, 50, 10, 1.0) 100%);
+                        color: #fff;
+                        cursor: pointer;
+                        letter-spacing: 2px;
+                        transition: all .4s;
+                        &:hover {
+                            background: hsla(14, 90%, 45%, 1);
+                            background: linear-gradient(to bottom, rgba(240, 60, 20, 1.0) 0, rgba(210, 50, 10, 1.0) 100%);
+                        }
+                    }
+                    #updatePetBtn {
                         width: 100%;
                     }
                 }
-                .uploadImgLabel {
-                    display: inline-block;
-                    padding: 6px 12px;
-                    height: auto;
-                    font-size: $fz-content;
-                    border: 1px solid rgba(119, 71, 32, .8);
-                    border-radius: 5px;
-                    color: $light-gray;
-                    cursor: pointer;
-                    letter-spacing: 1px;
-                    transition: all .4s;
-                    background-color: hsla(0, 0%, 97%, 1.0);
-                    &:hover {
-                        color: $deep-gray;
-                        background-color: hsla(0, 0%, 100%, 1.0);
-                    }
-                }
-                p {
-                    margin: 10px 0;
-                    font-size: $fz-mincontent;
-                }
-                .btnDiv {
+                .closeLightBox {
+                    line-height: 20px;
                     text-align: center;
-                }
-                .inputBtn {
-                    font-weight: 300;
-                    margin: 10px auto;
-                    // width: 80%;
-                    // width:auto;
-                    padding: 6px 12px;
-                    height: auto;
-                    font-size: $fz-content;
-                    border: solid transparent;
-                    border-radius: 5px;
-                    background: #f34e1b;
-                    background: linear-gradient(to bottom, rgba(243, 78, 27, 1.0) 0, rgba(230, 50, 10, 1.0) 100%);
-                    color: #fff;
-                    cursor: pointer;
-                    letter-spacing: 2px;
-                    transition: all .4s;
-                    &:hover {
-                        background: hsla(14, 90%, 45%, 1);
-                        background: linear-gradient(to bottom, rgba(240, 60, 20, 1.0) 0, rgba(210, 50, 10, 1.0) 100%);
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    width: 33px;
+                    height: 33px;
+                    background-color: rgba(0, 0, 0, .85);
+                    border-radius: 50%;
+                    transition: .3s;
+                    border: 2px solid #ddd;
+                    .fa-plus {
+                        position: relative;
+                        left: 3px;
+                        top: -2px;
+                        padding-top: 10px;
+                        font-size: 20px;
+                        color: #fff;
+                        cursor: pointer;
+                        transform: rotate(45deg);
                     }
-                }
-                #updatePetBtn {
-                    width: 100%;
-                }
-            }
-            .closeLightBox {
-                line-height: 20px;
-                text-align: center;
-                position: absolute;
-                top: -10px;
-                right: -10px;
-                width: 33px;
-                height: 33px;
-                background-color: rgba(0, 0, 0, .85);
-                border-radius: 50%;
-                transition: .3s;
-                border: 2px solid #ddd;
-                .fa-plus {
-                    position: relative;
-                    left: 3px;
-                    top: -2px;
-                    padding-top: 10px;
-                    font-size: 20px;
-                    color: #fff;
-                    cursor: pointer;
-                    transform: rotate(45deg);
                 }
             }
         }
     }
+    //燈箱結束
 }
-
-//燈箱結束

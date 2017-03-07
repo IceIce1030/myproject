@@ -40,26 +40,30 @@ try{
 
     while ( $orderlistRow = $orderlist->fetch(PDO::FETCH_ASSOC) ){
 
-        if($orderlistRow["real_in"]==NULL){
-            $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn check' id='{$orderlistRow["orderlist_no"]}'>";
-            // $str .= $orderlistRow["real_in"];
-        }
-        if($orderlistRow["real_out"]==NULL){
-            $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn check' id='{$orderlistRow["orderlist_no"]}'>";
+       
 
-             // $str .= $orderlistRow["real_out"];
-           
-        }
-        $str .="<tr>
+        if($orderlistRow["real_in"]==NULL && $orderlistRow["real_out"]==NULL){
+
+           if($orderlistRow["real_in"]==NULL){
+              $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
+              // $str .= $orderlistRow["real_in"];
+          }
+          if($orderlistRow["real_out"]==NULL){
+              $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
+
+               // $str .= $orderlistRow["real_out"];        
+          }
+
+            $str .="<tr>
                   <td>{$orderlistRow["orderlist_no"]}</td>
                   
                   <td>{$orderlistRow["mem_name"]}</td>
                   <td>{$orderlistRow["room_name"]}</td>
+                  <td>{$orderlistRow["pet_name"]}</td>
                   <td>
                     <input type='button' value='加值內容' class='inputBtn lookService'>
                     <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
                   </td>
-                  <td>{$orderlistRow["pet_name"]}</td>
                   <td>{$orderlistRow["orderlist_date"]}</td>
                   <td>{$orderlistRow["exp_in"]}</td>
                   <td>{$orderlistRow["exp_out"]}</td>
@@ -78,6 +82,46 @@ try{
                   </td>
                   
                 </tr>";
+        }
+        else{
+             if($orderlistRow["real_in"]==NULL){
+                $orderlistRow["real_in"]="<input type='button' value='入住' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
+                // $str .= $orderlistRow["real_in"];
+            }
+            if($orderlistRow["real_out"]==NULL){
+                $orderlistRow["real_out"] ="<input type='button' value='退房' class='inputBtn Check' id='{$orderlistRow["orderlist_no"]}'>";
+
+                 // $str .= $orderlistRow["real_out"];        
+            }
+            $str .="<tr>
+                  <td>{$orderlistRow["orderlist_no"]}</td>
+                  
+                  <td>{$orderlistRow["mem_name"]}</td>
+                  <td>{$orderlistRow["room_name"]}</td>
+                  <td>{$orderlistRow["pet_name"]}</td>
+                  <td>
+                    <input type='button' value='加值內容' class='inputBtn lookService'>
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
+                  <td>{$orderlistRow["orderlist_date"]}</td>
+                  <td>{$orderlistRow["exp_in"]}</td>
+                  <td>{$orderlistRow["exp_out"]}</td>
+                  <td>
+                    {$orderlistRow["real_in"]}
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
+                  <td>
+                    {$orderlistRow["real_out"]}
+                    <input type='hidden' value='{$orderlistRow["orderlist_no"]}' class='orderlistNo'>
+                  </td>
+                  <td>{$orderlistRow["mem_phone"]}</td>
+                  <td>
+                    
+                  </td>
+                  
+                </tr>";
+        }
+        
 
                                           
       

@@ -49,7 +49,7 @@ try{
       if ($discussRow["arti_count"]>120) {
           $hot='on';
       }
-      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 50 );
+      $discussRow["arti_content"] = mb_substr( $discussRow["arti_content"] , 0 , 50 ,'utf8');
 
       $str.="<a class='postLink' href='article.html?arti_no={$discussRow["arti_no"]}'><div class='post'>
         <div class='itemLabel $label'>{$discussRow["arti_sort"]}</div>

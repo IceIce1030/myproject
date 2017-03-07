@@ -499,7 +499,7 @@ $navFontColor:#af581f;
     position: fixed;
     right: -800px;
     z-index: 30;
-    padding: 20px 20px 10px;
+    padding: 20px 20px 20px;
 }
 
 //login燈箱開始
@@ -525,6 +525,10 @@ $navFontColor:#af581f;
         //密碼上方的p的margin縮小
         p:nth-child(5) {
             margin-bottom: 5px;
+        }
+        #wrongData {
+            font-size: 14px;
+            color: #f00;
         }
     }
     .fa-times {
@@ -586,9 +590,10 @@ $navFontColor:#af581f;
     }
     #guestLoginBtn {
         margin-top: -5px;
+        background: #ffa800;
         background: linear-gradient(to bottom, #ffa800 0, #f0a000 100%);
         &:hover {
-            background: hsla(14, 90%, 45%, 1);
+            background: #e69900;
             background: linear-gradient(to bottom, #f0a000 0, #e69900 100%);
         }
     }
@@ -611,7 +616,7 @@ $navFontColor:#af581f;
 @include respones(sm) {
     .loginlightbox {
         width: 280px;
-        height: 351px;
+        // height: 351px;
         top: 60px;
     }
 }
@@ -620,7 +625,7 @@ $navFontColor:#af581f;
 @include respones(md) {
     .loginlightbox {
         width: 280px;
-        height: 351px;
+        // height: 351px;
         top: 80px;
     }
 }

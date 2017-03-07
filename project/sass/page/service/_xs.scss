@@ -3,30 +3,17 @@
     //服務介紹
     .service {
         padding-top: 60px;
-        .introductionDiv {
-            .title {
-                margin-bottom: 20px;
-            }
+        .title {
+            margin-bottom: 20px;
         }
         .introduction {
-            margin: 0 4.166667% 40px;
-            .imageBox {
-                img {
-                    width: 100%;
-                }
-            }
-            .contentBox {
-                .txt {
-                    p {
-                        line-height: 1.5;
-                    }
-                    .btnDiv {
-                        margin-top: 20px;
-                    }
-                }
+            .txt {
+                width: 100%;
+                padding: 20px;
             }
         }
         .specialty {
+            padding: 60px 0 40px;
             .item {
                 text-align: center;
                 margin-bottom: -60px;
@@ -38,10 +25,15 @@
             }
         }
         .roomType {
+            #roomContainer {
+                padding-top: 40px;
+                padding-bottom: 60px;
+            }
             .roomTypeNav {
-                .item {
+                .itemDiv {
                     max-height: 50px;
                     overflow: hidden;
+                    margin-bottom: 10px;
                     &.active {
                         .txt {
                             background-color: rgba(255, 255, 255, .8);
@@ -52,35 +44,51 @@
                         }
                     }
                     .txt {
-                        p {}
+                        p {
+                            position: relative;
+                            bottom: 10px;
+                        }
                     }
                     img {
-                        bottom: 30px;
+                        bottom: 18px;
                     }
                 }
             }
             .roomInfo {
                 .roomPhoto {
-                    overflow: hidden;
-                    max-height: 110px;
+                    // overflow: hidden;
+                    // max-height: 110px;
                     img {
                         bottom: 70px;
                     }
                 }
                 .roomDetail {
-                    padding: 10px 0px;
-
+                    margin-top: -98px;
+                    padding: 10px 15px;
                     line-height: 1.8;
+                    background-color: rgba(255, 255, 255, .8);
                     .txt {}
                     h3 {}
                     h4 {}
                     .roomPrice {}
-                    p {}
+                    p {
+                        &.listDetail {
+                            line-height: 1.8;
+                        }
+                    }
                     .btnDiv {
                         margin-top: 10px;
                         .btn {}
                     }
                 }
+            }
+        }
+        .serviceType {
+            padding: 40px 0;
+            .item {
+                .txt {
+                    padding: 10px;
+                 }
             }
         }
     }
