@@ -688,12 +688,43 @@ $(document).ready(function() {
         $('#placeholder').fadeOut();
         $('#closeBox').css({'display':'block'});
     })
-    $('#closeBox').click(function(e) {
+    // $('#closeBox').click(function(e) {
+    //     var roomin = startDate;
+    //     var roomout = endDate;
+
+    //     var ri = $('#roomIn').text();
+    //     var ro = $('#roomOut').text();
+    //     // alert(aa);
+    //     $('#closeBox').css({'display':'none'});
+    //     if (ri == "" || ro == "") {
+    //         $('#placeholder').fadeIn();
+    //     } else {
+    //         sessionStorage['startDateY'] = roomin.getFullYear();
+    //         sessionStorage['startDateM'] = roomin.getMonth();
+    //         sessionStorage['startDateD'] = roomin.getDate();
+
+    //         sessionStorage['endDateY'] = roomout.getFullYear();
+    //         sessionStorage['endDateM'] = roomout.getMonth();
+    //         sessionStorage['endDateD'] = roomout.getDate();
+
+
+
+
+    //     }
+    //          console.log("ri",ri);
+    //          console.log("ro",ro);
+
+    // })
+     $('#close-canlender').click(function(e) {
         var roomin = startDate;
         var roomout = endDate;
+
         var ri = $('#roomIn').text();
         var ro = $('#roomOut').text();
         // alert(aa);
+
+        console.log("ri",ri);
+        console.log("ro",ro);
         $('#closeBox').css({'display':'none'});
         if (ri == "" || ro == "") {
             $('#placeholder').fadeIn();
@@ -707,13 +738,14 @@ $(document).ready(function() {
             sessionStorage['endDateD'] = roomout.getDate();
 
 
+
         }
 
     })
     $('.btnLink').click(function(e) {
         if (sessionStorage['startDateY'] == null && sessionStorage['startDateM'] == null && sessionStorage['startDateD'] == null && sessionStorage['endDateY'] == null && sessionStorage['endDateM'] == null && sessionStorage['endDateD'] == null) {
             e.preventDefault();
-            alert("請選擇入住日期");
+            alert("請選擇入住日期!");
         }
     })
 })

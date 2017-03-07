@@ -207,6 +207,7 @@ $(document).ready(function(){
                 success: function(msg){
                     alert(msg);
                     // console.log(msg);
+                    orderListCheck();
                     
                    
                 },
