@@ -155,6 +155,7 @@ $(document).ready(function(){
                         else{
                             if(confirm("確定要修改嗎?")){
                                 updateRoom();
+                                uploadimg(); 
                             }
                             
                         }
@@ -226,7 +227,8 @@ $(document).ready(function(){
                     // alert(msg);
                    // console.log(msg);
                    updateRoomimg(img1Src,img2Src,img3Src,img1Id,img2Id,img3Id);
-                   roomInfo();
+                   
+
 
                    
                     // $('#table').html(msg);
@@ -273,7 +275,9 @@ $(document).ready(function(){
                 success: function(msg){
                     // alert(msg);
                    // console.log(msg);
-                   uploadimg();           
+                   roomInfo();
+
+                             
                 },
 
                  error:function(xhr, ajaxOptions, thrownError){ 

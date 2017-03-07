@@ -11,6 +11,16 @@ try{
                   where arti_no = :arti_no;";
     }
     else{
+    
+        $sql1 = "delete from artimsg
+                 where artimsg_no = :artimsg_no;";
+        
+        
+         $arti1 = $pdo->prepare( $sql1 );
+         $arti1->bindValue(":artimsg_no", $a_no);
+         $arti1->execute();
+
+
         $sql = "delete from article
                 where arti_no = :arti_no;";
     }

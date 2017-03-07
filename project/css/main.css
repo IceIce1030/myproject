@@ -5543,16 +5543,11 @@ html.fp-enabled,
   border: solid transparent;
   border-radius: 5px;
   background: #f34e1b;
-  background: linear-gradient(to bottom, #f34e1b 0, #e6320a 100%);
+  background: linear-gradient(to bottom, #f79678 0, #f7785e 100%);
   color: #fff;
   cursor: pointer;
   letter-spacing: 2px;
   transition: .4s;
-}
-
-.backpage .inputBtn:hover {
-  background: #da3c0b;
-  background: linear-gradient(to bottom, #f03c14 0, #d2320a 100%);
 }
 
 .backpage .service_box {
@@ -5615,15 +5610,15 @@ html.fp-enabled,
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
-  border: 2px solid #f4511e;
+  border: 2px solid #F78D70;
   border-radius: 5px;
-  color: #f4511e;
+  color: #F78D70;
   letter-spacing: 2px;
   transition: all 0.4s;
 }
 
 .backpage .btnLink:hover {
-  background-color: #f4511e;
+  background-color: #F78D70;
   color: #fff;
 }
 

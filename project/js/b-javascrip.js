@@ -42,7 +42,9 @@ function doFirst(){
 		endDate.setFullYear(eY);
 		endDate.setMonth(eM);
 		endDate.setDate(eD);
-
+		
+		$id('before').addEventListener('click',monthLess,false);
+		$id('after').addEventListener('click',monthPlus,false);
 
 		current_year = startDate.getFullYear();//取得現在年分
 		current_month = startDate.getMonth();//取得現在月份
@@ -159,6 +161,7 @@ function monthLess(){
 	//目前月份天數
 	days = muchdays[current_month];
 	// alert(days);
+	console.log(current_month);
 	monthChange();
 }
 function monthPlus(){
@@ -180,6 +183,7 @@ function monthPlus(){
 	//目前月份天數
 	days = muchdays[current_month];
 	// alert(days);
+	console.log(current_month);
 	monthChange();
 }
 function monthChange(){

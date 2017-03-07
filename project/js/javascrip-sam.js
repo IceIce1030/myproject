@@ -79,7 +79,7 @@ $(document).ready(function() {
                     $('.disInfo .watch').eq(i).text(mesA[i].arti_count);
                     $('.disInfo .author').eq(i).text(mesA[i].mem_name);
                     $('.postImg img').eq(i).attr('src', "images/articlephoto/" + mesA[i].arti_img);
-                    $('.post .postTitle a').eq(i).attr('href', "artical.html?arti_no=" + mesA[i].arti_no);
+                    $('.post .postTitle a').eq(i).attr('href', "article.html?arti_no=" + mesA[i].arti_no);
                     $('.disInfo .itemLabel').eq(i).text(mesA[i].arti_sort);
                     $('.disInfo .message').eq(i).text(mesA[i].arti_report);
                 }
