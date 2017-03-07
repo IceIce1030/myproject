@@ -12,7 +12,11 @@
 	background-size:100%;
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
-
+	.manger{
+		display: block;
+		padding-bottom: 5px;
+		font-size: $fz-mincontent;
+	}
 	#dele,#cancle{
 		margin:5px 0; 
 	}

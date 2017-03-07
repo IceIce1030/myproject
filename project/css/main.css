@@ -5531,6 +5531,12 @@ html.fp-enabled,
   background-position: 100% 100%;
 }
 
+.backpage .manger {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 13px;
+}
+
 .backpage #dele, .backpage #cancle {
   margin: 5px 0;
 }
