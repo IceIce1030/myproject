@@ -112,7 +112,7 @@ $(function(){
  		if (arti_forward==0) {
  			alert('此文章為第一篇');
  		}else{
- 			var url = "../article.html?"+"arti_no="+arti_forward;
+ 			var url = "article.html?"+"arti_no="+arti_forward;
 			window.location.assign(url);
  		}
  		
@@ -125,7 +125,7 @@ $(function(){
  		var getArti_no = arti_str.split("="); //用等號隔開
  		var arti_no = parseInt(getArti_no[1]); //第1個即是等號號後面的數字
  		var arti_next = arti_no+1;
- 		var url = "../article.html?"+"arti_no="+arti_next;
+ 		var url = "article.html?"+"arti_no="+arti_next;
 
  		window.location.assign(url);
  	});

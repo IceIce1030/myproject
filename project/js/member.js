@@ -8,6 +8,9 @@ $(document).ready(function() {
         $('select').niceSelect('update');
     });
 
+    $('#logoutBtn').click(function(){
+        location.href="home.html";
+    });
     //tab選到直接連到會員頁相對應內容tabContent
     var _var_tabContentId = localStorage['_var_tabContentId'];
 
