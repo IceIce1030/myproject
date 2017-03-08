@@ -583,7 +583,7 @@ $(document).ready(function(){
 	//step的號碼
 	$('#stepNum').text(ahref);
 	//loacding動畫
-	$('.loadingbox').delay(500).fadeOut(500);
+	// $('.loadingbox').delay(500).fadeOut(500);
 
 	
 	
