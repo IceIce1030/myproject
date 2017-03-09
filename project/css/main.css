@@ -5005,11 +5005,17 @@ html.fp-enabled,
     display: none;
   }
   .discuss .lightbox .lightbox-box {
-    background-position: 655px;
+    background-position: -80%;
   }
   .discuss .lightbox .lightbox-box .lightbox-content .postForm {
-    width: 40%;
-    padding-top: 40px;
+    width: 80%;
+    padding-top: 10px;
+  }
+  .discuss .lightbox .lightbox-box .lightbox-content .postForm .uploadImgLabel {
+    padding: 6px 17px;
+  }
+  .discuss .lightbox .lightbox-box .lightbox-content .postForm .showPic img {
+    width: 150px;
   }
   .discuss .D-content .items {
     margin-top: 10px;
@@ -5096,6 +5102,15 @@ html.fp-enabled,
   }
   .discuss .lightbox .lightbox-box .lightbox-content .postForm #post-title {
     width: 104px;
+  }
+  .discuss .lightbox .lightbox-box .lightbox-content .postForm .uploadImgLabel {
+    float: right;
+    margin-top: 10px;
+    padding: 6px 5px;
+  }
+  .discuss .lightbox .lightbox-box .lightbox-content .postForm .showPic img {
+    width: 50px;
+    margin: 5px;
   }
   .discuss .D-content {
     margin-top: -25px;
@@ -5317,9 +5332,12 @@ html.fp-enabled,
   width: 70px;
 }
 
+.discuss .lightbox .lightbox-box .lightbox-content .postForm .showThePic {
+  text-align: center;
+}
+
 .discuss .lightbox .lightbox-box .lightbox-content .postForm .showPic {
   text-align: center;
-  display: inline-block;
   position: relative;
   top: 5px;
   vertical-align: bottom;
@@ -5328,7 +5346,7 @@ html.fp-enabled,
 }
 
 .discuss .lightbox .lightbox-box .lightbox-content .postForm .showPic img {
-  width: 50px;
+  border: 1px solid #ccc;
 }
 
 .discuss .lightbox .lightbox-box .lightbox-content .postForm #post-pic {
@@ -5338,7 +5356,6 @@ html.fp-enabled,
 
 .discuss .lightbox .lightbox-box .lightbox-content .postForm .uploadImgLabel {
   display: inline-block;
-  padding: 6px 12px;
   height: auto;
   font-size: 16px;
   border: 1px solid rgba(119, 71, 32, 0.8);
@@ -5359,7 +5376,11 @@ html.fp-enabled,
   width: 100%;
   margin-top: 5px;
   resize: none;
-  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 3px 6px;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(119, 71, 32, 0.8);
 }
 
 .discuss .lightbox .lightbox-box .lightbox-content .postForm .buttons {
@@ -5546,6 +5567,7 @@ html.fp-enabled,
 	    width: 80%; */
   padding: 6px 12px;
   height: auto;
+  font-size: 16px;
   border: solid transparent;
   border-radius: 5px;
   background: #f34e1b;
@@ -5633,7 +5655,14 @@ html.fp-enabled,
 }
 
 .backpage .updateinput {
+  display: none;
   width: 100px;
+}
+
+.backpage .upfilebtn {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 13px;
 }
 
 .backpage .page {
@@ -5901,10 +5930,6 @@ html.fp-enabled,
   .article .articleTable .firstRow .classLabel {
     margin: 5px 25px;
   }
-  .article .articleTable .firstRow .classLabel .hotLabel {
-    top: 5px;
-    left: 100px;
-  }
   .article .articleTable .secondRow .secondRight {
     border-left: 1px dotted #b37600;
   }
@@ -5923,10 +5948,6 @@ html.fp-enabled,
   }
   .article .firstRow .classLabel {
     margin: 5px 10px;
-  }
-  .article .firstRow .classLabel .hotLabel {
-    top: 5px;
-    left: 100px;
   }
 }
 
@@ -6000,6 +6021,7 @@ html.fp-enabled,
 .article .articleTable .firstRow {
   padding: 20px;
   background-color: rgba(255, 168, 0, 0.5);
+  position: relative;
 }
 
 .article .articleTable .firstRow h3, .article .articleTable .firstRow .classLabel {
@@ -6011,6 +6033,22 @@ html.fp-enabled,
   font-size: 40px;
 }
 
+.article .articleTable .firstRow .hotLabel {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  padding: 2px;
+  font-size: 14px;
+  background-color: #f00;
+  color: #fff;
+  opacity: 0;
+  transform: rotate(-30deg);
+}
+
+.article .articleTable .firstRow .hotLabel.on {
+  opacity: 1;
+}
+
 .article .articleTable .firstRow .classLabel {
   width: 90px;
   height: 30px;
@@ -6019,7 +6057,6 @@ html.fp-enabled,
   border-radius: 3px;
   letter-spacing: 1px;
   color: #fff;
-  position: relative;
 }
 
 .article .articleTable .firstRow .classLabel#shareLabel {
@@ -6036,18 +6073,6 @@ html.fp-enabled,
 
 .article .articleTable .firstRow .classLabel#foodLabel {
   background-color: #F4A66F;
-}
-
-.article .articleTable .firstRow .classLabel .hotLabel {
-  position: absolute;
-  padding: 2px;
-  font-size: 12px;
-  background-color: #f00;
-  opacity: 0;
-}
-
-.article .articleTable .firstRow .classLabel .hotLabel.on {
-  opacity: 1;
 }
 
 .article .articleTable .firstRow .reportBtn, .article .articleTable .firstRow .shareBtn, .article .articleTable .firstRow .reportedBtn {
@@ -6224,8 +6249,11 @@ html.fp-enabled,
 
 .article .a-reply .message .myMessage {
   max-width: 100%;
-  margin: auto;
+  margin: 10px auto;
   resize: none;
+  padding: 3px 6px;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(119, 71, 32, 0.8);
 }
 
 .article .a-reply .messbtn {
@@ -6239,6 +6267,7 @@ html.fp-enabled,
   padding: 6px 12px;
   margin: 5px;
   border-radius: 4px;
+  border: none;
   text-align: center;
   letter-spacing: 2px;
   color: #fff;
@@ -12002,10 +12031,6 @@ html.fp-enabled,
   transition: .3s;
 }
 
-.book .step_dateRoom .b-select-date .select-month .after:hover {
-  transform: translateX(3px);
-}
-
 .book .step_dateRoom .b-select-date .select-month .before {
   border-right: 20px solid #666;
   border-top: 20px solid transparent;
@@ -12016,10 +12041,6 @@ html.fp-enabled,
   left: 0;
   cursor: pointer;
   transition: .3s;
-}
-
-.book .step_dateRoom .b-select-date .select-month .before:hover {
-  transform: translateX(-3px);
 }
 
 .book .step_dateRoom .b-select-date .days {
@@ -14498,86 +14519,196 @@ html.fp-enabled,
   .faq {
     margin-top: 80px;
   }
+  .faq {
+    background: url(../images/bg02.png);
+    padding: 30px 0;
+  }
+  .faq .htitle {
+    margin: 30px 0;
+    padding: 20px 10px;
+    background-color: #b37600;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px #7d7d7d;
+  }
+  .faq .htitle h1 {
+    color: #f9f7e8;
+  }
+  .faq .question {
+    margin: 10px 0;
+    border: 1px solid #7d7d7d;
+    padding: 10px 10px;
+    transition: .3s;
+    border-radius: 5px;
+  }
+  .faq .question:hover .title {
+    color: #774720;
+  }
+  .faq .question:hover {
+    box-shadow: 0px 0px 15px #7d7d7d;
+  }
+  .faq .question:hover h4 .moreSpan {
+    transform: translateY(5px);
+  }
+  .faq .question .title {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    color: #7d7d7d;
+    transition: .3s;
+  }
+  .faq .question .title h4 {
+    display: inline-block;
+    position: relative;
+  }
+  .faq .question .title h4 span {
+    font-size: 30px;
+    color: #ff9100;
+    padding-right: 5px;
+  }
+  .faq .question .title h4 .moreSpan {
+    display: inline-block;
+    padding-left: 20px;
+    transition: .3s;
+  }
+  .faq .question .title .linebar {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: #ff9100;
+  }
+  .faq .question .content {
+    display: none;
+    padding: 20px 0;
+  }
+  .faq .question .content p {
+    line-height: 2.5em;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .faq {
+    margin-top: 60px;
+    background: url(../images/bg02.png);
+    padding: 30px 0;
+  }
+  .faq .htitle {
+    margin: 30px 0;
+    padding: 20px 10px;
+    background-color: #b37600;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px #7d7d7d;
+  }
+  .faq .htitle h1 {
+    color: #f9f7e8;
+  }
+  .faq .question {
+    margin: 10px 0;
+    border: 1px solid #7d7d7d;
+    padding: 10px 10px;
+    transition: .3s;
+    border-radius: 5px;
+  }
+  .faq .question .title {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    color: #7d7d7d;
+    transition: .3s;
+  }
+  .faq .question .title h4 {
+    display: inline-block;
+    position: relative;
+  }
+  .faq .question .title h4 span {
+    font-size: 30px;
+    color: #ff9100;
+    padding-right: 5px;
+  }
+  .faq .question .title h4 .moreSpan {
+    display: inline-block;
+    padding-left: 20px;
+    transition: .3s;
+  }
+  .faq .question .title .linebar {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: #ff9100;
+  }
+  .faq .question .content {
+    display: none;
+    padding: 20px 0;
+  }
+  .faq .question .content p {
+    line-height: 2.5em;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .faq {
     margin-top: 60px;
   }
-}
-
-.faq {
-  background-color: #f9f7e8;
-  padding-top: 20px;
-}
-
-.faq .htitle {
-  padding: 20px 10px;
-  background-color: #b37600;
-  border-radius: 5px;
-  box-shadow: 3px 3px 8px #434343;
-}
-
-.faq .htitle h1 {
-  color: #f9f7e8;
-}
-
-.faq .question {
-  margin: 10px 0;
-  border: 1px solid #7d7d7d;
-  padding: 10px 10px;
-  transition: .3s;
-  border-radius: 5px;
-}
-
-.faq .question:hover .title {
-  color: #774720;
-}
-
-.faq .question:hover {
-  box-shadow: 0px 0px 5px #7d7d7d;
-}
-
-.faq .question:hover h4 .moreSpan {
-  transform: translateY(5px);
-}
-
-.faq .question .title {
-  cursor: pointer;
-  position: relative;
-  padding: 5px 0;
-  color: #7d7d7d;
-  transition: .3s;
-}
-
-.faq .question .title h4 span {
-  font-size: 30px;
-  color: #ff9100;
-  padding-right: 5px;
-}
-
-.faq .question .title h4 .moreSpan {
-  display: inline-block;
-  padding-left: 20px;
-  transition: .3s;
-}
-
-.faq .question .title .linebar {
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  bottom: 0px;
-  left: 0;
-  background-color: #ff9100;
-}
-
-.faq .question .content {
-  display: none;
-  padding: 20px 0;
-}
-
-.faq .question .content p {
-  line-height: 30px;
+  .faq {
+    background: url(../images/bg02.png);
+    padding: 30px 0;
+  }
+  .faq .htitle {
+    margin: 30px 0;
+    padding: 20px 10px;
+    background-color: #b37600;
+    border-radius: 5px;
+    box-shadow: 3px 3px 8px #7d7d7d;
+  }
+  .faq .htitle h1 {
+    color: #f9f7e8;
+  }
+  .faq .question {
+    margin: 10px 0;
+    border: 1px solid #7d7d7d;
+    padding: 10px 10px;
+    transition: .3s;
+    border-radius: 5px;
+  }
+  .faq .question .title {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    color: #7d7d7d;
+    transition: .3s;
+  }
+  .faq .question .title h4 {
+    display: inline-block;
+    position: relative;
+  }
+  .faq .question .title h4 span {
+    font-size: 30px;
+    color: #ff9100;
+    padding-right: 5px;
+  }
+  .faq .question .title h4 .moreSpan {
+    display: inline-block;
+    padding-left: 20px;
+    transition: .3s;
+  }
+  .faq .question .title .linebar {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: #ff9100;
+  }
+  .faq .question .content {
+    display: none;
+    padding: 20px 0;
+  }
+  .faq .question .content p {
+    line-height: 2.5em;
+  }
 }
 
 .indexindex {

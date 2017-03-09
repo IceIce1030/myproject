@@ -11,9 +11,25 @@
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
 	<script src="js/nav.js?<%=Timer()%>"></script>
-    
 </head>
+<style type="text/css">
+    
+#gotop {
+    position: fixed;
+    border-radius: 50px;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 29;
+}
+#gotop img{
+    width: 70px;
+}
+</style>
 <body id="article-body">
+
+<!-- 回到頂端 -->
+<div id="gotop"><img src="images/gotop.png"></div>
 <!-- loadingbox -->
 <div class="loadingbox">
     <div class="dogbox">
@@ -226,8 +242,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="message" style="position: relative;">
-				<h3>我要留言...</h3>
-				<textarea class="myMessage" id="myMessage" rows="5" cols="170" placeholder="請輸入內容..."></textarea>
+				<textarea class="myMessage" id="myMessage" rows="5" cols="170" placeholder="我要留言..."></textarea>
 				<div class="messbtn">
 					<input type="submit" class="messSubmit" id="messSubmit" value="送出">
 					<input type="reset" class="messReset" id="messReset" value="重填">
@@ -237,12 +252,16 @@
 	</div>
 </div>
 <!-- 發表留言結束 -->
-
-<div class="changePage">
-    <div class="forwardArti" id="forwardArti"><<上一篇</div>
-    <div class="nextArti" id="nextArti">下一篇>></div>
-    <div class="clear"></div>
+<div class="container">
+    <div class="row">
+        <div class="changePage">
+            <div class="forwardArti" id="forwardArti"><<上一篇</div>
+            <div class="nextArti" id="nextArti">下一篇>></div>
+            <div class="clear"></div>
+        </div>
+    </div>
 </div>
+
 
 
 </div>
@@ -310,5 +329,22 @@
 
         }
     }
+
+</script>
+<script type="text/javascript">
+    
+//GOTOP
+$("#gotop").click(function(){
+    jQuery("html,body").animate({
+        scrollTop:0
+    },1000);
+});
+$(window).scroll(function() {
+    if ( $(this).scrollTop() > 300){
+        $('#gotop').fadeIn("fast");
+    } else {
+        $('#gotop').stop().fadeOut("fast");
+    }
+});
 
 </script>

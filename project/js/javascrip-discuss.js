@@ -92,7 +92,6 @@ $(function(){
 		      type: "GET",
 		      url: "postArticle.php"+url
 		    }).done(function( data) {
-		      alert( "發表文章成功!" );
 		      location.reload();//頁面重整
 		    });
 		 Upload();
@@ -114,7 +113,7 @@ $(function(){
 	function clearAll(){
 		$('#post-title').val('');
 		$('#post-pic').val('');
-		$('#postPic').attr('src','images/dogShadow.png');
+		$('#postPic').attr('src','images/white.jpg');
 		$('#post-text').val(''); 
 	}
 		//點選燈箱X

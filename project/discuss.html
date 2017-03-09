@@ -10,9 +10,8 @@
 	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/nav.js?<%=Timer()%>"></script>
 	<script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
-
+	<script src="js/nav.js?<%=Timer()%>"></script>
 	
 
 </head>
@@ -93,6 +92,9 @@
 
 </style>
 <body id="d-body">
+<!-- 回到頂端 -->
+<div id="gotop"><img src="images/gotop.png"></div>
+
 <!-- loadingbox -->
 <div class="loadingbox">
     <div class="dogbox">
@@ -133,8 +135,6 @@
     </div>
 </div>
 <!-- loadingbox -->
-<!-- 回到頂端 -->
-<div id="gotop"><img src="images/gotop.png"></div>
    <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
@@ -287,7 +287,7 @@
 					<!-- <form action="#" method="post"> -->
 						<div class="formGroup">
 							<label class="labelClass" for="post-title">文章標題</label>
-							<input type="text" name="post-title" id="post-title">
+							<input type="text" name="post-title" id="post-title" maxlength="16" placeholder="最多8個字">
 						</div>
 						<div class="formGroup">
 							<label class="labelClass" for="post-class">文章分類</label>
@@ -301,17 +301,17 @@
 						<div class="formGroup">
 							<label class="labelClass" for="post-pic">文章圖片</label>
 							<span class="showPic">
-								<img src="images/dogShadow.png" id="postPic">
+								<img src="images/white.jpg" id="postPic">
 							</span>
+							<label class="uploadImgLabel" for="post-pic">上傳圖片</label>
 							<span class="showPannel" id="showPannel"></span>
-							 <label class="uploadImgLabel" for="post-pic">上傳圖片</label>
-							 <form id="myForm">
-							 <input type="file" name="post-pic" id="post-pic">
-							 </form>
+							<form id="myForm">
+							<input type="file" name="post-pic" id="post-pic">
+							</form>
 						</div>
 						<div class="formGroup">
 							<label class="labelClass" for="post-text">文章內容</label>
-							<textarea name="post-text" id="post-text" rows="10"></textarea>
+							<textarea name="post-text" id="post-text" rows="10" placeholder="請輸入文章內容"></textarea>
 						</div>
 						<div class="buttons">
 							<div class="submitBtn" id="submitBtn">確認</div>
@@ -395,15 +395,25 @@ $('.closeLightBox').click(function(){
 
 	
 });
+
+
  //看燈箱
 $('.post').click(function(){
 	$('.lightbox').slideDown(0,function(){
-		$('.lightbox-box').css({
+		 wdth=$(window).width();
+		if (wdth>1200) {
+			$('.lightbox-box').css({
+			width: '50%',
+			height: '90%',
+			borderRadius: '15px'
+		});
+		}else{
+			$('.lightbox-box').css({
 			width: '80%',
 			height: '80%',
 			borderRadius: '15px'
-			
 		});
+		}
 	});
 	$('.lightbox-content').delay(800).fadeIn(500);
 });

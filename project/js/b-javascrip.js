@@ -634,10 +634,10 @@ $(document).ready(function(){
 	          particleSizeMax:            30,
 	          particleSourceX:            $(window).width()/2,
 	          particleSourceY:            $(window).height()/2+25,
-	          particleAnimationDuration:  700,
+	          particleAnimationDuration:  1000,
 	          particleDirection:          'center',
-	          particleAnimationDuration:  700,
-	          particleAnimationVariance:  500,
+	          particleAnimationDuration:  1000,
+	          particleAnimationVariance:  1000,
 	          particleScatteringX:        150,
 	          particleScatteringY:        100,
 	          imgSource: "images/b-heart1.png",
@@ -661,10 +661,10 @@ $(document).ready(function(){
 	          particleSizeMax:            100,
 	          particleSourceX:            $(window).width()/2,
 	          particleSourceY:            $(window).height()/2+50,
-	          particleAnimationDuration:  700,
+	          particleAnimationDuration:  1000,
 	          particleDirection:          'center',
-	          particleAnimationDuration:  700,
-	          particleAnimationVariance:  500,
+	          particleAnimationDuration:  1000,
+	          particleAnimationVariance:  1000,
 	          particleScatteringX:        300,
 	          particleScatteringY:        300,
 	          imgSource: "images/b-heart2.png",
@@ -2105,6 +2105,7 @@ $(document).ready(function(){
 
 		  				
 		  			});
+
 		  		});
 		  		$('.lightbox-content').delay(800).fadeIn(500);
 

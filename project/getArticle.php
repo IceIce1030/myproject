@@ -61,9 +61,9 @@ and arti_no=:arti_no";
       //底下是文章內容
         $str.=" <tr>
         <td class='firstRow'>
+          <span class='hotLabel $hot'>HOT</span>
           <h3>{$articleRow["arti_title"]}</h3>
-          <div class='classLabel' id='$label'>{$articleRow["arti_sort"]}<span class='hotLabel $hot'>HOT</span></div>
-          
+          <div class='classLabel' id='$label'>{$articleRow["arti_sort"]}</div>
           <div class='buttons'>
             <div class='reportBtn $reported' onclick='reportArticle()'>檢舉</div>
             <div class='reportedBtn $reported'>已檢舉</div>

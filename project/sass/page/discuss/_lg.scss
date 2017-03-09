@@ -24,13 +24,18 @@ $foodColor: #F4A66F;
 	//燈箱
 	.lightbox{
 		.lightbox-box{
-			background-position: 655px;
+			background-position: -80%;
 			.lightbox-content{
 				.postForm{
-					width: 40%;	
-					padding-top: 40px;
-					#post-title{}
-				}
+					width: 80%;	
+					padding-top: 10px;
+					.uploadImgLabel{
+						padding: 6px 17px;
+					}
+					.showPic{
+						img{width: 150px;}
+					}//showPic
+				}//postForm
 			}
 		}
 	}

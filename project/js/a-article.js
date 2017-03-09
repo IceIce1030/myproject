@@ -198,7 +198,7 @@ $(function(){
 		      type: "GET",
 		      url: "postReplyAdd.php?"+arti_no
 		    }).done(function( data) {
-		      alert( "留言成功!" );
+		      
 		    });
  	}//留言數更新結束
 

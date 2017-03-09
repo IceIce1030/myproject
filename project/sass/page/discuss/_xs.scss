@@ -56,8 +56,16 @@
 						width: 80%;
 						padding-top: 20px;
 						#post-title{width: 104px;}
-					}
-				}
+						.uploadImgLabel{
+							float: right;
+							margin-top: 10px;
+							padding: 6px 5px;
+						}
+						.showPic{
+							img{width: 50px;margin: 5px;}
+						}//showPic
+					}//postForm
+				}//lightbox-content
 			}
 		}
 		//燈箱結束

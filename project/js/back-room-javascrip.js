@@ -113,6 +113,10 @@ $(document).ready(function(){
                    // console.log(msg);
                     $('#table').html(msg);
 
+                     $('.upfilebtn').click(function(){
+                        $(this).siblings('.updateinput').click();
+                    });
+
                     $('.updateinput').change(function(){
 
                         var file = this.files[0];

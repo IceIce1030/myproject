@@ -1,7 +1,89 @@
 @include respones(sm){
 	//平板 container 100%
 	//直接寫css
-	.book{
-	//從這開始寫
+	.faq{
+		margin-top:60px;
+		background:url(../images/bg02.png);
+		padding: 30px 0;
+		.container{
+			
+		}
+		.htitle{
+				margin: 30px 0;
+				padding: 20px 10px;
+				background-color: $deep-orange;
+				border-radius: $border-radius;
+				box-shadow: 3px 3px 8px $light-gray;
+				h1{
+					color:$bgc;
+				}
+		}
+		.question{
+
+			margin:10px 0;
+			border: 1px solid $light-gray;
+			padding: 10px 10px;
+			transition:.3s;
+			border-radius: $border-radius;
+
+			// &:hover .title{
+			// 	color:$brown;		
+			// }
+			// &:hover {
+			// 	box-shadow: 0px 0px 15px $light-gray;
+			// }
+			// &:hover h4 .moreSpan{
+			// 	transform:translateY(5px);
+			// }
+			.title{
+				cursor: pointer;
+				position: relative;
+				padding: 5px 0;
+				color:$light-gray;
+				transition:.3s;
+				h4{
+					display: inline-block;
+					position: relative;
+					span{
+						font-size: 30px;
+						color:$sup-orange;
+						padding-right: 5px;
+					}
+					.moreSpan{
+						display: inline-block;
+						
+						padding-left: 20px;
+						transition:.3s;
+					}
+					// &:after{
+					// 	content: '';
+					// 	display: block;
+					// 	position: absolute;
+					// 	bottom: -5px;
+					// 	left: 0;
+					// 	width: 0%;
+					// 	height: 3px;
+					// 	background: $orange;
+
+					// }
+				}
+				
+				.linebar{
+					position: absolute;
+					width: 0;
+					height: 3px;
+					bottom: -8px;
+					left: 0;
+					background-color: $sup-orange;
+				}
+			}
+			.content{
+				display: none;
+				padding: 20px 0;
+				p{
+					line-height: 2.5em;
+				}
+			}
+		}
 	}
 }

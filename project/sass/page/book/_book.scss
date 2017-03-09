@@ -592,9 +592,9 @@ $step-info:#FF5553;
 					cursor: pointer;
 					transition:.3s;
 					
-					&:hover{
-						transform:translateX(3px);
-					}
+					// &:hover{
+					// 	transform:translateX(3px);
+					// }
 					
 				}
 				.before{
@@ -608,9 +608,9 @@ $step-info:#FF5553;
 	    			cursor: pointer;
 	    			transition:.3s;
 	    			
-	    			&:hover{
-						transform:translateX(-3px);
-					}
+	    // 			&:hover{
+					// 	transform:translateX(-3px);
+					// }
 				}
 			}
 			.days{

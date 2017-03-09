@@ -82,14 +82,12 @@ try{
               while ( $roomimgRow = $roomimg->fetch(PDO::FETCH_ASSOC) ){
                       $number++;
                       $str .="<td>
-                          <img style='width:133px;height:auto;' src='images/room/{$roomimgRow["roomimg_name"]}' id='img{$number}'>
-                          <input type='file' class='updateinput' name='image{$number}'>
-                          <input type='hidden' id='imgId{$number}'  value='{$roomimgRow["roomimg_no"]}'>
-                          <input type='hidden' id='imgName{$number}' class='imgName' value='{$roomimgRow["roomimg_name"]}'>
-
-
-
-                    </td>";   
+                                <img style='width:133px;height:auto; display:block;' src='images/room/{$roomimgRow["roomimg_name"]}' id='img{$number}'>
+                                <input type='file' class='updateinput' name='image{$number}'>
+                                <span class='upfilebtn inputBtn'>上傳檔案</span>
+                                <input type='hidden' id='imgId{$number}'  value='{$roomimgRow["roomimg_no"]}'>
+                                <input type='hidden' id='imgName{$number}' class='imgName' value='{$roomimgRow["roomimg_name"]}'>
+                          </td>";   
               }//roomimg while
              
 

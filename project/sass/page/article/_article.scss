@@ -56,9 +56,21 @@
 		.firstRow{
 			padding: 20px;
 			background-color: rgba(255,168,0,0.5);
-			// border-bottom: 4px double $deep-orange;
+			position: relative;
 			h3,.classLabel{float: left;}
 			h3{color: $deep-orange;font-size: 40px;}
+			.hotLabel{
+				position: absolute;
+				left: -8px;
+				top: 0;
+				padding: 2px;
+				font-size: 14px;
+				background-color: #f00;
+				color: #fff;
+				opacity: 0;
+				transform:rotate(-30deg);
+				&.on{opacity:1;}
+			}
 			.classLabel{
 				width: 90px;
 				height: 30px;
@@ -67,7 +79,6 @@
 				border-radius: 3px;
 				letter-spacing: 1px;
 				color: #fff;
-				position: relative;
 				&#shareLabel{
 					background-color: $shareColor;
 				}
@@ -79,14 +90,6 @@
 				}
 				&#foodLabel{
 					background-color: $foodColor;
-				}
-				.hotLabel{
-				position: absolute;
-				padding: 2px;
-				font-size: 12px;
-				background-color: #f00;
-				opacity: 0;
-					&.on{opacity:1;}
 				}
 			}
 			
@@ -230,10 +233,13 @@
 		.message{
 			max-width: 90%;
 			margin: auto;
-		.myMessage{
-			max-width: 100%;
-			margin: auto;
-			resize:none;
+			.myMessage{
+				max-width: 100%;
+				margin:10px auto;
+				resize:none;
+				padding: 3px 6px;
+				letter-spacing: 0.05em;
+				border: 1px solid rgba(119, 71, 32, .8);
 			}
 		}
 		.messbtn{text-align: center;}
@@ -244,6 +250,7 @@
 			padding: 6px 12px;
 			margin: 5px;
 			border-radius: 4px;
+			border: none;
 			text-align: center;
 			letter-spacing: 2px;
 			color: #fff;
