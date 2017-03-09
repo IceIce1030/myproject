@@ -350,6 +350,9 @@
 	    color: #f4511e;
 	    letter-spacing: 2px;
 	    transition: all 0.4s;
+	    &:hover{
+	    	color:#fff;
+	    }
 	}
 	.buttonWrap{
 			display:inline-block;

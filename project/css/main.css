@@ -10076,6 +10076,10 @@ html.fp-enabled,
   transition: all 0.4s;
 }
 
+.race .btnLink:hover {
+  color: #fff;
+}
+
 .race .buttonWrap {
   display: inline-block;
 }

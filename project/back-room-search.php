@@ -2,8 +2,8 @@
 try{
   header("Content-Type:text/html; charset=utf-8");
   require_once("connectFurkid.php");
-    $expIn = $_REQUEST['expIn'];
-    $expOut = $_REQUEST['expOut'];
+    $expIn = (string)$_REQUEST['expIn'];
+    $expOut = (string)$_REQUEST['expOut'];
     // $expIn = '2017-02-01';
     // $expOut = '2017-02-28';
     $canNotLiveRoomNo = array();

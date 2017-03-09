@@ -9,9 +9,11 @@ try{
         from orderlist o join pet p on o.pet_no = p.pet_no
                          join room r on o.room_no = r.room_no
                          join member m on o.mem_no = m.mem_no
-                where o.orderlist_no=:orderlist_no;";
+                where o.orderlist_no=?
+                or   m.mem_name like ?;";
         $orderlist = $pdo->prepare( $sql );
-        $orderlist->bindValue(":orderlist_no", $order_no);
+        $orderlist->bindValue(1, $order_no);
+        $orderlist->bindValue(2, '%'.$order_no.'%');
 
   
   $orderlist->execute();

@@ -1,5 +1,5 @@
 $(function(){	
-  //GOTOP
+  //GOTOP 309 0942
 $("#gotop").click(function(){
     jQuery("html,body").animate({
         scrollTop:0
@@ -10,7 +10,7 @@ $(window).scroll(function() {
         $('#gotop').fadeIn("fast");
     } else {
         $('#gotop').stop().fadeOut("fast");
-    }
+    };
 });
 
   $('.cardmsgbutton').click(function(){
@@ -27,9 +27,10 @@ $(window).scroll(function() {
       if($('.defaultMsg').length > 0){
         // $('.defaultMsg').removeAttr('class');
         $('.defaultMsg').remove();
-      }
+      };
         postMSg();// 呼叫留言 
-    } 
+    }; 
+
   });
     // 註冊分類與篩選
     $('#sorts .button').click(function(){
@@ -73,6 +74,8 @@ $(window).scroll(function() {
               var totalCardNum = $(".cardWrap").length;
               localStorage.setItem('race_totalCardNum', totalCardNum);
             };
+
+
           // 以localstorage判斷客戶端是否投過票_開始
           $( document ).ready(function() {
             if (typeof(Storage) !== "undefined") { 
@@ -604,10 +607,10 @@ $(window).scroll(function() {
 function postMSg(){
  
     var txt = $('#msgtype').val();    //找到textarea裡的值
-    // alert(txt_str);
-    if (txt=='') {
-      alert('尚未輸入留言');
-    }else{
+        
+    // if (txt=='') {
+    //   alert('尚未輸入留言');
+    // }else{
 
     var voteNUmber = $('.cardlightbox').attr("id");
     var voteNum = voteNUmber.replace(/[^0-9]/ig,"");
@@ -641,16 +644,11 @@ function postMSg(){
            }
        }
       }
-      if(localStorage.mem_no){
+     
         var mem_no = localStorage["mem_no"];
         var memUrl = '&mem_no='+mem_no;
         var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl;
-        }else{
-        var mem_no = 'guest';
-        var memUrl = '&mem_no='+ mem_no;
-        var url = "race_msgtoDb.php?vote_no="+voteNum+"&votemsg_date="+nowTime+"&votemsg_content="+txt+memUrl; 
-        alert(url);
-      }
+     
 
         // var mem_no = localStorage["mem_no"];
         // var memUrl = '&mem_no='+mem_no;
@@ -718,8 +716,7 @@ function postMSg(){
             var idnum = idname.replace(/[^0-9]/ig,"");
             var lightboxNum = "lightboxNum="+idnum;
             getRefreshLightboxMsg(lightboxNum); 
-
-    }
+    
 
 
 

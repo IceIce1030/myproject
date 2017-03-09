@@ -27,7 +27,7 @@ try{
      $sql = "select *
              from pet p join vote v on p.pet_no = v.pet_no
                         join dog d on p.dog_no = d.dog_no
-             order by v.vote_count desc
+             order by v.vote_date desc
              limit $start, $pageRecords;";
      $vote = $pdo->prepare( $sql );
      $vote->execute();
