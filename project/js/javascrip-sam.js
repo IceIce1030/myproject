@@ -6,7 +6,9 @@ $(document).ready(function() {
 
     $('#box .house').click(function() {
         var roomName = $(this).find('span').eq(0).text();
-
+        var roomNo = $(this).attr('data-room_no');
+        // console.log(roomNo);
+        localStorage['var_data_room_no'] = roomNo;
         $.ajax({
 
             url: "iRoom.php",
@@ -79,7 +81,7 @@ $(document).ready(function() {
                     $('.disInfo .watch').eq(i).text(mesA[i].arti_count);
                     $('.disInfo .author').eq(i).text(mesA[i].mem_name);
                     $('.postImg img').eq(i).attr('src', "images/articlephoto/" + mesA[i].arti_img);
-                    $('.post .postTitle a').eq(i).attr('href', "article.html?arti_no=" + mesA[i].arti_no);
+                    $('.disInfo a').eq(i).attr('href', "article.html?arti_no=" + mesA[i].arti_no);
                     $('.disInfo .itemLabel').eq(i).text(mesA[i].arti_sort);
                     $('.disInfo .message').eq(i).text(mesA[i].arti_report);
                 }
@@ -143,7 +145,7 @@ $(document).ready(function() {
                     $('#photostack-1 img').eq(i).attr('src', 'images/race_image/' + msgB[i].vote_img);
                     // $('.disInfo .postContent').eq(i).text(mess[i].arti_content.replace(/<br>/g, ","));
                     //RegExp 比對全部的寫法
-                    $('#photostack-1 .card').eq(i).attr('class','card card'+msgB[i].vote_no);
+                    $('#photostack-1 .card').eq(i).attr('class', 'card card' + msgB[i].vote_no);
                     $('#photostack-1 .text .size span').eq(i).text(msgB[i].dog_size);
                     $('#photostack-1 .text .sex span').eq(i).text(msgB[i].pet_sex.replace(/m/g, "男生").replace(/f/g, "女生"));
                 }
@@ -205,7 +207,7 @@ $(document).ready(function() {
         if (e.target.className == 'fa fa-plus') {
             var imgg = $('#index-lightbox .imgbox .img');
             $(this).css({ 'display': 'none' })
-            
+
             lightbox.removeClass('pg2').fadeOut();
             imgg.eq(2).css({ 'border': 'none' });
             imgg.eq(1).css({ 'border': 'none' });
@@ -550,11 +552,17 @@ $(document).ready(function() {
 
         disclass.on("click", function() { //設定點擊事件
                 disclass.removeClass("open"); //先移除open ClassName
+                $(this).children('.distitle').css({
+                    'cursor': 'default'
+                })
+                $(this).siblings().children('.distitle').css({
+                    'cursor': 'pointer'
+                })
                 $(this).addClass("open"); //加個ClassName給他
             })
             // autoPg5 = setInterval(autoPg5, 1800);
 
-        $('.disclass').hover(mouseA, mouseB);
+        disclass.hover(mouseA, mouseB);
 
         function mouseA() {
             $(this).addClass('hover');
@@ -685,12 +693,12 @@ $(document).ready(function() {
     }
 
     $('.i-dateClick').click(function() {
-        $('#placeholder').fadeOut();
-        $('#closeBox').css({'display':'block'});
-    })
-    // $('#closeBox').click(function(e) {
-    //     var roomin = startDate;
-    //     var roomout = endDate;
+            $('#placeholder').fadeOut();
+            $('#closeBox').css({ 'display': 'block' });
+        })
+        // $('#closeBox').click(function(e) {
+        //     var roomin = startDate;
+        //     var roomout = endDate;
 
     //     var ri = $('#roomIn').text();
     //     var ro = $('#roomOut').text();
@@ -715,7 +723,7 @@ $(document).ready(function() {
     //          console.log("ro",ro);
 
     // })
-     $('#close-canlender').click(function(e) {
+    $('#close-canlender').click(function(e) {
         var roomin = startDate;
         var roomout = endDate;
 
@@ -723,9 +731,9 @@ $(document).ready(function() {
         var ro = $('#roomOut').text();
         // alert(aa);
 
-        console.log("ri",ri);
-        console.log("ro",ro);
-        $('#closeBox').css({'display':'none'});
+        console.log("ri", ri);
+        console.log("ro", ro);
+        $('#closeBox').css({ 'display': 'none' });
         if (ri == "" || ro == "") {
             $('#placeholder').fadeIn();
         } else {
@@ -751,64 +759,68 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
-     heartClick();
-            // 愛心動畫
+    heartClick();
+    // 愛心動畫
 
-            function heartClick() {
-                $('.favorite').on('click', function() {
-                    $(this).toggleClass('liked');
+    function heartClick() {
+        // var a = $('#item1');
+        // var b = $('#paper');
+        $('.favorite').on('click', function() {
+            $(this).toggleClass('liked');
+            // $(this).find('.item2').css({
+            //     'fill':'#F8C660'
+            // })
+            // 增加及減少投票數
+            var temp = $(this).attr('class');
+            if (temp.indexOf("liked") != -1) {
+                // alert(temp);
+                var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                var voteCountInt = parseInt(voteCountString) + 1;
+                var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
+                cardNumber = cardNumber.substr(3);
+                var cardLikedNum = 'liked' + cardNumber;
+                var totalCardNum = 15;
 
-                    // 增加及減少投票數
-                    var temp = $(this).attr('class');
-                    if (temp.indexOf("liked") != -1) {
-                        // alert(temp);
-                        var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
-                        var voteCountInt = parseInt(voteCountString) + 1;
-                        var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
-                        cardNumber = cardNumber.substr(3);
-                        var cardLikedNum = 'liked' + cardNumber;
-                        var totalCardNum = 15;
-                            
-                        // 寫入localstorage投了哪一隻寵物
-                        localStorage.setItem(cardLikedNum, "1");
-
-
-                        $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
-
-                    } else {
-
-                        var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
-                        cardNumber = cardNumber.substr(3);
-                        var cardLikedNum = 'liked' + cardNumber;
-                        var totalCardNum = 15;
-                        var voteCount = $(this).parent().parent().siblings(".textTop").find('.votes').text();
-                        var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
-                        var voteCountInt = parseInt(voteCountString) - 1;
-
-                        $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
-                        // 清除localstorage投了哪一隻寵物
-                        localStorage.removeItem(cardLikedNum);
-                    };
-
-                }); // 愛心動畫結束
+                // 寫入localstorage投了哪一隻寵物
+                localStorage.setItem(cardLikedNum, "1");
 
 
+                $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
 
-                // // 以localstorage判斷客戶端是否投過票_開始
-                if (typeof(Storage) !== "undefined") {
-                    var totalCardNum = 39;
-                    for (i = 0; i <= totalCardNum; i++) {
-                        var likeCardNum = 'liked' + i;
-                        var likeStatus = localStorage.getItem(likeCardNum);
+            } else {
 
-                        if (likeStatus == 1) {
-                            var cardID = '.card' + i;
-                            var cardString = cardID + ' .favorite';
-                            $(cardString).addClass('liked');
+                var cardNumber = $(this).parent().parent().siblings(".textTop").find('.number').text();
+                cardNumber = cardNumber.substr(3);
+                var cardLikedNum = 'liked' + cardNumber;
+                var totalCardNum = 15;
+                var voteCount = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                var voteCountString = $(this).parent().parent().siblings(".textTop").find('.votes').text();
+                var voteCountInt = parseInt(voteCountString) - 1;
 
-                        }
-                    }
+                $(this).parent().parent().siblings(".textTop").find('.votes').text(voteCountInt);
+                // 清除localstorage投了哪一隻寵物
+                localStorage.removeItem(cardLikedNum);
+            };
+
+        }); // 愛心動畫結束
+
+
+
+        // // 以localstorage判斷客戶端是否投過票_開始
+        if (typeof(Storage) !== "undefined") {
+            var totalCardNum = 39;
+            for (i = 0; i <= totalCardNum; i++) {
+                var likeCardNum = 'liked' + i;
+                var likeStatus = localStorage.getItem(likeCardNum);
+
+                if (likeStatus == 1) {
+                    var cardID = '.card' + i;
+                    var cardString = cardID + ' .favorite';
+                    $(cardString).addClass('liked');
+
                 }
-                // 以localstorage判斷客戶端是否投過票_結束 
             }
+        }
+        // 以localstorage判斷客戶端是否投過票_結束 
+    }
 })

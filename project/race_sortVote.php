@@ -101,6 +101,7 @@ order by $orderField ";
                           <i class='fa fa-heart outsideheart' aria-hidden='true'>
                             <i class='fa fa-heart insideheart' aria-hidden='true'></i>
                           </i>
+                          <div class='wordsVote'>vote</div>
                       </button>
                     </div>                    
                   </div>
@@ -156,6 +157,7 @@ order by $orderField ";
                           <i class='fa fa-heart outsideheart' aria-hidden='true'>
                             <i class='fa fa-heart insideheart' aria-hidden='true'></i>
                           </i>
+                          <div class='wordsVote'>vote</div>
                       </button>
                     </div>                    
                   </div>

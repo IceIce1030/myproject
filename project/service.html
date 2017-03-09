@@ -4,14 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>服務介紹</title>
+    <title>服務介紹 | FurKid</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+    <!-- jquery -->
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <!-- TweenMax js-->
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="js/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="js/debug.addIndicators.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <!-- nav -->
     <script type="text/javascript" src="js/nav.js"></script>
+    <!-- service -->
     <script type="text/javascript" src="js/service.js"></script>
     <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
+
 </head>
 
 <body>
@@ -151,7 +162,7 @@
     <div class="service">
         <!-- 狗狗住宿 -->
         <div class="introduction">
-            <div class="txt">
+            <div class="txt" id="introBox">
                 <p>
                     出國、出差？總是請朋友幫忙顧欠人情？也不知道狗狗在朋友家過得如何...
                     <br>帶寶貝來「毛基地」住宿吧！
@@ -163,14 +174,13 @@
                 </div>
             </div>
         </div>
-        <!-- 六種房型 -->
-        <div class="roomType">
-            <!-- 毛基地特色 -->
-            <div class="specialty">
-                <div class="container">
-                    <div class="title">
-                        <h1><span><img src="images/dogHead02.png" alt=""></span>毛基地特色</h1> </div>
-                    <div class="row">
+        <!-- 毛基地特色 -->
+        <div class="specialty" id="trigger_02">
+            <div class="container">
+                <div class="title">
+                    <h1><span><img src="images/dogHead02.png" alt=""></span>毛基地特色</h1> </div>
+                <div class="row">
+                    <section class="section section_02">
                         <div class="col-xs-6 col-sm-4 col-md-2 itemDiv">
                             <div class="item">
                                 <div class="imageBox"><img class="rwd-img" src="images/service01.png" alt=""></div>
@@ -206,20 +216,22 @@
                                 <div class="imageBox"><img class="rwd-img" src="images/service06.jpg" alt=""></div>
                                 <div class="txt">褓母手工製作天然零食，給狗狗最健康的享受</div>
                             </div>
-                            <!-- 房型位置 -->
-                            <!-- <a name="roomTypeIntro"></a> -->
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
+        </div>
+        <!-- 六種房型 -->
+        <div class="roomType" id="trigger_03">
             <!-- 六種房型 -->
             <div class="container" id="roomContainer">
+                <a name="roomIntro"></a>
                 <div class="title">
                     <h1 id='test'><span><img src="images/dogHead04.png" alt=""></span>六種房型</h1>
                 </div>
                 <div class="roomTypeNav">
                     <div class="row">
-                        <div class="col-xs-4 col-sm-2 col-md-2 itemDiv roomTab active">
+                        <div class="col-xs-4 col-sm-2 col-md-2 itemDiv roomTab roomTab1 active" data-room_no="1">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/country3.jpg" alt="">
                                 <div class="txt">
@@ -227,7 +239,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv">
+                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab roomTab6 itemDiv" data-room_no="6">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/pop3.jpg" alt="">
                                 <div class="txt">
@@ -235,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv">
+                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab roomTab5 itemDiv" data-room_no="5">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/north1.jpg" alt="">
                                 <div class="txt">
@@ -243,7 +255,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv">
+                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab roomTab4 itemDiv" data-room_no="4">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/modern3.jpg" alt="">
                                 <div class="txt">
@@ -251,7 +263,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv">
+                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab roomTab2 itemDiv" data-room_no="2">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/dream3.jpg" alt="">
                                 <div class="txt">
@@ -259,7 +271,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv">
+                        <div class="col-xs-4 col-sm-2 col-md-2 roomTab roomTab3 itemDiv" data-room_no="3">
                             <div class="item">
                                 <img class="rwd-img" src="images/room/loft3.jpg" alt="">
                                 <div class="txt">
@@ -269,18 +281,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="roomInfo">
+                <div class="roomInfo itemDiv">
                     <div class="row">
                         <div class="main">
                             <div class="col-xs-12 col-sm-8 col-md-9 roomPhoto">
-                                <img id="roomTypeImage" class="rwd-img" src="images/room/country3.jpg" alt="">
+                                <div id="roomPhotoSlider">
+                                    <!-- <div>
+                                        <img class="rwd-img">
+                                    </div>
+                                      <div>
+                                        <img class="rwd-img">
+                                    </div>
+                                    <div>
+                                        <img class="rwd-img">
+                                    </div> -->
+                                    <div class="temp"></div>
+                                </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-3 roomDetail">
                                 <div class="txt">
                                     <h3 id="roomTypeName">鄉村風</h3>
-                                    <h4 class="roomPrice">$<span>500</span></h4>
+                                    <h4 class="roomPrice">每晚：$<span id='roomPrice'><!-- 500 --></span></h4>
                                     <p id="roomTypeIntro">
-                                        鄉村風中可以看見，大量採用紅磚頭、泥磚來造屋，營造內斂沉穩感覺，同時也彰顯自然氣息。小碎花、格子圖案是鄉村風格的主調，窗簾、布藝、壁紙都少不了它，另外，該風格中的沙發多以手工布面為主，線條優美、顏色秀麗，讓人過目不忘。
+                                        <!--  鄉村風中可以看見，大量採用紅磚頭、泥磚來造屋，營造內斂沉穩感覺，同時也彰顯自然氣息。小碎花、格子圖案是鄉村風格的主調，窗簾、布藝、壁紙都少不了它，另外，該風格中的沙發多以手工布面為主，線條優美、顏色秀麗，讓人過目不忘。 -->
                                     </p>
                                     <p class="listDetail">絨毛舒眠睡墊一張</p>
                                     <p class="listDetail">獨立沙發一張</p>
@@ -288,9 +311,6 @@
                                     <p class="listDetail">夜間有保姆隨時待命</p>
                                     <p class="listDetail">146x230x200cm</p>
                                 </div>
-                                <!-- <div class="btnDiv">
-                                    <a href="#" class="btnLink">詳細介紹</a>
-                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -299,53 +319,20 @@
         </div>
         <!-- 加值服務 -->
         <a name="serviceTypeIntro"></a>
-        <div class="serviceType">
+        <div class="serviceType" id="trigger_04">
             <div class="container">
                 <div class="title">
                     <h1><span><img src="images/dogHead01.png" alt=""></span>加值服務</h1></div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
                         <div class="item">
-                            <div class="imageBox"><img class="rwd-img" src="images/service/service_bath01.jpg" alt=""></div>
-                            <div class="txt">
-                                <h3>沐浴<img src="images/service/bathIcon.png" alt=""></h3>
-                                <p>讓毛寶貝洗香香，包含清耳朵、梳毛拆結、兩道洗淨、一道潤絲、純手吹吹乾，使用木酢家純天然洗劑，不過分香，天然不致敏</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
-                        <div class="item">
-                            <div class="imageBox"><img class="rwd-img" src="images/service/service_groom01.jpg" alt=""></div>
-                            <div class="txt">
-                                <h3>美容<img src="images/service/groomIcon.png" alt=""></h3>
-                                <p>由專業資深的美容師服務毛寶貝，含修指甲、修腳底毛、修腳圍、拔耳毛、剃肚子毛、剃腹部毛、剃肛門毛、修淚腺和簡單造型</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
-                        <div class="item">
-                            <div class="imageBox"><img class="rwd-img" src="images/service/service_massage01.jpg" alt=""></div>
-                            <div class="txt">
-                                <h3>按摩<img src="images/service/massagaIcon.png" alt=""></h3>
-                                <p>按摩幫助狗狗放鬆肌肉，促進血液循環，改善局部疼痛，每隻狗狗對按摩接受度不同，毛基地會視情況做調整，不會勉強毛寶貝唷</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
-                        <div class="item">
-                            <div class="imageBox"><img class="rwd-img" src="images/service/service_brush01.jpg" alt=""></div>
-                            <div class="txt">
-                                <h3>潔牙<img src="images/service/brushTeethIcon.png" alt=""></h3>
-                                <p>給毛寶貝清新口氣，讓你和寶貝更親近。最新日式無麻醉潔牙，透過沸石牙膏，搭配特殊手法，能達到一般麻醉洗牙的八成功效</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
-                        <div class="item">
                             <div class="imageBox"><img class="rwd-img" src="images/service/service_walk01.jpg" alt=""></div>
                             <div class="txt">
                                 <h3>遛狗<img src="images/service/walkDogIcon.png" alt=""></h3>
-                                <p>活力旺盛或尚未成年的毛寶貝需求散步的次數更多，加購溜狗服務滿足毛寶貝的好奇心和嗅聞需求，適當的消耗體力和釋放壓力</p>
+                                <p>活力旺盛或尚未成年的毛寶貝需求散步的次數更多，加購溜狗服務滿足毛寶貝的好奇心和嗅聞需求，適當的消耗體力和釋放壓力。</p>
+                                <p class="price">小型犬：$100</p>
+                                <p class="price">中型犬：$150</p>
+                                <p class="price">大型犬：$200</p>
                             </div>
                         </div>
                     </div>
@@ -354,13 +341,100 @@
                             <div class="imageBox"><img class="rwd-img" src="images/service/service_swim01.jpg" alt=""></div>
                             <div class="txt">
                                 <h3>游泳<img src="images/service/swimmingIcon.png" alt=""></h3>
-                                <p>帶毛寶貝來游泳吧，毛基地室內溫水泳池，珪藻土過濾．臭氧殺菌，每5-7日換水，免費提供芬蘭救生衣，寵物證照褓母全程伴游</p>
+                                <p>帶毛寶貝來游泳吧，毛基地室內溫水泳池，珪藻土過濾．臭氧殺菌，每5-7日換水，免費提供芬蘭救生衣，寵物證照褓母全程伴游。</p>
+                                <p class="price">小型犬：$200</p>
+                                <p class="price">中型犬：$300</p>
+                                <p class="price">大型犬：$400</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
+                        <div class="item">
+                            <div class="imageBox"><img class="rwd-img" src="images/service/service_bath01.jpg" alt=""></div>
+                            <div class="txt">
+                                <h3>沐浴<img src="images/service/bathIcon.png" alt=""></h3>
+                                <p>讓毛寶貝洗香香，包含清耳朵、梳毛拆結、兩道洗淨、一道潤絲、純手吹吹乾，使用木酢家純天然洗劑，不過分香，天然不致敏。</p>
+                                <p class="price">小型犬：$400</p>
+                                <p class="price">中型犬：$600</p>
+                                <p class="price">大型犬：$800</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
+                        <div class="item">
+                            <div class="imageBox"><img class="rwd-img" src="images/service/service_groom01.jpg" alt=""></div>
+                            <div class="txt">
+                                <h3>美容<img src="images/service/groomIcon.png" alt=""></h3>
+                                <p>由專業資深的美容師服務毛寶貝，含修指甲、修腳底毛、修腳圍、拔耳毛、剃肚子毛、剃腹部毛、剃肛門毛、修淚腺和簡單造型。</p>
+                                <p class="price">小型犬：$600</p>
+                                <p class="price">中型犬：$900</p>
+                                <p class="price">大型犬：$1200</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
+                        <div class="item">
+                            <div class="imageBox"><img class="rwd-img" src="images/service/service_massage01.jpg" alt=""></div>
+                            <div class="txt">
+                                <h3>按摩<img src="images/service/massagaIcon.png" alt=""></h3>
+                                <p>按摩幫助狗狗放鬆肌肉，促進血液循環，改善局部疼痛，每隻狗狗對按摩接受度不同，毛基地會視情況做調整，不會勉強毛寶貝唷。</p>
+                                <p class="price">小型犬：$800</p>
+                                <p class="price">中型犬：$1200</p>
+                                <p class="price">大型犬：$1600</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 itemDiv">
+                        <div class="item">
+                            <div class="imageBox"><img class="rwd-img" src="images/service/service_brush01.jpg" alt=""></div>
+                            <div class="txt">
+                                <h3>潔牙<img src="images/service/brushTeethIcon.png" alt=""></h3>
+                                <p>給毛寶貝清新口氣，讓你和寶貝更親近。最新日式無麻醉潔牙，透過沸石牙膏，搭配特殊手法，能達到一般麻醉洗牙的八成功效。</p>
+                                <p class="price">小型犬：$1600</p>
+                                <p class="price">中型犬：$2400</p>
+                                <p class="price">大型犬：$3200</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 連接到其他頁 -->
+        <div class="overall" id="trigger_05">
+            <div class="fullcontainer">
+                <div class="col-xs-12 col-sm-4 col-md-4 item">
+                    <div class="reminder" id="bookingReminder">
+                        <div class="txt">
+                            <h4>帶毛小孩來「毛基地」住宿吧！</h4>
+                            <div class="btnDiv">
+                                <a class="btnFunction" href="book.html">線上訂房</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 item">
+                    <div class="reminder" id="discussReminder">
+                        <div class="txt">
+                            <h4>分享你和毛小孩的生活點滴～</h4>
+                            <div class="btnDiv">
+                                <a class="btnFunction" href="discuss.html">加入討論</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 item">
+                    <div class="reminder" id="raceReminder">
+                        <div class="txt">
+                            <h4>幫可愛毛小孩報名萌主爭霸～</h4>
+                            <div class="btnDiv">
+                                <a class="btnFunction" href="compete_register.html">報名參賽</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gotop"><img src="images/gotop.png"></div>
     </div>
     <!-- 精選服務結束 -->
     <!-- footer開始 -->

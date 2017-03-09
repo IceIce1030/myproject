@@ -1,5 +1,6 @@
 //jquery
 $(document).ready(function() {
+
     // -------select外掛
     $('select').niceSelect();
     $("#dog_size").change(function() {
@@ -22,11 +23,29 @@ $(document).ready(function() {
     // 登入觸發事件？以後勒？
     $("#loginBtn").click(function() {
         // location.reload();
-        getMemPets();
+        // getMemPets();
         // if (localStorage["mem_no"] != null) {
         //     $('#addPetBtn').removeAttr('disabled');
         // }
+        setTimeout(getMemPets, 200);
+    });
 
+    $("#guestLoginBtn").click(function() {
+        // location.reload();
+        // getMemPets();
+        // if (localStorage["mem_no"] != null) {
+        //     $('#addPetBtn').removeAttr('disabled');
+        // }
+        setTimeout(getMemPets, 200);
+    });
+
+     $("#logoutBtn").click(function() {
+        // location.reload();
+        // getMemPets();
+        // if (localStorage["mem_no"] != null) {
+        //     $('#addPetBtn').removeAttr('disabled');
+        // }
+        setTimeout(getMemPets, 200);
     });
 
     // $("#logoutBtn").click(function() {

@@ -10,7 +10,7 @@
 				position: fixed;
 				top: 0;
 				left: 0;
-				z-index: 30;
+				z-index: 28;
 				margin: auto;
 				width: 100%;
 				height: 100vh;
@@ -134,16 +134,32 @@
 												cursor: pointer;
 												background: transparent;
 					  							border: 0;
+					  							.wordsVote{
+									  				position: absolute;
+									  				top: 9px;			  							
+									  				left: 8px;
+									  				margin: auto;
+									  				font-size: 11px;
+									  				color:white;			  								
+									  			}
 					  							&:focus{
 					  								outline: 0;
+					  								.wordsVote{
+														position: absolute;
+														top: 9px;			  							
+														left: 8px;
+														margin: auto;
+														font-size: 11px;
+														color:white;			  								
+													}
 					  							}
 					  							.outsideheart{			  									
 					  								position: relative;
 					  								font-size: 40px;
 					  								color: #ffd5cc;
-					  								&:hover{
-						  								color: $light-pink;
-						  							}
+					  								// &:hover{
+						  							// 	color: $light-pink;
+						  							// }
 					  								.insideheart{
 														position: absolute;
 														top: 0;
@@ -178,9 +194,11 @@
 									background-color: #FFF;
 									font-size: 15px;
 									display:block;
+									border-bottom: 1px dotted #ccc;
 									padding: 5px 5px 5px 5px;						
-									height: 150px;
-									width: 100%;	
+									// height: 150px;
+									// height: 100%;
+									max-height:140px; 																		width: 100%;	
 									border-radius:5px;
 									overflow: auto;
 									word-break: break-all;
@@ -190,8 +208,7 @@
 										display: block;
 
 										span{
-											width: 100%;
-									
+											width: 100%;									
 										}		
 									}
 								}			
@@ -212,7 +229,7 @@
 									.msgtype{
 										border: none;
 										outline:none;
-										width: 120px;										
+										width: 150px;										
 									}
 									.cardmsgbutton{
 										border:none;
@@ -277,24 +294,30 @@
 				margin: auto;
 				text-align:center;
 				height: 0em;
-				font-size: 12px;
-				color: #53a1da;
-				text-shadow:0.3px 0.3px 0.3px #4d5dbb;
+				font-size: 15px;
+				color: steelblue;
+				font-weight: bold;
+				// text-shadow:0.3px 0.3px 0.3px #fd8e2f;
 			}
 		}
 		.cloud1{
 			padding: 0;
 			text-align:center;
+			z-index: 5;
 			img{
 				width: 90%;
 			}
 			p{
-				color: #53a1da;			
+				color: #fd8e2f;			
 			}
 			span{
 				color:$light-pink;
 				font-size: $fz-h4;
 			}
+		}
+		.cloud3{
+			margin: -150px;
+			display: none;
 		}	
 		.topthree{
 		margin-top: 120px;
@@ -340,8 +363,8 @@
 					position: relative;
 					border-radius: 50%;
 					border: 5px solid $orange;	
-					width: 120px;
-					height: 120px;
+					width: 27vw;
+					height: 27vw;
 					margin: 0 auto;
 					overflow: hidden;
 					img{	
@@ -356,9 +379,11 @@
 						right: 0;
 						left: 0;
 						margin: 0 auto;
-						bottom: 15px;
+						bottom: 5px;
 						color: white;
 						font-size: $fz-content;
+						text-shadow:0.3px 0.3px 0.3px black;
+			}
 					}
 				}
 				.stick{
@@ -468,9 +493,6 @@
 			width: 350px;
 			height: 500px;
 			}
-		}
-		.anotherLine{
-			display: block;
 		}	
 		#sorts{
 			.button{
@@ -489,12 +511,15 @@
 				font-size: $fz-content;	
 				background-color: transparent;
 				outline: none;		
-				}
+			}
 			padding: 10px 0px 5px 0px;
 			span{
 				font-size:14px; 	
 			}
-	}
+			.buttonWrap{
+				display:block;
+			}
+	    }
 	.searchWrap{
 				display: none;
 				position: relative;
@@ -529,6 +554,9 @@
 			}
 		}
 	#filters{
+		.buttonWrap{
+			display:block;
+		}
 		.button{
 			letter-spacing: 0.05em;
 			width: 60px;
@@ -554,7 +582,15 @@
 	}
 		.cardWrap{
 			padding: 30px 30px;
+			.wordsVote{
+  				position: absolute;
+  				top: 9px;			  							
+  				left: 8px;
+  				margin: auto;
+  				font-size: 16px;
+  				color:white;			  								
+  			}
 		}
-	}
+	
 
 }

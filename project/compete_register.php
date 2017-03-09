@@ -19,7 +19,9 @@ try{
 
 
 //上傳圖片 放到pet資料夾
-switch( $_FILES["pet_img"]["error"]){
+
+if($_FILES["pet_img"]["tmp_name"] != NULL){
+  switch( $_FILES["pet_img"]["error"]){
   case 0:
     $from = $_FILES["pet_img"]["tmp_name"];
     //檢查資料夾或檔案是否存在
@@ -60,6 +62,11 @@ switch( $_FILES["pet_img"]["error"]){
      }//switch
 
   $member->bindValue(":pet_img", $fileName);
+}else{
+   $member->bindValue(":pet_img", $_REQUEST["default_pet_img"]);
+}
+
+
   $member->execute();
   header("Location:compete_registerIntro.html");
 

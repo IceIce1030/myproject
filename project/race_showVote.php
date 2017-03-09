@@ -1,37 +1,36 @@
 <?php
 try{
   require_once("connectFurkid.php");
-  $sql = "select * from vote a join pet b on a.pet_no = b.pet_no join dog c on b.dog_no = c.dog_no where b.mem_no=:mem_no ORDER by vote_no";
-  $vote = $pdo->prepare( $sql );
-  $vote->bindValue(":mem_no", $_REQUEST["mem_no"]);
-  $vote->execute();
-  $str='';
-  if( $vote->rowCount() == 0 ){ //找不到
-    
-    $str="<div class='reminder' id='raceReminder'>
-    <div class='txt'>
-        <h4>快來幫你可愛的毛小孩報名萌主爭霸贏得大獎～</h4>
-        <div class='btnDiv'>
-            <a class='btnFunction' href='compete_register.html'>報名參賽</a>
-        </div>
-    </div>
-</div>";
-  }
-  else{ //找得到取回資料
-  	 while ( $voteRow = $vote->fetch()){ 
 
-     // 抓到性別
-   if($voteRow["pet_sex"] =="m"){
+  $sql = "select * from vote join pet on vote.pet_no = pet.pet_no join dog on pet.dog_no = dog.dog_no";
+  $vote = $pdo->prepare( $sql );
+  // $room->bindValue(":room_no", $_REQUEST["roomstyle"]);
+  $vote->execute();
+ 
+  
+  if( $vote->rowCount() == 0 ){ //找不到
+    //傳回空的JSON字串
+    echo "{}";
+  }
+  else{ //找得到
+     //取回一筆資料
+    // $dogRow = $dog->fetch(PDO::FETCH_ASSOC);
+
+  		$str='';
+
+   	while ( $voteRow = $vote->fetch() ){       
+        if($voteRow["pet_sex"] =="m"){
           $sex = "男生";
+         
         }else{
           $sex = "女生";
+          
         };
 
-          $str.="
-          <a href='race.html'><div class='cardWrap col-xs-12 col-sm-4 col-md-3 element-item transition big'>
-              <div class='card card{$voteRow["vote_no"]}'>
-                <div id='openLightbox{$voteRow["vote_no"]}' class='openLightbox' value='{$voteRow["vote_no"]}'>
-                  <img src='images/race_image/{$voteRow["vote_img"]}'>
+          $str.="<div class='cardWrap col-xs-12 col-sm-4 col-md-3 element-item transition big'>
+              <div class='card'>
+                <div id='openLightbox{$voteRow["pet_no"]}' class='openLightbox'>
+                  <img src='race_image/{$voteRow["vote_img"]}'>
                 </div>
                 <div class='text'>
                   <div class='textTop'>
@@ -53,19 +52,30 @@ try{
                     </div>
                     <div class='like'>
                       <p class='votes'>{$voteRow["vote_count"]}</p>
-                      <button class='favorite' value='{$voteRow["vote_no"]}'>       
-                          <i class='fa fa-heart outsideheart' aria-hidden='true'></i>
+                      <button class='favorite'>       
+                          <i class='fa fa-heart outsideheart' aria-hidden='true'>
+                            <i class='fa fa-heart insideheart' aria-hidden='true'></i>
+                          </i>
                       </button>
                     </div>                    
                   </div>
                 </div>
+                <div class='messageBorad'>
+                  <section class='post'>
+                  </section>
+                  <input type='text' class='msg dropzone'>
+                  <button class='add_table' type='submit'>submit</button>
+                </div>
               </div>
-            </div></a>";
+            </div>";
+        }  
+    }
+          
+    //送出json字串
+    echo ( $str);//陣列編碼成json字串，回傳到前端
 
-      }//while         
-     }//else
-     echo $str;
-}catch(PDOException $ex){
+  	
+}catch(PDOException $e){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage() , "<br>";
   echo "行號 : " , $ex->getLine() , "<br>";
 }

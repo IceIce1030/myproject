@@ -28,7 +28,7 @@
                 width: 100%;
                 .imgbox{
                     padding-top: 5px;
-                    width: 310px;
+                    width: 100%;
                     margin: auto;
                 }
                 .img{
@@ -75,8 +75,9 @@
             display: none;
         } 
         .pic {
-            width: 100%;
+            width: 90%;
             padding: 5px;
+            margin: 20px auto;
             background-color: #fff;
             border-radius: 50%;
             position: relative;
@@ -173,7 +174,7 @@
         .PageTwo {
             padding-bottom: 50px;
             header {
-                padding: 80px 6px 20px;
+                padding: 150px 6px 20px;
                 text-align: center;
                 font-size: 20px;
             }

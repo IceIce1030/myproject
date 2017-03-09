@@ -14,12 +14,11 @@
 	<script type="text/javascript" src="js/race_showJS_save.js"></script>  
 <!-- 	<script type="text/javascript" src="sortVote.js"></script> -->
 	<script type="text/javascript" src="js/race_showTopThree.js"></script>
-	<script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
 <!-- 	<script type="text/javascript" src="race_showLightbox.js"></script> -->
-
+	<script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
 
 </head>
-<body>
+<body id="race-body">
 <!-- loadingbox -->
 <div class="loadingbox">
     <div class="dogbox">
@@ -60,6 +59,9 @@
     </div>
 </div>
 <!-- loadingbox -->
+	
+	<!-- 回到頂端 -->
+<!-- 	<div id="gotop"><img src="images/gotop.png"></div> -->
     <!-- 選單開始 -->
     <nav class="nav-header">
         <div class="fullcontainer">
@@ -78,7 +80,7 @@
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html" class="active"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
                     <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
@@ -125,7 +127,7 @@
     <!-- login燈箱開始 -->
     <div class="navbarLightbox loginlightbox">
         <div class="content">
-            <p class="loginLeft">登入</p>
+            <p class="loginLeft">留言前請先登入會員</p>
             <div class="loginRight"><i id="closeLightBox" class="fa fa-times" aria-hidden="true"></i></div>
             <div class="clear"></div>
             <p>
@@ -155,27 +157,36 @@
 
 	 <!-- 頒獎台 -->
 
+	<!-- 回到頂端 -->
+	<div id="gotop"><img src="images/gotop.png"></div>
 	<div class="race">
+
 		<div class="section section_prize" >	
 			<div class="container">
 				<div class="prize_items">
 					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6">
+						<div class="col-xs-8 col-sm-6 col-md-6">
 							<div class="cloud cloud1">
-								<img src="images/race_image/r_bigcloud.png">
-								<p>票選萌主!比賽倒數<span>5</span>天!</p>
+								<img src="images/race_image/r_bigcloud1.png">
+								<div class="cloudTxt">
+									<p>選出你心中最<span>萌</span>的狗狗!</p>
+								</div>
 							</div>	
 						</div>
-						<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="col-xs-4 col-sm-3 col-md-3">
 							<div class="cloud cloud2">
-								<img src="images/race_image/r_bigcloud.png">
-								<p>免費住宿券</p>
+								<img src="images/race_image/r_bigcloud1.png">
+								<div class="cloudTxt">
+									<p>免費住宿券!</p>
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-3 col-sm-3 col-md-3">
-							<div class="cloud cloud2">
-								<img src="images/race_image/r_bigcloud.png">
-								<p>可愛狗抱枕</p>
+						<div class="col-xs-3 col-sm-3 col-md-3" id="cloud3Box">
+							<div class="cloud cloud3">
+								<img src="images/race_image/r_bigcloud1.png">
+								<div class="cloudTxt">
+									<p>可愛狗抱枕!</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -264,19 +275,23 @@
 			<!-- 排序 -->
 
 				<div id="sorts" class="button-group">
-				  <span class="anotherLine">排序方式:&nbsp</span>  
-				  <button class="button is-checked" data-sort-by="number" id="voteNum" value="date">編號</button>
-				  <button class="button" data-sort-by="votes" id="voteCount" value="votes">票數</button>		
+				  <div class="circle"></div><span class="anotherLine">排序方式:&nbsp</span>  
+				 <div class="buttonWrap">
+				 	<button class="button is-checked" data-sort-by="number" id="voteNum" value="date">編號</button>
+				 	<button class="button" data-sort-by="votes" id="voteCount" value="votes">票數</button>
+				 </div>
 				</div>
 				
 			<!-- 篩選器 -->
 
 				<div id="filters" class="button-group">
-				  <span class="anotherLine">分類方式:&nbsp</span>
-				  <button class="button is-checked" data-filter="*" id="sizeAll" value="*">全部</button>
-				  <button class="button" data-filter=".big" id="sizeBig" value="大型犬">大型犬</button>
-				  <button class="button" data-filter=".medium" id="sizeMedium" value="中型犬">中型犬</button>
-				  <button class="button" data-filter=".small" id="sizeSmall" value="小型犬">小型犬</button>
+				  <div class="circle"></div><span class="anotherLine">分類方式:&nbsp</span>
+				  <div class="buttonWrap">
+				  	<button class="button is-checked" data-filter="*" id="sizeAll" value="*">全部</button>
+				  	<button class="button" data-filter=".big" id="sizeBig" value="大型犬">大型犬</button>
+				  	<button class="button" data-filter=".medium" id="sizeMedium" value="中型犬">中型犬</button>
+				  	<button class="button" data-filter=".small" id="sizeSmall" value="小型犬">小型犬</button>
+				  </div>
 				</div>
 
 			
@@ -324,6 +339,7 @@
 	                          <i class='fa fa-heart outsideheart' aria-hidden='true'>
 	                            <i class='fa fa-heart insideheart' aria-hidden='true'></i>
 	                          </i>
+	                          <div class="wordsVote">vote</div>
 	                        </button>
 	                     </div>
 	                  </div>          
@@ -379,148 +395,6 @@
     <!-- footer結束 -->
 
 
-			
-	
-			
-<script type="text/javascript">
-
-
-$(function() {
-			// 棒棒糖長高
-	$(window).load(function() {
-	 	var wdth=$(window).width();
-	 	var wdh=$(window).height();
-	 	var wdratio = (wdh/wdth)/3;
-	 	var pb1 = 240*wdratio;
-	 	var pb2 = 320*wdratio;
-	 	var pb3 = 280*wdratio;
-	 	console.log(wdth,wdh,wdratio,pb1);
-		// $("span").text(wdth);
-		// var windowh = window.screen.height; 
-		// var windoww = window.screen.width;
-		// console.log(windowh,windoww);
-
-		// var bodyh = document.body.clientWidth;
-		// var bodyw = document.body.clientHeight;
-		// console.log(bodyh,windoww);
-
-		if(wdth<768){
-			var pb1 = 350*wdratio;
-		 	var pb2 = 480*wdratio;
-		 	var pb3 = 425*wdratio;
-			$(".topthree .item .lollipop .stick.stick1").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    	
-		    $(this).animate({
-		      'padding-bottom' : pb1+"%"
-		    }, 4000);
-		  });
-		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(3000).animate({
-		      'padding-bottom' : pb2+"%"
-		    }, 4000);
-		  });
-		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(1500).animate({
-		      'padding-bottom' : pb3+"%"
-		    }, 4000);
-		  });
-		}
-
-		if(wdth>=768 && wdth<1200){
-			$(".topthree .item .lollipop .stick.stick1").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).animate({
-		      'padding-bottom' : pb1+"%"
-		    }, 4000);
-		  });
-		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(3000).animate({
-		      'padding-bottom' : pb2+"%"
-		    }, 4000);
-		  });
-		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(1500).animate({
-		      'padding-bottom' : pb3+"%"
-		    }, 4000);
-		  });
-		}
-
-		if(wdth>1200){
-			var wdth=1170;
-			var wdratio = (wdh/wdth)/3;
-			console.log(wdth,wdh,wdratio);
-			var pb1 = 240*wdratio;
-		 	var pb2 = 320*wdratio;
-		 	var pb3 = 280*wdratio;
-			$(".topthree .item .lollipop .stick.stick1").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    $(this).animate({
-		      'padding-bottom' : pb1+"%"
-		    }, 4000);
-		  });
-		    $(".topthree .item .lollipop .stick.stick2").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(3000).animate({
-		      'padding-bottom' : pb2+"%"
-		    }, 4000);
-		  });
-		      $(".topthree .item .lollipop .stick.stick3").each( function( key, bar ) {
-		    var percentage = $(this).data('percentage');
-		    
-		    $(this).delay(1500).animate({
-		      'padding-bottom' : pb3+"%"
-		    }, 4000);
-		  });
-		}
-	});
-
-
-
-
- 
-
-	// 雲淡入
- //    TweenMax.staggerFromTo(".cloud1", 5, {
- //        x: 1200,
- //        opacity: 0
- //    }, {
- //        x: 0,
- //        opacity: 1,
- //    }, 1);
-
- //    TweenMax.staggerFromTo(".cloud2", 5, {
- //        x: -1200,
- //        opacity: 0
- //    }, {
- //        x: 0,
- //        opacity: 1,
- //    }, 1);
-
-
-
-	// 卡片燈箱
-	// var setMdw = $(this),
-	// 	setHref = setMdw.attr('href'),
-	// 	setSource = setHref.html(),
-	// 	abbb= '';
-		// $('body').append('<div class="r-cardLightbox" id="anchorCard"><div class="r_cross"><a href="#"><i class="fa fa-times fa-inverse" aria-hidden="true"></i></a></div><div class="cardContent"></div></div>');
-
-	
-
-
-});
-</script>
 
 </body>
 </html>

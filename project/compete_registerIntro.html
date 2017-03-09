@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>建立寵物資料</title>
+    <title>報名萌主爭霸</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
@@ -13,7 +13,6 @@
     <script type="text/javascript" src="js/jquery.nice-select.js"></script>
     <script type="text/javascript" src="js/compete_registerIntro.js"></script>
     <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
-
 </head>
 
 <body>
@@ -71,7 +70,7 @@
                         <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
-                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
+                        <a href="race.html" class="active"><i class="fa fa-trophy" aria-hidden="true" ></i><span>萌主爭霸</span></a></li>
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
@@ -176,8 +175,8 @@
             <div class="main">
                 <h3>填寫報名資料</h3>
                 <div class="formDiv">
-                    <form action="compete_registerIntro.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="pet_no" id="pet_no" value="">
+                    <form  id="formRace" name="form" action="compete_registerIntro.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="pet_no" id="pet_no" value="" >
                         <div class="formGroup">
                             <h4 class="labelClass">狗狗萌照</h4>
                             <div class="showImage"><img id="voteImg"></div>
@@ -189,7 +188,7 @@
                         </div>
                         <div class="formGroup">
                             <h4 class="labelClass">狗狗介紹</h4>
-                            <textarea type="text" name="vote_intro" id="vote_intro" placeholder="50個中英文字以內" rows="4" cols="28" maxlength="50"></textarea>
+                            <textarea type="text" name="vote_intro" id="vote_intro" placeholder="30個中英文字以內" rows="3" cols="28" maxlength="50"></textarea>
                         </div>
                         <div class="formGroup">
                             <div class="btnDiv">

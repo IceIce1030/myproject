@@ -788,7 +788,7 @@ $(document).ready(function(){
   		//帶入狗資料
   		$('.again').click(function(){
   			//如果有會員帶入狗狗資料
-  			console.log(localStorage["mem_id"]);
+  			
 			if(localStorage["mem_id"]!=undefined){
 				getMemberPet();
 				$(this).css({

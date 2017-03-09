@@ -278,3 +278,24 @@ a{
 }
 
 //-------select外掛結束
+
+//-------go top
+///////
+#gotop {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+@include respones(xs) {
+    #gotop {
+        right: 10px;
+        bottom: 15px;
+        img {
+            width: 50px;
+        }
+    }
+}

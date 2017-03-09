@@ -1,6 +1,3 @@
-@import "lg";
-@import "sm";
-@import "xs";
 // * {
 //     outline: 1px solid red;
 // }
@@ -33,6 +30,24 @@
         position: relative;
         text-align: center;
         background: url(../images/background/bg_start.png) no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        #introBox {
+            transform: scale(0);
+            opacity: 0;
+            transition: all 0.5s;
+            animation: introBox 1.5s 0.2s both;
+        }
+        @keyframes introBox {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
         .txt {
             font-size: 18px;
             color: #333;
@@ -48,7 +63,7 @@
         position: relative;
         background: url(../images/background/bg16.jpg) no-repeat;
         background-size: cover;
-        background-position: 50% 100%;
+        background-position: 90% 100%;
         background-attachment: fixed;
         .item {
             .imageBox {
@@ -70,7 +85,6 @@
     }
     .roomType {
         background: url(../images/background/index-bg6.jpg) repeat;
-        #roomContainer {}
         .roomTypeNav {
             > .row {
                 font-size: 0;
@@ -89,7 +103,6 @@
                 position: relative;
                 img {
                     position: relative;
-                    border: 2px solid $deep-orange;
                 }
                 .txt {
                     width: 100%;
@@ -129,7 +142,9 @@
             overflow: hidden;
             .roomPhoto {
                 padding: 0;
-                img {}
+                img {
+                    position: relative;
+                }
             }
             .roomDetail {
                 height: 100%;
@@ -154,10 +169,6 @@
                 p {
                     color: $deep-gray;
                     font-size: $fz-content;
-                    letter-spacing: 0.08em;
-                    &#roomTypeIntro {
-                        margin-bottom: 20px;
-                    }
                     &.listDetail {
                         font-weight: 900;
                         &:before {
@@ -167,12 +178,12 @@
                         }
                     }
                 }
-                .btnDiv {
-                    .btn {
-                        font-size: $fz-content;
-                        line-height: initial;
-                    }
-                }
+                // .btnDiv {
+                //     .btn {
+                //         font-size: $fz-content;
+                //         line-height: initial;
+                //     }
+                // }
             }
         }
     }
@@ -180,6 +191,7 @@
         background: url(../images/background/bg16.jpg) no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        background-position: 75% 100%;
         .itemDiv {
             padding: 10px 20px;
         }
@@ -192,7 +204,7 @@
             background-color: rgba(255, 255, 255, 0.8);
             .txt {
                 position: relative;
-                bottom: 10px;
+                margin-top: -12px;
                 border: 1px solid #aaa;
                 border-radius: 3%;
                 border-top: none;
@@ -207,7 +219,259 @@
                         margin-left: 8px;
                     }
                 }
+                .price {
+                    color: $light-pink;
+                    font-weight: 700;
+                }
             }
         }
     }
+    .overall {
+        .fullcontainer {
+            padding: 0;
+        }
+        .item {
+            padding: 0;
+        }
+        .reminder {
+            color: $deep-gray;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            .txt {
+                background-color: rgba(255, 255, 255, 0.55);
+                height: 100%;
+                text-align: center;
+                transition: all 0.4s ease;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.4);
+                }
+            }
+            .btnDiv {
+                margin-top: 20px;
+            }
+            &#bookingReminder {
+                background-image: url(../images/dogOnSofa.jpg);
+            }
+            &#discussReminder {
+                background-image: url(../images/bg_post.jpg);
+            }
+            &#raceReminder {
+                background-image: url(../images/bg12.jpg);
+            }
+        }
+    }
+    ///////Slider----------
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .slick-list:focus {
+        outline: none;
+    }
+    .slick-list.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+    .slick-track:before,
+    .slick-track:after {
+        display: table;
+        content: '';
+    }
+    .slick-track:after {
+        clear: both;
+    }
+    .slick-loading .slick-track {
+        visibility: hidden;
+    }
+    .slick-slide {
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+    }
+    [dir='rtl'] .slick-slide {
+        float: right;
+    }
+    .slick-slide img {
+        display: block;
+    }
+    .slick-slide.slick-loading img {
+        display: none;
+    }
+    .slick-slide.dragging img {
+        pointer-events: none;
+    }
+    .slick-initialized .slick-slide {
+        display: block;
+    }
+    .slick-loading .slick-slide {
+        visibility: hidden;
+    }
+    .slick-vertical .slick-slide {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+    //theme-----------
+    $slick-font-path: "./fonts/" !default;
+    $slick-font-family: "slick" !default;
+    $slick-loader-path: "./" !default;
+    $slick-arrow-color: white !default;
+    $slick-dot-color: black !default;
+    $slick-dot-color-active: $slick-dot-color !default;
+    $slick-prev-character: "\2190" !default;
+    $slick-next-character: "\2192" !default;
+    $slick-dot-character: "\2022" !default;
+    $slick-dot-size: 6px !default;
+    $slick-opacity-default: 0.75 !default;
+    $slick-opacity-on-hover: 1 !default;
+    $slick-opacity-not-active: 0.25 !default;
+    @function slick-image-url($url) {
+        @if function-exists(image-url) {
+            @return image-url($url);
+        }
+        @else {
+            @return url($slick-loader-path + $url);
+        }
+    }
+    @function slick-font-url($url) {
+        @if function-exists(font-url) {
+            @return font-url($url);
+        }
+        @else {
+            @return url($slick-font-path + $url);
+        }
+    }
+    /* Slider */
+    .slick-list {
+        .slick-loading & {
+            background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+        }
+    }
+    /* Icons */
+    @if $slick-font-family=="slick" {
+        @font-face {
+            font-family: "slick";
+            src: slick-font-url("slick.eot");
+            src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+    }
+    /* Arrows */
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        display: block;
+        height: 20px;
+        width: 20px;
+        line-height: 0px;
+        font-size: 0px;
+        background: transparent;
+        color: transparent;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        padding: 0;
+        border: none;
+        outline: none;
+        &:hover,
+        &:focus {
+            outline: none;
+            background: transparent;
+            color: transparent;
+            &:before {
+                opacity: $slick-opacity-on-hover;
+            }
+        }
+        &.slick-disabled:before {
+            opacity: $slick-opacity-not-active;
+        }
+    }
+    //----theme
+    //---------slick
+    //------add
+    .slider {
+        width: 100%;
+        position: relative;
+    }
+    .slick-prev {
+        left: 0;
+        z-index: 10;
+        width: 10%;
+        height: 100%;
+    }
+    .slick-next {
+        right: 0;
+        z-index: 10;
+        width: 10%;
+        height: 100%;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+        position: fixed;
+        display: block;
+        box-sizing: border-box;
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+        top: 50%;
+        padding: 3px 0 0;
+        z-index: 5;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        color: $deep-orange;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 30px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+    }
+    .slick-prev:before {
+        content: "\f104";
+    }
+    .slick-next:before {
+        content: "\f105";
+    }
+    //------add
 }
+
+@import "lg";
+@import "sm";
+@import "xs";

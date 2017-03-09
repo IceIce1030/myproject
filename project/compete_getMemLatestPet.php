@@ -16,6 +16,7 @@ try{
       //while
      //送出字串
       echo $petRow["pet_no"];
+    }
     //else
 }catch(PDOException $ex){
   echo "資料庫操作失敗，原因 : " , $ex->getMessage(), "<br>";

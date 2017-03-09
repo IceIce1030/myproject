@@ -17,7 +17,7 @@ $orderlist->execute();
                             <div class="txt">
                                 <h4>你還沒有幫你的毛小孩訂過毛基地的房間，快來訂房吧～</h4>
                                 <div class="btnDiv">
-                                    <a class="btnFunction" href="booking.html">線上訂房</a>
+                                    <a class="btnFunction" href="book.html">線上訂房</a>
                                 </div>
                             </div>
                         </div>';
@@ -99,8 +99,7 @@ $historyBookingLabel ="<span class='historyBooking'>歷史訂單</span>";
 }else{
   //未來訂單
 $bookingLabel = "futureBooking";
-$bookingBtn='';
-// <div class="btnFunction">修改訂單</div>
+$bookingBtn='<div class="btnFunction cancelOrder">取消訂單</div>';
 $historyBookingLabel ="";
 }
 
@@ -140,6 +139,7 @@ $finalTotal = number_format($orderlistRow["orderlist_Total"], 0, '',',');
         <div class='clear'></div>
         <div class='btnDiv'>
             $bookingBtn
+            <input type='hidden' class='orderlist_no' name='orderlist_no' value='{$orderlistRow["orderlist_no"]}'>
         </div>
     </div>
     <div class='clear'></div>

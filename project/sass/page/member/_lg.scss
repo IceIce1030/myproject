@@ -1,7 +1,8 @@
 @include respones(md) {
     //小電腦 container 970px (992~1200)
     .member {
-        background-position: 80% 50%;
+        background-image: url(../images/background/bg07.jpg);
+        background-position: 80% 100%;
         padding-top: 80px;
         .container {
             padding-top: 20px;
@@ -16,7 +17,7 @@
                 margin-bottom: 20px;
                 .pet {
                     margin-right: 20px;
-                    margin-bottom:10px;
+                    margin-bottom: 10px;
                 }
             }
             // 會員管理
@@ -113,7 +114,15 @@
                         }
                     }
                     //萌主
-                    .cardWrap {}
+                    #myrace {
+                        .cardWrap {
+                            .card {
+                                .openLightbox {
+                                    max-height: 161px;
+                                }
+                            }
+                        }
+                    } //
                 }
             }
         }
@@ -150,23 +159,33 @@
         //mypets addPet資料燈箱
         #mypets,
         #addPet {}
-    }//member
+    } //member
 }
 
 //大桌機 container 1170 (>1200)
 @include respones(lg) {
     .member {
-        background-position: 80% 45%;
+        background-position: 80% 80%;
         .container {
             .accountMgt {
                 .mainContent {
                     //我的文章
                     .post {
                         .txt {
-                            max-width: 850px;
+                            max-width: 830px;
                         }
                     }
                 }
+                //萌主
+                #myrace {
+                    .cardWrap {
+                        .card {
+                            .openLightbox {
+                                max-height: 200px;
+                            }
+                        }
+                    }
+                } //
             }
         }
     }

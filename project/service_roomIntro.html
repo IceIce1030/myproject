@@ -4,13 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>註冊會員 | FurKid</title>
+    <title>房型介紹</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
+    <!-- jquery -->
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="js/nav.js?<%=Timer()%>"></script>
-    <script type="text/javascript" src="js/signup.js?<%=Timer()%>"></script>
+    <!-- TweenMax js-->
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="js/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="js/debug.addIndicators.min.js"></script>
+    <!-- nav -->
+    <script type="text/javascript" src="js/nav.js"></script>
+    <!-- service -->
+    <script type="text/javascript" src="js/service.js"></script>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
-                        <a href="service.html"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
+                        <a href="service.html" class="active"><i class="fa fa-bath" aria-hidden="true"></i><span>服務介紹</span></a></li>
                     <li><a href="faq.html"><i class="fa fa-question-circle" aria-hidden="true"></i><span>常見問題</span></a></li>
                 </ul>
             </div>
@@ -106,70 +114,93 @@
         </div>
     </div>
     <!-- login燈箱結束 -->
-    <div class="signup">
+    <!-- 房型介紹開始 -->
+    <div class="service_room">
         <div class="container">
-            <div class="wrapper">
-                <div class="main">
-                    <h3>註冊會員</h3>
-                    <div class="formDiv">
-                        <form id="signupForm" name="signupForm" action="mem_signup.php" method="post" enctype="multipart/form-data">
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_name">姓名</label>
-                                <input type="text" name="mem_name" id="mem_name" placeholder="2-8位中英文字" minlength="2" maxlength="8" pattern="[A-Za-z\u4e00-\u9fa5]{2,8}" required>
+            <!--  <div class="title">
+	    <h1 id='test'><span><img src="images/dogHead04.png" alt=""></span>六種房型</h1>
+	</div> -->
+            <div class="roomTypeNav">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-2 col-md-2 itemDiv roomTab active" data-room_no="1">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/country3.jpg" alt="">
+                            <div class="txt">
+                                <p>鄉村風</p>
                             </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_id">帳號</label>
-                                <input type="text" name="mem_id" id="mem_id" placeholder="3-12位英數字" minlength="3" maxlength="12" pattern="[A-Za-z0-9]{3,12}" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv" data-room_no="6">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/pop3.jpg" alt="">
+                            <div class="txt">
+                                <p>普普風</p>
                             </div>
-                            <div class="alertInform" id="accountRepeatDiv">
-                                <label class="labelClass"></label><span class="txt" id="accountRepeat"><!-- 帳號重複，請再輸入一次 --></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv" data-room_no="5">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/north1.jpg" alt="">
+                            <div class="txt">
+                                <p>北歐風</p>
                             </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_psw">密碼</label>
-                                <input type="password" name="mem_psw" id="mem_psw" placeholder="6-12位英數字" minlength="6" maxlength="12" pattern="[A-Za-z0-9]{6,12}" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv" data-room_no="4">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/modern3.jpg" alt="">
+                            <div class="txt">
+                                <p>現代風</p>
                             </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_pswConfirm">確認密碼</label>
-                                <input type="password" id="mem_pswConfirm" placeholder="再輸入一次以確認" minlength="6" maxlength="12" pattern="[A-Za-z0-9]{6,12}" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv" data-room_no="2">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/dream3.jpg" alt="">
+                            <div class="txt">
+                                <p>夢幻風</p>
                             </div>
-                            <div class="alertInform" id="pswDoAgainDiv">
-                                <label class="labelClass"></label><span class="txt" id="pswDoAgain"><!-- 兩次輸入的密碼不同，請再輸一次 --></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 roomTab itemDiv" data-room_no="3">
+                        <div class="item">
+                            <img class="rwd-img" src="images/room/loft3.jpg" alt="">
+                            <div class="txt">
+                                <p>工業風</p>
                             </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_phone">手機號碼</label>
-                                <input type="text" name="mem_phone" id="mem_phone" minlength="10" maxlength="10" placeholder="例:0911987654" pattern="[0-9]{10,10}" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="roomInfo">
+                <div class="row">
+                    <div class="main">
+                        <div class="col-xs-12 col-sm-8 col-md-9 roomPhoto">
+                            <img id="roomTypeImage" class="rwd-img" src="images/room/country3.jpg" alt="">
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-3 roomDetail">
+                            <div class="txt">
+                                <h3 id="roomTypeName">鄉村風</h3>
+                                <h4 class="roomPrice">$<span id='roomPrice'><!-- 500 --></span></h4>
+                                <p id="roomTypeIntro">
+                                    <!--  鄉村風中可以看見，大量採用紅磚頭、泥磚來造屋，營造內斂沉穩感覺，同時也彰顯自然氣息。小碎花、格子圖案是鄉村風格的主調，窗簾、布藝、壁紙都少不了它，另外，該風格中的沙發多以手工布面為主，線條優美、顏色秀麗，讓人過目不忘。 -->
+                                </p>
+                                <p class="listDetail">絨毛舒眠睡墊一張</p>
+                                <p class="listDetail">獨立沙發一張</p>
+                                <p class="listDetail">嬰兒房等級抗菌地板</p>
+                                <p class="listDetail">夜間有保姆隨時待命</p>
+                                <p class="listDetail">146x230x200cm</p>
                             </div>
-                            <div class="formGroup">
-                                <label class="labelClass" for="mem_mail">Email</label>
-                                <input type="email" name="mem_mail" id="mem_mail" maxlength="50" placeholder="例:furkid@mail.com" required>
+                            <div class="btnDiv">
+                                <a href="#" class="btnLink">詳細介紹</a>
                             </div>
-                            <div class="formGroup genderFormGroup">
-                                <span class="labelClass">性別</span>
-                                <span class="gender">
-                            <label for="male">男</label>
-                                <input type="radio" name="mem_sex" id="male" value="m" required>
-                                <label for="female">女</label>
-                                <input type="radio" name="mem_sex" id="female" value="f" required></span>
-                            </div>
-                            <div class="formGroup">
-                                <span class="labelClass">照片</span>
-                                <span class="showImage"><img src="images/member/memphoto01.png" id="profilePhoto"></span>
-                                <input type="file" name="mem_img" id="upload_mem_img">
-                                <label for="upload_mem_img" id="uploadImgLabel">上傳照片</label>
-                                <input type="hidden" name="default_mem_img" value="memphoto01.png">
-                            </div>
-                            <p>按下註冊鈕的同時，表示您已詳閱我們的<a href="">資料使用政策與使用條款</a>，同意使用furkid所提供的服務。</p>
-                            <div class="formGroup">
-                                <div class="btnDiv">
-                                    <input class="inputBtn" id="signupBtn" type="submit" value="註冊會員">
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- 房型介紹結束 -->
     <!-- footer開始 -->
     <footer>
         <div class="container">

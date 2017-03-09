@@ -16,9 +16,9 @@
         }
         .text {
             width: 40%;
-            height: 500px;
+            // height: 500px;
             float: left;
-            text-align: center;
+            // text-align: center;
             // box-sizing: border-box;
             // padding: 40px;
             img{
@@ -26,14 +26,15 @@
                 
             }
             .right {
-                width: 200px;
-                display: inline-block;
+                width: 100%;
+                // display: inline-block;
                 .inside{
-                    width: 98%;
+                    width: 100%;
+                    margin: 0 0 0 20px;
                     vertical-align:middle;
-                    display: inline-block;
+                    // display: inline-block;
                    h2 {
-                        padding: 10px 10px 10px 0;
+                        padding: 10px 10px 10px 0px;
                         border-bottom: 1px solid #fff;
                         font-size: 30px;
                     }
@@ -55,18 +56,29 @@
                 }
                 
             }
-            .right:before{
-                    content: "";
-                    width: 0;
-                    height: 500px;
-                    display: inline-block;
-                    background-color:#f00;
-                    vertical-align:middle;
-                }
+            // .right:before{
+            //         content: "";
+            //         width: 0;
+            //         height: 500px;
+            //         display: inline-block;
+            //         background-color:#f00;
+            //         vertical-align:middle;
+            //     }
             .left{
-                width: 100px;
-                display: inline-block;
-                vertical-align:middle;
+                width: 100%;
+                // display: inline-block;
+                // vertical-align:middle;
+                .imgbox{
+                    width: 100%;
+                    margin: 40px 15px;
+                    text-align: center;
+                    .img{
+                        width: 33%;
+                        // display: inline-block;
+                        font-size: 0;
+                        float: left;
+                    }
+                }
                 .imgbox>div{
                     padding: 10px;
                 }
@@ -76,6 +88,7 @@
     .index {
         //從這開始寫
         .PageOne {
+             // overflow-y: hidden;
             .page-view .project .text h2 {
                 font-size: 50px;
                 top: 60%;
@@ -268,7 +281,6 @@
             }
             .disclass .disInfo {
                 width: 90%;
-                height: 100%;
                 transition: 1.2s;
                 border-radius: 10px;
                 position: absolute;

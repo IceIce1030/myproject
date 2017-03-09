@@ -1,8 +1,4 @@
-@import "lg";
-@import "sm";
-@import "xs";
 .member {
-    background-image: url(../images/bg07_r.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -216,14 +212,15 @@
                         .historyBooking {
                             display: inline-block;
                             vertical-align: middle;
-                            padding: 2px 5px;
+                            padding: 0px 5px;
                             margin-left: 20px;
                             position: relative;
                             bottom: 2px;
                             font-size: $fz-content;
                             vertical-align: middle;
-                            background-color: #ccc;
+                            background-color: #b3b3b3;
                             color: $deep-gray;
+                            border-radius:5px;
                         }
                         .stayDay,
                         .serviceItem,
@@ -364,7 +361,7 @@
                 //參賽紀錄{
                 #myrace {
                     .cardWrap {
-                        margin-bottom:10px;
+                        margin-bottom: 10px;
                         color: #434343;
                         .card {
                             a {
@@ -592,3 +589,7 @@
     }
     //燈箱結束
 }
+
+@import "lg";
+@import "sm";
+@import "xs";

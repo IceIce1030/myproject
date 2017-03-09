@@ -9,21 +9,17 @@
         text-align: center;
         .banner {
             //banner開頭
-            height: 200px;
-            width: 90%;
+            height: 250px;
+            width: 100%;
             position: relative;
-            right: 0;
-            left: 0;
-            margin: auto;
             text-align: center;
             border-bottom: 1px dotted $deep-orange;
-            .txt {       
-                // position: relative;
-                margin-top: 120px;
-                // left: 120px;
-                // right: 0;
-                // left: 0;
-                // margin: auto;
+            .txt {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
                 color: #a91e2d;
                 font-weight: bolder;
                 .txt1 {
@@ -72,20 +68,15 @@
                             animation: heartbeat .5s infinite alternate;
                         }
                     }
-                }             
-            }
-            .img1 {
-                // position: relative;
-                // right: 120px;
-                 display: inline-block;
-                    // width: 300px;              
-                    height: 200px;
+                }
+                .img1 {
+                    display: inline-block;
+                    width: 300px;
                     vertical-align: bottom;
                     img {
-
-                        // width: 100%;
-                        // width: 300px;
+                        width: 100%;
                     }
+                }
             }
         } //banner結尾
         .main {
@@ -310,13 +301,6 @@
     .postCompete {
         .container {
             padding-top: 60px;
-            .banner{
-                .img1{
-                    img{
-                        width: 380px;
-                    }
-                }
-            }
             .main {
                 width: 550px;
                 padding: 20px;
@@ -356,14 +340,6 @@
     .postCompete {
         .container {
             padding: 120px 0px 40px;
-            .banner{
-                width: 70%;
-                .img1{
-                    img{
-                        width: 380px;
-                    }
-                }
-            }
             .main {
                 width: auto;
                 padding: 40px 60px 20px;

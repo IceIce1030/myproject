@@ -9,7 +9,6 @@
         .introduction {
             z-index: 2;
             height: 500px;
-            background-position: 50% 50%;
             .txt {
                 padding: 40px;
                 height: 300px;
@@ -26,11 +25,8 @@
             }
         }
         .specialty {
-            //定位
-            z-index: 1;
-            bottom: 120px;
-            //定位
             padding: 160px 0 40px;
+            margin-top: -84px;
             .item {
                 margin-bottom: -65px;
                 .txt {
@@ -42,11 +38,11 @@
         }
         .roomType {
             #roomContainer {
-                margin-top: -60px;
-                padding-bottom: 60px;
+                padding: 65px 10px 60px;
             }
             .roomTypeNav {
                 .itemDiv {
+                    height: 80px;
                     &:hover .txt {
                         top: 60%;
                         background-color: rgba(255, 255, 255, 0.8);
@@ -65,7 +61,13 @@
                             }
                         }
                     }
+                    .item {
+                        height: 80px;
+                        overflow: hidden;
+                        border: 1px solid $deep-orange;
+                    }
                     .txt {
+                        height: 80px;
                         p {
                             font-size: 24px;
                             font-weight: 900;
@@ -79,16 +81,18 @@
                     img {}
                 }
                 .roomDetail {
-                    padding: 20px;
+                    padding: 20px 20px 10px;
                     .txt {
-                        line-height: 2;
+                        line-height: 2.1;
                     }
-                    h3 {}
-                    h4 {}
                     .roomPrice {}
                     p {
+                        letter-spacing: 0.08em;
+                        &#roomTypeIntro {
+                            margin-bottom: 25px;
+                        }
                         &.listDetail {
-                            line-height: 2.5;
+                            line-height: 2;
                         }
                     }
                     .btnDiv {
@@ -97,32 +101,43 @@
                     }
                 }
             }
+            .slick-prev:before {
+                left: 20px;
+            }
+            .slick-next:before {
+                right: 20px;
+            }
         }
         .serviceType {
-            background-position: 50% 100%;
-            padding: 60px 0;
+            padding: 65px 0 60px;
             .item {
                 .txt {
                     p {
                         text-align: left;
                     }
-                    min-height: 150px;
+                    min-height: 230px;
                     padding: .5em 20px .8em;
                 }
+            }
+        }
+        .overall {
+            .txt {
+                padding: 125px 10px 0px;
+            }
+            .reminder {
+                height: 300px;
             }
         }
     }
 }
 
-@include respones(md) {
+@include respones(lg) {
     //桌機 container 1170
     //服務介紹
     .service {
-        .specialty {
-            .item {
-                .txt {
-                    min-height: 183px;
-                }
+        .overall {
+            .txt {
+                padding: 125px 10px 0px;
             }
         }
     }

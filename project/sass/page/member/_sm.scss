@@ -1,6 +1,7 @@
 @include respones(sm) {
     //平板 container 100%
     .member {
+        background-image: url(../images/background/bg07.jpg);
         background-position: 80% 100%;
         padding-top: 60px;
         .container {
@@ -108,7 +109,15 @@
                     }
                 }
                 //萌主
-                .cardWrap {}
+                #myrace {
+                    .cardWrap {
+                        .card {
+                            .openLightbox {
+                                max-height: 162px;
+                            }
+                        }
+                    }
+                } //
             }
         }
     }

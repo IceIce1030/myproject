@@ -16,7 +16,6 @@
     animation: opa 2s;
 }
 
-
 @keyframes opa {
     from {
         opacity: 0;
@@ -25,9 +24,14 @@
         opacity: 1;
     }
 }
-#home-nav-header,.h-navbarLightbox{
+
+#home-nav-header,
+.h-navbarLightbox {
     z-index: 4000;
 }
+ .clear {
+        clear: both;
+    }
 #index-lightbox {
     // opacity: 0;
     display: none;
@@ -45,7 +49,7 @@
             text-align: center;
             position: absolute;
             top: -10px;
-            right: -5px;
+            right: 0px;
             width: 33px;
             height: 33px;
             background-color: rgba(0, 0, 0, .7);
@@ -171,9 +175,7 @@
     img {
         width: 100%;
     }
-    .clear {
-        clear: both;
-    }
+   
     .scroll-icon {
         width: 40px;
         // height: 60px;
@@ -780,9 +782,7 @@
         }
         .photostack figure {
             width: 300px;
-            height: 360px;
-            position: relative;
-            display: inline-block;
+            // height: 350px;
             border-radius: 5px;
             box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
             text-align: center;
@@ -795,6 +795,7 @@
                     display: block;
                     height: 210px;
                     width: 100%;
+                    border-radius: 5px;
                     overflow: hidden;
                 }
                 .text {
@@ -821,7 +822,7 @@
                     }
                 }
                 .textDown {
-                    padding: 5px;
+                    padding:5px;
                     position: relative;
                     text-align: left;
                     span {
@@ -832,17 +833,31 @@
                         height: 50px;
                         width: 50px;
                         position: absolute;
-                        bottom: 50px;
-                        right: 10px;
+                        bottom: 20px;
+                        right: 15px;
                         img {
                             width: 100%;
                         }
                         .favorite {
+                            position: relative;
                             cursor: pointer;
                             background: transparent;
                             border: 0;
                             &:focus {
                                 outline: 0;
+                            }
+                            .vote-text{
+                                width: 50px;
+                                height: 50px;
+                                line-height: 45px;
+                                font-size: 13px;
+                                color: #fff;
+                                position: absolute;
+                                margin: auto;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
                             }
                             .outsideheart {
                                 &:hover {
@@ -867,6 +882,7 @@
                                         z-index: 1000;
                                         animation: heartHollow 1s;
                                     }
+                                   
                                 }
                             }
                         }
@@ -984,7 +1000,7 @@
             transition-delay: 0.4s;
         }
         /* Overlay on figure */
-        .photostack figure::after {
+        .photostack figure:after {
             content: '';
             position: absolute;
             width: 100%;
@@ -1041,6 +1057,9 @@
     }
     /*Page Four end*/
     .PageFive {
+        a{
+            text-decoration: none;
+        }
         .disclass {
             overflow: hidden;
         }
@@ -1069,10 +1088,12 @@
             height: 100%;
             background-color: rgba(0, 0, 0, .4);
             transition: .5s;
+
             cursor: pointer;
             &.bgc {
                 background-color: rgba(0, 0, 0, 0);
             }
+
         }
         .post {
             border-radius: 5px;
@@ -1084,6 +1105,12 @@
             display: block;
             clear: both;
         }
+        .txt .postTitle h3{
+            color: hsl(0, 0%, 40%);
+        }
+        .txt .postContent{
+            color: #000;   
+        }
         .disclass .distitle:hover {
             background-color: rgba(0, 0, 0, 0);
         }
@@ -1093,6 +1120,9 @@
         .disclass.open .disInfo {
             top: 15%;
             opacity: 1;
+        }
+        .postInfo .watch{
+            margin: 0 10px;
         }
         .itemLabel {
             &.foodLabel {

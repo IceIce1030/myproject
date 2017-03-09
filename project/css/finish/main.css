@@ -974,6 +974,25 @@ a {
   display: block;
 }
 
+#gotop {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  #gotop {
+    right: 10px;
+    bottom: 15px;
+  }
+  #gotop img {
+    width: 50px;
+  }
+}
+
 .fullcontainer:after {
   content: '';
   display: block;
@@ -2649,24 +2668,21 @@ footer .copyright p {
   }
   #index-lightbox.pg2 .text {
     width: 40%;
-    height: 500px;
     float: left;
-    text-align: center;
   }
   #index-lightbox.pg2 .text img {
     opacity: 1;
   }
   #index-lightbox.pg2 .text .right {
-    width: 200px;
-    display: inline-block;
+    width: 100%;
   }
   #index-lightbox.pg2 .text .right .inside {
-    width: 98%;
+    width: 100%;
+    margin: 0 0 0 20px;
     vertical-align: middle;
-    display: inline-block;
   }
   #index-lightbox.pg2 .text .right .inside h2 {
-    padding: 10px 10px 10px 0;
+    padding: 10px 10px 10px 0px;
     border-bottom: 1px solid #fff;
     font-size: 30px;
   }
@@ -2682,18 +2698,18 @@ footer .copyright p {
     text-decoration: none;
     color: #DAA356;
   }
-  #index-lightbox.pg2 .text .right:before {
-    content: "";
-    width: 0;
-    height: 500px;
-    display: inline-block;
-    background-color: #f00;
-    vertical-align: middle;
-  }
   #index-lightbox.pg2 .text .left {
-    width: 100px;
-    display: inline-block;
-    vertical-align: middle;
+    width: 100%;
+  }
+  #index-lightbox.pg2 .text .left .imgbox {
+    width: 100%;
+    margin: 40px 15px;
+    text-align: center;
+  }
+  #index-lightbox.pg2 .text .left .imgbox .img {
+    width: 33%;
+    font-size: 0;
+    float: left;
   }
   #index-lightbox.pg2 .text .left .imgbox > div {
     padding: 10px;
@@ -2892,7 +2908,6 @@ footer .copyright p {
   }
   .index .PageFive .disclass .disInfo {
     width: 90%;
-    height: 100%;
     -webkit-transition: 1.2s;
     transition: 1.2s;
     border-radius: 10px;
@@ -3399,7 +3414,7 @@ footer .copyright p {
   }
   #index-lightbox.pg2 .text .left .imgbox {
     padding-top: 5px;
-    width: 310px;
+    width: 100%;
     margin: auto;
   }
   #index-lightbox.pg2 .text .left .img {
@@ -3442,8 +3457,9 @@ footer .copyright p {
     display: none;
   }
   #index-lightbox.pg3 .pic {
-    width: 100%;
+    width: 90%;
     padding: 5px;
+    margin: 20px auto;
     background-color: #fff;
     border-radius: 50%;
     position: relative;
@@ -3536,7 +3552,7 @@ footer .copyright p {
     padding-bottom: 50px;
   }
   .index .PageTwo header {
-    padding: 80px 6px 20px;
+    padding: 150px 6px 20px;
     text-align: center;
     font-size: 20px;
   }
@@ -4038,8 +4054,13 @@ html.fp-enabled,
   }
 }
 
-#home-nav-header, .h-navbarLightbox {
+#home-nav-header,
+.h-navbarLightbox {
   z-index: 4000;
+}
+
+.clear {
+  clear: both;
 }
 
 #index-lightbox {
@@ -4062,7 +4083,7 @@ html.fp-enabled,
   text-align: center;
   position: absolute;
   top: -10px;
-  right: -5px;
+  right: 0px;
   width: 33px;
   height: 33px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -4215,10 +4236,6 @@ html.fp-enabled,
 
 .index img {
   width: 100%;
-}
-
-.index .clear {
-  clear: both;
 }
 
 .index .scroll-icon {
@@ -5018,9 +5035,6 @@ html.fp-enabled,
 
 .index .PageFour .photostack figure {
   width: 300px;
-  height: 360px;
-  position: relative;
-  display: inline-block;
   border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -5037,6 +5051,7 @@ html.fp-enabled,
   display: block;
   height: 210px;
   width: 100%;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -5083,8 +5098,8 @@ html.fp-enabled,
   height: 50px;
   width: 50px;
   position: absolute;
-  bottom: 50px;
-  right: 10px;
+  bottom: 20px;
+  right: 15px;
 }
 
 .index .PageFour .photostack figure .card .textDown .like img {
@@ -5092,6 +5107,7 @@ html.fp-enabled,
 }
 
 .index .PageFour .photostack figure .card .textDown .like .favorite {
+  position: relative;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -5099,6 +5115,20 @@ html.fp-enabled,
 
 .index .PageFour .photostack figure .card .textDown .like .favorite:focus {
   outline: 0;
+}
+
+.index .PageFour .photostack figure .card .textDown .like .favorite .vote-text {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .index .PageFour .photostack figure .card .textDown .like .favorite .outsideheart {
@@ -5306,7 +5336,7 @@ html.fp-enabled,
   transition-delay: 0.4s;
 }
 
-.index .PageFour .photostack figure::after {
+.index .PageFour .photostack figure:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -5370,6 +5400,10 @@ html.fp-enabled,
   transform: scale(0.61);
 }
 
+.index .PageFive a {
+  text-decoration: none;
+}
+
 .index .PageFive .disclass {
   overflow: hidden;
 }
@@ -5423,6 +5457,14 @@ html.fp-enabled,
   clear: both;
 }
 
+.index .PageFive .txt .postTitle h3 {
+  color: #666666;
+}
+
+.index .PageFive .txt .postContent {
+  color: #000;
+}
+
 .index .PageFive .disclass .distitle:hover {
   background-color: transparent;
 }
@@ -5434,6 +5476,10 @@ html.fp-enabled,
 .index .PageFive .disclass.open .disInfo {
   top: 15%;
   opacity: 1;
+}
+
+.index .PageFive .postInfo .watch {
+  margin: 0 10px;
 }
 
 .index .PageFive .itemLabel.foodLabel {
@@ -6815,385 +6861,7 @@ html.fp-enabled,
   float: right;
 }
 
-@media screen and (min-width: 993px) {
-  .member {
-    background-position: 80% 50%;
-    padding-top: 80px;
-  }
-  .member .container {
-    padding-top: 20px;
-    min-height: 75vh;
-  }
-  .member .container .memberInfo {
-    margin-bottom: 20px;
-  }
-  .member .container .top {
-    margin-left: 25px;
-  }
-  .member .container .petList {
-    margin-bottom: 20px;
-  }
-  .member .container .petList .pet {
-    margin-right: 20px;
-    margin-bottom: 10px;
-  }
-  .member .container .accountMgt .tabMenu a:first-child {
-    margin-left: 25px;
-  }
-  .member .container .accountMgt .tabMenu a {
-    padding: 5px 10px;
-    letter-spacing: 2px;
-    width: auto;
-    margin: 0 5px;
-  }
-  .member .container .accountMgt .mainContent {
-    margin-left: 25px;
-  }
-  .member .container .accountMgt .mainContent .reminder {
-    height: 380px;
-  }
-  .member .container .accountMgt .mainContent .reminder .txt {
-    padding-top: 15%;
-  }
-  .member .container .accountMgt .mainContent .reminder#raceReminder {
-    background-position: 50% 20%;
-  }
-  .member .container .accountMgt .mainContent .booking {
-    overflow: hidden;
-    height: 240px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .member .container .accountMgt .mainContent .booking .roomPhoto {
-    width: 300px;
-    height: 200px;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDetail {
-    margin-left: 20px;
-    float: left;
-    line-height: 2;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDate {
-    width: 260px;
-    padding-top: 9px;
-    float: right;
-    margin-bottom: 10px;
-    height: 100%;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDate p {
-    margin-bottom: 5px;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDate h4 {
-    margin-bottom: 5px;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDate .checkinDate {
-    padding: 0 10px;
-    width: 50%;
-  }
-  .member .container .accountMgt .mainContent .booking .bookingDate .checkoutDate {
-    padding: 0 10px;
-    float: right;
-    width: 50%;
-  }
-  .member .container .accountMgt .mainContent .booking .btnDiv {
-    position: absolute;
-    bottom: 10px;
-    line-height: normal;
-    width: 100%;
-  }
-  .member .container .accountMgt .mainContent .booking .btnDiv .btnFunction {
-    width: 203px;
-    margin: auto;
-  }
-  .member .container .accountMgt .mainContent .post {
-    height: 180px;
-    padding: 20px;
-  }
-  .member .container .accountMgt .mainContent .post .postImg {
-    width: 200px;
-    height: 140px;
-  }
-  .member .container .accountMgt .mainContent .post .txt {
-    max-width: 630px;
-    margin-left: 20px;
-  }
-  .member .container .accountMgt .mainContent .post .txt .postTitle {
-    max-height: 40px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content {
-    padding-top: 20px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv {
-    font-size: 16px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .formGroup {
-    padding: 5px;
-    min-height: 44px;
-    margin-bottom: 10px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .labelClass {
-    width: 50px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv input {
-    width: 200px;
-    height: 34px;
-    padding: 3px 6px;
-    font-size: 16px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .genderFormGroup {
-    padding-top: 10px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .member {
-    background-position: 80% 45%;
-  }
-  .member .container .accountMgt .mainContent .post .txt {
-    max-width: 850px;
-  }
-}
-
-@media screen and (max-width: 992px) and (min-width: 768px) {
-  .member {
-    background-position: 80% 100%;
-    padding-top: 60px;
-  }
-  .member .container {
-    padding-top: 20px;
-    min-height: 65vh;
-  }
-  .member .container .memberInfo {
-    margin-bottom: 20px;
-  }
-  .member .container .top {
-    margin-left: 25px;
-  }
-  .member .container .petList {
-    margin-bottom: 20px;
-  }
-  .member .container .petList .pet {
-    margin-right: 20px;
-  }
-  .member .container .accountMgt .tabMenu a:first-child {
-    margin-left: 25px;
-  }
-  .member .container .accountMgt .tabMenu a {
-    padding: 5px 10px;
-    letter-spacing: 2px;
-    width: auto;
-    margin: 0 5px;
-  }
-  .member .container .mainContent {
-    margin-left: 25px;
-  }
-  .member .container .mainContent .reminder {
-    height: 300px;
-  }
-  .member .container .mainContent .reminder .txt {
-    padding-top: 18%;
-  }
-  .member .container .mainContent .reminder#raceReminder {
-    background-position: 50% 20%;
-  }
-  .member .container .mainContent .booking {
-    padding: 20px;
-  }
-  .member .container .mainContent .booking .roomPhoto {
-    width: 260px;
-  }
-  .member .container .mainContent .booking .bookingDetail {
-    margin-left: 20px;
-    float: left;
-    min-height: 151px;
-    line-height: 1.8;
-  }
-  .member .container .mainContent .booking .bookingDate {
-    width: 100%;
-    float: left;
-    margin: 10px 0;
-  }
-  .member .container .mainContent .booking .bookingDate .checkinDate {
-    width: 50%;
-    padding: 0 10px;
-    border-top: 2px dotted #ccc;
-    border-bottom: 2px dotted #ccc;
-  }
-  .member .container .mainContent .booking .bookingDate .checkinDate > p,
-  .member .container .mainContent .booking .bookingDate .checkinDate > h4 {
-    display: inline-block;
-  }
-  .member .container .mainContent .booking .bookingDate .checkoutDate {
-    width: 50%;
-    padding: 0 10px;
-    float: left;
-    border-top: 2px dotted #ccc;
-    border-bottom: 2px dotted #ccc;
-  }
-  .member .container .mainContent .booking .bookingDate .checkoutDate > p,
-  .member .container .mainContent .booking .bookingDate .checkoutDate > h4 {
-    display: inline-block;
-  }
-  .member .container .mainContent .booking .btnDiv {
-    margin-top: 10px;
-    width: auto;
-  }
-  .member .container .mainContent .booking .btnDiv .btn {
-    width: 100%;
-  }
-  .member .container .mainContent .post {
-    height: 180px;
-    padding: 20px;
-  }
-  .member .container .mainContent .post .postImg {
-    width: 160px;
-    height: 140px;
-  }
-  .member .container .mainContent .post .txt {
-    max-width: 425px;
-    margin-left: 20px;
-  }
-  .member .container .mainContent .post .txt .postTitle {
-    max-height: 40px;
-  }
-  #aboutme .content {
-    height: 500px;
-  }
-  #mypets .content,
-  #addPet .content {
-    height: 610px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .member {
-    background-position: 80% 100%;
-    padding-top: 60px;
-  }
-  .member .container {
-    padding-top: 20px;
-    min-height: 65vh;
-  }
-  .member .container .memberInfo {
-    margin-bottom: 10px;
-  }
-  .member .container .petList .pet {
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  .member .container .accountMgt .tabMenu a {
-    padding: 5px 5px;
-    letter-spacing: 0.01em;
-    width: auto;
-  }
-  .member .container .mainContent {
-    font-size: 16px;
-  }
-  .member .container .mainContent .reminder {
-    height: 280px;
-  }
-  .member .container .mainContent .reminder .txt {
-    padding-top: 30%;
-  }
-  .member .container .mainContent .reminder .txt h4 {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    font-size: 18px;
-  }
-  .member .container .mainContent .reminder#bookingReminder {
-    background-position: center center;
-  }
-  .member .container .mainContent .reminder#raceReminder {
-    background-position: 40% 20%;
-  }
-  .member .container .mainContent .reminder#discussReminder {
-    background-position: 40% 20%;
-  }
-  .member .container .mainContent .booking {
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  .member .container .mainContent .booking.pastBooking .bookingDetail {
-    border-bottom: 2px dotted #aaa;
-  }
-  .member .container .mainContent .booking.pastBooking .bookingDate .checkinDate {
-    border-bottom: 2px dotted #aaa;
-  }
-  .member .container .mainContent .booking.pastBooking .bookingDate .checkoutDate {
-    border-bottom: 2px dotted #aaa;
-  }
-  .member .container .mainContent .booking .roomPhoto {
-    width: 100%;
-  }
-  .member .container .mainContent .booking .bookingDetail {
-    line-height: 1.8;
-    border-bottom: 2px dotted #888;
-  }
-  .member .container .mainContent .booking .bookingDate .checkinDate {
-    width: 50%;
-    border-bottom: 2px dotted #888;
-  }
-  .member .container .mainContent .booking .bookingDate .checkoutDate {
-    width: 50%;
-    float: left;
-    border-bottom: 2px dotted #888;
-  }
-  .member .container .mainContent .booking .bookingDate .btnDiv {
-    margin: 10px 0 0px;
-  }
-  .member .container .mainContent .post {
-    padding: 20px;
-  }
-  .member .container .mainContent .post .postImg {
-    width: 100%;
-    height: 180px;
-  }
-  .member .container .mainContent .post .txt {
-    max-width: 100%;
-    margin-top: 10px;
-  }
-  .member .container .mainContent .post .txt .postTitle {
-    max-height: 90px;
-  }
-  .member .container .mainContent .cardWrap {
-    margin-bottom: 20px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content {
-    padding-top: 20px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv {
-    font-size: 16px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .formGroup {
-    padding: 5px;
-    min-height: 44px;
-    margin-bottom: 10px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .labelClass {
-    display: inline-block;
-    width: 50px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv input {
-    width: 200px;
-    height: 34px;
-    padding: 3px 6px;
-    font-size: 16px;
-  }
-  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .genderFormGroup {
-    padding-top: 10px;
-  }
-  .member #aboutme .content {
-    height: 90vh;
-  }
-  .member #mypets .content,
-  .member #addPet .content {
-    height: 90vh;
-  }
-}
-
 .member {
-  background-image: url(../images/bg07_r.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -7436,14 +7104,15 @@ html.fp-enabled,
 .member .container .accountMgt .mainContent .booking .bookingDetail .historyBooking {
   display: inline-block;
   vertical-align: middle;
-  padding: 2px 5px;
+  padding: 0px 5px;
   margin-left: 20px;
   position: relative;
   bottom: 2px;
   font-size: 16px;
   vertical-align: middle;
-  background-color: #ccc;
+  background-color: #b3b3b3;
   color: #434343;
+  border-radius: 5px;
 }
 
 .member .container .accountMgt .mainContent .booking .bookingDetail .stayDay,
@@ -7875,6 +7544,398 @@ html.fp-enabled,
           transform: rotate(45deg);
 }
 
+@media screen and (min-width: 993px) {
+  .member {
+    background-image: url(../images/background/bg07.jpg);
+    background-position: 80% 100%;
+    padding-top: 80px;
+  }
+  .member .container {
+    padding-top: 20px;
+    min-height: 75vh;
+  }
+  .member .container .memberInfo {
+    margin-bottom: 20px;
+  }
+  .member .container .top {
+    margin-left: 25px;
+  }
+  .member .container .petList {
+    margin-bottom: 20px;
+  }
+  .member .container .petList .pet {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  .member .container .accountMgt .tabMenu a:first-child {
+    margin-left: 25px;
+  }
+  .member .container .accountMgt .tabMenu a {
+    padding: 5px 10px;
+    letter-spacing: 2px;
+    width: auto;
+    margin: 0 5px;
+  }
+  .member .container .accountMgt .mainContent {
+    margin-left: 25px;
+  }
+  .member .container .accountMgt .mainContent .reminder {
+    height: 380px;
+  }
+  .member .container .accountMgt .mainContent .reminder .txt {
+    padding-top: 15%;
+  }
+  .member .container .accountMgt .mainContent .reminder#raceReminder {
+    background-position: 50% 20%;
+  }
+  .member .container .accountMgt .mainContent .booking {
+    overflow: hidden;
+    height: 240px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .member .container .accountMgt .mainContent .booking .roomPhoto {
+    width: 300px;
+    height: 200px;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDetail {
+    margin-left: 20px;
+    float: left;
+    line-height: 2;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate {
+    width: 260px;
+    padding-top: 9px;
+    float: right;
+    margin-bottom: 10px;
+    height: 100%;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate p {
+    margin-bottom: 5px;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate h4 {
+    margin-bottom: 5px;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate .checkinDate {
+    padding: 0 10px;
+    width: 50%;
+  }
+  .member .container .accountMgt .mainContent .booking .bookingDate .checkoutDate {
+    padding: 0 10px;
+    float: right;
+    width: 50%;
+  }
+  .member .container .accountMgt .mainContent .booking .btnDiv {
+    position: absolute;
+    bottom: 10px;
+    line-height: normal;
+    width: 100%;
+  }
+  .member .container .accountMgt .mainContent .booking .btnDiv .btnFunction {
+    width: 203px;
+    margin: auto;
+  }
+  .member .container .accountMgt .mainContent .post {
+    height: 180px;
+    padding: 20px;
+  }
+  .member .container .accountMgt .mainContent .post .postImg {
+    width: 200px;
+    height: 140px;
+  }
+  .member .container .accountMgt .mainContent .post .txt {
+    max-width: 630px;
+    margin-left: 20px;
+  }
+  .member .container .accountMgt .mainContent .post .txt .postTitle {
+    max-height: 40px;
+  }
+  .member .container .accountMgt .mainContent #myrace .cardWrap .card .openLightbox {
+    max-height: 161px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content {
+    padding-top: 20px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv {
+    font-size: 16px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .formGroup {
+    padding: 5px;
+    min-height: 44px;
+    margin-bottom: 10px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .labelClass {
+    width: 50px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv input {
+    width: 200px;
+    height: 34px;
+    padding: 3px 6px;
+    font-size: 16px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .genderFormGroup {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .member {
+    background-position: 80% 80%;
+  }
+  .member .container .accountMgt .mainContent .post .txt {
+    max-width: 830px;
+  }
+  .member .container .accountMgt #myrace .cardWrap .card .openLightbox {
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .member {
+    background-image: url(../images/background/bg07.jpg);
+    background-position: 80% 100%;
+    padding-top: 60px;
+  }
+  .member .container {
+    padding-top: 20px;
+    min-height: 65vh;
+  }
+  .member .container .memberInfo {
+    margin-bottom: 20px;
+  }
+  .member .container .top {
+    margin-left: 25px;
+  }
+  .member .container .petList {
+    margin-bottom: 20px;
+  }
+  .member .container .petList .pet {
+    margin-right: 20px;
+  }
+  .member .container .accountMgt .tabMenu a:first-child {
+    margin-left: 25px;
+  }
+  .member .container .accountMgt .tabMenu a {
+    padding: 5px 10px;
+    letter-spacing: 2px;
+    width: auto;
+    margin: 0 5px;
+  }
+  .member .container .mainContent {
+    margin-left: 25px;
+  }
+  .member .container .mainContent .reminder {
+    height: 300px;
+  }
+  .member .container .mainContent .reminder .txt {
+    padding-top: 18%;
+  }
+  .member .container .mainContent .reminder#raceReminder {
+    background-position: 50% 20%;
+  }
+  .member .container .mainContent .booking {
+    padding: 20px;
+  }
+  .member .container .mainContent .booking .roomPhoto {
+    width: 260px;
+  }
+  .member .container .mainContent .booking .bookingDetail {
+    margin-left: 20px;
+    float: left;
+    min-height: 151px;
+    line-height: 1.8;
+  }
+  .member .container .mainContent .booking .bookingDate {
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+  }
+  .member .container .mainContent .booking .bookingDate .checkinDate {
+    width: 50%;
+    padding: 0 10px;
+    border-top: 2px dotted #ccc;
+    border-bottom: 2px dotted #ccc;
+  }
+  .member .container .mainContent .booking .bookingDate .checkinDate > p,
+  .member .container .mainContent .booking .bookingDate .checkinDate > h4 {
+    display: inline-block;
+  }
+  .member .container .mainContent .booking .bookingDate .checkoutDate {
+    width: 50%;
+    padding: 0 10px;
+    float: left;
+    border-top: 2px dotted #ccc;
+    border-bottom: 2px dotted #ccc;
+  }
+  .member .container .mainContent .booking .bookingDate .checkoutDate > p,
+  .member .container .mainContent .booking .bookingDate .checkoutDate > h4 {
+    display: inline-block;
+  }
+  .member .container .mainContent .booking .btnDiv {
+    margin-top: 10px;
+    width: auto;
+  }
+  .member .container .mainContent .booking .btnDiv .btn {
+    width: 100%;
+  }
+  .member .container .mainContent .post {
+    height: 180px;
+    padding: 20px;
+  }
+  .member .container .mainContent .post .postImg {
+    width: 160px;
+    height: 140px;
+  }
+  .member .container .mainContent .post .txt {
+    max-width: 425px;
+    margin-left: 20px;
+  }
+  .member .container .mainContent .post .txt .postTitle {
+    max-height: 40px;
+  }
+  .member .container .mainContent #myrace .cardWrap .card .openLightbox {
+    max-height: 162px;
+  }
+  #aboutme .content {
+    height: 500px;
+  }
+  #mypets .content,
+  #addPet .content {
+    height: 610px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .member {
+    background-image: url(../images/background/bg07_r.jpg);
+    background-position: 80% 100%;
+    padding-top: 60px;
+  }
+  .member .container {
+    padding-top: 20px;
+    min-height: 65vh;
+  }
+  .member .container .memberInfo {
+    margin-bottom: 10px;
+  }
+  .member .container .petList .pet {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .member .container .accountMgt .tabMenu a {
+    padding: 5px 5px;
+    letter-spacing: 0.01em;
+    width: auto;
+  }
+  .member .container .mainContent {
+    font-size: 16px;
+  }
+  .member .container .mainContent .reminder {
+    height: 280px;
+  }
+  .member .container .mainContent .reminder .txt {
+    padding-top: 30%;
+  }
+  .member .container .mainContent .reminder .txt h4 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    font-size: 18px;
+  }
+  .member .container .mainContent .reminder#bookingReminder {
+    background-position: center center;
+  }
+  .member .container .mainContent .reminder#raceReminder {
+    background-position: 40% 20%;
+  }
+  .member .container .mainContent .reminder#discussReminder {
+    background-position: 40% 20%;
+  }
+  .member .container .mainContent .booking {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .member .container .mainContent .booking.pastBooking .bookingDetail {
+    border-bottom: 2px dotted #aaa;
+  }
+  .member .container .mainContent .booking.pastBooking .bookingDate .checkinDate {
+    border-bottom: 2px dotted #aaa;
+  }
+  .member .container .mainContent .booking.pastBooking .bookingDate .checkoutDate {
+    border-bottom: 2px dotted #aaa;
+  }
+  .member .container .mainContent .booking .roomPhoto {
+    width: 100%;
+  }
+  .member .container .mainContent .booking .bookingDetail {
+    line-height: 1.8;
+    border-bottom: 2px dotted #888;
+  }
+  .member .container .mainContent .booking .bookingDate .checkinDate {
+    width: 50%;
+    border-bottom: 2px dotted #888;
+  }
+  .member .container .mainContent .booking .bookingDate .checkoutDate {
+    width: 50%;
+    float: left;
+    border-bottom: 2px dotted #888;
+  }
+  .member .container .mainContent .booking .bookingDate .btnDiv {
+    margin: 10px 0 0px;
+  }
+  .member .container .mainContent .post {
+    padding: 20px;
+  }
+  .member .container .mainContent .post .postImg {
+    width: 100%;
+    height: 180px;
+  }
+  .member .container .mainContent .post .txt {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+  .member .container .mainContent .post .txt .postTitle {
+    max-height: 90px;
+  }
+  .member .container .mainContent #myrace .cardWrap {
+    margin-bottom: 20px;
+  }
+  .member .container .mainContent #myrace .cardWrap .card .openLightbox {
+    max-height: 246px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content {
+    padding-top: 20px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv {
+    font-size: 16px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .formGroup {
+    padding: 5px;
+    min-height: 44px;
+    margin-bottom: 10px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .labelClass {
+    display: inline-block;
+    width: 50px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv input {
+    width: 200px;
+    height: 34px;
+    padding: 3px 6px;
+    font-size: 16px;
+  }
+  .member .C_lightbox .lightbox_box .lightbox_content .formDiv .genderFormGroup {
+    padding-top: 10px;
+  }
+  .member #aboutme .content {
+    height: 90vh;
+  }
+  .member #mypets .content,
+  .member #addPet .content {
+    height: 90vh;
+  }
+}
+
 .signup {
   background-image: url(../images/bg11.jpg);
   background-size: cover;
@@ -8085,244 +8146,10 @@ html.fp-enabled,
   }
 }
 
-@media screen and (min-width: 993px) {
-  .service {
-    padding-top: 80px;
-  }
-  .service .title {
-    margin: 20px auto 40px;
-  }
-  .service .introduction {
-    z-index: 2;
-    height: 500px;
-    background-position: 50% 50%;
-  }
-  .service .introduction .txt {
-    padding: 40px;
-    height: 300px;
-    border-radius: 15px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 750px;
-  }
-  .service .specialty {
-    z-index: 1;
-    bottom: 120px;
-    padding: 160px 0 40px;
-  }
-  .service .specialty .item {
-    margin-bottom: -65px;
-  }
-  .service .specialty .item .txt {
-    min-height: 201px;
-    top: -95px;
-    padding: 105px 10px .5em;
-  }
-  .service .roomType #roomContainer {
-    margin-top: -60px;
-    padding-bottom: 60px;
-  }
-  .service .roomType .roomTypeNav .itemDiv:hover .txt {
-    top: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .service .roomType .roomTypeNav .itemDiv:hover .txt p {
-    vertical-align: 90%;
-    color: #434343;
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt {
-    top: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt p {
-    vertical-align: 90%;
-    color: #434343;
-  }
-  .service .roomType .roomTypeNav .itemDiv .txt p {
-    font-size: 24px;
-    font-weight: 900;
-  }
-  .service .roomType .roomInfo {
-    margin-top: 20px;
-  }
-  .service .roomType .roomInfo .roomDetail {
-    padding: 20px;
-  }
-  .service .roomType .roomInfo .roomDetail .txt {
-    line-height: 2;
-  }
-  .service .roomType .roomInfo .roomDetail p.listDetail {
-    line-height: 2.5;
-  }
-  .service .roomType .roomInfo .roomDetail .btnDiv {
-    margin-top: 40px;
-  }
-  .service .serviceType {
-    background-position: 50% 100%;
-    padding: 60px 0;
-  }
-  .service .serviceType .item .txt {
-    min-height: 150px;
-    padding: .5em 20px .8em;
-  }
-  .service .serviceType .item .txt p {
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 993px) {
-  .service .specialty .item .txt {
-    min-height: 183px;
-  }
-}
-
-@media screen and (max-width: 992px) and (min-width: 768px) {
-  .service {
-    padding-top: 60px;
-  }
-  .service .introduction {
-    height: 500px;
-    background-position: 50% 50%;
-  }
-  .service .introduction .txt {
-    width: 80vw;
-    padding: 20px;
-    height: 300px;
-    border-radius: 15px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 750px;
-  }
-  .service .specialty {
-    z-index: 1;
-    bottom: 120px;
-    background-position: 80% 100%;
-    margin-bottom: -100px;
-  }
-  .service .specialty .item {
-    margin-bottom: -60px;
-  }
-  .service .specialty .item .txt {
-    min-height: 60px;
-    top: -95px;
-    padding: 105px 10px .8em;
-  }
-  .service .roomType #roomContainer {
-    margin-top: -60px;
-    padding-bottom: 60px;
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt {
-    top: 60%;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt p {
-    vertical-align: 90%;
-    color: #434343;
-  }
-  .service .roomType .roomTypeNav .itemDiv .txt p {
-    font-size: 24px;
-    font-weight: 900;
-  }
-  .service .roomInfo {
-    margin-top: 20px;
-  }
-  .service .roomInfo .roomDetail {
-    padding: 20px;
-  }
-  .service .roomInfo .roomDetail .txt {
-    line-height: 2;
-  }
-  .service .roomInfo .roomDetail p.listDetail {
-    line-height: 2.5;
-  }
-  .service .roomInfo .roomDetail .btnDiv {
-    margin-top: 40px;
-  }
-  .service .serviceType {
-    padding: 60px 0;
-  }
-  .service .serviceType .item .txt {
-    min-height: 150px;
-    padding: .5em 20px .8em;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .service {
-    padding-top: 60px;
-  }
-  .service .title {
-    margin-bottom: 20px;
-  }
-  .service .introduction .txt {
-    width: 100%;
-    padding: 20px;
-  }
-  .service .specialty {
-    padding: 60px 0 40px;
-  }
-  .service .specialty .item {
-    text-align: center;
-    margin-bottom: -60px;
-  }
-  .service .specialty .item .txt {
-    min-height: 60px;
-    top: -80px;
-    padding: 90px 10px .8em;
-  }
-  .service .roomType #roomContainer {
-    padding-top: 40px;
-    padding-bottom: 60px;
-  }
-  .service .roomType .roomTypeNav .itemDiv {
-    max-height: 50px;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .service .roomType .roomTypeNav .itemDiv.active .txt p {
-    -webkit-transition: .5s;
-    transition: .5s;
-    color: #434343;
-  }
-  .service .roomType .roomTypeNav .itemDiv .txt p {
-    position: relative;
-    bottom: 10px;
-  }
-  .service .roomType .roomTypeNav .itemDiv img {
-    bottom: 18px;
-  }
-  .service .roomType .roomInfo .roomPhoto img {
-    bottom: 70px;
-  }
-  .service .roomType .roomInfo .roomDetail {
-    margin-top: -98px;
-    padding: 10px 15px;
-    line-height: 1.8;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .service .roomType .roomInfo .roomDetail p.listDetail {
-    line-height: 1.8;
-  }
-  .service .roomType .roomInfo .roomDetail .btnDiv {
-    margin-top: 10px;
-  }
-  .service .serviceType {
-    padding: 40px 0;
-  }
-  .service .serviceType .item .txt {
-    padding: 10px;
-  }
+.service {
+  /* Slider */
+  /* Icons */
+  /* Arrows */
 }
 
 .service .title {
@@ -8356,6 +8183,44 @@ html.fp-enabled,
   position: relative;
   text-align: center;
   background: url(../images/background/bg_start.png) no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.service .introduction #introBox {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-animation: introBox 1.5s 0.2s both;
+          animation: introBox 1.5s 0.2s both;
+}
+
+@-webkit-keyframes introBox {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes introBox {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .service .introduction .txt {
@@ -8374,7 +8239,7 @@ html.fp-enabled,
   position: relative;
   background: url(../images/background/bg16.jpg) no-repeat;
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: 90% 100%;
   background-attachment: fixed;
 }
 
@@ -8421,7 +8286,6 @@ html.fp-enabled,
 
 .service .roomType .roomTypeNav .item img {
   position: relative;
-  border: 2px solid #b37600;
 }
 
 .service .roomType .roomTypeNav .item .txt {
@@ -8469,6 +8333,10 @@ html.fp-enabled,
   padding: 0;
 }
 
+.service .roomType .roomInfo .roomPhoto img {
+  position: relative;
+}
+
 .service .roomType .roomInfo .roomDetail {
   height: 100%;
   text-align: center;
@@ -8498,11 +8366,6 @@ html.fp-enabled,
 .service .roomType .roomInfo .roomDetail p {
   color: #434343;
   font-size: 16px;
-  letter-spacing: 0.08em;
-}
-
-.service .roomType .roomInfo .roomDetail p#roomTypeIntro {
-  margin-bottom: 20px;
 }
 
 .service .roomType .roomInfo .roomDetail p.listDetail {
@@ -8515,15 +8378,11 @@ html.fp-enabled,
   margin-right: 5px;
 }
 
-.service .roomType .roomInfo .roomDetail .btnDiv .btn {
-  font-size: 16px;
-  line-height: initial;
-}
-
 .service .serviceType {
   background: url(../images/background/bg16.jpg) no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: 75% 100%;
 }
 
 .service .serviceType .itemDiv {
@@ -8541,7 +8400,7 @@ html.fp-enabled,
 
 .service .serviceType .item .txt {
   position: relative;
-  bottom: 10px;
+  margin-top: -12px;
   border: 1px solid #aaa;
   border-radius: 3%;
   border-top: none;
@@ -8558,6 +8417,574 @@ html.fp-enabled,
   top: 3px;
   width: 26px;
   margin-left: 8px;
+}
+
+.service .serviceType .item .txt .price {
+  color: #ef715a;
+  font-weight: 700;
+}
+
+.service .overall .fullcontainer {
+  padding: 0;
+}
+
+.service .overall .item {
+  padding: 0;
+}
+
+.service .overall .reminder {
+  color: #434343;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.service .overall .reminder .txt {
+  background-color: rgba(255, 255, 255, 0.55);
+  height: 100%;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.service .overall .reminder .txt:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.service .overall .reminder .btnDiv {
+  margin-top: 20px;
+}
+
+.service .overall .reminder#bookingReminder {
+  background-image: url(../images/dogOnSofa.jpg);
+}
+
+.service .overall .reminder#discussReminder {
+  background-image: url(../images/bg_post.jpg);
+}
+
+.service .overall .reminder#raceReminder {
+  background-image: url(../images/bg12.jpg);
+}
+
+.service .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.service .slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.service .slick-list:focus {
+  outline: none;
+}
+
+.service .slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.service .slick-slider .slick-track,
+.service .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.service .slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.service .slick-track:before,
+.service .slick-track:after {
+  display: table;
+  content: '';
+}
+
+.service .slick-track:after {
+  clear: both;
+}
+
+.service .slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.service .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.service [dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.service .slick-slide img {
+  display: block;
+}
+
+.service .slick-slide.slick-loading img {
+  display: none;
+}
+
+.service .slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.service .slick-initialized .slick-slide {
+  display: block;
+}
+
+.service .slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.service .slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.service .slick-arrow.slick-hidden {
+  display: none;
+}
+
+.slick-loading .service .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat;
+}
+
+@font-face {
+  .service {
+    font-family: "slick";
+    src: url("./fonts/slick.eot");
+    src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.service .slick-prev,
+.service .slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.service .slick-prev:hover, .service .slick-prev:focus,
+.service .slick-next:hover,
+.service .slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+
+.service .slick-prev:hover:before, .service .slick-prev:focus:before,
+.service .slick-next:hover:before,
+.service .slick-next:focus:before {
+  opacity: 1;
+}
+
+.service .slick-prev.slick-disabled:before,
+.service .slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.service .slider {
+  width: 100%;
+  position: relative;
+}
+
+.service .slick-prev {
+  left: 0;
+  z-index: 10;
+  width: 10%;
+  height: 100%;
+}
+
+.service .slick-next {
+  right: 0;
+  z-index: 10;
+  width: 10%;
+  height: 100%;
+}
+
+.service .slick-prev:before,
+.service .slick-next:before {
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  top: 50%;
+  padding: 3px 0 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: #b37600;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 30px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+}
+
+.service .slick-prev:before {
+  content: "\f104";
+}
+
+.service .slick-next:before {
+  content: "\f105";
+}
+
+@media screen and (min-width: 993px) {
+  .service {
+    padding-top: 80px;
+  }
+  .service .title {
+    margin: 20px auto 40px;
+  }
+  .service .introduction {
+    z-index: 2;
+    height: 500px;
+  }
+  .service .introduction .txt {
+    padding: 40px;
+    height: 300px;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 750px;
+  }
+  .service .specialty {
+    padding: 160px 0 40px;
+    margin-top: -84px;
+  }
+  .service .specialty .item {
+    margin-bottom: -65px;
+  }
+  .service .specialty .item .txt {
+    min-height: 201px;
+    top: -95px;
+    padding: 105px 10px .5em;
+  }
+  .service .roomType #roomContainer {
+    padding: 65px 10px 60px;
+  }
+  .service .roomType .roomTypeNav .itemDiv {
+    height: 80px;
+  }
+  .service .roomType .roomTypeNav .itemDiv:hover .txt {
+    top: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .service .roomType .roomTypeNav .itemDiv:hover .txt p {
+    vertical-align: 90%;
+    color: #434343;
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt {
+    top: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt p {
+    vertical-align: 90%;
+    color: #434343;
+  }
+  .service .roomType .roomTypeNav .itemDiv .item {
+    height: 80px;
+    overflow: hidden;
+    border: 1px solid #b37600;
+  }
+  .service .roomType .roomTypeNav .itemDiv .txt {
+    height: 80px;
+  }
+  .service .roomType .roomTypeNav .itemDiv .txt p {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .service .roomType .roomInfo {
+    margin-top: 20px;
+  }
+  .service .roomType .roomInfo .roomDetail {
+    padding: 20px 20px 10px;
+  }
+  .service .roomType .roomInfo .roomDetail .txt {
+    line-height: 2.1;
+  }
+  .service .roomType .roomInfo .roomDetail p {
+    letter-spacing: 0.08em;
+  }
+  .service .roomType .roomInfo .roomDetail p#roomTypeIntro {
+    margin-bottom: 25px;
+  }
+  .service .roomType .roomInfo .roomDetail p.listDetail {
+    line-height: 2;
+  }
+  .service .roomType .roomInfo .roomDetail .btnDiv {
+    margin-top: 40px;
+  }
+  .service .roomType .slick-prev:before {
+    left: 20px;
+  }
+  .service .roomType .slick-next:before {
+    right: 20px;
+  }
+  .service .serviceType {
+    padding: 65px 0 60px;
+  }
+  .service .serviceType .item .txt {
+    min-height: 230px;
+    padding: .5em 20px .8em;
+  }
+  .service .serviceType .item .txt p {
+    text-align: left;
+  }
+  .service .overall .txt {
+    padding: 125px 10px 0px;
+  }
+  .service .overall .reminder {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .service .overall .txt {
+    padding: 125px 10px 0px;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  .service {
+    padding-top: 60px;
+  }
+  .service .title {
+    margin: 0px auto 40px;
+  }
+  .service .introduction {
+    z-index: 2;
+    height: 460px;
+  }
+  .service .introduction .txt {
+    width: 75vw;
+    padding: 20px;
+    height: 300px;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .service .specialty {
+    margin-top: -20px;
+    padding: 85px 0 40px;
+  }
+  .service .specialty .item {
+    margin-bottom: -60px;
+  }
+  .service .specialty .item .txt {
+    min-height: 60px;
+    top: -95px;
+    padding: 105px 10px .8em;
+  }
+  .service .roomType #roomContainer {
+    padding: 65px 10px 60px;
+  }
+  .service .roomType .roomTypeNav .itemDiv {
+    height: 80px;
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt {
+    top: 60%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt p {
+    vertical-align: 90%;
+    color: #434343;
+  }
+  .service .roomType .roomTypeNav .itemDiv .item {
+    height: 80px;
+    overflow: hidden;
+    border: 1px solid #b37600;
+  }
+  .service .roomType .roomTypeNav .itemDiv .txt p {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .service .roomType .slick-prev:before {
+    left: 20px;
+  }
+  .service .roomType .slick-next:before {
+    right: 20px;
+  }
+  .service .roomInfo {
+    margin-top: 20px;
+  }
+  .service .roomInfo .roomDetail {
+    padding: 5px 15px 0px;
+  }
+  .service .roomInfo .roomDetail #roomTypeName {
+    display: none;
+  }
+  .service .roomInfo .roomDetail .txt {
+    line-height: 1.75;
+    letter-spacing: 0.07em;
+  }
+  .service .roomInfo .roomDetail p.listDetail {
+    line-height: 2.5;
+    display: none;
+  }
+  .service .serviceType {
+    padding: 60px 0;
+  }
+  .service .serviceType .item .txt {
+    min-height: 300px;
+    padding: .5em 20px .8em;
+  }
+  .service .serviceType .item .txt p {
+    text-align: left;
+  }
+  .service .overall .txt {
+    padding: 50px 10px 0px;
+  }
+  .service .overall .reminder {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .service {
+    padding-top: 60px;
+  }
+  .service .title {
+    margin-bottom: 20px;
+  }
+  .service .introduction .txt {
+    width: 100%;
+    padding: 30px 20px;
+  }
+  .service .specialty {
+    background-attachment: scroll;
+    padding: 40px 0 40px;
+  }
+  .service .specialty .item {
+    text-align: center;
+    margin-bottom: -60px;
+  }
+  .service .specialty .item .txt {
+    min-height: 60px;
+    top: -80px;
+    padding: 90px 10px .8em;
+  }
+  .service .roomType #roomContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .service .roomType .roomTypeNav .itemDiv {
+    max-height: 50px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt {
+    background-color: rgba(255, 168, 0, 0.7);
+  }
+  .service .roomType .roomTypeNav .itemDiv.active .txt p {
+    -webkit-transition: .5s;
+    transition: .5s;
+    color: #434343;
+    font-weight: 900;
+  }
+  .service .roomType .roomTypeNav .itemDiv .txt p {
+    position: relative;
+    bottom: 15px;
+    font-size: 20px;
+  }
+  .service .roomType .roomTypeNav .itemDiv img {
+    bottom: 18px;
+  }
+  .service .roomType .roomInfo .roomPhoto {
+    overflow: hidden;
+    max-height: 200px;
+  }
+  .service .roomType .roomInfo .roomPhoto img {
+    margin-top: -60px;
+  }
+  .service .roomType .roomInfo .roomPhoto .temp {
+    width: 100%;
+    height: 100%;
+  }
+  .service .roomType .roomInfo .roomDetail {
+    position: relative;
+    padding: 0px 15px 10px;
+    line-height: 1.8;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  .service .roomType .roomInfo .roomDetail #roomTypeName {
+    display: none;
+  }
+  .service .roomType .roomInfo .roomDetail p.listDetail {
+    line-height: 1.8;
+  }
+  .service .roomType .slick-prev:before {
+    left: 10px;
+    top: 38%;
+  }
+  .service .roomType .slick-next:before {
+    right: 10px;
+    top: 38%;
+  }
+  .service .serviceType {
+    background: #ffa800;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 0, rgba(255, 168, 0, 0.5) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0, rgba(255, 168, 0, 0.5) 100%);
+    padding: 40px 0;
+  }
+  .service .serviceType .item .txt {
+    padding: .5em 20px .8em;
+    border: none;
+  }
+  .service .overall .txt {
+    padding: 60px 10px 0px;
+  }
+  .service .overall .txt h4 {
+    font-size: 18px;
+  }
+  .service .overall .reminder {
+    height: 170px;
+  }
 }
 
 .addPetInfo {
@@ -8785,6 +9212,25 @@ html.fp-enabled,
 }
 
 @media screen and (min-width: 993px) {
+  .race .main {
+    background: #f9edcf;
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f9edcf 1%, #fffcef 27%, #fffdf4 75%, #f9edcf 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f9edcf 1%, #fffcef 27%, #fffdf4 75%, #f9edcf 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9edcf', endColorstr='#f9edcf',GradientType=1 );
+    /* IE6-9 */
+  }
+  .race .cardlightbox .wordsVote {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    margin: auto;
+    font-size: 16px;
+    color: white;
+  }
   .race .section_prize {
     background-size: cover;
     position: relative;
@@ -8808,7 +9254,7 @@ html.fp-enabled,
     height: 0em;
     font-size: 25px;
     color: #53a1da;
-    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
+    font-weight: bold;
   }
   .race .cloud1 {
     padding: 0;
@@ -8818,11 +9264,14 @@ html.fp-enabled,
     width: 80%;
   }
   .race .cloud1 p {
-    color: #53a1da;
+    color: #fd8e2f;
   }
   .race .cloud1 span {
     color: #ef715a;
     font-size: 36px;
+  }
+  .race .cloud3 {
+    margin-top: 150px;
   }
   .race .topthree {
     margin-top: 120px;
@@ -8884,7 +9333,7 @@ html.fp-enabled,
     right: 0;
     left: 0;
     margin: 0 auto;
-    bottom: 30px;
+    bottom: 15px;
     color: white;
     font-size: 36px;
     text-shadow: 0.5px 0.5px 0.5px black;
@@ -8931,6 +9380,14 @@ html.fp-enabled,
   .race .cardWrap {
     padding: 25px;
   }
+  .race .cardWrap .wordsVote {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    margin: auto;
+    font-size: 16px;
+    color: white;
+  }
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
@@ -8939,7 +9396,7 @@ html.fp-enabled,
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 30;
+    z-index: 28;
     margin: auto;
     width: 100%;
     height: 100vh;
@@ -9072,9 +9529,6 @@ html.fp-enabled,
     font-size: 50px;
     color: #ffd5cc;
   }
-  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
-    color: #ef715a;
-  }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
     position: absolute;
     top: 0;
@@ -9173,7 +9627,6 @@ html.fp-enabled,
   }
   .race .cloud {
     margin-top: 93px;
-    padding: 10px 10px 0 10px;
     position: relative;
   }
   .race .cloud img {
@@ -9189,8 +9642,7 @@ html.fp-enabled,
     text-align: center;
     height: 0em;
     font-size: 24px;
-    color: #53a1da;
-    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
+    color: #4d5dbb;
   }
   .race .cloud1 {
     padding: 0;
@@ -9200,11 +9652,14 @@ html.fp-enabled,
     width: 80%;
   }
   .race .cloud1 p {
-    color: #53a1da;
+    color: #fd8e2f;
   }
   .race .cloud1 span {
     color: #ef715a;
     font-size: 32px;
+  }
+  .race .cloud3 {
+    margin-top: 150px;
   }
   .race .topthree {
     margin-top: 120px;
@@ -9266,31 +9721,32 @@ html.fp-enabled,
     right: 0;
     left: 0;
     margin: 0 auto;
-    bottom: 30px;
+    bottom: 10px;
     color: white;
     font-size: 36px;
+    text-shadow: 0.3px 0.3px 0.3px black;
   }
-  .race .topthree .item .lollipop .stick {
+  .race .topthree .item .stick {
     margin-top: -50px;
     width: 20px;
     height: 50px;
     background-color: #ffa800;
     display: inline-block;
   }
-  .race .searchWrap {
+  .searchWrap {
     margin-right: 40px;
     padding: 25px 15px 15px 15px;
     display: inline-block;
     float: right;
     position: relative;
   }
-  .race .searchWrap #search input {
+  .searchWrap #search input {
     border: 3px solid #ffa800;
     border-radius: 5px;
     padding: 5px;
     outline: none;
   }
-  .race .searchWrap #search #searchBtn {
+  .searchWrap #search #searchBtn {
     position: absolute;
     height: 33px;
     bottom: 15px;
@@ -9304,11 +9760,11 @@ html.fp-enabled,
     border: 3px solid #ffa800;
     cursor: pointer;
   }
-  .race .searchWrap #search #searchBtn i {
+  .searchWrap #search #searchBtn i {
     height: 100%;
     color: #ffffff;
   }
-  .race .cardWrap {
+  .cardWrap {
     padding: 15px;
   }
 }
@@ -9319,7 +9775,7 @@ html.fp-enabled,
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 30;
+    z-index: 28;
     margin: auto;
     width: 100%;
     height: 100vh;
@@ -9446,16 +9902,29 @@ html.fp-enabled,
     background: transparent;
     border: 0;
   }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .wordsVote {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    margin: auto;
+    font-size: 11px;
+    color: white;
+  }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite:focus {
     outline: 0;
+  }
+  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite:focus .wordsVote {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    margin: auto;
+    font-size: 11px;
+    color: white;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart {
     position: relative;
     font-size: 40px;
     color: #ffd5cc;
-  }
-  .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
-    color: #ef715a;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
     position: absolute;
@@ -9486,8 +9955,9 @@ html.fp-enabled,
     background-color: #FFF;
     font-size: 15px;
     display: block;
+    border-bottom: 1px dotted #ccc;
     padding: 5px 5px 5px 5px;
-    height: 150px;
+    max-height: 140px;
     width: 100%;
     border-radius: 5px;
     overflow: auto;
@@ -9519,7 +9989,7 @@ html.fp-enabled,
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .msgtype {
     border: none;
     outline: none;
-    width: 120px;
+    width: 150px;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput .cardmsgbutton {
     border: none;
@@ -9580,23 +10050,28 @@ html.fp-enabled,
     margin: auto;
     text-align: center;
     height: 0em;
-    font-size: 12px;
-    color: #53a1da;
-    text-shadow: 0.3px 0.3px 0.3px #4d5dbb;
+    font-size: 15px;
+    color: steelblue;
+    font-weight: bold;
   }
   .race .cloud1 {
     padding: 0;
     text-align: center;
+    z-index: 5;
   }
   .race .cloud1 img {
     width: 90%;
   }
   .race .cloud1 p {
-    color: #53a1da;
+    color: #fd8e2f;
   }
   .race .cloud1 span {
     color: #ef715a;
     font-size: 24px;
+  }
+  .race .cloud3 {
+    margin: -150px;
+    display: none;
   }
   .race .topthree {
     margin-top: 120px;
@@ -9645,8 +10120,8 @@ html.fp-enabled,
     position: relative;
     border-radius: 50%;
     border: 5px solid #ffa800;
-    width: 120px;
-    height: 120px;
+    width: 27vw;
+    height: 27vw;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -9658,28 +10133,26 @@ html.fp-enabled,
     right: 0;
     left: 0;
     margin: 0 auto;
-    bottom: 15px;
+    bottom: 5px;
     color: white;
     font-size: 16px;
+    text-shadow: 0.3px 0.3px 0.3px black;
   }
-  .race .topthree .item .lollipop .stick {
+  .race .topthree .item .stick {
     margin-top: -50px;
     width: 10px;
     height: 50px;
     display: inline-block;
     background-color: #ffa800;
   }
-  .race .r-cardLightbox .cardContent {
+  .r-cardLightbox .cardContent {
     width: 350px;
     height: 500px;
   }
-  .race .anotherLine {
-    display: block;
-  }
-  .race #sorts {
+  #sorts {
     padding: 10px 0px 5px 0px;
   }
-  .race #sorts .button {
+  #sorts .button {
     letter-spacing: 0.05em;
     width: 60px;
     height: 30px;
@@ -9697,10 +10170,13 @@ html.fp-enabled,
     background-color: transparent;
     outline: none;
   }
-  .race #sorts span {
+  #sorts span {
     font-size: 14px;
   }
-  .race .searchWrap {
+  #sorts .buttonWrap {
+    display: block;
+  }
+  .searchWrap {
     display: none;
     position: relative;
     float: right;
@@ -9708,14 +10184,14 @@ html.fp-enabled,
     padding: 0px 0px 0px 0px;
     display: inline-block;
   }
-  .race .searchWrap #search input {
+  .searchWrap #search input {
     border: 2px solid #ffa800;
     border-radius: 5px;
     padding: 5px;
     outline: none;
     width: 100px;
   }
-  .race .searchWrap #search #searchBtn {
+  .searchWrap #search #searchBtn {
     position: absolute;
     bottom: 15px;
     font-size: 20px;
@@ -9727,15 +10203,18 @@ html.fp-enabled,
     outline: none;
     border: 2px solid #ffa800;
   }
-  .race .searchWrap #search #searchBtn i {
+  .searchWrap #search #searchBtn i {
     height: 100%;
     color: #ffffff;
   }
-  .race #filters {
+  #filters {
     padding: 0px 0 0px 0;
     display: inline-block;
   }
-  .race #filters .button {
+  #filters .buttonWrap {
+    display: block;
+  }
+  #filters .button {
     letter-spacing: 0.05em;
     width: 60px;
     height: 30px;
@@ -9753,17 +10232,51 @@ html.fp-enabled,
     background-color: transparent;
     outline: none;
   }
-  .race #filters span {
+  #filters span {
     font-size: 14px;
   }
-  .race .cardWrap {
+  .cardWrap {
     padding: 30px 30px;
+  }
+  .cardWrap .wordsVote {
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    margin: auto;
+    font-size: 16px;
+    color: white;
   }
 }
 
+#race-body #gotop {
+  display: none;
+  position: fixed;
+  border-radius: 50px;
+  right: 20px;
+  bottom: 30px;
+  cursor: pointer;
+  z-index: 25;
+}
+
+#race-body #gotop img {
+  width: 70px;
+}
+
 .race .main {
+  background-repeat: no-repeat;
   background-color: #f9f7e8;
   position: relative;
+}
+
+.race .main .circle {
+  margin-right: 3px;
+  position: relative;
+  bottom: -3px;
+  display: inline-block;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background-color: #ffa800;
 }
 
 .race .cardlightbox {
@@ -9771,7 +10284,7 @@ html.fp-enabled,
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 30;
+  z-index: 28;
   margin: auto;
   width: 100%;
   height: 100vh;
@@ -9836,6 +10349,9 @@ html.fp-enabled,
 .race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox {
   text-align: center;
   max-width: 320px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .imgbox img {
@@ -9918,6 +10434,7 @@ html.fp-enabled,
 }
 
 .race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite {
+  position: relative;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -9931,10 +10448,6 @@ html.fp-enabled,
   position: relative;
   font-size: 50px;
   color: #ffd5cc;
-}
-
-.race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart:hover {
-  color: #ef715a;
 }
 
 .race .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .favorite .outsideheart .insideheart {
@@ -9992,6 +10505,7 @@ html.fp-enabled,
 .race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msgContent ul span {
   width: 100%;
   word-break: break-all;
+  padding-top: 5px;
 }
 
 .race .cardlightbox .lightbox-box .lightbox-content .msgbox .msg .msginput {
@@ -10120,9 +10634,8 @@ html.fp-enabled,
   transition: all 0.4s;
 }
 
-.race .btnLink:hover {
-  background-color: #f4511e;
-  color: #fff;
+.race .buttonWrap {
+  display: inline-block;
 }
 
 .race #sorts {
@@ -10142,6 +10655,7 @@ html.fp-enabled,
 
 .race #sorts span {
   color: #7d7d7d;
+  font-weight: bold;
 }
 
 .race #filters {
@@ -10162,6 +10676,7 @@ html.fp-enabled,
 
 .race #filters span {
   color: #7d7d7d;
+  font-weight: bold;
 }
 
 .race .button {
@@ -10284,6 +10799,7 @@ html.fp-enabled,
 }
 
 .race .section_vote .cardWrap .card .textDown .like .favorite {
+  position: relative;
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -10297,10 +10813,6 @@ html.fp-enabled,
   position: relative;
   font-size: 50px;
   color: #ffd5cc;
-}
-
-.race .section_vote .cardWrap .card .textDown .like .favorite .outsideheart:hover {
-  color: #ef715a;
 }
 
 .race .section_vote .cardWrap .card .textDown .like .favorite .outsideheart .insideheart {
@@ -10420,6 +10932,52 @@ html.fp-enabled,
   }
 }
 
+@-webkit-keyframes hoverHeart {
+  0% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+    opacity: 1;
+  }
+  25% {
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px);
+    opacity: 1;
+  }
+}
+
+@keyframes hoverHeart {
+  0% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+    opacity: 1;
+  }
+  25% {
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: translate(0, 10px);
+            transform: translate(0, 10px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate(0, -10px);
+            transform: translate(0, -10px);
+    opacity: 1;
+  }
+}
+
 .postCompete {
   background-image: url(../images/race_image/compete_registerBg3.png);
   background-size: cover;
@@ -10433,18 +10991,19 @@ html.fp-enabled,
 }
 
 .postCompete .container .banner {
-  height: 200px;
-  width: 90%;
+  height: 250px;
+  width: 100%;
   position: relative;
-  right: 0;
-  left: 0;
-  margin: auto;
   text-align: center;
   border-bottom: 1px dotted #b37600;
 }
 
 .postCompete .container .banner .txt {
-  margin-top: 120px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
   color: #a91e2d;
   font-weight: bolder;
 }
@@ -10507,10 +11066,14 @@ html.fp-enabled,
           animation: heartbeat .5s infinite alternate;
 }
 
-.postCompete .container .banner .img1 {
+.postCompete .container .banner .txt .img1 {
   display: inline-block;
-  height: 200px;
+  width: 300px;
   vertical-align: bottom;
+}
+
+.postCompete .container .banner .txt .img1 img {
+  width: 100%;
 }
 
 .postCompete .container .main {
@@ -10763,9 +11326,6 @@ html.fp-enabled,
   .postCompete .container {
     padding-top: 60px;
   }
-  .postCompete .container .banner .img1 img {
-    width: 380px;
-  }
   .postCompete .container .main {
     width: 550px;
     padding: 20px;
@@ -10799,12 +11359,6 @@ html.fp-enabled,
 @media screen and (min-width: 993px) {
   .postCompete .container {
     padding: 120px 0px 40px;
-  }
-  .postCompete .container .banner {
-    width: 70%;
-  }
-  .postCompete .container .banner .img1 img {
-    width: 380px;
   }
   .postCompete .container .main {
     width: auto;

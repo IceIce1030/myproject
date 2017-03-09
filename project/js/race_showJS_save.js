@@ -1,7 +1,47 @@
 $(function(){	
+  //GOTOP
+$("#gotop").click(function(){
+    jQuery("html,body").animate({
+        scrollTop:0
+    },1000);
+});
+$(window).scroll(function() {
+    if ( $(this).scrollTop() > 300){
+        $('#gotop').fadeIn("fast");
+    } else {
+        $('#gotop').stop().fadeOut("fast");
+    }
+});
+
   $('.cardmsgbutton').click(function(){
-        postMSg()
+
+    if (localStorage["mem_no"] == null) {
+        //燈箱出現
+        $(".loginlightbox").animate({
+            "right": "0px"
+        }, "0.5s");
+        // focus會員帳號
+        $("#login_mem_id").focus();
+    }else{
+         // 刪除預設留言
+      if($('.defaultMsg').length > 0){
+        // $('.defaultMsg').removeAttr('class');
+        $('.defaultMsg').remove();
+      }
+        postMSg();// 呼叫留言 
+    } 
   });
+    // 註冊分類與篩選
+    $('#sorts .button').click(function(){
+        $('#sorts .button').removeClass("is-checked");
+        $(this).addClass('is-checked');  
+    });
+
+
+    $('#filters .button').click(function(){
+        $('#filters .button').removeClass("is-checked");
+        $(this).addClass('is-checked');  
+    });
 
 	// 卡片分類開始
 	function getVoteBySort(sortStyle,filterStyle){
@@ -18,7 +58,11 @@ $(function(){
             if (localStorage.race_totalCardNum){
               var totalCardNum = $(".cardWrap").length;
               var totalCardNumParse = Number(totalCardNum);
-              var localStorageTotalCardNumParse = Number(localStorage.race_totalCardNum);
+              var localStorageTotalCardNumParse = Number(totalCardNumParse);
+              console.log(localStorageTotalCardNumParse);
+              console.log(totalCardNum);
+
+
               if (localStorageTotalCardNumParse > totalCardNum ){
                 localStorage.setItem('race_totalCardNum', localStorageTotalCardNumParse);
               }else{
@@ -33,7 +77,7 @@ $(function(){
           $( document ).ready(function() {
             if (typeof(Storage) !== "undefined") { 
                 var  totalCardNum = localStorage.getItem('race_totalCardNum');         
-                for (i = 0; i <= totalCardNum; i++) { 
+                for (i = 0; i <= 60; i++) { 
                     var likeCardNum = 'liked'+i;
                     var likeStatus = localStorage.getItem(likeCardNum);
 
@@ -181,10 +225,10 @@ $(function(){
           // alert(lightboxContent[0].mem_name);
 
           if(jsonStr == '"nodata"'){
-               $('.msgContent').append('<li><span>~成為第一個留言的人吧~</span></li>');
+               $('.msgContent').append('<li><span class="defaultMsg">~成為第一個留言的人吧~</span></li>');
           }else{
             for(var i=0;i<lightboxContent.length;i++){
-                $('.msgContent').append('<li><span>'+lightboxContent[i].mem_name+':'+'</span><span>'+lightboxContent[i].votemsg_content+'</span></li>');
+                $('.msgContent').append('<li><span>'+lightboxContent[i].mem_name+': '+'</span><span>'+lightboxContent[i].votemsg_content+'</span></li>');
             };
           }
 
@@ -288,12 +332,12 @@ $(function(){
  		var sortStyle = "sortStyle=vote_count desc";
  		// var filterStyle = "filterStyle='大型犬'";      '大型犬' or dog.dog_size = '中型犬' or dog.dog_size = '小型犬'
  		// var filterStyle = "filterStyle='all'";	
-
+    // alert('123');
  		var filterStatus = $("#filters .is-checked").val();
 
  		if(filterStatus == "*"){
 
- 			var filterStyle = "filterStyle='all'";
+ 		var filterStyle = "filterStyle='all'";
 
  		}else if(filterStatus == "大型犬"){
  			var filterStyle = "filterStyle='大型犬'";
@@ -314,9 +358,10 @@ $(function(){
 
  	$("#voteNum").click(function(){
 
- 		var sortStyle = "sortStyle=vote_no asc";
+ 		var sortStyle = "sortStyle=vote_no desc";
 
  		var filterStatus = $("#filters .is-checked").val();
+
 
  		if(filterStatus == "*"){
 
@@ -350,7 +395,7 @@ $(function(){
 
  		}else if(sortStatus == "date"){
 
- 			var sortStyle = "sortStyle=vote_no asc";
+ 			var sortStyle = "sortStyle=vote_no desc";
  		};
    //  sessionStorage["sortStyle"] = sortStyle;
    //  sessionStorage["filterStyle"] = filterStyle;
@@ -371,7 +416,7 @@ $(function(){
 
  		}else if(sortStatus == "date"){
 
- 			var sortStyle = "sortStyle=vote_no asc";
+ 			var sortStyle = "sortStyle=vote_no desc";
  		};
    //  sessionStorage["sortStyle"] = sortStyle;
    //  sessionStorage["filterStyle"] = filterStyle;
@@ -393,7 +438,7 @@ $(function(){
 
  		}else if(sortStatus == "date"){
 
- 			var sortStyle = "sortStyle=vote_no asc";
+ 			var sortStyle = "sortStyle=vote_no desc";
  		};
    //  sessionStorage["sortStyle"] = sortStyle;
    //  sessionStorage["filterStyle"] = filterStyle;
@@ -414,7 +459,7 @@ $(function(){
 
  		}else if(sortStatus == "date"){
 
- 			var sortStyle = "sortStyle=vote_no asc";
+ 			var sortStyle = "sortStyle=vote_no desc";
  		};
    //  sessionStorage["sortStyle"] = sortStyle;
    //  sessionStorage["filterStyle"] = filterStyle;
@@ -425,7 +470,7 @@ $(function(){
  	// 卡片點擊分類事件結束
  	
  	// 初始卡片分類事件
- 	getVoteBySort("filterStyle='all'","sortStyle=vote_no asc");
+ 	getVoteBySort("filterStyle='all'","sortStyle=vote_no desc");
  	// 初始卡片分類事件結束
 
 
@@ -632,10 +677,10 @@ function postMSg(){
           // alert(lightboxContent[0].mem_name);
 
           if(jsonStr == '"nodata"'){
-               $('.msgContent').append('<li><span>~成為第一個留言的人吧~</span></li>');
+               $('.msgContent').append('<li><span class="defaultMsg">~成為第一個留言的人吧~</span></li>');
           }else{
             var i = lightboxContent.length-1;
-                $('.msgContent').append('<li><span>'+lightboxContent[i].mem_name+':'+'</span><span>'+lightboxContent[i].votemsg_content+'</span></li>');      
+                $('.msgContent').append('<li><span>'+lightboxContent[i].mem_name+': '+'</span><span>'+lightboxContent[i].votemsg_content+'</span></li>');      
           }
           
 

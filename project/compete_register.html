@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>建立寵物資料</title>
+    <title>報名萌主爭霸</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/jquery.nice-select.js"></script>
-    <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
     <script type="text/javascript" src="js/compete_register.js"></script>
+    <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
 </head>
 
 <body>
@@ -70,7 +70,7 @@
                         <a href="book.html"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i><span>線上訂房</span></a>
                     </li>
                     <li>
-                        <a href="race.html"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
+                        <a href="race.html" class="active"><i class="fa fa-trophy" aria-hidden="true"></i><span>萌主爭霸</span></a></li>
                     <li>
                         <a href="discuss.html"><i class="fa fa-comments" aria-hidden="true"></i><span>主題討論</span></a></li>
                     <li>
@@ -152,30 +152,25 @@
     <div class="postCompete">
         <div class="container">
             <div class="banner">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="txt">
-                        <div class="txt1">
-                            寵物
-                        </div>
-                        <div class="txt2">
-                            <div class="txtUp">萌</div>
-                            <div class="txtDown">主</div>
-                        </div>
-                        <div class="txt3">
-                            <div class="txtUp">選拔賽</div>
-                            <div class="txtDown">每月15日結算</div>
-                            <div class="heartWrap">
-                                <img class="img" src="images/race_image/r_heart.png">
-                            </div>
-                        </div>                    
+                <div class="txt">
+                    <div class="txt1">
+                        寵物
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="txt2">
+                        <div class="txtUp">萌</div>
+                        <div class="txtDown">主</div>
+                    </div>
+                    <div class="txt3">
+                        <div class="txtUp">選拔賽</div>
+                        <div class="txtDown">每月15日結算</div>
+                        <div class="heartWrap">
+                            <img class="img" src="images/race_image/r_heart.png">
+                        </div>
+                    </div>
                     <div class="img1">
                         <img src="images/race_image/topThreeSmall.png">
                     </div>
-                </div> 
-                <div class="clear"></div>                         
+                </div>
             </div>
             <div class="main">
                 <div class="col-xs-12 col-sm-12 col-md-12 petList" id="petList">
@@ -242,6 +237,9 @@
                             <span class="labelClass">照片</span>
                             <span class="showImage"><img src="images/race_image/petDefault.png" id="petImg"></span>
                             <input type="file" name="pet_img" id="upload_petImg">
+                            <input type="hidden" name="default_pet_img" value="petDefault.png">
+
+
                             <label for="upload_petImg" id="uploadImgLabel">上傳照片</label>
                         </div>
                         <div class="alertInform" id="chooseImgDiv">

@@ -1,6 +1,22 @@
 @include respones(md){
 	.race{
-		
+		.main{
+			background: #f9edcf; /* Old browsers */
+			background: -moz-linear-gradient(left, #f9edcf 1%, #fffcef 27%, #fffdf4 75%, #f9edcf 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #f9edcf 1%,#fffcef 27%,#fffdf4 75%,#f9edcf 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #f9edcf 1%,#fffcef 27%,#fffdf4 75%,#f9edcf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9edcf', endColorstr='#f9edcf',GradientType=1 ); /* IE6-9 */
+		}
+		.cardlightbox{
+			.wordsVote{
+				position: absolute;
+				top: 9px;			  							
+				left: 8px;
+				margin: auto;
+				font-size: 16px;
+				color:white;			  								
+			}
+		}
 		.section_prize{
 			background-size: cover;
 			position: relative;	
@@ -23,7 +39,8 @@
 				height: 0em;
 				font-size: 25px;
 				color: #53a1da;
-				text-shadow:0.3px 0.3px 0.3px #4d5dbb;
+				font-weight: bold;
+				// text-shadow:0.3px 0.3px 0.3px #4d5dbb;
 			}
 		}
 		.cloud1{
@@ -33,12 +50,15 @@
 				width: 80%;
 			}
 			p{
-				color: #53a1da;
+				color: #fd8e2f;
 			}
 			span{
 				color:$light-pink;
 				font-size: $fz-h1;
 			}
+		}
+		.cloud3{
+			margin-top:150px;
 		}	
 		.topthree{
 		margin-top: 120px;
@@ -101,7 +121,7 @@
 							right: 0;
 							left: 0;
 							margin: 0 auto;
-							bottom: 30px;
+							bottom: 15px;
 							color: white;
 							font-size: $fz-h1;
 							text-shadow:0.5px 0.5px 0.5px black;
@@ -156,6 +176,14 @@
 		}
 		.cardWrap{
 			padding: 25px;
+			.wordsVote{
+  				position: absolute;
+  				top: 9px;			  							
+  				left: 8px;
+  				margin: auto;
+  				font-size: 16px;
+  				color:white;			  								
+  			}
 		}
 	}
 }

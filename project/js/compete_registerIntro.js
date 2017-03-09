@@ -1,15 +1,65 @@
 //jquery
 $(document).ready(function() {
     // 將pet編號放入表單隱藏欄位
+    // $('#addPetBtn').attr('disabled', 'disabled');
+
+    //     $("#upload_voteImg").click(function() {
+    //          $('#addPetBtn').removeAttr('disabled');
+                        
+    //     });
+    // $("#addPetBtn").click(function(){
+    //     // var qq =$("#voteImg").attr("src");
+    //     // alert(qq);       
+    //     if($("#voteImg").attr("src") == ""){
+            
+    //     }else{
+    //        alert($("#voteImg").attr("src"));
+    //         // document.formRace.submit();
+    //     }
+    // })
+
+    // function submitTest() {
+    //     alert("123");
+        // if($("#voteImg").attr("src") == ""){
+        //     alert("你尚未上傳照片");
+        //     return false;
+        // }else{
+        //     return true; 
+        //     alert("123");   
+        // }
+    // };
+    
+
     if(localStorage.compete_pet_no){
       var pet_no = (localStorage.compete_pet_no);
         $('#pet_no').val(pet_no); 
-     localStorage.removeItem(compete_pet_no);
+     localStorage.removeItem('compete_pet_no');
     }else{
         getMemLatestPet();
     };
-   
+
+
+
 }); 
+
+
+// 檢查表單
+function checkForm(e) {
+
+
+    var upload_voteImg = document.getElementById("upload_voteImg");
+
+    //檢查體型一定要選
+    if (upload_voteImg.value == "") {
+        alert('請上傳照片唷~');
+        e.preventDefault();
+        return;
+    } 
+
+}
+
+
+
 // 上傳照片
 function fileChange() {
 
@@ -41,8 +91,8 @@ function addPetDoFirst() {
     document.getElementById('upload_voteImg').onchange = fileChange;
     // // ===addPetBtn.onclick 事件處理程序是 addPet
 
-    // document.getElementById("addPetBtn").onclick = addPet;
-    //focus在狗狗名字
+    //送出表單時檢查表單
+    document.getElementById("formRace").onsubmit = checkForm;
 }
 
 window.addEventListener('load', addPetDoFirst, false);
@@ -55,7 +105,7 @@ function getMemLatestPet() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) { //成功，取回資料
                 console.log(xhr.responseText);
-                $('#vote_no').val(xhr.responseText);        
+                $('#pet_no').val(xhr.responseText);        
             } else {
                 alert(xhr.status);
             }

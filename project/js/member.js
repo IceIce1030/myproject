@@ -1,4 +1,18 @@
 $(document).ready(function() {
+    // -------gotop
+    $("#gotop").click(function() {
+        jQuery("html,body").animate({
+            scrollTop: 0
+        }, 1000);
+    });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 300) {
+            $('#gotop').fadeIn("fast");
+        } else {
+            $('#gotop').stop().fadeOut("fast");
+        }
+    });
+
     // -------select外掛
     $('select').niceSelect();
     $("#dog_size").change(function() {
@@ -8,9 +22,11 @@ $(document).ready(function() {
         $('select').niceSelect('update');
     });
 
-    $('#logoutBtn').click(function(){
-        location.href="home.html";
+    //登出跳轉到首頁
+    $('#logoutBtn').click(function() {
+        location.href = "home.html";
     });
+
     //tab選到直接連到會員頁相對應內容tabContent
     var _var_tabContentId = localStorage['_var_tabContentId'];
 
@@ -62,7 +78,7 @@ $(document).ready(function() {
     $('.updateMemInfo').click(function() {
         $('#aboutme').slideDown(0, function() {
             $('#aboutme .lightbox_box').css({
-                width: '360px',
+                width: '300px',
                 height: '450px',
                 borderRadius: '15px'
             });
@@ -86,8 +102,8 @@ $(document).ready(function() {
     $('#changepsw').click(function() {
         $('#changePswLb').slideDown(0, function() {
             $('#changePswLb .lightbox_box').css({
-               width: '360px',
-                height: '300px',
+                width: '300px',
+                height: '280px',
                 borderRadius: '15px'
             });
         });
@@ -108,6 +124,15 @@ function mem_getOrderList() {
                     document.getElementById('mybookings').innerHTML = "沒有住宿訂單";
                 } else { //成功
                     document.getElementById('mybookings').innerHTML = xhr.responseText;
+                    $('.cancelOrder').click(function() {
+                        if (confirm("確定要取消訂單嗎?")) {
+                            var _order_no = $(this).siblings('input').val();
+                            // alert(_order_no);
+                            orderlistDele(_order_no);
+                            // orderListCheck();
+                        }
+
+                    });
                 }
             } else {
                 alert(xhr.status);
@@ -123,6 +148,31 @@ function mem_getOrderList() {
     xhr.send(data_info);
 }
 
+
+
+//刪除住宿訂單資料
+function orderlistDele(order_no) {
+
+    var URLs = "mem_orderlist_dele.php";
+
+    $.ajax({
+        url: URLs,
+        data: { order_no },
+        type: "GET",
+        dataType: 'html',
+
+        success: function(msg) {
+            alert(msg);
+            mem_getOrderList();
+        },
+
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
+        }
+    });
+
+}
 
 //顯示文章資料
 function getArticle() {
@@ -349,10 +399,12 @@ function updatePetInfointoDB() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) { //server端順利執行完畢
                 console.log("成功更新寵物資料");
-                //更新寵物頁面和燈箱資料
-                getPetInfo();
                 //更新寵物照片和名字
-
+                getPetInfo();
+                //更新盟主
+                member_getRaceInfo();
+                //更新住宿
+                mem_getOrderList();
                 //修改寵物資料燈箱關閉
                 $('#mypets .lightbox_content').fadeOut(0, function() {
                     $('#mypets .lightbox_box').css({
@@ -494,6 +546,8 @@ function showPetLightboxInfo(jsonStr) {
 
     //sex
     var pet_sex = pet.pet_sex;
+    document.getElementById("female_pet").removeAttribute("checked");
+    document.getElementById("male_pet").removeAttribute("checked");
     if (pet_sex == "f") {
         document.getElementById("female_pet").setAttribute("checked", "chekced");
     } else {
@@ -545,7 +599,8 @@ function getDogInfo(dog_no) {
                 $('select').niceSelect('update');
 
                 var _var_option_id = 'dog_no_option' + dog_no;
-                document.getElementById(_var_option_id).setAttribute("selected", "selected");
+                var __var_option_id_update = document.getElementById(_var_option_id);
+                __var_option_id_update.setAttribute("selected", "selected");
                 $('select').niceSelect('update');
 
             } else {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>會員專區</title>
+    <title>會員專區 | FurKid</title>
     <link href='images/furkid.ico' rel='shortcut icon' />
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!-- 選單要引用fontawesome/jquery和nav.js -->
@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/jquery.nice-select.js"></script>
     <script type="text/javascript" src="js/member.js"></script>
     <script type="text/javascript" src="js/loading.js?<%=Timer()%>"></script>
+
 </head>
 
 <body>
@@ -414,6 +415,7 @@
         <!-- <div class="memberLightboxTarget" id="mybookingContent">
     </div> -->
         <!-- 訂單燈箱結束 -->
+        <div id="gotop"><img src="images/gotop.png"></div>
     </div>
     <!-- footer開始 -->
     <footer>
@@ -441,21 +443,7 @@
             </section>
         </div>
     </footer>
-    <!-- footer結束 -->
-<!--     <script type="text/javascript">
-    //在會員頁登出後，跳轉回到首頁
-    function logoutOnMemberPage() {
-        console.log('logoutOnMemberPage');
-        location.href = "home.html";
-    }
 
-    function memLogOutFirst() {
-        var logoutBtn = document.getElementById('logoutBtn');
-        logoutBtn.addEventListener('click', logoutOnMemberPage, false);
-
-    }
-    window.addEventListener('load', memLogOutFirst, false);
-    </script> -->
 </body>
 
 </html>
