@@ -50,7 +50,7 @@ function getTopthree(){
         opacity: 1,
     }, 1);
 
-       $(window).load(function() {
+
     var wdth=$(window).width();
     var wdh=$(window).height();
     var wdratio = (wdh/wdth)/3;
@@ -139,7 +139,7 @@ function getTopthree(){
         }, 4000);
       });
     }
-  });
+
 
        $('.count.count1').each(function () {
         $(this).prop('Counter',0).delay(1000).animate({

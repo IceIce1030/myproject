@@ -7650,9 +7650,6 @@ html.fp-enabled,
   .member .container .accountMgt .mainContent .post .txt .postTitle {
     max-height: 40px;
   }
-  .member .container .accountMgt .mainContent #myrace .cardWrap .card .openLightbox {
-    max-height: 161px;
-  }
   .member .C_lightbox .lightbox_box .lightbox_content {
     padding-top: 20px;
   }
@@ -7686,7 +7683,7 @@ html.fp-enabled,
     max-width: 830px;
   }
   .member .container .accountMgt #myrace .cardWrap .card .openLightbox {
-    max-height: 200px;
+    height: 200px;
   }
 }
 
@@ -9819,6 +9816,7 @@ html.fp-enabled,
     margin-top: -20px;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox {
+    margin-top: 2px;
     color: #888;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .maininfo .txtboxwrap .txtbox p {
@@ -9890,7 +9888,7 @@ html.fp-enabled,
     text-align: center;
   }
   .race #showlightbox .cardlightbox .lightbox-box .lightbox-content .infobox .petinfo .detailinfo .detailRight .like .votes {
-    display: inline-block;
+    display: block;
     font-size: 28px;
     color: #ef715a;
   }
@@ -9957,7 +9955,7 @@ html.fp-enabled,
     display: block;
     border-bottom: 1px dotted #ccc;
     padding: 5px 5px 5px 5px;
-    max-height: 140px;
+    max-height: 132px;
     width: 100%;
     border-radius: 5px;
     overflow: auto;

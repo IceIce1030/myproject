@@ -47,10 +47,10 @@ try{
                     <input type='hidden' value='{$roomRow["room_no"]}' id='room_no'>
                   </td>
                   <td>
-                    <input type='text'   class='text-center updateinput inputdate' value='{$roomRow["room_name"]}' id='room_name'>
+                    <input type='text'  style='width:120px;' class='text-center  inputdate' value='{$roomRow["room_name"]}' id='room_name'>
                   </td>
                   <td>
-                    <input type='text' class='text-center updateinput inputdate' value='{$roomRow["room_price"]}' id='room_price'>
+                    <input type='text' style='width:120px;' class='text-center inputdate' value='{$roomRow["room_price"]}' id='room_price'>
                     
                     
                   </td>
@@ -58,7 +58,7 @@ try{
                     <textarea id='room_info' class='inputdate' style='width:200px; height:250px;resize : none;' value=''>{$roomRow["room_intro"]}</textarea>
                   </td>
                   <td>
-                    <input type='text'  class='text-center updateinput inputdate' value='{$roomRow["room_count"]}' id='room_count'>
+                    <input type='text' style='width:120px;'  class='text-center inputdate' value='{$roomRow["room_count"]}' id='room_count'>
                     
                   </td>";
 
